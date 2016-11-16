@@ -85,6 +85,7 @@
     <Content Include="HR\Position.aspx" />
     <Content Include="HR\Timesheet.aspx" />
     <Content Include="HR\WebForm1.aspx" />
+    <Content Include="Register Office\University Application form.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +157,13 @@
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register Office\University Application form.aspx.cs">
+      <DependentUpon>University Application form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register Office\University Application form.aspx.designer.cs">
+      <DependentUpon>University Application form.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\" />
