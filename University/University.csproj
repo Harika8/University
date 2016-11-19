@@ -66,6 +66,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Academics\CourseCreation.aspx" />
+    <Content Include="Academics\Program.aspx">
+      <BrowseToURL>~/Academics/Program.aspx</BrowseToURL>
+    </Content>
+    <Content Include="Academics\DepartmentCreation.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -88,6 +93,27 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Academics\CourseCreation.aspx.cs">
+      <DependentUpon>CourseCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academics\CourseCreation.aspx.designer.cs">
+      <DependentUpon>CourseCreation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academics\Program.aspx.cs">
+      <DependentUpon>Program.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academics\Program.aspx.designer.cs">
+      <DependentUpon>Program.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academics\DepartmentCreation.aspx.cs">
+      <DependentUpon>DepartmentCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academics\DepartmentCreation.aspx.designer.cs">
+      <DependentUpon>DepartmentCreation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -174,7 +200,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>31205</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
