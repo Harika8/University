@@ -41,12 +41,12 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="HRDefault.aspx">HR - Home</a></li>
+                        <li><a href="HRDefault.aspx">HR - Home</a></li>
                         <li><a href="JobSearch.aspx">Job Search</a></li>
                         <li><a href="JobApplication.aspx">Job Application</a></li>                        
                         <li><a href="JobNotification.aspx">Create Vacancy</a></li> 
                         <li><a href="Payroll.aspx">Check Payroll</a></li>
-                        <li><a href="Position.aspx">Create Position</a></li> 
+                        <li class="active"><a href="Position.aspx">Create Position</a></li> 
                         <li><a href="Timesheet.aspx">Update Timesheet</a></li>
                         <li><a href="EmployeeJoining.aspx">Employee</a></li>                      
                     </ul>
@@ -55,9 +55,34 @@
         </nav><!--/nav-->
  
     </header>
-    <div>
-    
-    </div>
+    <div style="margin-top:100px;" align="center">
+         Position Creation Form<br /><br />
+        </div>
+        <div style="margin-left: 100px">
+     
+         <asp:Label ID="lblJobtype" Width="150" runat="server" Text="Job Type :"></asp:Label>         
+         <asp:DropDownList ID="selJobtype" Width="150" runat="server">
+             <asp:ListItem>part time</asp:ListItem>
+             <asp:ListItem>full time</asp:ListItem>
+         </asp:DropDownList>         
+        <br /><br />
+         <asp:Label ID="lbldesignation" runat="server" Width="150" Text="Designation :"></asp:Label>
+         <asp:TextBox ID="txtdesignation" runat="server" Width="150"></asp:TextBox><br /><br />
+         <asp:Label ID="lblRoles_resp" runat="server" Width="150" Text="Roles & Responsibilities :"></asp:Label>
+         <asp:TextBox ID="txtrolesresp" runat="server" Width="500"></asp:TextBox><br /><br /><br />
+             <asp:Label ID="lbldepartment" runat="server" Text="Department :" Width="150"></asp:Label>
+            <asp:DropDownList ID="seldept" runat="server" Width="150" DataSourceID="SqlDepartment" DataTextField="department_name" DataValueField="department_name">
+            </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDepartment" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionStringA %>" SelectCommand="SELECT [department_name] FROM [department]"></asp:SqlDataSource>
+            <br />            
+        </div>
+        <div style="margin-top:100px;" align="center">
+        <asp:Button ID="btnsubmit" runat="server" Width="150" Text="Submit" />
+        <asp:Button ID="btnclear" runat="server" Width="150" Text="Clear" />
+            <br />
+        </div>
+        
     </form>
+  
 </body>
 </html>
