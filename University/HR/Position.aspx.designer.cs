@@ -10,7 +10,7 @@
 namespace University.HR {
     
     
-    public partial class HRDefault {
+    public partial class Position {
         
         /// <summary>
         /// form1 control.
