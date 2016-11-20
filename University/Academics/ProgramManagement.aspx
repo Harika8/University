@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AcademicsHome.aspx.cs" Inherits="University.Academics.AcademicsHome" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProgramManagement.aspx.cs" Inherits="University.Academics.ProgramManagement" %>
 
 <!DOCTYPE html>
 
@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Academics Module" />
     <meta name="author" content="Sri Nuthalapati" />
-    <title>Academics Home</title>
+    <title>Program</title>
     <%-- ------ css ------ --%>
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -25,9 +25,8 @@
     <link rel="shortcut icon" href="../images/favicon.ico" />
 </head>
 <body>
-    <form id="AcademicsHome" runat="server">
-        
-<header id="header">
+    <form id="ProgramManagementForm" runat="server">
+       <header id="header">
     <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
                 <div class="navbar-header">
@@ -47,26 +46,22 @@
                         <li><a href="ProgramManagement.aspx">Program Management</a></li>                        
                         <li><a href="CourseCreation.aspx">Create Course</a></li>                  
                         <li><a href="AssignFacultyToCourse.aspx">Faculty Course Assignments</a></li> 
-                        <li><a href="FacultyLoadReport.aspx">Faculty Load Report</a></li>                        
+                        <li><a href="FacultyLoadReport.aspx">Faculty Load Report</a></li>                  
                     </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
- 
     </header>
+      <div>
 
-<!--    <section id="main-slider" class="no-margin">
-         <div class="carousel slide">
-            <ol class="carousel-indicators">
-                <li data-target="#main-slider" data-slide-to="0" class="active"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="item active" style="background-image: url(../images/DSC_1980.jpg)">
-                </div>
-            </div>
-        </div>
-       </section>
--->
+        <p style="width: 203px; margin-left: 600px">
+        <b>Academics' Programs Management - Creation/Deletion</b></p><br />
+    
+    </div>
+        <p>
+            <asp:Button ID="NewProgramButton" runat="server" Text="Enter New" OnClick="NewProgramButton_Click" />
+            <asp:Button ID="DeleteProgramButton" runat="server" Text="Delete Existing" Width="112px" OnClick="DeleteProgramButton_Click" />
+        </p>
     </form>
 </body>
 </html>

@@ -72,6 +72,10 @@
     </Content>
     <Content Include="Academics\CourseCreation.aspx" />
     <Content Include="Academics\FacultyLoadReport.aspx" />
+    <Content Include="Academics\ProgramManagement.aspx">
+      <BrowseToURL>~/Academics/ProgramManagement.aspx</BrowseToURL>
+    </Content>
+    <Content Include="Academics\ProgramDeletion.aspx" />
     <Content Include="Academics\ProgramCreation.aspx">
       <BrowseToURL>~/Academics/ProgramCreation.aspx</BrowseToURL>
     </Content>
@@ -125,6 +129,20 @@
     </Compile>
     <Compile Include="Academics\FacultyLoadReport.aspx.designer.cs">
       <DependentUpon>FacultyLoadReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academics\ProgramManagement.aspx.cs">
+      <DependentUpon>ProgramManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academics\ProgramManagement.aspx.designer.cs">
+      <DependentUpon>ProgramManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academics\ProgramDeletion.aspx.cs">
+      <DependentUpon>ProgramDeletion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academics\ProgramDeletion.aspx.designer.cs">
+      <DependentUpon>ProgramDeletion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Academics\ProgramCreation.aspx.cs">
       <DependentUpon>ProgramCreation.aspx</DependentUpon>

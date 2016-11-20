@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProgramCreation.aspx.cs" Inherits="University.Academics.Department" StyleSheetTheme="" MasterPageFile="" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProgramCreation.aspx.cs" Inherits="University.Academics.ProgramCreation" %>
 
 <!DOCTYPE html>
 
@@ -43,7 +43,7 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="AcademicsHome.aspx">Academics - Home</a></li>
                         <li><a href="DepartmentCreation.aspx">Create Department</a></li>
-                        <li><a href="ProgramCreation.aspx">Create Program</a></li>                        
+                        <li><a href="ProgramManagement.aspx">Program Management</a></li>                        
                         <li><a href="CourseCreation.aspx">Create Course</a></li>                  
                         <li><a href="AssignFacultyToCourse.aspx">Faculty Course Assignments</a></li> 
                         <li><a href="FacultyLoadReport.aspx">Faculty Load Report</a></li>                  
@@ -68,10 +68,8 @@
                 <asp:ListItem>UnderGrad</asp:ListItem>
             </asp:DropDownList>
         </p>
-        <p style="margin-left: 200px">
-            <asp:Button ID="NewProgramButton" runat="server" Text="Enter New" OnClick="NewProgramButton_Click" />
-            <asp:Button ID="DeleteProgramButton" runat="server" Text="Delete Existing" Width="112px" />
-        </p>
+          <p>
+              &nbsp;</p>
         <p>
 
             <asp:Label ID="ProgramName" runat="server" Text="Program Name:"></asp:Label>
@@ -81,9 +79,11 @@
             <asp:Label ID="ProgramCode" runat="server" Text="Program Code:"></asp:Label>
             <asp:TextBox ID="ProgramCodeTB" runat="server" Width="125px"></asp:TextBox>
         </p>
+          <p>
+              &nbsp;</p>
         <p style="margin-left: 200px">
             <asp:Button ID="ProgramSubmitButton" runat="server" Text="Submit" OnClick="ProgramSubmitButton_Click" />
-            <asp:Button ID="ProgramClearButton" runat="server" Text="Clear" />
+            <asp:Button ID="ProgramClearButton" runat="server" Text="Clear" OnClick="ProgramClearButton_Click" />
         </p>
         <asp:SqlDataSource ID="sqlprogram" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [program] WHERE [program_id] = @original_program_id AND (([program_name] = @original_program_name) OR ([program_name] IS NULL AND @original_program_name IS NULL)) AND (([department_id] = @original_department_id) OR ([department_id] IS NULL AND @original_department_id IS NULL)) AND (([course_level] = @original_course_level) OR ([course_level] IS NULL AND @original_course_level IS NULL))" InsertCommand="INSERT INTO [program] ([program_id], [program_name], [department_id], [course_level]) VALUES (@program_id, @program_name, @department_id, @course_level)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [program]" UpdateCommand="UPDATE [program] SET [program_name] = @program_name, [department_id] = @department_id, [course_level] = @course_level WHERE [program_id] = @original_program_id AND (([program_name] = @original_program_name) OR ([program_name] IS NULL AND @original_program_name IS NULL)) AND (([department_id] = @original_department_id) OR ([department_id] IS NULL AND @original_department_id IS NULL)) AND (([course_level] = @original_course_level) OR ([course_level] IS NULL AND @original_course_level IS NULL))">
             <DeleteParameters>
