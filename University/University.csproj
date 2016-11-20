@@ -66,9 +66,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Academics\AcademicsHome.aspx" />
+    <Content Include="Academics\AssignFacultyToCourse.aspx">
+      <BrowseToURL>~/Academics/AssignFacultyToCourse.aspx</BrowseToURL>
+    </Content>
     <Content Include="Academics\CourseCreation.aspx" />
-    <Content Include="Academics\Program.aspx">
-      <BrowseToURL>~/Academics/Program.aspx</BrowseToURL>
+    <Content Include="Academics\FacultyLoadReport.aspx" />
+    <Content Include="Academics\ProgramCreation.aspx">
+      <BrowseToURL>~/Academics/ProgramCreation.aspx</BrowseToURL>
     </Content>
     <Content Include="Academics\DepartmentCreation.aspx" />
     <Content Include="packages.config" />
@@ -93,6 +98,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Academics\AcademicsHome.aspx.cs">
+      <DependentUpon>AcademicsHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academics\AcademicsHome.aspx.designer.cs">
+      <DependentUpon>AcademicsHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academics\AssignFacultyToCourse.aspx.cs">
+      <DependentUpon>AssignFacultyToCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academics\AssignFacultyToCourse.aspx.designer.cs">
+      <DependentUpon>AssignFacultyToCourse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Academics\CourseCreation.aspx.cs">
       <DependentUpon>CourseCreation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -100,12 +119,19 @@
     <Compile Include="Academics\CourseCreation.aspx.designer.cs">
       <DependentUpon>CourseCreation.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Academics\Program.aspx.cs">
-      <DependentUpon>Program.aspx</DependentUpon>
+    <Compile Include="Academics\FacultyLoadReport.aspx.cs">
+      <DependentUpon>FacultyLoadReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Academics\Program.aspx.designer.cs">
-      <DependentUpon>Program.aspx</DependentUpon>
+    <Compile Include="Academics\FacultyLoadReport.aspx.designer.cs">
+      <DependentUpon>FacultyLoadReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academics\ProgramCreation.aspx.cs">
+      <DependentUpon>ProgramCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academics\ProgramCreation.aspx.designer.cs">
+      <DependentUpon>ProgramCreation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Academics\DepartmentCreation.aspx.cs">
       <DependentUpon>DepartmentCreation.aspx</DependentUpon>

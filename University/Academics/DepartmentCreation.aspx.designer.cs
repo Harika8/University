@@ -58,13 +58,13 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.Label DeptName;
         
         /// <summary>
-        /// TextBox1 control.
+        /// DepartmentNameTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox DepartmentNameTB;
         
         /// <summary>
         /// DeptName0 control.
@@ -76,76 +76,13 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.Label DeptName0;
         
         /// <summary>
-        /// TextBox2 control.
+        /// DepartmentIDTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
-        
-        /// <summary>
-        /// DeptName7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName7;
-        
-        /// <summary>
-        /// DeptName5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName5;
-        
-        /// <summary>
-        /// DropDownList2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
-        
-        /// <summary>
-        /// SqlDataSource1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-        
-        /// <summary>
-        /// DeptName6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName6;
-        
-        /// <summary>
-        /// DropDownList3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
-        
-        /// <summary>
-        /// DeptName8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName8;
+        protected global::System.Web.UI.WebControls.TextBox DepartmentIDTB;
         
         /// <summary>
         /// DeptName1 control.
@@ -166,13 +103,13 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.Label DeptName4;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// DepartmentLocationDDL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList DepartmentLocationDDL;
         
         /// <summary>
         /// DeptName2 control.
@@ -184,13 +121,13 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.Label DeptName2;
         
         /// <summary>
-        /// TextBox3 control.
+        /// DepartmentPhoneNoTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox DepartmentPhoneNoTB;
         
         /// <summary>
         /// DeptName3 control.
@@ -202,12 +139,39 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.Label DeptName3;
         
         /// <summary>
-        /// TextBox4 control.
+        /// DepartmentEmailIDTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox DepartmentEmailIDTB;
+        
+        /// <summary>
+        /// ProgramSubmitButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ProgramSubmitButton;
+        
+        /// <summary>
+        /// ProgramClearButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ProgramClearButton;
+        
+        /// <summary>
+        /// sqldepartment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource sqldepartment;
     }
 }

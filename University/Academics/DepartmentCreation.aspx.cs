@@ -13,5 +13,14 @@ namespace University.Academics
         {
 
         }
+
+        protected void ProgramSubmitButton_Click(object sender, EventArgs e)
+        {
+            sqldepartment.InsertParameters["department_name"].DefaultValue = DepartmentNameTB.Text.ToUpper().Trim();
+            sqldepartment.InsertParameters["department_location"].DefaultValue = DepartmentLocationDDL.SelectedValue;
+            sqldepartment.InsertParameters["department_phone_num"].DefaultValue = DepartmentPhoneNoTB.Text.ToUpper().Trim();
+            sqldepartment.InsertParameters["department_email_id"].DefaultValue = DepartmentEmailIDTB.Text.ToUpper().Trim();
+            sqldepartment.Insert();
+        }
     }
 }

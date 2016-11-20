@@ -43,7 +43,7 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="Default.aspx">Home</a></li>
                         <li><a href="services.aspx">Registrar</a></li>
-                        <li><a href="services.aspx">Academics</a></li>                        
+                        <li><a href="Academics/AcademicsHome.aspx">Academics</a></li>                        
                         <li><a href="contactus.aspx">Financial Aid</a></li> 
                         <li><a href="HR/HRDefault.aspx">HR</a></li>
                         <li><a href="services.aspx">Campus Services</a></li>                       
