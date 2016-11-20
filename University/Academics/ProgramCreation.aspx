@@ -69,7 +69,7 @@
             </asp:DropDownList>
         </p>
         <p style="margin-left: 200px">
-            <asp:Button ID="NewProgramButton" runat="server" Text="Enter New" />
+            <asp:Button ID="NewProgramButton" runat="server" Text="Enter New" OnClick="NewProgramButton_Click" />
             <asp:Button ID="DeleteProgramButton" runat="server" Text="Delete Existing" Width="112px" />
         </p>
         <p>

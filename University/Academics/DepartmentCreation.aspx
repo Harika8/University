@@ -58,20 +58,20 @@
         <asp:Button ID="NewDeptButton" runat="server" Text="Enter New Department" />
         <asp:Button ID="UpdateDeptButton" runat="server" Text="Update Existing Department" Width="196px" />
         <asp:Button ID="DeleteDeptButton" runat="server" Text="Delete Existing Department" Width="196px" />
-    
-    
+        <br />
+        <br />
         <br />
         <asp:Label ID="DeptName" runat="server" Text="Department Name:"></asp:Label>
         <asp:TextBox ID="DepartmentNameTB" runat="server"></asp:TextBox>
         <asp:Label ID="DeptName0" runat="server" Text="Department ID:"></asp:Label>
-        <asp:TextBox ID="DepartmentIDTB" runat="server"></asp:TextBox>
+        <asp:TextBox ID="DepartmentIDTB" runat="server" Enabled="False"></asp:TextBox>
         <br />
         <br />
         <br />
-        <asp:Label ID="DeptName1" runat="server" Text="Department Contact Details" CssClass="auto-style1"></asp:Label>
+        <asp:Label ID="DepartmentDetailsLbl" runat="server" Text="***Department Contact Details" CssClass="auto-style1"></asp:Label>
         <br class="auto-style1" />
         <br />
-        <asp:Label ID="DeptName4" runat="server" Text="Department Location:"></asp:Label>
+        <asp:Label ID="DepartmentLocationLbl" runat="server" Text="Department Location:"></asp:Label>
         <asp:DropDownList ID="DepartmentLocationDDL" runat="server">
             <asp:ListItem>Block A - Room 101</asp:ListItem>
             <asp:ListItem>Block B - Room 101</asp:ListItem>
@@ -84,16 +84,18 @@
             <asp:ListItem></asp:ListItem>
         </asp:DropDownList>
         <br />
-        <asp:Label ID="DeptName2" runat="server" Text="Phone Number:"></asp:Label>
+        <br />
+        <asp:Label ID="DepartmentNoLbl" runat="server" Text="Phone Number:"></asp:Label>
         <asp:TextBox ID="DepartmentPhoneNoTB" runat="server"></asp:TextBox>
-        <asp:Label ID="DeptName3" runat="server" Text="Email ID:"></asp:Label>
+        <asp:Label ID="DepartmentEmailIDLbl" runat="server" Text="Email ID:"></asp:Label>
         <asp:TextBox ID="DepartmentEmailIDTB" runat="server"></asp:TextBox>
         <br />
         <br />
-        <br />
+        
         <asp:Button ID="ProgramSubmitButton" runat="server" Text="Submit" OnClick="ProgramSubmitButton_Click" />
         <asp:Button ID="ProgramClearButton" runat="server" Text="Clear" />
-
+        <br />
+        <br />
         <asp:SqlDataSource ID="sqldepartment" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [department] WHERE [department_id] = @original_department_id AND [department_name] = @original_department_name AND [department_location] = @original_department_location AND [department_phone_num] = @original_department_phone_num AND [department_email_id] = @original_department_email_id" InsertCommand="INSERT INTO [department] ([department_name], [department_location], [department_phone_num], [department_email_id]) VALUES (@department_name, @department_location, @department_phone_num, @department_email_id)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [department]" UpdateCommand="UPDATE [department] SET [department_name] = @department_name, [department_location] = @department_location, [department_phone_num] = @department_phone_num, [department_email_id] = @department_email_id WHERE [department_id] = @original_department_id AND [department_name] = @original_department_name AND [department_location] = @original_department_location AND [department_phone_num] = @original_department_phone_num AND [department_email_id] = @original_department_email_id">
             <DeleteParameters>
                 <asp:Parameter Name="original_department_id" Type="Int16" />

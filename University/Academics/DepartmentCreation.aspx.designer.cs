@@ -85,22 +85,22 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.TextBox DepartmentIDTB;
         
         /// <summary>
-        /// DeptName1 control.
+        /// DepartmentDetailsLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName1;
+        protected global::System.Web.UI.WebControls.Label DepartmentDetailsLbl;
         
         /// <summary>
-        /// DeptName4 control.
+        /// DepartmentLocationLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName4;
+        protected global::System.Web.UI.WebControls.Label DepartmentLocationLbl;
         
         /// <summary>
         /// DepartmentLocationDDL control.
@@ -112,13 +112,13 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.DropDownList DepartmentLocationDDL;
         
         /// <summary>
-        /// DeptName2 control.
+        /// DepartmentNoLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName2;
+        protected global::System.Web.UI.WebControls.Label DepartmentNoLbl;
         
         /// <summary>
         /// DepartmentPhoneNoTB control.
@@ -130,13 +130,13 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.TextBox DepartmentPhoneNoTB;
         
         /// <summary>
-        /// DeptName3 control.
+        /// DepartmentEmailIDLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName3;
+        protected global::System.Web.UI.WebControls.Label DepartmentEmailIDLbl;
         
         /// <summary>
         /// DepartmentEmailIDTB control.

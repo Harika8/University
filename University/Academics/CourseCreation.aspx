@@ -62,44 +62,43 @@
         </asp:DropDownList>
         <asp:SqlDataSource ID="UniversityDatabase" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_name] FROM [department]"></asp:SqlDataSource>
         <p>
-        <asp:Label ID="CourseLevel" runat="server" Text="Course Level:"></asp:Label>
+        <asp:Label ID="CourseLevelLbl" runat="server" Text="Course Level:"></asp:Label>
         <asp:DropDownList ID="CourseLevelDDList" runat="server">
                 <asp:ListItem>Grad</asp:ListItem>
                 <asp:ListItem>PhD</asp:ListItem>
                 <asp:ListItem>UnderGrad</asp:ListItem>
             </asp:DropDownList>
-            <asp:Label ID="CourseLevel0" runat="server" Text="Program Name:"></asp:Label>
-            <asp:DropDownList ID="DropDownList1" runat="server">
+            <asp:Label ID="ProgramNameLbl" runat="server" Text="Program Name:"></asp:Label>
+            <asp:DropDownList ID="ProgramNameDDL" runat="server">
             </asp:DropDownList>
         </p>
+        <p>
+            &nbsp;</p>
         <p style="margin-left: 200px">
             <asp:Button ID="NewProgramButton" runat="server" Text="Create" />
             <asp:Button ID="ProgramSubmitButton0" runat="server" Text="Update" />
             <asp:Button ID="DeleteProgramButton" runat="server" Text="Delete Existing" Width="112px" />
         </p>
+        <p style="margin-left: 200px">
+            &nbsp;</p>
         <p>
-            <asp:Label ID="ProgramName" runat="server" Text="Course Name:"></asp:Label>
+            <asp:Label ID="CourseNameLbl" runat="server" Text="Course Name:"></asp:Label>
             <asp:TextBox ID="ProgramNameTB" runat="server"></asp:TextBox>
-            <asp:Label ID="ProgramCode0" runat="server" Text="Course Number:"></asp:Label>
-            <asp:TextBox ID="ProgramCodeTB0" runat="server" Width="125px"></asp:TextBox>
+            <asp:Label ID="CourseNumberLbl" runat="server" Text="Course Number:"></asp:Label>
+            <asp:TextBox ID="CourseNumberTB" runat="server" Width="125px" Enabled="False"></asp:TextBox>
         </p>
         <p>
-            <asp:Label ID="ProgramCode1" runat="server" Text="Effective Date:"></asp:Label>
+            &nbsp;</p>
+        <p>
+            <asp:Label ID="ProgramEffDtLbl" runat="server" Text="Effective Date:"></asp:Label>
+            <asp:Calendar ID="ProgramEffDtCal" runat="server"></asp:Calendar>
         </p>
         <p>
-            <asp:Label ID="ProgramCode" runat="server" Text="Course Description:"></asp:Label>
-            <asp:TextBox ID="ProgramCodeTB" runat="server" Width="372px" Height="56px"></asp:TextBox>
+            <asp:Label ID="CourseDescriptionLbl" runat="server" Text="Course Description:"></asp:Label>
+            <asp:TextBox ID="CourseDescriptionTB" runat="server" Width="372px" Height="56px"></asp:TextBox>
         </p>
         <p>
-            ***Additional Information</p>
-        <p>
-            <asp:Label ID="ProgramName1" runat="server" Text="Course Name:"></asp:Label>
-            <asp:TextBox ID="ProgramNameTB1" runat="server"></asp:TextBox>
-        </p>
-        <p>
-            <asp:Label ID="ProgramName0" runat="server" Text="Course Name:"></asp:Label>
-            <asp:TextBox ID="ProgramNameTB0" runat="server"></asp:TextBox>
-        </p>
+            &nbsp;</p>
         <p style="margin-left: 200px">
             <asp:Button ID="ProgramSubmitButton" runat="server" Text="Submit" />
             <asp:Button ID="ProgramClearButton" runat="server" Text="Clear" />

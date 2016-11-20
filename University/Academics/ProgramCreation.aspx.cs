@@ -26,5 +26,6 @@ namespace University.Academics
             sqlprogram.InsertParameters["course_level"].DefaultValue = CourseLevelDDList.SelectedValue;
             sqlprogram.Insert();
         }
+
     }
 }
