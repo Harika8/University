@@ -28,7 +28,7 @@
     
 <body>
 
-    <form id="AssignFacultyToCourse" runat="server">
+    <form id="FacultyLoadReport" runat="server">
     
     <header id="header">
     <nav class="navbar navbar-inverse" role="banner">
