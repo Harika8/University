@@ -30,8 +30,6 @@ namespace University.Academics
         {
             ProgramNameTB.Text = string.Empty;
             ProgramCodeTB.Text = string.Empty;
-            DepartmentIDDDList.SelectedValue = string.Empty;
-            CourseLevelDDList.SelectedValue = string.Empty;
         }
     }
 }
