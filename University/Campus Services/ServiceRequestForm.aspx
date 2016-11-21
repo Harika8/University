@@ -19,9 +19,14 @@
         </span></strong>
         <br />
         <br />
-        Student ID:&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox1" runat="server" Width="148px"></asp:TextBox>
-        <br />
+        Room Number:&nbsp;&nbsp;
+        <asp:DropDownList ID="DropDownList3" runat="server">
+            <asp:ListItem>100</asp:ListItem>
+            <asp:ListItem>101</asp:ListItem>
+            <asp:ListItem>102</asp:ListItem>
+            <asp:ListItem>103</asp:ListItem>
+            <asp:ListItem>104</asp:ListItem>
+        </asp:DropDownList>
         <br />
         <br />
         Service Type:&nbsp;&nbsp;
@@ -30,7 +35,6 @@
             <asp:ListItem>Plumbing</asp:ListItem>
             <asp:ListItem></asp:ListItem>
         </asp:DropDownList>
-        <br />
         <br />
         <br />
         Service Time:&nbsp;&nbsp;
@@ -42,7 +46,6 @@
         </asp:DropDownList>
         <br />
         <br />
-        <br />
         Service Date:&nbsp;&nbsp;
         <asp:TextBox ID="TextBox2" runat="server" Width="156px"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;
@@ -50,14 +53,6 @@
         <br />
         <br />
         <br />
-        Room Number:&nbsp;&nbsp;
-        <asp:DropDownList ID="DropDownList3" runat="server">
-            <asp:ListItem>100</asp:ListItem>
-            <asp:ListItem>101</asp:ListItem>
-            <asp:ListItem>102</asp:ListItem>
-            <asp:ListItem>103</asp:ListItem>
-            <asp:ListItem>104</asp:ListItem>
-        </asp:DropDownList>
         <br />
         <br />
         <br />
@@ -71,35 +66,7 @@
             <strong>For Office Use Only</strong></p>
         <hr />
         <br />
-        <br />
-        Service Completion Time:&nbsp;&nbsp;
-        <asp:DropDownList ID="DropDownList4" runat="server">
-            <asp:ListItem>10 AM</asp:ListItem>
-            <asp:ListItem>11 AM</asp:ListItem>
-        </asp:DropDownList>
-        <br />
-        <br />
-        <br />
-        Service Completion Date:&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;
-        <asp:Label ID="Label2" runat="server" Text="(MM/DD/YYYY)"></asp:Label>
-        <br />
-        <br />
-        <br />
-        Service Status:&nbsp;&nbsp;
-        <asp:DropDownList ID="DropDownList5" runat="server">
-            <asp:ListItem>Completed</asp:ListItem>
-            <asp:ListItem>Work in Progress</asp:ListItem>
-            <asp:ListItem>Pending</asp:ListItem>
-        </asp:DropDownList>
-        <br />
-        <br />
-        <br />
-        <br />
-        Signature (Enter your initials):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date:&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
         <br />
         <br />

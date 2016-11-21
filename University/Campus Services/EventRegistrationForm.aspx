@@ -25,10 +25,6 @@
         <asp:CheckBox ID="Faculty" runat="server" Text="Faculty" />
         <br />
         <br />
-        Name of the applicant:&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        <br />
-        <br />
         First Name:&nbsp;
         <asp:TextBox ID="TextBox2" runat="server" Width="179px"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Last Name:&nbsp;&nbsp;&nbsp;&nbsp;
@@ -56,22 +52,10 @@
         <br />
         <br />
         <br />
-        Sponsoring Organization:&nbsp;
-        <asp:TextBox ID="TextBox9" runat="server" Width="196px"></asp:TextBox>
-        <br />
-        <br />
-        <br />
         Multi-Day Event:&nbsp;
         <asp:CheckBox ID="CheckBox1" runat="server" Text="Yes" />
 &nbsp;&nbsp;&nbsp;
         <asp:CheckBox ID="CheckBox2" runat="server" Text="No" />
-        <br />
-        <br />
-        <br />
-        Recurring Event:&nbsp;&nbsp;
-        <asp:CheckBox ID="CheckBox3" runat="server" Text="Yes" />
-&nbsp;&nbsp;
-        <asp:CheckBox ID="CheckBox4" runat="server" Text="No" />
         <br />
         <br />
         <br />
@@ -86,8 +70,7 @@
         <asp:TextBox ID="TextBox11" runat="server" Width="113px"></asp:TextBox>
         <br />
         <br />
-        <br />
-        Event EndEvent End Date:&nbsp;
+        Event End Date:&nbsp;
         <asp:TextBox ID="TextBox12" runat="server"></asp:TextBox>
 &nbsp;
         <asp:Label ID="Label3" runat="server" Text="(MM/DD/YYYY)"></asp:Label>
@@ -99,43 +82,17 @@
         <br />
         <br />
         <br />
-        Event Hall* :&nbsp;&nbsp;&nbsp; ID="DropDownList1" runat="server">
-            <asp:ListItem>Student Centre Ball Room</asp:ListItem>
-            <asp:ListItem>Other</asp:ListItem>
-        </asp:DropDownList>
-        <br />
-        <br />
-        If other, Please specify:&nbsp;
-        <asp:TextBox ID="TextBox14" runat="server"></asp:TextBox>
-        <br />
-        <br />
+        Event Hall* :&nbsp;&nbsp;=
+        </asp:DropDownList><br />
         <br />
         Expected attendance:&nbsp;
         <asp:TextBox ID="TextBox15" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        <br />
-        Catering needed:&nbsp;
-        <asp:CheckBox ID="CheckBox5" runat="server" Text="Yes" />
-&nbsp;&nbsp;&nbsp;
-        <asp:CheckBox ID="CheckBox6" runat="server" Text="No" />
-        <br />
         <br />
         <br />
         Audio / Video Visuals:&nbsp;
         <asp:CheckBox ID="CheckBox7" runat="server" Text="Yes" />
 &nbsp;
         <asp:CheckBox ID="CheckBox8" runat="server" Text="No" />
-        <br />
-        <br />
-        <br />
-        Describe any setup needed:&nbsp;
-        <asp:TextBox ID="TextBox16" runat="server" TextMode="MultiLine" Width="179px"></asp:TextBox>
-        <br />
-        <br />
-        <br />
-        Additional Needs (Band Playing, Lecture, ...etc.):<br />
-        <asp:TextBox ID="TextBox17" runat="server" Height="54px" TextMode="MultiLine" Width="289px"></asp:TextBox>
         <br />
         <br />
         <br />

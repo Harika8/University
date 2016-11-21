@@ -87,6 +87,7 @@
     <Content Include="Campus Services\HostelAccomodation.aspx" />
     <Content Include="Campus Services\HostelConfirmation.aspx" />
     <Content Include="Campus Services\HostelRoomReport.aspx" />
+    <Content Include="Campus Services\ServiceAllotedForm.aspx" />
     <Content Include="Campus Services\ServiceRequestForm.aspx" />
     <Content Include="Campus Services\ServiceRequestReport.aspx" />
     <Content Include="packages.config" />
@@ -215,6 +216,13 @@
     </Compile>
     <Compile Include="Campus Services\HostelRoomReport.aspx.designer.cs">
       <DependentUpon>HostelRoomReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Campus Services\ServiceAllotedForm.aspx.cs">
+      <DependentUpon>ServiceAllotedForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Campus Services\ServiceAllotedForm.aspx.designer.cs">
+      <DependentUpon>ServiceAllotedForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Campus Services\ServiceRequestForm.aspx.cs">
       <DependentUpon>ServiceRequestForm.aspx</DependentUpon>

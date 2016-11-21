@@ -32,8 +32,9 @@
         <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
 &nbsp;(DD/MM/YYYY)<br />
         <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Employee Name :<asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Signature :</p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Approved Employee Name :<asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </p>
     <div>
     
     </div>

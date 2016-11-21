@@ -28,14 +28,13 @@
         <asp:TextBox ID="TextBox18" runat="server" Width="164px"></asp:TextBox>
         <br />
         <br />
-        Allotted Allotted Date:&nbsp;
+            Allotted Date:&nbsp;
         <asp:TextBox ID="TextBox23" runat="server" Width="148px"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;
         <asp:Label ID="Label4" runat="server" Text="(MM/DD/YYYY)"></asp:Label>
         <br />
         <br />
-        Allotted Time:&nbsp; extBox19" runat="server"></asp:TextBox>
-        <br />
+        Allotted Time:&nbsp;<br />
         <br />
         Allotted Capacity:&nbsp;
         <asp:TextBox ID="TextBox20" runat="server"></asp:TextBox>
