@@ -11,11 +11,7 @@
             text-decoration: underline;
             margin-left: 240px;
         }
-        .auto-style3 {
-            text-decoration: underline;
-            margin-left: 280px;
-        }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -67,37 +63,6 @@
 &nbsp;(DD/MM/YYYY)</p>
     
     </div>
-        <hr />
-        <p style="margin-left: 40px">
-            <span class="auto-style3"><strong>For Official Use Only</strong></span></p>
-        <hr />
-        <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Allotted Room Number :
-        <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
-        <br />
-        <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Duration Assigned :
-        <asp:DropDownList ID="DropDownList3" runat="server">
-            <asp:ListItem>6 Months</asp:ListItem>
-            <asp:ListItem>12 Months</asp:ListItem>
-        </asp:DropDownList>
-        <br />
-        <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Start Date:
-        <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
-&nbsp;(DD/MM/YYYY)<br />
-        <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Employee Name :<asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Signature :<br />
-        <br />
-        <div style="margin-left: 360px">
-            <asp:Button ID="Button1" runat="server" Text="Submit" />
-            <br />
-            <br />
-            <asp:Label ID="Label1" runat="server" Enabled="False"></asp:Label>
-            <br />
-            <asp:Button ID="Button2" runat="server" Text="Close" />
-        </div>
     </form>
 </body>
 </html>

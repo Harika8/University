@@ -46,6 +46,21 @@
         <asp:Button ID="Button1" runat="server" Text="Run Report" />
         <br />
 &nbsp;</span></div>
+        <asp:SqlDataSource ID="SqlTenant" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" DeleteCommand="DELETE FROM [tenent] WHERE [tuser_id] = @original_tuser_id AND [allocation_room_no] = @original_allocation_room_no" InsertCommand="INSERT INTO [tenent] ([tuser_id], [allocation_room_no]) VALUES (@tuser_id, @allocation_room_no)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [tenent]" UpdateCommand="UPDATE [tenent] SET [allocation_room_no] = @allocation_room_no WHERE [tuser_id] = @original_tuser_id AND [allocation_room_no] = @original_allocation_room_no">
+            <DeleteParameters>
+                <asp:Parameter Name="original_tuser_id" Type="Int32" />
+                <asp:Parameter Name="original_allocation_room_no" Type="Int16" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="tuser_id" Type="Int32" />
+                <asp:Parameter Name="allocation_room_no" Type="Int16" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="allocation_room_no" Type="Int16" />
+                <asp:Parameter Name="original_tuser_id" Type="Int32" />
+                <asp:Parameter Name="original_allocation_room_no" Type="Int16" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
     </form>
 </body>
 </html>

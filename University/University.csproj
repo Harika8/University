@@ -81,9 +81,11 @@
     </Content>
     <Content Include="Academics\DepartmentCreation.aspx" />
     <Content Include="Campus Services\CampusServicesHome.aspx" />
+    <Content Include="Campus Services\EventConfirmation.aspx" />
     <Content Include="Campus Services\EventRegistrationForm.aspx" />
     <Content Include="Campus Services\EventReport.aspx" />
     <Content Include="Campus Services\HostelAccomodation.aspx" />
+    <Content Include="Campus Services\HostelConfirmation.aspx" />
     <Content Include="Campus Services\HostelRoomReport.aspx" />
     <Content Include="Campus Services\ServiceRequestForm.aspx" />
     <Content Include="Campus Services\ServiceRequestReport.aspx" />
@@ -172,6 +174,13 @@
     <Compile Include="Campus Services\CampusServicesHome.aspx.designer.cs">
       <DependentUpon>CampusServicesHome.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Campus Services\EventConfirmation.aspx.cs">
+      <DependentUpon>EventConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Campus Services\EventConfirmation.aspx.designer.cs">
+      <DependentUpon>EventConfirmation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Campus Services\EventRegistrationForm.aspx.cs">
       <DependentUpon>EventRegistrationForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -192,6 +201,13 @@
     </Compile>
     <Compile Include="Campus Services\HostelAccomodation.aspx.designer.cs">
       <DependentUpon>HostelAccomodation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Campus Services\HostelConfirmation.aspx.cs">
+      <DependentUpon>HostelConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Campus Services\HostelConfirmation.aspx.designer.cs">
+      <DependentUpon>HostelConfirmation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Campus Services\HostelRoomReport.aspx.cs">
       <DependentUpon>HostelRoomReport.aspx</DependentUpon>
