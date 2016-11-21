@@ -25,7 +25,7 @@
     <link rel="shortcut icon" href="../images/favicon.ico" />
 </head>
 <body>
-    <form id="CourseCreationForm" runat="server">
+    <form id="CourseCreation" runat="server">
        <header id="header">
     <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
@@ -42,17 +42,18 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="AcademicsHome.aspx">Academics - Home</a></li>
-                        <li><a href="DepartmentManagement.aspx">Manage Department</a></li>
-                        <li><a href="ProgramManagement.aspx">Manage Program</a></li>                        
-                        <li><a href="CourseManagement.aspx">Manage Course</a></li>                     
+                        <li><a href="DepartmentCreation.aspx">Create Department</a></li>
+                        <li><a href="ProgramManagement.aspx">Program Management</a></li>                         
+                        <li><a href="CourseCreation.aspx">Create Course</a></li>                  
                         <li><a href="AssignFacultyToCourse.aspx">Faculty Course Assignments</a></li> 
-                        <li><a href="FacultyLoadReport.aspx">Faculty Load Report</a></li>                  
+                        <li><a href="FacultyLoadReport.aspx">Faculty Load Report</a></li>                                          
                     </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
     </header>
 
+    <div>
         <p style="width: 203px; margin-left: 600px">
         <b>Course Creation Form</b></p><br />
     
@@ -72,6 +73,13 @@
             </asp:DropDownList>
         </p>
         <p>
+            &nbsp;</p>
+        <p style="margin-left: 200px">
+            <asp:Button ID="NewProgramButton" runat="server" Text="Create" />
+            <asp:Button ID="ProgramSubmitButton0" runat="server" Text="Update" />
+            <asp:Button ID="DeleteProgramButton" runat="server" Text="Delete Existing" Width="112px" />
+        </p>
+        <p style="margin-left: 200px">
             &nbsp;</p>
         <p>
             <asp:Label ID="CourseNameLbl" runat="server" Text="Course Name:"></asp:Label>

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Academics Module" />
     <meta name="author" content="Sri Nuthalapati" />
-    <title>Update Program</title>
+    <title>Delete Program</title>
     <%-- ------ css ------ --%>
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -42,9 +42,9 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="AcademicsHome.aspx">Academics - Home</a></li>
-                        <li><a href="DepartmentManagement.aspx">Manage Department</a></li>
-                        <li><a href="ProgramManagement.aspx">Manage Program</a></li>                        
-                        <li><a href="CourseManagement.aspx">Manage Course</a></li>                     
+                        <li><a href="DepartmentCreation.aspx">Create Department</a></li>
+                        <li><a href="ProgramManagement.aspx">Program Management</a></li>                        
+                        <li><a href="CourseCreation.aspx">Create Course</a></li>                  
                         <li><a href="AssignFacultyToCourse.aspx">Faculty Course Assignments</a></li> 
                         <li><a href="FacultyLoadReport.aspx">Faculty Load Report</a></li>                  
                     </ul>
@@ -58,40 +58,47 @@
         <b>Program Deletion Form</b></p>
         <p>
 
-            &nbsp;</p>
+            <asp:GridView ID="ProgramGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="program_id" DataSourceID="SqlDataSource1">
+                <Columns>
+                    <asp:CommandField ShowDeleteButton="True" />
+                    <asp:BoundField DataField="program_id" HeaderText="program_id" ReadOnly="True" SortExpression="program_id" />
+                    <asp:BoundField DataField="program_name" HeaderText="program_name" SortExpression="program_name" />
+                    <asp:BoundField DataField="department_id" HeaderText="department_id" SortExpression="department_id" />
+                    <asp:BoundField DataField="course_level" HeaderText="course_level" SortExpression="course_level" />
+                </Columns>
+            </asp:GridView>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [program] WHERE [program_id] = @original_program_id AND [program_name] = @original_program_name AND [department_id] = @original_department_id AND [course_level] = @original_course_level" InsertCommand="INSERT INTO [program] ([program_id], [program_name], [department_id], [course_level]) VALUES (@program_id, @program_name, @department_id, @course_level)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [program]" UpdateCommand="UPDATE [program] SET [program_name] = @program_name, [department_id] = @department_id, [course_level] = @course_level WHERE [program_id] = @original_program_id AND [program_name] = @original_program_name AND [department_id] = @original_department_id AND [course_level] = @original_course_level">
+                <DeleteParameters>
+                    <asp:Parameter Name="original_program_id" Type="Int16" />
+                    <asp:Parameter Name="original_program_name" Type="String" />
+                    <asp:Parameter Name="original_department_id" Type="Int16" />
+                    <asp:Parameter Name="original_course_level" Type="String" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="program_id" Type="Int16" />
+                    <asp:Parameter Name="program_name" Type="String" />
+                    <asp:Parameter Name="department_id" Type="Int16" />
+                    <asp:Parameter Name="course_level" Type="String" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="program_name" Type="String" />
+                    <asp:Parameter Name="department_id" Type="Int16" />
+                    <asp:Parameter Name="course_level" Type="String" />
+                    <asp:Parameter Name="original_program_id" Type="Int16" />
+                    <asp:Parameter Name="original_program_name" Type="String" />
+                    <asp:Parameter Name="original_department_id" Type="Int16" />
+                    <asp:Parameter Name="original_course_level" Type="String" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
+        </p>
+          <p>
+
+              &nbsp;</p>
+        <p style="margin-left: 200px">
+            <asp:Button ID="ProgramDelSubmitButton" runat="server" OnClick="ProgramDelButton_Click" Text="Submit" />
+            <asp:Button ID="ProgramDelClearButton" runat="server" Text="Clear" OnClick="ProgramDelClearButton_Click" />
+        </p>
       </div>
-        <asp:GridView ID="ProgramGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="program_id" DataSourceID="ProgramDataSource">
-            <Columns>
-                <asp:CommandField ShowDeleteButton="True" />
-                <asp:BoundField DataField="program_id" HeaderText="program_id" ReadOnly="True" SortExpression="program_id" />
-                <asp:BoundField DataField="program_name" HeaderText="program_name" SortExpression="program_name" />
-                <asp:BoundField DataField="department_id" HeaderText="department_id" SortExpression="department_id" />
-                <asp:BoundField DataField="course_level" HeaderText="course_level" SortExpression="course_level" />
-            </Columns>
-        </asp:GridView>
-        <asp:SqlDataSource ID="ProgramDataSource" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [program] WHERE [program_id] = @original_program_id AND [program_name] = @original_program_name AND [department_id] = @original_department_id AND [course_level] = @original_course_level" InsertCommand="INSERT INTO [program] ([program_id], [program_name], [department_id], [course_level]) VALUES (@program_id, @program_name, @department_id, @course_level)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [program]" UpdateCommand="UPDATE [program] SET [program_name] = @program_name, [department_id] = @department_id, [course_level] = @course_level WHERE [program_id] = @original_program_id AND [program_name] = @original_program_name AND [department_id] = @original_department_id AND [course_level] = @original_course_level">
-            <DeleteParameters>
-                <asp:Parameter Name="original_program_id" Type="Int16" />
-                <asp:Parameter Name="original_program_name" Type="String" />
-                <asp:Parameter Name="original_department_id" Type="Int16" />
-                <asp:Parameter Name="original_course_level" Type="String" />
-            </DeleteParameters>
-            <InsertParameters>
-                <asp:Parameter Name="program_id" Type="Int16" />
-                <asp:Parameter Name="program_name" Type="String" />
-                <asp:Parameter Name="department_id" Type="Int16" />
-                <asp:Parameter Name="course_level" Type="String" />
-            </InsertParameters>
-            <UpdateParameters>
-                <asp:Parameter Name="program_name" Type="String" />
-                <asp:Parameter Name="department_id" Type="Int16" />
-                <asp:Parameter Name="course_level" Type="String" />
-                <asp:Parameter Name="original_program_id" Type="Int16" />
-                <asp:Parameter Name="original_program_name" Type="String" />
-                <asp:Parameter Name="original_department_id" Type="Int16" />
-                <asp:Parameter Name="original_course_level" Type="String" />
-            </UpdateParameters>
-        </asp:SqlDataSource>
     </form>
 </body>
 </html>
