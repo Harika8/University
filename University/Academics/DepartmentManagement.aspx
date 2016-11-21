@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CourseCreation.aspx.cs" Inherits="University.Academics.CourseCreation" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DepartmentManagement.aspx.cs" Inherits="University.Academics.DepartmentManagement" %>
 
 <!DOCTYPE html>
 
@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Academics Module" />
     <meta name="author" content="Sri Nuthalapati" />
-    <title>Create Course</title>
+    <title>Department</title>
     <%-- ------ css ------ --%>
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -25,7 +25,7 @@
     <link rel="shortcut icon" href="../images/favicon.ico" />
 </head>
 <body>
-    <form id="CourseCreationForm" runat="server">
+    <form id="DepartmentManagementForm" runat="server">
        <header id="header">
     <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
@@ -54,49 +54,15 @@
     </header>
 
         <p style="width: 203px; margin-left: 600px">
-        <b>Course Creation Form</b></p><br />
-    
-        <asp:Label ID="DeptName" runat="server" Text="Department Name:"></asp:Label>
-        <asp:DropDownList ID="DeptNameDDList" runat="server" DataSourceID="UniversityDatabase" DataTextField="department_name" DataValueField="department_name">
-        </asp:DropDownList>
-        <asp:SqlDataSource ID="UniversityDatabase" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_name] FROM [department]"></asp:SqlDataSource>
-        <p>
-        <asp:Label ID="CourseLevelLbl" runat="server" Text="Course Level:"></asp:Label>
-        <asp:DropDownList ID="CourseLevelDDList" runat="server">
-                <asp:ListItem>Grad</asp:ListItem>
-                <asp:ListItem>PhD</asp:ListItem>
-                <asp:ListItem>UnderGrad</asp:ListItem>
-            </asp:DropDownList>
-            <asp:Label ID="ProgramNameLbl" runat="server" Text="Program Name:"></asp:Label>
-            <asp:DropDownList ID="ProgramNameDDL" runat="server">
-            </asp:DropDownList>
-        </p>
-        <p>
-            &nbsp;</p>
-        <p>
-            <asp:Label ID="CourseNameLbl" runat="server" Text="Course Name:"></asp:Label>
-            <asp:TextBox ID="ProgramNameTB" runat="server"></asp:TextBox>
-            <asp:Label ID="CourseNumberLbl" runat="server" Text="Course Number:"></asp:Label>
-            <asp:TextBox ID="CourseNumberTB" runat="server" Width="125px" Enabled="False"></asp:TextBox>
-        </p>
-        <p>
-            &nbsp;</p>
-        <p>
-            <asp:Label ID="ProgramEffDtLbl" runat="server" Text="Effective Date:"></asp:Label>
-            <asp:Calendar ID="ProgramEffDtCal" runat="server"></asp:Calendar>
-        </p>
-        <p>
-            <asp:Label ID="CourseDescriptionLbl" runat="server" Text="Course Description:"></asp:Label>
-            <asp:TextBox ID="CourseDescriptionTB" runat="server" Width="372px" Height="56px"></asp:TextBox>
-        </p>
-        <p>
-            &nbsp;</p>
-        <p style="margin-left: 200px">
-            <asp:Button ID="ProgramSubmitButton" runat="server" Text="Submit" />
-            <asp:Button ID="ProgramClearButton" runat="server" Text="Clear" />
-        </p>
-    
-    </div>
+        <b>Department Management Form</b></p><br />
+        <br />
+        <asp:Button ID="NewDeptButton" runat="server" Text="Enter New Department" OnClick="NewDeptButton_Click" />
+        <br />
+        <br />
+        <asp:Button ID="UpdateDeptButton" runat="server" Text="Update/Delete Existing Department" Width="283px" OnClick="UpdateDeptButton_Click" />
+        <br />
+        <br />
+        <br />
     </form>
 </body>
 </html>
