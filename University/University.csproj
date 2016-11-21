@@ -66,11 +66,30 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Academics\AcademicsHome.aspx" />
+    <Content Include="Academics\AssignFacultyToCourse.aspx">
+      <BrowseToURL>~/Academics/AssignFacultyToCourse.aspx</BrowseToURL>
+    </Content>
     <Content Include="Academics\CourseCreation.aspx" />
-    <Content Include="Academics\Program.aspx">
-      <BrowseToURL>~/Academics/Program.aspx</BrowseToURL>
+    <Content Include="Academics\FacultyLoadReport.aspx" />
+    <Content Include="Academics\ProgramManagement.aspx">
+      <BrowseToURL>~/Academics/ProgramManagement.aspx</BrowseToURL>
+    </Content>
+    <Content Include="Academics\ProgramDeletion.aspx" />
+    <Content Include="Academics\ProgramCreation.aspx">
+      <BrowseToURL>~/Academics/ProgramCreation.aspx</BrowseToURL>
     </Content>
     <Content Include="Academics\DepartmentCreation.aspx" />
+    <Content Include="Campus Services\CampusServicesHome.aspx" />
+    <Content Include="Campus Services\EventConfirmation.aspx" />
+    <Content Include="Campus Services\EventRegistrationForm.aspx" />
+    <Content Include="Campus Services\EventReport.aspx" />
+    <Content Include="Campus Services\HostelAccomodation.aspx" />
+    <Content Include="Campus Services\HostelConfirmation.aspx" />
+    <Content Include="Campus Services\HostelRoomReport.aspx" />
+    <Content Include="Campus Services\ServiceAllotedForm.aspx" />
+    <Content Include="Campus Services\ServiceRequestForm.aspx" />
+    <Content Include="Campus Services\ServiceRequestReport.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -93,6 +112,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Academics\AcademicsHome.aspx.cs">
+      <DependentUpon>AcademicsHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academics\AcademicsHome.aspx.designer.cs">
+      <DependentUpon>AcademicsHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academics\AssignFacultyToCourse.aspx.cs">
+      <DependentUpon>AssignFacultyToCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academics\AssignFacultyToCourse.aspx.designer.cs">
+      <DependentUpon>AssignFacultyToCourse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Academics\CourseCreation.aspx.cs">
       <DependentUpon>CourseCreation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -100,12 +133,33 @@
     <Compile Include="Academics\CourseCreation.aspx.designer.cs">
       <DependentUpon>CourseCreation.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Academics\Program.aspx.cs">
-      <DependentUpon>Program.aspx</DependentUpon>
+    <Compile Include="Academics\FacultyLoadReport.aspx.cs">
+      <DependentUpon>FacultyLoadReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Academics\Program.aspx.designer.cs">
-      <DependentUpon>Program.aspx</DependentUpon>
+    <Compile Include="Academics\FacultyLoadReport.aspx.designer.cs">
+      <DependentUpon>FacultyLoadReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academics\ProgramManagement.aspx.cs">
+      <DependentUpon>ProgramManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academics\ProgramManagement.aspx.designer.cs">
+      <DependentUpon>ProgramManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academics\ProgramDeletion.aspx.cs">
+      <DependentUpon>ProgramDeletion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academics\ProgramDeletion.aspx.designer.cs">
+      <DependentUpon>ProgramDeletion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academics\ProgramCreation.aspx.cs">
+      <DependentUpon>ProgramCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academics\ProgramCreation.aspx.designer.cs">
+      <DependentUpon>ProgramCreation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Academics\DepartmentCreation.aspx.cs">
       <DependentUpon>DepartmentCreation.aspx</DependentUpon>
@@ -113,6 +167,76 @@
     </Compile>
     <Compile Include="Academics\DepartmentCreation.aspx.designer.cs">
       <DependentUpon>DepartmentCreation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Campus Services\CampusServicesHome.aspx.cs">
+      <DependentUpon>CampusServicesHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Campus Services\CampusServicesHome.aspx.designer.cs">
+      <DependentUpon>CampusServicesHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Campus Services\EventConfirmation.aspx.cs">
+      <DependentUpon>EventConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Campus Services\EventConfirmation.aspx.designer.cs">
+      <DependentUpon>EventConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Campus Services\EventRegistrationForm.aspx.cs">
+      <DependentUpon>EventRegistrationForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Campus Services\EventRegistrationForm.aspx.designer.cs">
+      <DependentUpon>EventRegistrationForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Campus Services\EventReport.aspx.cs">
+      <DependentUpon>EventReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Campus Services\EventReport.aspx.designer.cs">
+      <DependentUpon>EventReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Campus Services\HostelAccomodation.aspx.cs">
+      <DependentUpon>HostelAccomodation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Campus Services\HostelAccomodation.aspx.designer.cs">
+      <DependentUpon>HostelAccomodation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Campus Services\HostelConfirmation.aspx.cs">
+      <DependentUpon>HostelConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Campus Services\HostelConfirmation.aspx.designer.cs">
+      <DependentUpon>HostelConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Campus Services\HostelRoomReport.aspx.cs">
+      <DependentUpon>HostelRoomReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Campus Services\HostelRoomReport.aspx.designer.cs">
+      <DependentUpon>HostelRoomReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Campus Services\ServiceAllotedForm.aspx.cs">
+      <DependentUpon>ServiceAllotedForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Campus Services\ServiceAllotedForm.aspx.designer.cs">
+      <DependentUpon>ServiceAllotedForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Campus Services\ServiceRequestForm.aspx.cs">
+      <DependentUpon>ServiceRequestForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Campus Services\ServiceRequestForm.aspx.designer.cs">
+      <DependentUpon>ServiceRequestForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Campus Services\ServiceRequestReport.aspx.cs">
+      <DependentUpon>ServiceRequestReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Campus Services\ServiceRequestReport.aspx.designer.cs">
+      <DependentUpon>ServiceRequestReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

@@ -58,13 +58,13 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.Label DeptName;
         
         /// <summary>
-        /// TextBox1 control.
+        /// DepartmentNameTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox DepartmentNameTB;
         
         /// <summary>
         /// DeptName0 control.
@@ -76,138 +76,102 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.Label DeptName0;
         
         /// <summary>
-        /// TextBox2 control.
+        /// DepartmentIDTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox DepartmentIDTB;
         
         /// <summary>
-        /// DeptName7 control.
+        /// DepartmentDetailsLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName7;
+        protected global::System.Web.UI.WebControls.Label DepartmentDetailsLbl;
         
         /// <summary>
-        /// DeptName5 control.
+        /// DepartmentLocationLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName5;
+        protected global::System.Web.UI.WebControls.Label DepartmentLocationLbl;
         
         /// <summary>
-        /// DropDownList2 control.
+        /// DepartmentLocationDDL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList DepartmentLocationDDL;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// DepartmentNoLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Label DepartmentNoLbl;
         
         /// <summary>
-        /// DeptName6 control.
+        /// DepartmentPhoneNoTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName6;
+        protected global::System.Web.UI.WebControls.TextBox DepartmentPhoneNoTB;
         
         /// <summary>
-        /// DropDownList3 control.
+        /// DepartmentEmailIDLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.Label DepartmentEmailIDLbl;
         
         /// <summary>
-        /// DeptName8 control.
+        /// DepartmentEmailIDTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName8;
+        protected global::System.Web.UI.WebControls.TextBox DepartmentEmailIDTB;
         
         /// <summary>
-        /// DeptName1 control.
+        /// ProgramSubmitButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName1;
+        protected global::System.Web.UI.WebControls.Button ProgramSubmitButton;
         
         /// <summary>
-        /// DeptName4 control.
+        /// ProgramClearButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName4;
+        protected global::System.Web.UI.WebControls.Button ProgramClearButton;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// sqldepartment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
-        
-        /// <summary>
-        /// DeptName2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName2;
-        
-        /// <summary>
-        /// TextBox3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
-        
-        /// <summary>
-        /// DeptName3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName3;
-        
-        /// <summary>
-        /// TextBox4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.SqlDataSource sqldepartment;
     }
 }

@@ -10,7 +10,8 @@
 namespace University.Academics {
     
     
-    public partial class Department {
+    public partial class ProgramCreation
+    {
         
         /// <summary>
         /// ProgramCreationForm control.
@@ -31,13 +32,13 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.Label DeptName;
         
         /// <summary>
-        /// DeptNameDDList control.
+        /// DepartmentIDDDList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DeptNameDDList;
+        protected global::System.Web.UI.WebControls.DropDownList DepartmentIDDDList;
         
         /// <summary>
         /// UniversityDatabase control.
@@ -65,24 +66,6 @@ namespace University.Academics {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList CourseLevelDDList;
-        
-        /// <summary>
-        /// NewProgramButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button NewProgramButton;
-        
-        /// <summary>
-        /// DeleteProgramButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button DeleteProgramButton;
         
         /// <summary>
         /// ProgramName control.
