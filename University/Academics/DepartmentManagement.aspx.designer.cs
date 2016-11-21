@@ -10,33 +10,33 @@
 namespace University.Academics {
     
     
-    public partial class ProgramDeletion {
+    public partial class DepartmentManagement {
         
         /// <summary>
-        /// ProgramDeletionForm control.
+        /// DepartmentManagementForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm ProgramDeletionForm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm DepartmentManagementForm;
         
         /// <summary>
-        /// ProgramGridView control.
+        /// NewDeptButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ProgramGridView;
+        protected global::System.Web.UI.WebControls.Button NewDeptButton;
         
         /// <summary>
-        /// ProgramDataSource control.
+        /// UpdateDeptButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ProgramDataSource;
+        protected global::System.Web.UI.WebControls.Button UpdateDeptButton;
     }
 }

@@ -22,40 +22,13 @@ namespace University.Academics {
         protected global::System.Web.UI.HtmlControls.HtmlForm DepartmentCreationForm;
         
         /// <summary>
-        /// NewDeptButton control.
+        /// DepartmentName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button NewDeptButton;
-        
-        /// <summary>
-        /// UpdateDeptButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button UpdateDeptButton;
-        
-        /// <summary>
-        /// DeleteDeptButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button DeleteDeptButton;
-        
-        /// <summary>
-        /// DeptName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName;
+        protected global::System.Web.UI.WebControls.Label DepartmentName;
         
         /// <summary>
         /// DepartmentNameTB control.
@@ -67,13 +40,13 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.TextBox DepartmentNameTB;
         
         /// <summary>
-        /// DeptName0 control.
+        /// DepartmentIDLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName0;
+        protected global::System.Web.UI.WebControls.Label DepartmentIDLbl;
         
         /// <summary>
         /// DepartmentIDTB control.
