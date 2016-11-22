@@ -61,14 +61,34 @@
         <br />
         <br />
         <br />
-        <hr />
-        <p style="margin-left: 280px">
-            <strong>For Office Use Only</strong></p>
-        <hr />
-        <br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="Button1" runat="server" Text="Submit" Width="61px" />
+        <asp:Button ID="Button2" runat="server" Text="Cancel" />
         <br />
         <br />
+        <asp:SqlDataSource ID="servicesource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" DeleteCommand="DELETE FROM [service] WHERE [service_id] = @service_id" InsertCommand="INSERT INTO [service] ([room_no], [service_type], [service_req_time], [service_req_date], [service_alloted_time], [service_alloted_date], [status]) VALUES (@room_no, @service_type, @service_req_time, @service_req_date, @service_alloted_time, @service_alloted_date, @status)" SelectCommand="SELECT * FROM [service]" UpdateCommand="UPDATE [service] SET [room_no] = @room_no, [service_type] = @service_type, [service_req_time] = @service_req_time, [service_req_date] = @service_req_date, [service_alloted_time] = @service_alloted_time, [service_alloted_date] = @service_alloted_date, [status] = @status WHERE [service_id] = @service_id">
+            <DeleteParameters>
+                <asp:Parameter Name="service_id" Type="Int16" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="room_no" Type="Int16" />
+                <asp:Parameter Name="service_type" Type="String" />
+                <asp:Parameter Name="service_req_time" Type="DateTime" />
+                <asp:Parameter DbType="Date" Name="service_req_date" />
+                <asp:Parameter Name="service_alloted_time" Type="DateTime" />
+                <asp:Parameter DbType="Date" Name="service_alloted_date" />
+                <asp:Parameter Name="status" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="room_no" Type="Int16" />
+                <asp:Parameter Name="service_type" Type="String" />
+                <asp:Parameter Name="service_req_time" Type="DateTime" />
+                <asp:Parameter DbType="Date" Name="service_req_date" />
+                <asp:Parameter Name="service_alloted_time" Type="DateTime" />
+                <asp:Parameter DbType="Date" Name="service_alloted_date" />
+                <asp:Parameter Name="status" Type="String" />
+                <asp:Parameter Name="service_id" Type="Int16" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
         <br />
         <br />
         <br />
