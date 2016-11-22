@@ -103,22 +103,13 @@ namespace HostelAccomodationApplication {
         protected global::System.Web.UI.WebControls.TextBox TextBox8;
         
         /// <summary>
-        /// CheckBox1 control.
+        /// RadioButtonList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
-        
-        /// <summary>
-        /// CheckBox2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox2;
+        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
         
         /// <summary>
         /// TextBox10 control.
@@ -175,6 +166,15 @@ namespace HostelAccomodationApplication {
         protected global::System.Web.UI.WebControls.TextBox TextBox24;
         
         /// <summary>
+        /// CheckBoxList1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList1;
+        
+        /// <summary>
         /// TextBox15 control.
         /// </summary>
         /// <remarks>
@@ -184,22 +184,13 @@ namespace HostelAccomodationApplication {
         protected global::System.Web.UI.WebControls.TextBox TextBox15;
         
         /// <summary>
-        /// CheckBox7 control.
+        /// RadioButtonList2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox7;
-        
-        /// <summary>
-        /// CheckBox8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox8;
+        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList2;
         
         /// <summary>
         /// Button1 control.
@@ -209,5 +200,23 @@ namespace HostelAccomodationApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
+        /// Button2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
+        
+        /// <summary>
+        /// eventsource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource eventsource;
     }
 }
