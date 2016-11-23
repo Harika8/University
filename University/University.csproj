@@ -90,6 +90,7 @@
     <Content Include="Campus Services\ServiceAllotedForm.aspx" />
     <Content Include="Campus Services\ServiceRequestForm.aspx" />
     <Content Include="Campus Services\ServiceRequestReport.aspx" />
+    <Content Include="Campus Services\WebForm1.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -237,6 +238,13 @@
     </Compile>
     <Compile Include="Campus Services\ServiceRequestReport.aspx.designer.cs">
       <DependentUpon>ServiceRequestReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Campus Services\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Campus Services\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
