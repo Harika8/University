@@ -71,6 +71,10 @@
       <BrowseToURL>~/Academics/AssignFacultyToCourse.aspx</BrowseToURL>
     </Content>
     <Content Include="Academics\CourseCreation.aspx" />
+    <Content Include="Academics\CourseManagement.aspx" />
+    <Content Include="Academics\CourseUpdation.aspx" />
+    <Content Include="Academics\DepartmentManagement.aspx" />
+    <Content Include="Academics\DepartmentUpdation.aspx" />
     <Content Include="Academics\FacultyLoadReport.aspx" />
     <Content Include="Academics\ProgramManagement.aspx">
       <BrowseToURL>~/Academics/ProgramManagement.aspx</BrowseToURL>
@@ -133,6 +137,34 @@
     </Compile>
     <Compile Include="Academics\CourseCreation.aspx.designer.cs">
       <DependentUpon>CourseCreation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academics\CourseManagement.aspx.cs">
+      <DependentUpon>CourseManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academics\CourseManagement.aspx.designer.cs">
+      <DependentUpon>CourseManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academics\CourseUpdation.aspx.cs">
+      <DependentUpon>CourseUpdation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academics\CourseUpdation.aspx.designer.cs">
+      <DependentUpon>CourseUpdation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academics\DepartmentManagement.aspx.cs">
+      <DependentUpon>DepartmentManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academics\DepartmentManagement.aspx.designer.cs">
+      <DependentUpon>DepartmentManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academics\DepartmentUpdation.aspx.cs">
+      <DependentUpon>DepartmentUpdation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academics\DepartmentUpdation.aspx.designer.cs">
+      <DependentUpon>DepartmentUpdation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Academics\FacultyLoadReport.aspx.cs">
       <DependentUpon>FacultyLoadReport.aspx</DependentUpon>
