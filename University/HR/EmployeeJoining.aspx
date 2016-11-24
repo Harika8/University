@@ -58,6 +58,7 @@
     <div>
     
     </div>
+        <asp:SqlDataSource ID="SqlUser" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [user_info]"></asp:SqlDataSource>
     </form>
 </body>
 </html>

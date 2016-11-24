@@ -13,5 +13,34 @@ namespace University.HR
         {
 
         }
+
+        protected void btnsubmit_Click(object sender, EventArgs e)
+        {
+            SqlPosition.InsertParameters["job_type"].DefaultValue = selJobtype.SelectedValue;
+            SqlPosition.InsertParameters["designation"].DefaultValue = txtdesignation.Text.ToUpper().Trim();
+            SqlPosition.InsertParameters["roles_responsibilities"].DefaultValue = txtrolesresp.Text.ToUpper().Trim();
+            SqlPosition.InsertParameters["department_id"].DefaultValue = seldept.SelectedValue;
+            SqlPosition.InsertParameters["salary"].DefaultValue = txtSalary.Text.ToUpper().Trim();
+            SqlPosition.InsertParameters["pay_frequency"].DefaultValue = selPayfrequency.SelectedValue;
+            SqlPosition.Insert();
+
+            selJobtype.SelectedIndex = 0;
+            txtdesignation.Text = string.Empty;
+            txtrolesresp.Text = string.Empty;
+            seldept.SelectedIndex = -1;
+            txtSalary.Text = string.Empty;
+            selPayfrequency.SelectedIndex = 0;
+           
+        }
+
+        protected void btnclear_Click(object sender, EventArgs e)
+        {
+            selJobtype.SelectedIndex = 0;
+            txtdesignation.Text = string.Empty;
+            txtrolesresp.Text = string.Empty;
+            seldept.SelectedIndex = -1;
+            txtSalary.Text = string.Empty;
+            selPayfrequency.SelectedIndex = 0;
+        }
     }
 }

@@ -41,12 +41,12 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="HRDefault.aspx">HR - Home</a></li>
+                        <li><a href="HRDefault.aspx">HR - Home</a></li>
                         <li><a href="JobSearch.aspx">Job Search</a></li>
                         <li><a href="JobApplication.aspx">Job Application</a></li>                        
                         <li><a href="JobNotification.aspx">Create Vacancy</a></li> 
                         <li><a href="Payroll.aspx">Check Payroll</a></li>
-                        <li><a href="Position.aspx">Create Position</a></li> 
+                        <li class="active"><a href="Position.aspx">Create Position</a></li> 
                         <li><a href="Timesheet.aspx">Update Timesheet</a></li>
                         <li><a href="EmployeeJoining.aspx">Employee</a></li>                      
                     </ul>
@@ -55,9 +55,82 @@
         </nav><!--/nav-->
  
     </header>
-    <div>
-    
-    </div>
+    <div style="margin-top:75px;" align="center">
+         Position Creation Form<br />
+         <br /><br />
+        </div>
+        <div style="margin-left: 100px">
+     
+         <asp:Label ID="lblJobtype" Width="150" runat="server" Text="Job Type :"></asp:Label>         
+         <asp:DropDownList ID="selJobtype" Width="150" runat="server">
+             <asp:ListItem Selected="True" Value="-1">Select Job Type</asp:ListItem>
+             <asp:ListItem>part time</asp:ListItem>
+             <asp:ListItem>full time</asp:ListItem>
+         </asp:DropDownList>         
+        <br /><br />
+         <asp:Label ID="lbldesignation" runat="server" Width="150" Text="Designation :"></asp:Label>
+         <asp:TextBox ID="txtdesignation" runat="server" Width="150"></asp:TextBox><br /><br />
+         <asp:Label ID="lblRoles_resp" runat="server" Width="150" Text="Roles & Responsibilities :"></asp:Label>
+         <asp:TextBox ID="txtrolesresp" runat="server" Width="500"></asp:TextBox><br /><br /><br />
+             <asp:Label ID="lbldepartment" runat="server" Text="Department :" Width="150"></asp:Label>
+            <asp:DropDownList ID="seldept" runat="server" Width="150px" AppendDataBoundItems="true" EnableViewState="false" DataSourceID="SqlDepartment" DataTextField="department_name" DataValueField="department_id">
+                <asp:ListItem Selected="True" Value="-1">Select Department</asp:ListItem>
+            </asp:DropDownList>      
+                       
+             <br /><br />
+          <asp:Label ID="lblSalary" runat="server" Width="150" Text="Salary :"></asp:Label>
+          <asp:TextBox ID="txtSalary" runat="server" Width="150"></asp:TextBox><br /><br />
+          <asp:Label ID="lblPayfrequency" runat="server" Width="150" Text="Pay Frequency :"></asp:Label>
+          <asp:DropDownList ID="selPayfrequency" Width="150" runat="server">
+              <asp:ListItem Value="-1">Select Pay Frequency</asp:ListItem>
+             <asp:ListItem>Monthly</asp:ListItem>
+             <asp:ListItem>Bi-Weekly</asp:ListItem>
+         </asp:DropDownList>   
+            <asp:SqlDataSource ID="SqlDepartment" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" SelectCommand="SELECT [department_name], [department_id] FROM [department]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlPosition" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" DeleteCommand="DELETE FROM [position] WHERE [position_id] = @original_position_id AND [job_type] = @original_job_type AND [designation] = @original_designation AND [roles_responsibilities] = @original_roles_responsibilities AND (([department_id] = @original_department_id) OR ([department_id] IS NULL AND @original_department_id IS NULL)) AND (([salary] = @original_salary) OR ([salary] IS NULL AND @original_salary IS NULL)) AND [pay_frequency] = @original_pay_frequency" InsertCommand="INSERT INTO [position] ([job_type], [designation], [roles_responsibilities], [department_id], [salary], [pay_frequency]) VALUES (@job_type, @designation, @roles_responsibilities, @department_id, @salary, @pay_frequency)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [position]" UpdateCommand="UPDATE [position] SET [job_type] = @job_type, [designation] = @designation, [roles_responsibilities] = @roles_responsibilities, [department_id] = @department_id, [salary] = @salary, [pay_frequency] = @pay_frequency WHERE [position_id] = @original_position_id AND [job_type] = @original_job_type AND [designation] = @original_designation AND [roles_responsibilities] = @original_roles_responsibilities AND (([department_id] = @original_department_id) OR ([department_id] IS NULL AND @original_department_id IS NULL)) AND (([salary] = @original_salary) OR ([salary] IS NULL AND @original_salary IS NULL)) AND [pay_frequency] = @original_pay_frequency">
+                <DeleteParameters>
+                    <asp:Parameter Name="original_position_id" Type="Int16" />
+                    <asp:Parameter Name="original_job_type" Type="String" />
+                    <asp:Parameter Name="original_designation" Type="String" />
+                    <asp:Parameter Name="original_roles_responsibilities" Type="String" />
+                    <asp:Parameter Name="original_department_id" Type="Int16" />
+                    <asp:Parameter Name="original_salary" Type="String" />
+                    <asp:Parameter Name="original_pay_frequency" Type="String" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="job_type" Type="String" />
+                    <asp:Parameter Name="designation" Type="String" />
+                    <asp:Parameter Name="roles_responsibilities" Type="String" />
+                    <asp:Parameter Name="department_id" Type="Int16" />
+                    <asp:Parameter Name="salary" Type="String" />
+                    <asp:Parameter Name="pay_frequency" Type="String" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="job_type" Type="String" />
+                    <asp:Parameter Name="designation" Type="String" />
+                    <asp:Parameter Name="roles_responsibilities" Type="String" />
+                    <asp:Parameter Name="department_id" Type="Int16" />
+                    <asp:Parameter Name="salary" Type="String" />
+                    <asp:Parameter Name="pay_frequency" Type="String" />
+                    <asp:Parameter Name="original_position_id" Type="Int16" />
+                    <asp:Parameter Name="original_job_type" Type="String" />
+                    <asp:Parameter Name="original_designation" Type="String" />
+                    <asp:Parameter Name="original_roles_responsibilities" Type="String" />
+                    <asp:Parameter Name="original_department_id" Type="Int16" />
+                    <asp:Parameter Name="original_salary" Type="String" />
+                    <asp:Parameter Name="original_pay_frequency" Type="String" />
+                </UpdateParameters>
+            </asp:SqlDataSource>         
+                 
+            <br />            
+        </div>
+        <div style="margin-top:50px;" align="center">
+        <asp:Button ID="btnsubmit" runat="server"  Text="Submit" OnClick="btnsubmit_Click" />&nbsp;&nbsp;
+        <asp:Button ID="btnclear" runat="server"  Text="Clear" OnClick="btnclear_Click" />
+            <br />
+        </div>
+        
     </form>
+  
 </body>
 </html>

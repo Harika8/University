@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿*<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js" type="text/javascript"></script>
@@ -43,7 +43,7 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="Default.aspx">Home</a></li>
                         <li><a href="services.aspx">Registrar</a></li>
-                        <li><a href="services.aspx">Academics</a></li>                        
+                        <li><a href="Academics/AcademicsHome.aspx">Academics</a></li>                        
                         <li><a href="contactus.aspx">Financial Aid</a></li> 
                         <li><a href="HR/HRDefault.aspx">HR</a></li>
                         <li><a href="services.aspx">Campus Services</a></li>                       
@@ -62,53 +62,49 @@
             </ol>
             <div class="carousel-inner">
 
-                <div class="item active" style="background-image: url(images/slider/bg1.jpg)">
+                <div class="item active" style="background-image: url(../images/DSC_1854.jpeg)">
                     <div class="container">
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Content</h1>
-                                    <h2 class="animation animated-item-2">content</h2>                                
+                                    <h1 class="animation animated-item-1">University</h1>
+                                    <h2 class="animation animated-item-2">About</h2>                                
                                 </div>
                             </div>
-
                             <div class="col-sm-6 hidden-xs animation animated-item-4">
                                 <div class="slider-img">
                                     <img src="images/slider/img1.png" class="img-responsive">
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div><!--/.item-->
 
-                <div class="item" style="background-image: url(images/slider/bg2.jpg)">
+                <div class="item" style="background-image: url(../images/DSC_1980.jpeg)">
                     <div class="container">
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">content</h1>
-                                    <h2 class="animation animated-item-2">content</h2>                                    
+                                    <h1 class="animation animated-item-1">University</h1>
+                                    <h2 class="animation animated-item-2">About</h2>                                    
                                 </div>
                             </div>
-
                             <div class="col-sm-6 hidden-xs animation animated-item-4">
                                 <div class="slider-img">
                                     <img src="images/slider/img2.png" class="img-responsive">
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div><!--/.item-->
 
-                <div class="item" style="background-image: url(images/slider/bg3.jpg)">
+                <div class="item" style="background-image: url(../images/DSC_1842.jpeg)">
                     <div class="container">
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">content</h1>
-                                    <h2 class="animation animated-item-2">content</h2>
+                                    <h1 class="animation animated-item-1">University</h1>
+                                    <h2 class="animation animated-item-2">About</h2>
                                 </div>
                             </div>
                             <div class="col-sm-6 hidden-xs animation animated-item-4">
