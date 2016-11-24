@@ -13,8 +13,6 @@
         <asp:Label ID="Label8" runat="server" Font-Size="XX-Large" Text="Course Apllication/Drop Form:"></asp:Label>
         <br />
         <br />
-        Student Name<br />
-        <br />
         First Name:&nbsp;
         <asp:TextBox ID="TextBox1" runat="server" Width="181px"></asp:TextBox>
 &nbsp;&nbsp; Last Name:&nbsp;
@@ -34,16 +32,15 @@
         </asp:DropDownList>
         <br />
         <br />
-        Address: Box ID="TextBox5" runat="server" Height="20px" Width="339px"></asp:TextBox>
+        Address:
+        <asp:TextBox ID="TextBox19" runat="server" Width="334px"></asp:TextBox>
 &nbsp;
-        <asp:Label ID="Label2" runat="server" Text="Street adress Line1"></asp:Label>
-        <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label9" runat="server" Text="Street address Line 1"></asp:Label>
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="TextBox6" runat="server" Width="334px"></asp:TextBox>
 &nbsp;
-        <asp:Label ID="Label3" runat="server" Text="Street adress Line 2"></asp:Label>
+        <asp:Label ID="Label3" runat="server" Text="Street address Line 2"></asp:Label>
         <br />
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
