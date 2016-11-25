@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AssignFacultyToCourse.aspx.cs" Inherits="University.Academics.AssignFacultyToCourse" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FacultyCourseAssignment.aspx.cs" Inherits="University.Academics.FacultyCourseAssignment" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -24,7 +24,7 @@
     <link rel="shortcut icon" href="../images/favicon.ico" />
 </head>
 <body>
-    <form id="AssignFacultyToCourseForm" runat="server">
+    <form id="FacultyCourseAssignmentForm" runat="server">
        <header id="header">
     <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
@@ -53,16 +53,28 @@
     </header>
 
         <p style="width: 203px; margin-left: 600px">
-            <b>Form to create a Faculty in Department and then assign to a Course</b></p>
+            <b>Form to Assign a Faculty to a Course</b></p>
     
-            
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Create Faculty" />
-&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Update/Delete Faculty" />
-        <br />
-        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Assign Faculty to Course" />
-    
-            
+        <asp:Label ID="DeptName" runat="server" Text="Department Name:"></asp:Label>
+        <asp:DropDownList ID="DeptNameDDList" runat="server" DataSourceID="UniversityDatabase" DataTextField="department_name" DataValueField="department_name">
+        </asp:DropDownList>
+        <asp:SqlDataSource ID="UniversityDatabase" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_name] FROM [department]"></asp:SqlDataSource>
+        <p>
+            Course ID:
+            <asp:DropDownList ID="CourseIDDDL" runat="server">
+            </asp:DropDownList>
+&nbsp;Course Name:<asp:TextBox ID="CourseNameTB" runat="server" Enabled="False"></asp:TextBox>
+        </p>
+        <p>
+            Faculty ID:
+            <asp:DropDownList ID="FacultyIDDDL" runat="server">
+            </asp:DropDownList>
+&nbsp;Faculty Name:<asp:TextBox ID="FacultyNameTB" runat="server" Enabled="False"></asp:TextBox>
+        </p>
+        <p>
+            <asp:Button ID="ProgramSubmitButton" runat="server" Text="Submit" />
+            <asp:Button ID="ProgramClearButton" runat="server" Text="Clear" />
+        </p>
     </form>
 </body>
 </html>
