@@ -90,19 +90,10 @@
     </Content>
     <Content Include="Academics\DepartmentCreation.aspx" />
     <Content Include="Campus Services\CampusServicesHome.aspx" />
-    <Content Include="Campus services%28dump%29\EventConfirmation.aspx" />
-    <Content Include="Campus services%28dump%29\EventRegistrationForm.aspx" />
-    <Content Include="Campus services%28dump%29\EventReport.aspx" />
     <Content Include="Campus Services\Event_Confirmation.aspx" />
-    <Content Include="Campus services%28dump%29\HostelAccomodation.aspx" />
-    <Content Include="Campus services%28dump%29\HostelConfirmation.aspx" />
-    <Content Include="Campus services%28dump%29\HostelRoomReport.aspx" />
     <Content Include="Campus Services\Hostel_Accomodation.aspx" />
     <Content Include="Campus Services\Hostel_Confirmation.aspx" />
     <Content Include="Campus Services\Hostel_RoomReport.aspx" />
-    <Content Include="Campus services%28dump%29\ServiceAllotedForm.aspx" />
-    <Content Include="Campus services%28dump%29\ServiceRequestForm.aspx" />
-    <Content Include="Campus services%28dump%29\ServiceRequestReport.aspx" />
     <Content Include="Campus Services\Event_Registration.aspx" />
     <Content Include="Campus Services\Event_Report.aspx" />
     <Content Include="Campus Services\Service_AllotedForm.aspx" />
@@ -242,54 +233,12 @@
     <Compile Include="Campus Services\CampusServicesHome.aspx.designer.cs">
       <DependentUpon>CampusServicesHome.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Campus services%28dump%29\EventConfirmation.aspx.cs">
-      <DependentUpon>EventConfirmation.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Campus services%28dump%29\EventConfirmation.aspx.designer.cs">
-      <DependentUpon>EventConfirmation.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Campus services%28dump%29\EventRegistrationForm.aspx.cs">
-      <DependentUpon>EventRegistrationForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Campus services%28dump%29\EventRegistrationForm.aspx.designer.cs">
-      <DependentUpon>EventRegistrationForm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Campus services%28dump%29\EventReport.aspx.cs">
-      <DependentUpon>EventReport.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Campus services%28dump%29\EventReport.aspx.designer.cs">
-      <DependentUpon>EventReport.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Campus Services\Event_Confirmation.aspx.cs">
       <DependentUpon>Event_Confirmation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Campus Services\Event_Confirmation.aspx.designer.cs">
       <DependentUpon>Event_Confirmation.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Campus services%28dump%29\HostelAccomodation.aspx.cs">
-      <DependentUpon>HostelAccomodation.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Campus services%28dump%29\HostelAccomodation.aspx.designer.cs">
-      <DependentUpon>HostelAccomodation.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Campus services%28dump%29\HostelConfirmation.aspx.cs">
-      <DependentUpon>HostelConfirmation.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Campus services%28dump%29\HostelConfirmation.aspx.designer.cs">
-      <DependentUpon>HostelConfirmation.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Campus services%28dump%29\HostelRoomReport.aspx.cs">
-      <DependentUpon>HostelRoomReport.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Campus services%28dump%29\HostelRoomReport.aspx.designer.cs">
-      <DependentUpon>HostelRoomReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Campus Services\Hostel_Accomodation.aspx.cs">
       <DependentUpon>Hostel_Accomodation.aspx</DependentUpon>
@@ -311,27 +260,6 @@
     </Compile>
     <Compile Include="Campus Services\Hostel_RoomReport.aspx.designer.cs">
       <DependentUpon>Hostel_RoomReport.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Campus services%28dump%29\ServiceAllotedForm.aspx.cs">
-      <DependentUpon>ServiceAllotedForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Campus services%28dump%29\ServiceAllotedForm.aspx.designer.cs">
-      <DependentUpon>ServiceAllotedForm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Campus services%28dump%29\ServiceRequestForm.aspx.cs">
-      <DependentUpon>ServiceRequestForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Campus services%28dump%29\ServiceRequestForm.aspx.designer.cs">
-      <DependentUpon>ServiceRequestForm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Campus services%28dump%29\ServiceRequestReport.aspx.cs">
-      <DependentUpon>ServiceRequestReport.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Campus services%28dump%29\ServiceRequestReport.aspx.designer.cs">
-      <DependentUpon>ServiceRequestReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Campus Services\Event_Registration.aspx.cs">
       <DependentUpon>Event_Registration.aspx</DependentUpon>

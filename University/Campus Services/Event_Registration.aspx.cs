@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Data
+using System.Data;
 using System.Web.UI;
+using System.Data.SqlClient;
 using System.Web.UI.WebControls;
 
 namespace University.Campus_Services
@@ -17,8 +18,8 @@ namespace University.Campus_Services
             eventsource.InsertParameters["event_title"].DefaultValue = TextBox7.Text.ToUpper().Trim();
             eventsource.InsertParameters["event_start_date"].DefaultValue = TextBox10.Text.ToUpper().Trim();
             eventsource.InsertParameters["event_end_date"].DefaultValue = TextBox12.Text.ToUpper().Trim();
-            eventsource.InsertParameters["evnt_end_time"].DefaultValue = TextBox24..Text.ToUpper().Trim(); 
-            eventsource.InsertParameters["evnt_start_time"].DefaultValue = TextBox11.Text.ToUpper().Trim();
+            eventsource.InsertParameters["event_end_time"].DefaultValue = TextBox24.Text.ToUpper().Trim(); 
+            eventsource.InsertParameters["event_start_time"].DefaultValue = TextBox11.Text.ToUpper().Trim();
             eventsource.InsertParameters["event_place"].DefaultValue = CheckBoxList1.SelectedValue;
              eventsource.InsertParameters["event_capacity"].DefaultValue = TextBox15.Text.Trim();
             eventsource.InsertParameters["multi_day_event"].DefaultValue = RadioButtonList1.SelectedValue;
@@ -50,9 +51,11 @@ namespace University.Campus_Services
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            eventsource.SelectCommand = "Select first_name,last_name,email_id,contact_no from user_info where user_id=" +TextBox25.ToString()+ "";
+            
+            eventsource.SelectCommand = "Select first_name,last_name,email_id,contact_no from user_info where user_id='" +TextBox25.Text+ "'";
             DataSourceSelectArguments data = new DataSourceSelectArguments();
             DataView view = new DataView();
+            view = (DataView)eventsource.Select(data);
             TextBox2.Text = view[0].Row["first_name"].ToString();
             TextBox3.Text = view[0].Row["last_name"].ToString();
             TextBox5.Text = view[0].Row["contact_no"].ToString();
@@ -62,4 +65,3 @@ namespace University.Campus_Services
         }
     }
     }
-}

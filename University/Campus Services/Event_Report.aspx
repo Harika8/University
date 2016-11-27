@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="EventReport.aspx.vb" Inherits="HostelAccomodationApplication.EventReport" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Event_Report.aspx.cs" Inherits="University.Campus_Services.WebForm2" %>
 
 <!DOCTYPE html>
 
@@ -44,3 +44,4 @@
     </form>
 </body>
 </html>
+

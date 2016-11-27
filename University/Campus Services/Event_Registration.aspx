@@ -27,13 +27,13 @@
             <asp:ListItem>Faculty</asp:ListItem>
         </asp:RadioButtonList>
         User Id:<asp:TextBox ID="TextBox25" runat="server"></asp:TextBox>
-        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Go" />
+        <asp:Button ID="Button3" runat="server"  OnClick="Button3_Click" Text="Go" />
         <br />
         <br />
         First Name:&nbsp;
         <asp:TextBox ID="TextBox2" runat="server" Width="179px"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Last Name:&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox3" runat="server" Width="177px" OnTextChanged="TextBox3_TextChanged"></asp:TextBox>
+        <asp:TextBox ID="TextBox3" runat="server" Width="177px" Height="22px" ></asp:TextBox>
         <br />
         <br />
         Phone Number:&nbsp;
@@ -106,10 +106,11 @@
         <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" />
         <asp:Button ID="Button2" runat="server" Text="Cancel" OnClick="Button2_Click" />
         <br />
-        <asp:SqlDataSource ID="eventsource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" DeleteCommand="DELETE FROM [event] WHERE [event_id] = @event_id" InsertCommand="INSERT INTO [event] ([event_title], [event_start_date], [multi_day_event], [event_end_date], [event_end_time], [event_start_time], [event_place], [event_capacity], [audio_visual]) VALUES (@event_title, @event_start_date, @multi_day_event, @event_end_date, @event_end_time, @event_start_time, @event_place, @event_capacity, @audio_visual)" SelectCommand="SELECT * FROM [event]" UpdateCommand="UPDATE [event] SET [event_title] = @event_title, [event_start_date] = @event_start_date, [multi_day_event] = @multi_day_event, [event_end_date] = @event_end_date, [event_end_time] = @event_end_time, [event_start_time] = @event_start_time, [event_place] = @event_place, [event_capacity] = @event_capacity, [audio_visual] = @audio_visual WHERE [event_id] = @event_id" OnSelecting="eventsource_Selecting">
+        <asp:SqlDataSource ID="eventsource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" DeleteCommand="DELETE FROM [event] WHERE [event_id] = @event_id" InsertCommand="INSERT INTO [event] ([event_title], [event_start_date], [multi_day_event], [event_end_date], [event_end_time], [event_start_time], [event_place], [event_capacity], [audio_visual]) VALUES (@event_title, @event_start_date, @multi_day_event, @event_end_date, @event_end_time, @event_start_time, @event_place, @event_capacity, @audio_visual)" SelectCommand="SELECT * FROM [event]" UpdateCommand="UPDATE [event] SET [event_title] = @event_title, [event_start_date] = @event_start_date, [multi_day_event] = @multi_day_event, [event_end_date] = @event_end_date, [event_end_time] = @event_end_time, [event_start_time] = @event_start_time, [event_place] = @event_place, [event_capacity] = @event_capacity, [audio_visual] = @audio_visual WHERE [event_id] = @event_id">
          
             <DeleteParameters>
                 <asp:Parameter Name="event_id" Type="Int16" />
+
             </DeleteParameters>
          
             <InsertParameters>
