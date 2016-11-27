@@ -29,6 +29,9 @@
             </asp:DropDownList>
         </p>
         <p style="margin-left: 40px">
+            User ID:<asp:TextBox ID="TextBox11" runat="server"></asp:TextBox>
+        </p>
+        <p style="margin-left: 40px">
             Name of the Applicant:<asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
             <br />
             <br />
@@ -54,8 +57,8 @@
             Date:<asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
 &nbsp;(DD/MM/YYYY)</p>
         <p style="margin-left: 320px">
-            <asp:Button ID="Button1" runat="server" Text="Submit" />
-            <asp:Button ID="Button2" runat="server" Text="Cancel" />
+            <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" />
+            <asp:Button ID="Button2" runat="server" Text="Cancel" OnClick="Button2_Click" />
         </p>
     
     </div>

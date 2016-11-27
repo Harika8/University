@@ -13,5 +13,30 @@ namespace University.Campus_Services
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+            roomsource.InsertParameters["room_type"].DefaultValue = RadioButtonList1.SelectedValue;
+           
+          
+
+
+            roomsource.Insert();
+
+            TextBox11.Text = string.Empty;
+            TextBox10.Text = string.Empty;
+            TextBox2.Text = string.Empty;
+            TextBox9.Text = string.Empty;
+           
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            TextBox11.Text = string.Empty;
+            TextBox10.Text = string.Empty;
+            TextBox2.Text = string.Empty;
+            TextBox9.Text = string.Empty;
+        }
     }
 }

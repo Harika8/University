@@ -61,8 +61,8 @@
         <br />
         <br />
         <br />
-        <asp:Button ID="Button1" runat="server" Text="Submit" Width="61px" />
-        <asp:Button ID="Button2" runat="server" Text="Cancel" />
+        <asp:Button ID="Button1" runat="server" Text="Submit" Width="61px" OnClick="Button1_Click" />
+        <asp:Button ID="Button2" runat="server" Text="Cancel" OnClick="Button2_Click" />
         <br />
         <br />
         <asp:SqlDataSource ID="servicesource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" DeleteCommand="DELETE FROM [service] WHERE [service_id] = @service_id" InsertCommand="INSERT INTO [service] ([room_no], [service_type], [service_req_time], [service_req_date], [service_alloted_time], [service_alloted_date], [status]) VALUES (@room_no, @service_type, @service_req_time, @service_req_date, @service_alloted_time, @service_alloted_date, @status)" SelectCommand="SELECT * FROM [service]" UpdateCommand="UPDATE [service] SET [room_no] = @room_no, [service_type] = @service_type, [service_req_time] = @service_req_time, [service_req_date] = @service_req_date, [service_alloted_time] = @service_alloted_time, [service_alloted_date] = @service_alloted_date, [status] = @status WHERE [service_id] = @service_id">
