@@ -10,7 +10,16 @@
 namespace University.Academics {
     
     
-    public partial class FacultyLoadReport {
+    public partial class FacultyCourseAssignment {
+        
+        /// <summary>
+        /// FacultyCourseAssignmentForm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm FacultyCourseAssignmentForm;
         
         /// <summary>
         /// DeptName control.
@@ -31,48 +40,66 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.DropDownList DeptNameDDList;
         
         /// <summary>
-        /// FacultyNameLbl control.
+        /// UniversityDatabase control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label FacultyNameLbl;
+        protected global::System.Web.UI.WebControls.SqlDataSource UniversityDatabase;
         
         /// <summary>
-        /// FacultyNameDDL control.
+        /// CourseIDDDL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList FacultyNameDDL;
+        protected global::System.Web.UI.WebControls.DropDownList CourseIDDDL;
         
         /// <summary>
-        /// Button1 control.
+        /// CourseNameTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.TextBox CourseNameTB;
         
         /// <summary>
-        /// FacultyLoadGridView control.
+        /// FacultyIDDDL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView FacultyLoadGridView;
+        protected global::System.Web.UI.WebControls.DropDownList FacultyIDDDL;
         
         /// <summary>
-        /// FacultyLoadDataSource control.
+        /// FacultyNameTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource FacultyLoadDataSource;
+        protected global::System.Web.UI.WebControls.TextBox FacultyNameTB;
+        
+        /// <summary>
+        /// ProgramSubmitButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ProgramSubmitButton;
+        
+        /// <summary>
+        /// ProgramClearButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ProgramClearButton;
     }
 }

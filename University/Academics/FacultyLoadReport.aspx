@@ -61,6 +61,22 @@
             <b>Faculty Load Report</b></p><br/>
         </div>
             
+        <asp:Label ID="DeptName" runat="server" Text="Department Name:"></asp:Label>
+        <asp:DropDownList ID="DeptNameDDList" runat="server">
+        </asp:DropDownList>
+        <p>
+            &nbsp;</p>
+    
+        <asp:Label ID="FacultyNameLbl" runat="server" Text="Faculty Name:"></asp:Label>
+        <asp:DropDownList ID="FacultyNameDDL" runat="server">
+        </asp:DropDownList>
+            
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="Button1" runat="server" Text="Generate Report" />
+        <asp:GridView ID="FacultyLoadGridView" runat="server" DataSourceID="FacultyLoadDataSource">
+        </asp:GridView>
+        <asp:SqlDataSource ID="FacultyLoadDataSource" runat="server"></asp:SqlDataSource>
+            
     </form>
 </body>
 </html>
