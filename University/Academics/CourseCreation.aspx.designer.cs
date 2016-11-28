@@ -40,31 +40,31 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.SqlDataSource CourseTBLDataSource;
         
         /// <summary>
-        /// DeptName control.
+        /// DepartmentIDLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName;
+        protected global::System.Web.UI.WebControls.Label DepartmentIDLbl;
         
         /// <summary>
-        /// DeptNameDDList control.
+        /// DepartmentIDDDList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DeptNameDDList;
+        protected global::System.Web.UI.WebControls.DropDownList DepartmentIDDDList;
         
         /// <summary>
-        /// UniversityDatabase control.
+        /// DepartmentIDList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource UniversityDatabase;
+        protected global::System.Web.UI.WebControls.SqlDataSource DepartmentIDList;
         
         /// <summary>
         /// CourseLevelLbl control.
@@ -85,22 +85,31 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.DropDownList CourseLevelDDList;
         
         /// <summary>
-        /// ProgramNameLbl control.
+        /// ProgramIDLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ProgramNameLbl;
+        protected global::System.Web.UI.WebControls.Label ProgramIDLbl;
         
         /// <summary>
-        /// ProgramNameDDL control.
+        /// ProgramIDDDL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ProgramNameDDL;
+        protected global::System.Web.UI.WebControls.DropDownList ProgramIDDDL;
+        
+        /// <summary>
+        /// ProgramIDList_DepartmentName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ProgramIDList_DepartmentName;
         
         /// <summary>
         /// CourseNameLbl control.
@@ -112,13 +121,13 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.Label CourseNameLbl;
         
         /// <summary>
-        /// ProgramNameTB control.
+        /// CourseNameTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ProgramNameTB;
+        protected global::System.Web.UI.WebControls.TextBox CourseNameTB;
         
         /// <summary>
         /// CourseNumberLbl control.
@@ -139,22 +148,22 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.TextBox CourseNumberTB;
         
         /// <summary>
-        /// ProgramEffDtLbl control.
+        /// CourseEffDtLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ProgramEffDtLbl;
+        protected global::System.Web.UI.WebControls.Label CourseEffDtLbl;
         
         /// <summary>
-        /// ProgramEffDtCal control.
+        /// CourseEffectiveDateTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar ProgramEffDtCal;
+        protected global::System.Web.UI.WebControls.TextBox CourseEffectiveDateTB;
         
         /// <summary>
         /// CourseDescriptionLbl control.
@@ -175,21 +184,30 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.TextBox CourseDescriptionTB;
         
         /// <summary>
-        /// ProgramSubmitButton control.
+        /// CourseSubmitButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ProgramSubmitButton;
+        protected global::System.Web.UI.WebControls.Button CourseSubmitButton;
         
         /// <summary>
-        /// ProgramClearButton control.
+        /// CourseClearButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ProgramClearButton;
+        protected global::System.Web.UI.WebControls.Button CourseClearButton;
+        
+        /// <summary>
+        /// CourseInsertSqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource CourseInsertSqlDataSource;
     }
 }

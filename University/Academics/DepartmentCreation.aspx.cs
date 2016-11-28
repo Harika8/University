@@ -22,5 +22,13 @@ namespace University.Academics
             sqldepartment.InsertParameters["department_email_id"].DefaultValue = DepartmentEmailIDTB.Text.ToUpper().Trim();
             sqldepartment.Insert();
         }
+
+        protected void ProgramClearButton_Click(object sender, EventArgs e)
+        {
+            DepartmentNameTB.Text = string.Empty;
+            DepartmentIDTB.Text = string.Empty;
+            DepartmentPhoneNoTB.Text = string.Empty;
+            DepartmentEmailIDTB.Text = string.Empty;
+        }
     }
 }

@@ -97,7 +97,7 @@
         <p>
             <asp:Button ID="FacultyCreateSubmitButton" runat="server" Text="Submit" />
 &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="FacultyCreateClearButton" runat="server" Text="Clear" />
+            <asp:Button ID="FacultyCreateClearButton" runat="server" Text="Clear" OnClick="FacultyCreateClearButton_Click" />
         </p>
     
             
