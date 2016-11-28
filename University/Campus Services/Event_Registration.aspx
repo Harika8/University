@@ -21,12 +21,7 @@
     
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="auto-style2">Event Registration Form:</span><br />
         <br />
-        <span class="auto-style1">Category:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-        <asp:RadioButtonList ID="RadioButtonList3" runat="server">
-            <asp:ListItem>Student</asp:ListItem>
-            <asp:ListItem>Faculty</asp:ListItem>
-        </asp:RadioButtonList>
-        User Id:<asp:TextBox ID="TextBox25" runat="server"></asp:TextBox>
+        <span class="auto-style1">User Id:<asp:TextBox ID="TextBox25" runat="server"></asp:TextBox>
         <asp:Button ID="Button3" runat="server"  OnClick="Button3_Click" Text="Go" />
         <br />
         <br />
