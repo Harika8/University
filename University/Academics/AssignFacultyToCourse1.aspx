@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AssignFacultyToCourse.aspx.cs" Inherits="University.Academics.AssignFacultyToCourse" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AssignFacultyToCourse1.aspx.cs" Inherits="University.Academics.AssignFacultyToCourse" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -44,7 +44,7 @@
                         <li><a href="DepartmentManagement.aspx">Manage Department</a></li>
                         <li><a href="ProgramManagement.aspx">Manage Program</a></li>                        
                         <li><a href="CourseManagement.aspx">Manage Course</a></li>                     
-                        <li><a href="AssignFacultyToCourse.aspx">Faculty Course Assignments</a></li> 
+                        <li><a href="AssignFacultyToCourse1.aspx">Faculty Course Assignments</a></li> 
                         <li><a href="FacultyLoadReport.aspx">Faculty Load Report</a></li>                  
                     </ul>
                 </div>

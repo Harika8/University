@@ -49,7 +49,7 @@
                         <li><a href="DepartmentCreation.aspx">Create Department</a></li>
                         <li><a href="ProgramCreation.aspx">Create Program</a></li>                        
                         <li><a href="CourseCreation.aspx">Create Course</a></li>                  
-                        <li><a href="AssignFacultyToCourse.aspx">Faculty Course Assignments</a></li> 
+                        <li><a href="AssignFacultyToCourse1.aspx">Faculty Course Assignments</a></li> 
                         <li><a href="FacultyLoadReport.aspx">Faculty Load Report</a></li>                  
                     </ul>
                 </div>
