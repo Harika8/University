@@ -46,7 +46,7 @@
                         <li><a href="DepartmentManagement.aspx">Manage Department</a></li>
                         <li><a href="ProgramManagement.aspx">Manage Program</a></li>                        
                         <li><a href="CourseManagement.aspx">Manage Course</a></li>                     
-                        <li><a href="AssignFacultyToCourse.aspx">Faculty Course Assignments</a></li> 
+                        <li><a href="AssignFacultyToCourse1.aspx">Faculty Course Assignments</a></li> 
                         <li><a href="FacultyLoadReport.aspx">Faculty Load Report</a></li>                  
                     </ul>
                 </div>
@@ -56,6 +56,20 @@
 
         <p style="width: 203px; margin-left: 600px">
             <b>Form to create a Faculty under a Department</b></p>
+    
+        <asp:GridView ID="FacultyTBLGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="fuser_id" DataSourceID="FacultyTBLDataSource">
+            <Columns>
+                <asp:BoundField DataField="fuser_id" HeaderText="fuser_id" ReadOnly="True" SortExpression="fuser_id" />
+                <asp:BoundField DataField="specalization" HeaderText="specalization" SortExpression="specalization" />
+                <asp:BoundField DataField="education" HeaderText="education" SortExpression="education" />
+                <asp:BoundField DataField="contract" HeaderText="contract" SortExpression="contract" />
+                <asp:BoundField DataField="department_id" HeaderText="department_id" SortExpression="department_id" />
+            </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="FacultyTBLDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [faculty]"></asp:SqlDataSource>
+        <br />
+        <hr />
+        <br />
     
         <asp:Label ID="DeptName" runat="server" Text="Department Name:"></asp:Label>
         <asp:DropDownList ID="DeptNameDDList" runat="server" DataSourceID="FacultyDeptNameDataSource" DataTextField="department_name" DataValueField="department_name">
@@ -80,10 +94,12 @@
         <asp:TextBox ID="ContractHoursTB" runat="server"></asp:TextBox>
         <p>
             &nbsp;</p>
+        <p>
+            <asp:Button ID="FacultyCreateSubmitButton" runat="server" Text="Submit" />
+&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="FacultyCreateClearButton" runat="server" Text="Clear" OnClick="FacultyCreateClearButton_Click" />
+        </p>
     
-        <asp:Button ID="FacultyAssignSubmitButton" runat="server" Text="Submit" OnClick="ProgramSubmitButton_Click" />
-        <asp:Button ID="FacultyAssignClearButton" runat="server" Text="Clear" />
-
             
     </form>
 </body>

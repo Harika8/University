@@ -14,7 +14,7 @@ namespace University.Registrar_Office
 
         }
 
-        protected void ProgramSubmitButton_Click(object sender, EventArgs e)
+        protected void SectionSubmitButton_Click(object sender, EventArgs e)
         {
             SqlSection.InsertParameters["section_id"].DefaultValue = SectionIDTxt.Text;
             SqlSection.InsertParameters["course_id"].DefaultValue = selCourse.SelectedValue;

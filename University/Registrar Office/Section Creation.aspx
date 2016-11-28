@@ -23,7 +23,7 @@
          </p>
         <p>
             &nbsp;<asp:Label ID="lblFaculty1" runat="server" Text="Section Id:"></asp:Label>
-            <asp:TextBox ID="SectionIDTxt" runat="server" OnTextChanged="txtFaculty1_TextChanged"></asp:TextBox>
+            <asp:TextBox ID="SectionIDTxt" runat="server" ></asp:TextBox>
             </p>
          <p>
             <asp:Label ID="lblFaculty2" runat="server" Text="Section Availability:"></asp:Label>
@@ -48,13 +48,11 @@
     
     
     </div>
-        <asp:SqlDataSource ID="SqlSection" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [section] WHERE [section_id] = @original_section_id AND [course_id] = @original_course_id AND [fuser_id] = @original_fuser_id AND [course_name] = @original_course_name AND [section_name] = @original_section_name AND [section_availabilty] = @original_section_availabilty AND [semester] = @original_semester AND [credits] = @original_credits" InsertCommand="INSERT INTO [section] ([section_id], [course_id], [fuser_id], [course_name], [section_name], [section_availabilty], [semester], [credits]) VALUES (@section_id, @course_id, @fuser_id, @course_name, @section_name, @section_availabilty, @semester, @credits)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [section]" UpdateCommand="UPDATE [section] SET [course_id] = @course_id, [fuser_id] = @fuser_id, [course_name] = @course_name, [section_name] = @section_name, [section_availabilty] = @section_availabilty, [semester] = @semester, [credits] = @credits WHERE [section_id] = @original_section_id AND [course_id] = @original_course_id AND [fuser_id] = @original_fuser_id AND [course_name] = @original_course_name AND [section_name] = @original_section_name AND [section_availabilty] = @original_section_availabilty AND [semester] = @original_semester AND [credits] = @original_credits">
+        <asp:SqlDataSource ID="SqlSection" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [section] WHERE [section_id] = @original_section_id AND [course_id] = @original_course_id AND [fuser_id] = @original_fuser_id AND [section_availabilty] = @original_section_availabilty AND [semester] = @original_semester AND [credits] = @original_credits" InsertCommand="INSERT INTO [section] ([section_id], [course_id], [fuser_id], [section_availabilty], [semester], [credits]) VALUES (@section_id, @course_id, @fuser_id, @section_availabilty, @semester, @credits)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [section]" UpdateCommand="UPDATE [section] SET [course_id] = @course_id, [fuser_id] = @fuser_id, [section_availabilty] = @section_availabilty, [semester] = @semester, [credits] = @credits WHERE [section_id] = @original_section_id AND [course_id] = @original_course_id AND [fuser_id] = @original_fuser_id AND [section_availabilty] = @original_section_availabilty AND [semester] = @original_semester AND [credits] = @original_credits">
             <DeleteParameters>
                 <asp:Parameter Name="original_section_id" Type="Int16" />
                 <asp:Parameter Name="original_course_id" Type="Int16" />
                 <asp:Parameter Name="original_fuser_id" Type="Int32" />
-                <asp:Parameter Name="original_course_name" Type="String" />
-                <asp:Parameter Name="original_section_name" Type="String" />
                 <asp:Parameter Name="original_section_availabilty" Type="String" />
                 <asp:Parameter Name="original_semester" Type="String" />
                 <asp:Parameter Name="original_credits" Type="Int16" />
@@ -63,8 +61,6 @@
                 <asp:Parameter Name="section_id" Type="Int16" />
                 <asp:Parameter Name="course_id" Type="Int16" />
                 <asp:Parameter Name="fuser_id" Type="Int32" />
-                <asp:Parameter Name="course_name" Type="String" />
-                <asp:Parameter Name="section_name" Type="String" />
                 <asp:Parameter Name="section_availabilty" Type="String" />
                 <asp:Parameter Name="semester" Type="String" />
                 <asp:Parameter Name="credits" Type="Int16" />
@@ -72,16 +68,12 @@
             <UpdateParameters>
                 <asp:Parameter Name="course_id" Type="Int16" />
                 <asp:Parameter Name="fuser_id" Type="Int32" />
-                <asp:Parameter Name="course_name" Type="String" />
-                <asp:Parameter Name="section_name" Type="String" />
                 <asp:Parameter Name="section_availabilty" Type="String" />
                 <asp:Parameter Name="semester" Type="String" />
                 <asp:Parameter Name="credits" Type="Int16" />
                 <asp:Parameter Name="original_section_id" Type="Int16" />
                 <asp:Parameter Name="original_course_id" Type="Int16" />
                 <asp:Parameter Name="original_fuser_id" Type="Int32" />
-                <asp:Parameter Name="original_course_name" Type="String" />
-                <asp:Parameter Name="original_section_name" Type="String" />
                 <asp:Parameter Name="original_section_availabilty" Type="String" />
                 <asp:Parameter Name="original_semester" Type="String" />
                 <asp:Parameter Name="original_credits" Type="Int16" />

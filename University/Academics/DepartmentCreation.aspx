@@ -45,7 +45,7 @@
                         <li><a href="DepartmentManagement.aspx">Manage Department</a></li>
                         <li><a href="ProgramManagement.aspx">Manage Program</a></li>                        
                         <li><a href="CourseManagement.aspx">Manage Course</a></li>                     
-                        <li><a href="AssignFacultyToCourse.aspx">Faculty Course Assignments</a></li> 
+                        <li><a href="AssignFacultyToCourse1.aspx">Faculty Course Assignments</a></li> 
                         <li><a href="FacultyLoadReport.aspx">Faculty Load Report</a></li>                  
                     </ul>
                 </div>
@@ -54,7 +54,29 @@
     </header>
 
         <p style="width: 203px; margin-left: 600px">
-        <b>Department - Creation Form</b></p><br />
+        <b>Department - Creation Form</b></p>
+        <asp:GridView ID="DepartmentTBLGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="department_id" DataSourceID="DepartmentTBLDataSource" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
+            <Columns>
+                <asp:BoundField DataField="department_id" HeaderText="department_id" InsertVisible="False" ReadOnly="True" SortExpression="department_id" />
+                <asp:BoundField DataField="department_name" HeaderText="department_name" SortExpression="department_name" />
+                <asp:BoundField DataField="department_location" HeaderText="department_location" SortExpression="department_location" />
+                <asp:BoundField DataField="department_phone_num" HeaderText="department_phone_num" SortExpression="department_phone_num" />
+                <asp:BoundField DataField="department_email_id" HeaderText="department_email_id" SortExpression="department_email_id" />
+            </Columns>
+            <FooterStyle BackColor="White" ForeColor="#000066" />
+            <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+            <RowStyle ForeColor="#000066" />
+            <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+            <SortedAscendingHeaderStyle BackColor="#007DBB" />
+            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+            <SortedDescendingHeaderStyle BackColor="#00547E" />
+        </asp:GridView>
+        <asp:SqlDataSource ID="DepartmentTBLDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [department]"></asp:SqlDataSource>
+        <br />
+        <hr />
+        <br />
         <asp:Label ID="DepartmentName" runat="server" Text="Department Name:"></asp:Label>
         <asp:TextBox ID="DepartmentNameTB" runat="server"></asp:TextBox>
         &nbsp;&nbsp;&nbsp;
@@ -109,7 +131,7 @@
         
         <asp:Button ID="ProgramSubmitButton" runat="server" Text="Submit" OnClick="ProgramSubmitButton_Click" />
         &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="ProgramClearButton" runat="server" Text="Clear" />
+        <asp:Button ID="ProgramClearButton" runat="server" Text="Clear" OnClick="ProgramClearButton_Click" />
         <br />
         <br />
         <asp:SqlDataSource ID="sqldepartment" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [department] WHERE [department_id] = @original_department_id AND [department_name] = @original_department_name AND [department_location] = @original_department_location AND [department_phone_num] = @original_department_phone_num AND [department_email_id] = @original_department_email_id" InsertCommand="INSERT INTO [department] ([department_name], [department_location], [department_phone_num], [department_email_id]) VALUES (@department_name, @department_location, @department_phone_num, @department_email_id)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [department]" UpdateCommand="UPDATE [department] SET [department_name] = @department_name, [department_location] = @department_location, [department_phone_num] = @department_phone_num, [department_email_id] = @department_email_id WHERE [department_id] = @original_department_id AND [department_name] = @original_department_name AND [department_location] = @original_department_location AND [department_phone_num] = @original_department_phone_num AND [department_email_id] = @original_department_email_id">

@@ -13,5 +13,14 @@ namespace University.Academics
         {
 
         }
+
+        protected void FacultyCreateClearButton_Click(object sender, EventArgs e)
+        {
+            FacultyNameTB.Text = string.Empty;
+            FacultySpecializationTB.Text = string.Empty;
+            FacultyEducationTB.Text = string.Empty;
+            ContractHoursTB.Text = string.Empty;
+
+        }
     }
 }
