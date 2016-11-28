@@ -22,6 +22,24 @@ namespace University.Academics {
         protected global::System.Web.UI.HtmlControls.HtmlForm FacultyCreationForm;
         
         /// <summary>
+        /// FacultyTBLGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView FacultyTBLGridView;
+        
+        /// <summary>
+        /// FacultyTBLDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource FacultyTBLDataSource;
+        
+        /// <summary>
         /// DeptName control.
         /// </summary>
         /// <remarks>

@@ -54,7 +54,22 @@
     </header>
 
         <p style="width: 203px; margin-left: 600px">
-        <b>Course Creation Form</b></p><br />
+        <b>Course Creation Form</b></p>
+        <br />
+        <asp:GridView ID="CourseTBLGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="course_id" DataSourceID="CourseTBLDataSource">
+            <Columns>
+                <asp:BoundField DataField="course_id" HeaderText="course_id" InsertVisible="False" ReadOnly="True" SortExpression="course_id" />
+                <asp:BoundField DataField="course_name" HeaderText="course_name" SortExpression="course_name" />
+                <asp:BoundField DataField="Effective_start_date" HeaderText="Effective_start_date" SortExpression="Effective_start_date" />
+                <asp:BoundField DataField="course_description" HeaderText="course_description" SortExpression="course_description" />
+                <asp:BoundField DataField="department_id" HeaderText="department_id" SortExpression="department_id" />
+                <asp:BoundField DataField="course_level" HeaderText="course_level" SortExpression="course_level" />
+                <asp:BoundField DataField="program_id" HeaderText="program_id" SortExpression="program_id" />
+            </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="CourseTBLDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [course]"></asp:SqlDataSource>
+        <hr />
+        <br />
     
         <asp:Label ID="DeptName" runat="server" Text="Department Name:"></asp:Label>
         <asp:DropDownList ID="DeptNameDDList" runat="server" DataSourceID="UniversityDatabase" DataTextField="department_name" DataValueField="department_name">

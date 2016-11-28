@@ -54,7 +54,20 @@
     </header>
 
         <p style="width: 203px; margin-left: 600px">
-        <b>Department - Creation Form</b></p><br />
+        <b>Department - Creation Form</b></p>
+        <asp:GridView ID="DepartmentTBLGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="department_id" DataSourceID="DepartmentTBLDataSource">
+            <Columns>
+                <asp:BoundField DataField="department_id" HeaderText="department_id" InsertVisible="False" ReadOnly="True" SortExpression="department_id" />
+                <asp:BoundField DataField="department_name" HeaderText="department_name" SortExpression="department_name" />
+                <asp:BoundField DataField="department_location" HeaderText="department_location" SortExpression="department_location" />
+                <asp:BoundField DataField="department_phone_num" HeaderText="department_phone_num" SortExpression="department_phone_num" />
+                <asp:BoundField DataField="department_email_id" HeaderText="department_email_id" SortExpression="department_email_id" />
+            </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="DepartmentTBLDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [department]"></asp:SqlDataSource>
+        <br />
+        <hr />
+        <br />
         <asp:Label ID="DepartmentName" runat="server" Text="Department Name:"></asp:Label>
         <asp:TextBox ID="DepartmentNameTB" runat="server"></asp:TextBox>
         &nbsp;&nbsp;&nbsp;

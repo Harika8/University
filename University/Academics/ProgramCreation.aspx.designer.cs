@@ -10,8 +10,7 @@
 namespace University.Academics {
     
     
-    public partial class ProgramCreation
-    {
+    public partial class ProgramCreation {
         
         /// <summary>
         /// ProgramCreationForm control.
@@ -21,6 +20,24 @@ namespace University.Academics {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm ProgramCreationForm;
+        
+        /// <summary>
+        /// ProgramTBLGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView ProgramTBLGridView;
+        
+        /// <summary>
+        /// ProgramTBLDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ProgramTBLDataSource;
         
         /// <summary>
         /// DeptName control.
