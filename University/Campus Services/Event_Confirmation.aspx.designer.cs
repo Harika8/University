@@ -7,72 +7,81 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace University.Academics {
+namespace University.Campus_Services {
     
     
-    public partial class FacultyLoadReport {
+    public partial class Event_Confirmation {
         
         /// <summary>
-        /// DeptName control.
+        /// form2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
         
         /// <summary>
-        /// DeptNameDDList control.
+        /// TextBox18 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DeptNameDDList;
+        protected global::System.Web.UI.WebControls.TextBox TextBox18;
         
         /// <summary>
-        /// FacultyNameLbl control.
+        /// TextBox23 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label FacultyNameLbl;
+        protected global::System.Web.UI.WebControls.TextBox TextBox23;
         
         /// <summary>
-        /// FacultyNameDDL control.
+        /// Label4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList FacultyNameDDL;
+        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// Button1 control.
+        /// TextBox20 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.TextBox TextBox20;
         
         /// <summary>
-        /// FacultyLoadGridView control.
+        /// TextBox21 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView FacultyLoadGridView;
+        protected global::System.Web.UI.WebControls.TextBox TextBox21;
         
         /// <summary>
-        /// FacultyLoadDataSource control.
+        /// TextBox22 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource FacultyLoadDataSource;
+        protected global::System.Web.UI.WebControls.TextBox TextBox22;
+        
+        /// <summary>
+        /// form1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
     }
 }
