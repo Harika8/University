@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace University.Campus_Services
 {
-    public partial class Service_RequestReport : System.Web.UI.Page
+    public partial class Hostel_RoomReport : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

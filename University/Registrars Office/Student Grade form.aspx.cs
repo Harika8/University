@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace University.Campus_Services
+namespace University.Registrars_Office
 {
-    public partial class Service_RequestReport : System.Web.UI.Page
+    public partial class Student_Grade_form : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
