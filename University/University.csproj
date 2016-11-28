@@ -98,7 +98,7 @@
     <Content Include="Campus Services\Event_Report.aspx" />
     <Content Include="Campus Services\Service_AllotedForm.aspx" />
     <Content Include="Campus Services\Service_RequestForm.aspx" />
-    <Content Include="Campus Services\Service_RequestReport.aspx" />
+    <Content Include="Campus Services\ServiceRequestReport.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -289,12 +289,12 @@
     <Compile Include="Campus Services\Service_RequestForm.aspx.designer.cs">
       <DependentUpon>Service_RequestForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Campus Services\Service_RequestReport.aspx.cs">
-      <DependentUpon>Service_RequestReport.aspx</DependentUpon>
+    <Compile Include="Campus Services\ServiceRequestReport.aspx.cs">
+      <DependentUpon>ServiceRequestReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Campus Services\Service_RequestReport.aspx.designer.cs">
-      <DependentUpon>Service_RequestReport.aspx</DependentUpon>
+    <Compile Include="Campus Services\ServiceRequestReport.aspx.designer.cs">
+      <DependentUpon>ServiceRequestReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
