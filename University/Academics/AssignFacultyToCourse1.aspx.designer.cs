@@ -10,42 +10,42 @@
 namespace University.Academics {
     
     
-    public partial class AssignFacultyToCourse {
+    public partial class AssignFacultyToCourse1 {
         
         /// <summary>
-        /// AssignFacultyToCourseForm control.
+        /// AssignFacultyToCourse1Form control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm AssignFacultyToCourseForm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm AssignFacultyToCourse1Form;
         
         /// <summary>
-        /// Button1 control.
+        /// FacultyCreateButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button FacultyCreateButton;
         
         /// <summary>
-        /// Button2 control.
+        /// FacultyUpdateButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button FacultyUpdateButton;
         
         /// <summary>
-        /// Button3 control.
+        /// FacultyAssignButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Button FacultyAssignButton;
     }
 }

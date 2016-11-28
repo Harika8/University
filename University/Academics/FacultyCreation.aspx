@@ -80,10 +80,12 @@
         <asp:TextBox ID="ContractHoursTB" runat="server"></asp:TextBox>
         <p>
             &nbsp;</p>
+        <p>
+            <asp:Button ID="FacultyCreateSubmitButton" runat="server" Text="Submit" />
+&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="FacultyCreateClearButton" runat="server" Text="Clear" />
+        </p>
     
-        <asp:Button ID="FacultyAssignSubmitButton" runat="server" Text="Submit" OnClick="ProgramSubmitButton_Click" />
-        <asp:Button ID="FacultyAssignClearButton" runat="server" Text="Clear" />
-
             
     </form>
 </body>

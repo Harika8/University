@@ -69,9 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Academics\AcademicsHome.aspx" />
-    <Content Include="Academics\AssignFacultyToCourse1.aspx">
-      <BrowseToURL>~/Academics/AssignFacultyToCourse.aspx</BrowseToURL>
-    </Content>
+    <Content Include="Academics\AssignFacultyToCourse1.aspx" />
     <Content Include="Academics\CourseCreation.aspx" />
     <Content Include="Academics\CourseManagement.aspx" />
     <Content Include="Academics\CourseUpdation.aspx" />
