@@ -103,13 +103,13 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.DropDownList ProgramIDDDL;
         
         /// <summary>
-        /// ProgramIDList_DepartmentName control.
+        /// ProgramIDList_DeptID_CRSLVL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ProgramIDList_DepartmentName;
+        protected global::System.Web.UI.WebControls.SqlDataSource ProgramIDList_DeptID_CRSLVL;
         
         /// <summary>
         /// CourseNameLbl control.
