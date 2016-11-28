@@ -1,13 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AssignFacultyToCourse.aspx.cs" Inherits="University.Academics.AssignFacultyToCourse" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AssignFacultyToCourse1.aspx.cs" Inherits="University.Academics.AssignFacultyToCourse1" %>
 
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Academics Module" />
     <meta name="author" content="Sri Nuthalapati" />
-    <title>FacultyCourseAssignment</title>
+    <title>Manage Faculty</title>
     <%-- ------ css ------ --%>
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -24,7 +25,7 @@
     <link rel="shortcut icon" href="../images/favicon.ico" />
 </head>
 <body>
-    <form id="AssignFacultyToCourseForm" runat="server">
+    <form id="AssignFacultyToCourse1Form" runat="server">
        <header id="header">
     <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
@@ -44,7 +45,7 @@
                         <li><a href="DepartmentManagement.aspx">Manage Department</a></li>
                         <li><a href="ProgramManagement.aspx">Manage Program</a></li>                        
                         <li><a href="CourseManagement.aspx">Manage Course</a></li>                     
-                        <li><a href="AssignFacultyToCourse.aspx">Faculty Course Assignments</a></li> 
+                        <li><a href="AssignFacultyToCourse1.aspx">Faculty Course Assignments</a></li> 
                         <li><a href="FacultyLoadReport.aspx">Faculty Load Report</a></li>                  
                     </ul>
                 </div>
@@ -53,16 +54,14 @@
     </header>
 
         <p style="width: 203px; margin-left: 600px">
-            <b>Form to create a Faculty in Department and then assign to a Course</b></p>
+        <b>Form to create Faculty and then assign them to a Course</b></p><br />        
     
-            
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Create Faculty" />
+        <asp:Button ID="FacultyCreateButton" runat="server" OnClick="FacultyCreateButton_Click1" Text="Create Faculty" />
 &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Update/Delete Faculty" />
+        <asp:Button ID="FacultyUpdateButton" runat="server" Text="Update/Delete Faculty" OnClick="FacultyUpdateButton_Click" />
         <br />
-        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Assign Faculty to Course" />
-    
-            
+&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="FacultyAssignButton" runat="server" Text="Assign Faculty to Course" OnClick="FacultyAssignButton_Click" />
     </form>
 </body>
 </html>

@@ -46,7 +46,7 @@
                         <li><a href="DepartmentManagement.aspx">Manage Department</a></li>
                         <li><a href="ProgramManagement.aspx">Manage Program</a></li>                        
                         <li><a href="CourseManagement.aspx">Manage Course</a></li>                     
-                        <li><a href="AssignFacultyToCourse.aspx">Faculty Course Assignments</a></li> 
+                        <li><a href="AssignFacultyToCourse1.aspx">Faculty Course Assignments</a></li> 
                         <li><a href="FacultyLoadReport.aspx">Faculty Load Report</a></li>                  
                     </ul>
                 </div>
@@ -80,10 +80,12 @@
         <asp:TextBox ID="ContractHoursTB" runat="server"></asp:TextBox>
         <p>
             &nbsp;</p>
+        <p>
+            <asp:Button ID="FacultyCreateSubmitButton" runat="server" Text="Submit" />
+&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="FacultyCreateClearButton" runat="server" Text="Clear" />
+        </p>
     
-        <asp:Button ID="FacultyAssignSubmitButton" runat="server" Text="Submit" OnClick="ProgramSubmitButton_Click" />
-        <asp:Button ID="FacultyAssignClearButton" runat="server" Text="Clear" />
-
             
     </form>
 </body>

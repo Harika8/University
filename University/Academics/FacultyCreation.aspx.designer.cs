@@ -139,21 +139,21 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.TextBox ContractHoursTB;
         
         /// <summary>
-        /// FacultyAssignSubmitButton control.
+        /// FacultyCreateSubmitButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button FacultyAssignSubmitButton;
+        protected global::System.Web.UI.WebControls.Button FacultyCreateSubmitButton;
         
         /// <summary>
-        /// FacultyAssignClearButton control.
+        /// FacultyCreateClearButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button FacultyAssignClearButton;
+        protected global::System.Web.UI.WebControls.Button FacultyCreateClearButton;
     }
 }

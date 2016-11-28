@@ -34,7 +34,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PublishDatabaseSettings>&lt;Objects&gt;&lt;ObjectGroup Name="UniversityConnectionString-Deployment" Order="1"&gt;&lt;Destination Path="" /&gt;&lt;Object Type="DbFullSql"&gt;&lt;PreSource Path="Data Source=mis5370.database.windows.net%3bInitial Catalog=University%3bUser ID=mis5370group5%3bPassword=HeliumHighway&amp;amp%3b71" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" /&gt;&lt;Source Path="obj\Debug\AutoScripts\UniversityConnectionString-Deployment_SchemaOnly.sql" Transacted="True" /&gt;&lt;/Object&gt;&lt;/ObjectGroup&gt;&lt;ObjectGroup Name="UniversityConnectionString3-Deployment" Order="2"&gt;&lt;Destination Path="" /&gt;&lt;Object Type="DbFullSql"&gt;&lt;PreSource Path="Data Source=mis5370.database.windows.net%3bInitial Catalog=University%3bPersist Security Info=True%3bUser ID=mis5370group3%3bPassword=RocketCarpet%2a23" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" /&gt;&lt;Source Path="obj\Debug\AutoScripts\UniversityConnectionString3-Deployment_SchemaOnly.sql" Transacted="True" /&gt;&lt;/Object&gt;&lt;/ObjectGroup&gt;&lt;/Objects&gt;</PublishDatabaseSettings>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -69,9 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Academics\AcademicsHome.aspx" />
-    <Content Include="Academics\AssignFacultyToCourse.aspx">
-      <BrowseToURL>~/Academics/AssignFacultyToCourse.aspx</BrowseToURL>
-    </Content>
+    <Content Include="Academics\AssignFacultyToCourse1.aspx" />
     <Content Include="Academics\CourseCreation.aspx" />
     <Content Include="Academics\CourseManagement.aspx" />
     <Content Include="Academics\CourseUpdation.aspx" />
@@ -132,12 +130,12 @@
     <Compile Include="Academics\AcademicsHome.aspx.designer.cs">
       <DependentUpon>AcademicsHome.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Academics\AssignFacultyToCourse.aspx.cs">
-      <DependentUpon>AssignFacultyToCourse.aspx</DependentUpon>
+    <Compile Include="Academics\AssignFacultyToCourse1.aspx.cs">
+      <DependentUpon>AssignFacultyToCourse1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Academics\AssignFacultyToCourse.aspx.designer.cs">
-      <DependentUpon>AssignFacultyToCourse.aspx</DependentUpon>
+    <Compile Include="Academics\AssignFacultyToCourse1.aspx.designer.cs">
+      <DependentUpon>AssignFacultyToCourse1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Academics\CourseCreation.aspx.cs">
       <DependentUpon>CourseCreation.aspx</DependentUpon>
