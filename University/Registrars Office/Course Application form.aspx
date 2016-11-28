@@ -25,10 +25,11 @@
 &nbsp;&nbsp;
         <br />
         <br />
-        Gender:&nGender:&nbsp;
+        Gender:&nbsp;
         <asp:DropDownList ID="DropDownList3" runat="server">
             <asp:ListItem>Male</asp:ListItem>
             <asp:ListItem>Female</asp:ListItem>
+            <asp:ListItem>Other</asp:ListItem>
         </asp:DropDownList>
         <br />
         <br />
@@ -65,9 +66,7 @@
         <br />
         Student EStudent Email:
         <asp:TextBox ID="TextBox11" runat="server" Width="268px"></asp:TextBox>
-&nbsp; Mobile Number:
-        <asp:TextBox ID="TextBox12" runat="server" Width="39px"></asp:TextBox>
-&nbsp;
+&nbsp; Mobile Number:&nbsp;
         <asp:TextBox ID="TextBox13" runat="server"></asp:TextBox>
         <br />
         <br />
@@ -103,7 +102,7 @@
         <br />
         <br />
         Courses:&nbsp;
-        <asp:DropDownList ID="DropDownList1" runat="server">
+        <asp:DropDownList ID="DropDownList1" runat="server" >
             <asp:ListItem>MIS</asp:ListItem>
             <asp:ListItem>English</asp:ListItem>
             <asp:ListItem>Psychology</asp:ListItem>
