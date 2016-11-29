@@ -10,7 +10,7 @@
 namespace University.Campus_Services {
     
     
-    public partial class ServiceAllotedForm {
+    public partial class Service_AllotedForm {
         
         /// <summary>
         /// form1 control.

@@ -29,7 +29,10 @@
         <br />
         Event Hall :
         <asp:DropDownList ID="DropDownList1" runat="server">
-            <asp:ListItem>Student Centre Ball room</asp:ListItem>
+            <asp:ListItem>Cowart Hall</asp:ListItem>
+            <asp:ListItem>Ball Room</asp:ListItem>
+            <asp:ListItem>Student Center</asp:ListItem>
+            <asp:ListItem>ZSC Lawn</asp:ListItem>
         </asp:DropDownList>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
