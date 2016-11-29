@@ -17,6 +17,7 @@ namespace University.HR
                 Session["sender"] = sessionsend;
                 Response.Redirect("../UserRegistration.aspx");
             }
+            txtUserid.Text = (string)Session["user_id"];
         }
 
         protected void btnaddEduHistory_Click(object sender, EventArgs e)
@@ -27,7 +28,7 @@ namespace University.HR
 
         protected void btnedusubmit_Click(object sender, EventArgs e)
         {
-            SqlEducationHistory.InsertParameters["user_id"].DefaultValue = (string)Session["userid"];
+            SqlEducationHistory.InsertParameters["user_id"].DefaultValue = (string)txtUserid.Text.ToUpper().Trim();
             SqlEducationHistory.InsertParameters["school_name"].DefaultValue = txtSchoolName.Text.ToUpper().Trim();
             SqlEducationHistory.InsertParameters["degree"].DefaultValue = txtdegree.Text.ToUpper().Trim();
             SqlEducationHistory.InsertParameters["major"].DefaultValue = txtmajor.Text.ToUpper().Trim();
@@ -62,7 +63,7 @@ namespace University.HR
 
         protected void btnempsubmit_Click(object sender, EventArgs e)
         {
-            SqlEmpHistory.InsertParameters["juser_id"].DefaultValue = (string)Session["userid"];
+            SqlEmpHistory.InsertParameters["juser_id"].DefaultValue = (string)txtUserid.Text.ToUpper().Trim();
             SqlEmpHistory.InsertParameters["employer_name"].DefaultValue = txtEmployerName.Text.ToUpper().Trim();
             SqlEmpHistory.InsertParameters["designation"].DefaultValue = txtDesignation.Text.ToUpper().Trim();
             SqlEmpHistory.InsertParameters["duration"].DefaultValue = (string)txtDuration.Text.ToUpper().Trim();

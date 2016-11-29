@@ -8,18 +8,32 @@
 </head>
 <body>
     <form id="form1" runat="server">
-     <div align="center">
+     <div style="margin-top:75px;" align="center">
+         New Job Applicant<br />
+
+         <asp:Label ID="lblUserid" Width="150" runat="server" Text="User ID :"></asp:Label>       
+         <asp:TextBox ID="txtUserid" runat="server" Width="150px" ReadOnly="true"></asp:TextBox> 
+        <br /><br /><br /> <br />
         <asp:Panel ID="PanelGVEducationHistory" Visible="true" runat="server">
+            ADD EDUCATION HISTORY <br /> <br />
            <asp:Button ID="btnaddEduHistory" runat="server" OnClick="btnaddEduHistory_Click" Text="Add" style="height: 26px" /><br /> <br />
-                <asp:GridView ID="gvEducationHistory" runat="server" AutoGenerateColumns="False" DataKeyNames="user_id,school_name" DataSourceID="SqlEducationHistory">
+                <asp:GridView ID="gvEducationHistory" ShowHeaderWhenEmpty="True" runat="server" AutoGenerateColumns="False" DataKeyNames="user_id,school_name" DataSourceID="SqlEducationHistory" AllowPaging="True" AllowSorting="True"  BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" HorizontalAlign="Center" >
                     <Columns>
-                        <asp:BoundField DataField="user_id" HeaderText="user_id" InsertVisible="False" ReadOnly="True" SortExpression="user_id" />
                         <asp:BoundField DataField="school_name" HeaderText="school_name" ReadOnly="True" SortExpression="school_name" />
                         <asp:BoundField DataField="degree" HeaderText="degree" SortExpression="degree" />
                         <asp:BoundField DataField="major" HeaderText="major" SortExpression="major" />
                         <asp:BoundField DataField="gpa" HeaderText="gpa" SortExpression="gpa" />
                         <asp:BoundField DataField="graduated_year" HeaderText="graduated_year" SortExpression="graduated_year" />
                     </Columns>
+                        <FooterStyle BackColor="#CCCCCC" />
+                        <EditRowStyle BackColor="Yellow"/>
+                        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                        <SortedAscendingHeaderStyle BackColor="#808080" />
+                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                        <SortedDescendingHeaderStyle BackColor="#383838" />
             </asp:GridView> 
             <asp:SqlDataSource ID="SqlEducationHistory" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" DeleteCommand="DELETE FROM [education_history] WHERE [user_id] = @original_user_id AND [school_name] = @original_school_name AND [degree] = @original_degree AND [major] = @original_major AND [gpa] = @original_gpa AND [graduated_year] = @original_graduated_year" InsertCommand="INSERT INTO [education_history] ([user_id], [school_name], [degree], [major], [gpa], [graduated_year]) VALUES (@user_id, @school_name, @degree, @major, @gpa, @graduated_year)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [education_history] WHERE ([user_id] = @user_id)" UpdateCommand="UPDATE [education_history] SET [degree] = @degree, [major] = @major, [gpa] = @gpa, [graduated_year] = @graduated_year WHERE [user_id] = @original_user_id AND [school_name] = @original_school_name AND [degree] = @original_degree AND [major] = @original_major AND [gpa] = @original_gpa AND [graduated_year] = @original_graduated_year">
                 <DeleteParameters>
@@ -39,7 +53,7 @@
                     <asp:Parameter Name="graduated_year" Type="Int16" />
                 </InsertParameters>
                 <SelectParameters>
-                    <asp:SessionParameter Name="user_id" SessionField="user_id" Type="Int32" />
+                    <asp:ControlParameter ControlID="txtUserid" Name="user_id" PropertyName="Text" Type="Int32" />
                 </SelectParameters>
                 <UpdateParameters>
                     <asp:Parameter Name="degree" Type="String" />
@@ -56,6 +70,7 @@
             </asp:SqlDataSource>   
          </asp:Panel>
         </div>
+        
         <div style="margin-left: 100px">
         <asp:Panel ID="PanelAddEducationHistory" Visible="false" runat="server">
          <asp:Label ID="lblSchoolName" Width="150" runat="server" Text="School Name :"></asp:Label> 
@@ -67,9 +82,9 @@
          <asp:Label ID="lblmajor" runat="server" Text="Major :" Width="150"></asp:Label>
          <asp:TextBox ID="txtmajor" runat="server" Width="150"></asp:TextBox>        
         <br /><br />
-        <asp:Label ID="lblgpa" runat="server" Width="150" Text="Salary :"></asp:Label>
+        <asp:Label ID="lblgpa" runat="server" Width="150" Text="GPA :"></asp:Label>
         <asp:TextBox ID="txtgpa" runat="server" Width="150"></asp:TextBox><br /><br />
-        <asp:Label ID="lblgraduated_year" runat="server" Width="150" Text="Pay Frequency :"></asp:Label>
+        <asp:Label ID="lblgraduated_year" runat="server" Width="150" Text="Graduated Year :"></asp:Label>
         <asp:TextBox ID="txtgraduated_year" runat="server" Width="150"></asp:TextBox><br /><br />
          <div style="margin-top:50px;" align="center">
         <asp:Button ID="btnedusubmit" runat="server"  Text="Submit" OnClick="btnedusubmit_Click" />&nbsp;&nbsp;
@@ -78,13 +93,13 @@
         </div>
         </asp:Panel>
         </div>
-        <div align="center">
+        <div style="margin-top:75px;" align="center">
         <asp:Panel ID="PanelgvEmploymentHistory" Visible="true" runat="server">
+           ADD EMPLOYMENT HISTORY <br /> <br />
            <asp:Button ID="btnaddEmpHistory" runat="server" OnClick="btnaddEmpHistory_Click" Text="Add" /><br /> <br />
-                <asp:GridView ID="gvEmpHistory" runat="server" AutoGenerateColumns="False" DataKeyNames="juser_id,employer_name" DataSourceID="SqlEmpHistory">
+                <asp:GridView ID="gvEmpHistory" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataKeyNames="juser_id,employer_name" DataSourceID="SqlEmpHistory">
                    
                     <Columns>
-                        <asp:BoundField DataField="juser_id" HeaderText="juser_id" InsertVisible="False" ReadOnly="True" SortExpression="juser_id" />
                         <asp:BoundField DataField="employer_name" HeaderText="employer_name" ReadOnly="True" SortExpression="employer_name" />
                         <asp:BoundField DataField="designation" HeaderText="designation" SortExpression="designation" />
                         <asp:BoundField DataField="duration" HeaderText="duration" SortExpression="duration" />
@@ -108,7 +123,7 @@
                     <asp:Parameter Name="job_description" Type="String" />
                 </InsertParameters>
                 <SelectParameters>
-                    <asp:SessionParameter Name="juser_id" SessionField="user_id" Type="Int32" />
+                    <asp:ControlParameter ControlID="txtUserid" Name="juser_id" PropertyName="Text" Type="Int32" />
                 </SelectParameters>
                 <UpdateParameters>
                     <asp:Parameter Name="designation" Type="String" />
@@ -143,6 +158,7 @@
         </div>
         </asp:Panel>
         </div>
+        <br /><br /><br /> 
         <div style="margin-top:50px;" align="center">
             <asp:Button ID="btnSubmitForm" runat="server"  Text="Proceed" OnClick="btnSubmitForm_Click" />&nbsp;&nbsp;
             <br />
