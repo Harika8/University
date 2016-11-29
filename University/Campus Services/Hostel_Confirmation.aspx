@@ -24,7 +24,7 @@
         <p style="margin-left: 40px">
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Allotted Room Number :
-        <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TextBox4" runat="server" Height="22px"></asp:TextBox>
         <br />
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Duration Assigned :
@@ -46,14 +46,14 @@
                 <asp:Parameter Name="room_no" Type="Int16" />
                 <asp:Parameter Name="room_type" Type="String" />
                 <asp:Parameter DbType="Date" Name="availability" />
-                <asp:Parameter Name="status" Type="String" />
+                
                 <asp:Parameter Name="user_id" Type="Int32" />
                 <asp:Parameter Name="duration_stay" Type="String" />
             </InsertParameters>
             <UpdateParameters>
                 <asp:Parameter Name="room_type" Type="String" />
                 <asp:Parameter DbType="Date" Name="availability" />
-                <asp:Parameter Name="status" Type="String" />
+                
                 <asp:Parameter Name="user_id" Type="Int32" />
                 <asp:Parameter Name="duration_stay" Type="String" />
                 <asp:Parameter Name="room_no" Type="Int16" />

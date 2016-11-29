@@ -33,8 +33,9 @@
         <br />
         Room Number:&nbsp;&nbsp;
         <asp:DropDownList ID="DropDownList2" runat="server">
-            <asp:ListItem>100</asp:ListItem>
+            <asp:ListItem>select value</asp:ListItem>
             <asp:ListItem>101</asp:ListItem>
+            <asp:ListItem>102</asp:ListItem>
         </asp:DropDownList>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
@@ -58,13 +59,20 @@
                 <asp:Parameter Name="original_allocation_room_no" Type="Int16" />
             </UpdateParameters>
         </asp:SqlDataSource>
-        <asp:SqlDataSource ID="roomSource2" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" SelectCommand="SELECT [duration_stay], [room_no], [room_type] FROM [room]">
+        <asp:SqlDataSource ID="roomSource2" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" SelectCommand="Select * from room where availability between @availability1  and @availability2  and room_no=@room_no;">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="TextBox1" Name="availability1" PropertyName="Text" />
+                <asp:ControlParameter ControlID="TextBox2" Name="availability2" PropertyName="Text" />
+                <asp:ControlParameter ControlID="DropDownList2" Name="room_no" PropertyName="SelectedValue" />
+            </SelectParameters>
         </asp:SqlDataSource>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="room_no" DataSourceID="roomSource2">
             <Columns>
-                <asp:BoundField DataField="duration_stay" HeaderText="duration_stay" SortExpression="duration_stay" />
                 <asp:BoundField DataField="room_no" HeaderText="room_no" ReadOnly="True" SortExpression="room_no" />
                 <asp:BoundField DataField="room_type" HeaderText="room_type" SortExpression="room_type" />
+                <asp:BoundField DataField="availability" HeaderText="availability" SortExpression="availability" />
+                <asp:BoundField DataField="user_id" HeaderText="user_id" SortExpression="user_id" />
+                <asp:BoundField DataField="duration_stay" HeaderText="duration_stay" SortExpression="duration_stay" />
             </Columns>
         </asp:GridView>
     </form>
