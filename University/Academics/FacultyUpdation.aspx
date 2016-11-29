@@ -56,7 +56,8 @@
 
         <p style="width: 203px; margin-left: 600px">
             <b>Form to Update/Delete a Faculty under a Department</b></p>
-        <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="fuser_id" DataSourceID="FacultytblDataSource">
+        <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="fuser_id" DataSourceID="FacultytblDataSource" AllowPaging="True" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+            <AlternatingRowStyle BackColor="#CCCCCC" />
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                 <asp:BoundField DataField="fuser_id" HeaderText="fuser_id" ReadOnly="True" SortExpression="fuser_id" />
@@ -65,6 +66,14 @@
                 <asp:BoundField DataField="contract" HeaderText="contract" SortExpression="contract" />
                 <asp:BoundField DataField="department_id" HeaderText="department_id" SortExpression="department_id" />
             </Columns>
+            <FooterStyle BackColor="#CCCCCC" />
+            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+            <SortedAscendingHeaderStyle BackColor="#808080" />
+            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+            <SortedDescendingHeaderStyle BackColor="#383838" />
         </asp:GridView>
         <asp:SqlDataSource ID="FacultytblDataSource" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [faculty] WHERE [fuser_id] = @original_fuser_id AND [specalization] = @original_specalization AND [education] = @original_education AND [contract] = @original_contract AND [department_id] = @original_department_id" InsertCommand="INSERT INTO [faculty] ([fuser_id], [specalization], [education], [contract], [department_id]) VALUES (@fuser_id, @specalization, @education, @contract, @department_id)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [faculty]" UpdateCommand="UPDATE [faculty] SET [specalization] = @specalization, [education] = @education, [contract] = @contract, [department_id] = @department_id WHERE [fuser_id] = @original_fuser_id AND [specalization] = @original_specalization AND [education] = @original_education AND [contract] = @original_contract AND [department_id] = @original_department_id">
             <DeleteParameters>

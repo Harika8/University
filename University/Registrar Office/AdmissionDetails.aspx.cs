@@ -5,14 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace University.Academics
+namespace University.Registrar_Office
 {
-    public partial class DepartmentUpdation : System.Web.UI.Page
+    public partial class Applicant_Admission_details_update_form : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
     }
 }

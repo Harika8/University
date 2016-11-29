@@ -10,11 +10,6 @@ namespace University.Campus_Services
 {
     public partial class Event_Confirmation : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
         protected void Button1_Click(object sender, EventArgs e)
         {
             eventSource1.SelectCommand = "Select event_place,event_start_date,event_start_time,event_capacity,event_end_date,event_end_time from event where user_id='" + TextBox24.Text + "'";
@@ -26,8 +21,7 @@ namespace University.Campus_Services
             TextBox25.Text = view[0].Row["event_start_time"].ToString();
             TextBox20.Text = view[0].Row["event_capacity"].ToString();
             TextBox21.Text = view[0].Row["event_end_date"].ToString();
-            TextBox22.Text = view[0].Row["event_end_time"].ToString();
-            
+            TextBox22.Text = view[0].Row["event_end_time"].ToString();            
         }
 
         protected void Button2_Click(object sender, EventArgs e)

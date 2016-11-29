@@ -7,12 +7,18 @@
     <title></title>
 </head>
 <body>
+    <iframe src="RegistrarHome.aspx" onload="this.width=screen.width;"> 
+         <p>Your browser does not support iframes.</p>
+    </iframe>
     <form id="form1" runat="server">
     <div>
          <asp:Label ID="Label1" runat="server" Font-Size="XX-Large" Text="Application For University"></asp:Label>
         <br />
         (Please Fill out the Application form carefully)<br />
         <br />
+         SUserID:&nbsp;
+        <asp:TextBox ID="TextBox35" runat="server" Width="184px"></asp:TextBox>
+         <br />
         <br />
         <asp:Label ID="Label12" runat="server" Font-Size="X-Large" Text="Course Information"></asp:Label>
         <br />
@@ -57,19 +63,11 @@
         <asp:RadioButton ID="RadioButton6" runat="server" Text="No" />
         <br />
         <br />
-&nbsp;<asp:Label ID="Label20" runat="server" Font-Size="Large" Text="Entry Date"></asp:Label>
-        :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox18" runat="server"></asp:TextBox>
-&nbsp;
-        <asp:Label ID="Label19" runat="server" Text="(MM/DD/YYYY)"></asp:Label>
-&nbsp;&nbsp;
-        <br />
-        <br />
-&nbsp;<asp:Label ID="Label21" runat="server" Font-Size="Large" Text="Graduation Date"></asp:Label>
+&nbsp;<asp:Label ID="Label21" runat="server" Font-Size="Large" Text="Graduated Date"></asp:Label>
         :&nbsp;
         <asp:TextBox ID="TextBox19" runat="server"></asp:TextBox>
 &nbsp;
-        <asp:Label ID="Label22" runat="server" Text="(MM/DD/YYYY)"></asp:Label>
+        <asp:Label ID="Label22" runat="server" Text="YYYY-MM-DD"></asp:Label>
 &nbsp;&nbsp;
         <br />
         <br />
@@ -83,20 +81,17 @@
         <br />
         <br />
         <asp:TextBox ID="TextBox21" runat="server" Width="65px"></asp:TextBox>
+         <br />
         <br />
-        <asp:Label ID="Label26" runat="server" Font-Size="Large" Text="Entry Date"></asp:Label>
-        :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox22" runat="server"></asp:TextBox>
-&nbsp;
-        <asp:Label ID="Label27" runat="server" Text="(MM/DD/YYYY)"></asp:Label>
-&nbsp;&nbsp;
-        <br />
-        <br />
-&nbsp;<asp:Label ID="Label28" runat="server" Font-Size="Large" Text="Exit Date"></asp:Label>
+         <asp:Label ID="Label49" runat="server" Font-Size="Large" Text="Graduated Date"></asp:Label>
         :&nbsp;
-        <asp:TextBox ID="TextBox23" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TextBox34" runat="server"></asp:TextBox>
 &nbsp;
-        <asp:Label ID="Label29" runat="server" Text="(MM/DD/YYYY)"></asp:Label>
+        <asp:Label ID="Label50" runat="server" Text="YYYY-MM-DD"></asp:Label>
+&nbsp;&nbsp;
+         &nbsp;
+        <br />
+        <br />
 &nbsp;&nbsp;
         <br />
     
@@ -116,21 +111,15 @@
         <asp:TextBox ID="TextBox25" runat="server" Width="64px"></asp:TextBox>
         <br />
         <br />
-&nbsp;<asp:Label ID="Label33" runat="server" Font-Size="Large" Text="Entry Date"></asp:Label>
+&nbsp;<asp:Label ID="Label33" runat="server" Font-Size="Large" Text="Graduated year"></asp:Label>
         :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="TextBox26" runat="server"></asp:TextBox>
 &nbsp;
-        <asp:Label ID="Label34" runat="server" Text="(MM/DD/YYYY)"></asp:Label>
+        <asp:Label ID="Label34" runat="server" Text="YYYY-MM-DD"></asp:Label>
 &nbsp;&nbsp;
         <br />
         <br />
-&nbsp;<asp:Label ID="Label35" runat="server" Font-Size="Large" Text="Exit Date"></asp:Label>
-        :&nbsp;
-        <asp:TextBox ID="TextBox27" runat="server"></asp:TextBox>
-&nbsp;
-        <asp:Label ID="Label36" runat="server" Text="(MM/DD/YYYY)"></asp:Label>
-&nbsp;&nbsp;
-        <br />
+&nbsp;<br />
         <br />
         <asp:Label ID="Label37" runat="server" Font-Size="X-Large" Text="GRE Information"></asp:Label>
         <br />

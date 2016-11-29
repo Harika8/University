@@ -24,6 +24,8 @@ namespace University.Campus_Services
             eventsource.InsertParameters["event_capacity"].DefaultValue = TextBox15.Text.Trim();
             eventsource.InsertParameters["multi_day_event"].DefaultValue = RadioButtonList1.SelectedValue;
             eventsource.InsertParameters["audio_visual"].DefaultValue = RadioButtonList2.SelectedValue;
+            eventsource.InsertParameters["user_id"].DefaultValue = TextBox25.Text.Trim();
+
 
 
             eventsource.Insert();
@@ -70,12 +72,12 @@ namespace University.Campus_Services
             DataSourceSelectArguments data = new DataSourceSelectArguments();
             DataView view = new DataView();
             view = (DataView)eventsource.Select(data);
+            /*TextBox25.Text = view[0].Row["user_id"].ToString();*/
             TextBox2.Text = view[0].Row["first_name"].ToString();
             TextBox3.Text = view[0].Row["last_name"].ToString();
             TextBox5.Text = view[0].Row["contact_no"].ToString();
             TextBox6.Text = view[0].Row["email_id"].ToString();
-
-
+          
         }
     }
     }

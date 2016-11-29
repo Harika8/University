@@ -17,7 +17,7 @@
     </style>
 </head>
 <body>
-    <form id="form2" runat="server">
+    <form id="form2" runat="server">  
     <div class="auto-style1">
     
         <p style="margin-left: 40px">
@@ -57,10 +57,10 @@
             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Clear" />
         </p>
     
-    </div>
+   <!-- </div>
     </form>
-    <form id="form1" runat="server">
-    <div>
+    <form id="form1" runat="server"> 
+    <div> -->
     
         <asp:SqlDataSource ID="eventSource1" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" DeleteCommand="DELETE FROM [event] WHERE [event_id] = @event_id" InsertCommand="INSERT INTO [event] ([event_title], [event_start_date], [multi_day_event], [event_end_date], [event_end_time], [event_start_time], [event_place], [event_capacity], [audio_visual], [user_id]) VALUES (@event_title, @event_start_date, @multi_day_event, @event_end_date, @event_end_time, @event_start_time, @event_place, @event_capacity, @audio_visual, @user_id)" SelectCommand="SELECT * FROM [event]" UpdateCommand="UPDATE [event] SET [event_title] = @event_title, [event_start_date] = @event_start_date, [multi_day_event] = @multi_day_event, [event_end_date] = @event_end_date, [event_end_time] = @event_end_time, [event_start_time] = @event_start_time, [event_place] = @event_place, [event_capacity] = @event_capacity, [audio_visual] = @audio_visual, [user_id] = @user_id WHERE [event_id] = @event_id">
             <DeleteParameters>

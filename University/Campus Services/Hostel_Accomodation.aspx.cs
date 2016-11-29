@@ -19,7 +19,8 @@ namespace University.Campus_Services
         {
 
             roomsource.InsertParameters["room_type"].DefaultValue = RadioButtonList1.SelectedValue;
-          
+            roomsource.InsertParameters["user_id"].DefaultValue = TextBox11.Text.Trim();
+            roomsource.InsertParameters["duration_stay"].DefaultValue = RadioButtonList2.SelectedValue;
             roomsource.Insert();
 
             TextBox11.Text = string.Empty;
@@ -56,4 +57,6 @@ namespace University.Campus_Services
             TextBox13.Text = view[0].Row["email_id"].ToString();
         }
     }
-}
+}/*room number not null
+Cannot insert the value NULL into column 'room_no', table 'University.dbo.room'; column does not allow nulls. INSERT fails.
+The statement has been terminated.*/

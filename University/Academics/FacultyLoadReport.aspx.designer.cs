@@ -13,49 +13,58 @@ namespace University.Academics {
     public partial class FacultyLoadReport {
         
         /// <summary>
-        /// DeptName control.
+        /// DeptIDLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName;
+        protected global::System.Web.UI.WebControls.Label DeptIDLbl;
         
         /// <summary>
-        /// DeptNameDDList control.
+        /// DeptIDDDL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DeptNameDDList;
+        protected global::System.Web.UI.WebControls.DropDownList DeptIDDDL;
         
         /// <summary>
-        /// FacultyNameLbl control.
+        /// DeptIDs_DataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label FacultyNameLbl;
+        protected global::System.Web.UI.WebControls.SqlDataSource DeptIDs_DataSource;
         
         /// <summary>
-        /// FacultyNameDDL control.
+        /// FacultyIDLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList FacultyNameDDL;
+        protected global::System.Web.UI.WebControls.Label FacultyIDLbl;
         
         /// <summary>
-        /// Button1 control.
+        /// FacultyIDDDL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.DropDownList FacultyIDDDL;
+        
+        /// <summary>
+        /// FacultyIDs_DeptID_DataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource FacultyIDs_DeptID_DataSource;
         
         /// <summary>
         /// FacultyLoadGridView control.
@@ -67,12 +76,12 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.GridView FacultyLoadGridView;
         
         /// <summary>
-        /// FacultyLoadDataSource control.
+        /// FacultyReportDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource FacultyLoadDataSource;
+        protected global::System.Web.UI.WebControls.SqlDataSource FacultyReportDataSource;
     }
 }

@@ -16,26 +16,49 @@
     <form id="form1" runat="server">
         <p style="margin-left: 40px">
             <span class="auto-style1"><strong>Hostel Accomodation Confirmation</strong></span><br />
+        </p>
+        <p style="margin-left: 80px">
+            User Id:<asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Go" />
+        </p>
+        <p style="margin-left: 40px">
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Allotted Room Number :
         <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
         <br />
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Duration Assigned :
-        <asp:DropDownList ID="DropDownList3" runat="server">
-            <asp:ListItem>6 Months</asp:ListItem>
-            <asp:ListItem>12 Months</asp:ListItem>
-        </asp:DropDownList>
+            <asp:TextBox ID="TextBox9" runat="server" OnTextChanged="TextBox9_TextChanged"></asp:TextBox>
         <br />
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Start Date:
         <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
 &nbsp;(DD/MM/YYYY)<br />
-        <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Approved Employee Name :<asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </p>
     <div>
+    
+        <asp:SqlDataSource ID="roomSource1" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" DeleteCommand="DELETE FROM [room] WHERE [room_no] = @room_no" InsertCommand="INSERT INTO [room] ([room_no], [room_type], [availability], [status], [user_id], [duration_stay]) VALUES (@room_no, @room_type, @availability, @status, @user_id, @duration_stay)" SelectCommand="SELECT * FROM [room]" UpdateCommand="UPDATE [room] SET [room_type] = @room_type, [availability] = @availability, [status] = @status, [user_id] = @user_id, [duration_stay] = @duration_stay WHERE [room_no] = @room_no">
+            <DeleteParameters>
+                <asp:Parameter Name="room_no" Type="Int16" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="room_no" Type="Int16" />
+                <asp:Parameter Name="room_type" Type="String" />
+                <asp:Parameter DbType="Date" Name="availability" />
+                <asp:Parameter Name="status" Type="String" />
+                <asp:Parameter Name="user_id" Type="Int32" />
+                <asp:Parameter Name="duration_stay" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="room_type" Type="String" />
+                <asp:Parameter DbType="Date" Name="availability" />
+                <asp:Parameter Name="status" Type="String" />
+                <asp:Parameter Name="user_id" Type="Int32" />
+                <asp:Parameter Name="duration_stay" Type="String" />
+                <asp:Parameter Name="room_no" Type="Int16" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
     
     </div>
     </form>

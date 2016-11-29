@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Service_AllotedForm.aspx.cs" Inherits="University.Campus_Services.Service_AllotedForm" %>
 
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ServiceAllotedForm.aspx.cs" Inherits="University.Campus_Services.ServiceAllotedForm" %>
+
 
 <!DOCTYPE html>
 
@@ -20,6 +20,7 @@
             <p style="margin-left: 40px">
                 <span class="auto-style1"><strong>Service Allotment Form</strong></span></p>
             <p style="margin-left: 40px">
+                Room No :<asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
                 <br />
         Service Completion Time:&nbsp;&nbsp;
         <asp:DropDownList ID="DropDownList4" runat="server">
