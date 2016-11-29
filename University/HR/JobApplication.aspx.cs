@@ -17,7 +17,7 @@ namespace University.HR
         }
 
         protected void btnNewUser_Click(object sender, EventArgs e)
-        {            
+        {
             Response.Redirect("../NewJobApplicant.aspx");            
         }
 

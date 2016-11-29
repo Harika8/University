@@ -101,6 +101,11 @@
                 
             <br />            
         </div>
+         <div style="margin-top:50px;" align="center">
+        <asp:Button ID="btnsubmit" runat="server"  Text="Submit" OnClick="btnsubmit_Click" />&nbsp;&nbsp;
+        <asp:Button ID="btnclear" runat="server"  Text="Clear" OnClick="btnclear_Click" />
+            <br />
+        </div>
 
  
 
