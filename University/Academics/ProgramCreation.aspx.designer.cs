@@ -40,13 +40,13 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.SqlDataSource ProgramTBLDataSource;
         
         /// <summary>
-        /// DeptName control.
+        /// DeptIDLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName;
+        protected global::System.Web.UI.WebControls.Label DeptIDLbl;
         
         /// <summary>
         /// DepartmentIDDDList control.
@@ -67,13 +67,13 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.SqlDataSource UniversityDatabase;
         
         /// <summary>
-        /// CourseLevel control.
+        /// CourseLevelLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CourseLevel;
+        protected global::System.Web.UI.WebControls.Label CourseLevelLbl;
         
         /// <summary>
         /// CourseLevelDDList control.
@@ -85,13 +85,13 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.DropDownList CourseLevelDDList;
         
         /// <summary>
-        /// ProgramName control.
+        /// ProgramNameLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ProgramName;
+        protected global::System.Web.UI.WebControls.Label ProgramNameLbl;
         
         /// <summary>
         /// ProgramNameTB control.
@@ -103,13 +103,13 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.TextBox ProgramNameTB;
         
         /// <summary>
-        /// ProgramCode control.
+        /// ProgramCodeLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ProgramCode;
+        protected global::System.Web.UI.WebControls.Label ProgramCodeLbl;
         
         /// <summary>
         /// ProgramCodeTB control.
