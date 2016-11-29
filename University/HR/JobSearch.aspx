@@ -57,29 +57,7 @@
      <div style="margin-top:75px;" align="center">
          Job Search Portal<br />
          <br /><br />
-        </div>
-      <div style="margin-left: 100px">
-         Search By : <br /><br />
-         <asp:Label ID="lblPositionType" runat="server" Width="150" Text="Position Type :"></asp:Label>
-         <asp:DropDownList ID="selPositionType" Width="150" runat="server" OnSelectedIndexChanged="selPositionType_SelectedIndexChanged">
-              <asp:ListItem Value="-1">Select Position Type</asp:ListItem>
-             <asp:ListItem>Full Time Monthly</asp:ListItem>
-             <asp:ListItem>Staff- Bi-Weekly</asp:ListItem>
-         </asp:DropDownList> 
-          <br /><br />
-         <asp:Label ID="lblDepartment" runat="server" Width="150" Text="Department :"></asp:Label>
-            <asp:DropDownList ID="seldept" runat="server" Width="150px" AppendDataBoundItems="True" EnableViewState="False" DataSourceID="SqlDepartment" DataTextField="department_name" DataValueField="department_id">
-                <asp:ListItem Selected="True" Value="-1">Select Department</asp:ListItem>
-            </asp:DropDownList>  
-             <br /><br />
-         <div align="center">
-          <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <asp:Button ID="btnClearsearch" runat="server" Text="Clear Filters" OnClick="btnClearsearch_Click"  /><br /><br />
-        </div>
-          
-          
-        
+                 
         <asp:Panel ID="PanelResults" runat="server">
             <asp:GridView ID="gvSearchResults" runat="server" AutoGenerateColumns="False" DataKeyNames="vacancy_id" DataSourceID="SqlSearchResults" >
                 <Columns>
@@ -88,6 +66,19 @@
                     <asp:BoundField DataField="Department" HeaderText="Department" SortExpression="Department" />
                     <asp:BoundField DataField="Position_Type" HeaderText="Position_Type" SortExpression="Position_Type" />
                     <asp:BoundField DataField="Job_Description" HeaderText="Job_Description" SortExpression="Job_Description" />
+                    <asp:TemplateField HeaderText="View Details"  ShowHeader="True">
+                                 <ItemTemplate>
+                                     <asp:LinkButton ID="lnkView" runat="server" CausesValidation="False" ToolTip=" click to view details" OnClick="lnkView_Click"  Text="View"></asp:LinkButton>
+                                 </ItemTemplate>
+                                
+                    </asp:TemplateField>
+                   <asp:TemplateField HeaderText="Apply"  ShowHeader="True">
+                                 <ItemTemplate>
+                                     <asp:LinkButton ID="lnkApply" runat="server" CausesValidation="False" ToolTip=" click to Apply" OnClick="lnkApply_Click"  Text="Apply"></asp:LinkButton>
+                                 </ItemTemplate>
+                                
+                    </asp:TemplateField>
+                    
                 </Columns>
             </asp:GridView>
             <asp:SqlDataSource ID="SqlSearchResults" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" SelectCommand="Select vacancy.vacancy_id,  position.designation as Job_Title, department.department_name as Department, position.pay_frequency as Position_Type, position.roles_responsibilities as Job_Description from vacancy, position,department where vacancy.position_id=position.position_id and position.department_id = department.department_id">

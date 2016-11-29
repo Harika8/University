@@ -97,6 +97,7 @@
     <Content Include="Campus Services\Service_AllotedForm.aspx" />
     <Content Include="Campus Services\Service_RequestForm.aspx" />
     <Content Include="Campus Services\ServiceRequestReport.aspx" />
+    <Content Include="HR\JobApplicationStatus.aspx" />
     <Content Include="HR\JobDetails.aspx" />
     <Content Include="HR\NewJobApplicant.aspx" />
     <Content Include="packages.config" />
@@ -327,6 +328,13 @@
     </Compile>
     <Compile Include="HR\JobApplication.aspx.designer.cs">
       <DependentUpon>JobApplication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HR\JobApplicationStatus.aspx.cs">
+      <DependentUpon>JobApplicationStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HR\JobApplicationStatus.aspx.designer.cs">
+      <DependentUpon>JobApplicationStatus.aspx</DependentUpon>
     </Compile>
     <Compile Include="HR\JobDetails.aspx.cs">
       <DependentUpon>JobDetails.aspx</DependentUpon>

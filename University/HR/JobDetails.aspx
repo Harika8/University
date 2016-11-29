@@ -8,9 +8,48 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+      <div style="margin-top:75px;" align="center">
+         Job Details<br />
+         <br /><br />
+        </div>
+        <div style="margin-left: 100px">        
+           <asp:TextBox ID="txtVacancyID" runat="server" Width="150px"  ReadOnly="true"></asp:TextBox><br /><br /> 
+         <asp:Label ID="lblPositiontitle" Width="150" runat="server" Text="Position Title :"></asp:Label>
+         <asp:TextBox ID="txtDesignation" runat="server" Width="150px"  ReadOnly="true"></asp:TextBox><br /><br />
+         <asp:Label ID="lbldepartment" runat="server" Text="Department :" Width="150"></asp:Label>
+         <asp:TextBox ID="txtDepartment" runat="server" Width="150" ReadOnly="true"></asp:TextBox>        
+        <br /><br />
+        <asp:Label ID="lblSalary" runat="server" Width="150" Text="Salary :"></asp:Label>
+        <asp:TextBox ID="txtSalary" runat="server" Width="150" ReadOnly="true"></asp:TextBox><br /><br />
+         <asp:Label ID="lblJobtype" Width="150" runat="server" Text="Job Type :"></asp:Label>         
+         <asp:TextBox ID="txtJobtype" runat="server" Width="150px"  ReadOnly="true"></asp:TextBox>        
+        <br /><br />
+        <asp:Label ID="lblDuration" runat="server" Width="150" Text="Duration :"></asp:Label>
+         <asp:TextBox ID="txtDuration" runat="server" Width="150" ReadOnly="true"></asp:TextBox><br /><br />        
+        <asp:Label ID="lblPayfrequency" runat="server" Width="150" Text="Pay Frequency :"></asp:Label>
+        <asp:TextBox ID="txtPayFrequency" runat="server" Width="150" ReadOnly="true"></asp:TextBox><br /><br />     
+         <asp:Label ID="lblRoles_resp" runat="server" Width="150" Height="50px" Text="Job Description :"></asp:Label>
+         <asp:TextBox ID="txtrolesresp" runat="server" Width="300" Height="50px" ReadOnly="true"></asp:TextBox><br /><br />
+        <asp:Label ID="lblRequiredQualification" runat="server" Width="150px" Text="Required Qualification :" Height="50px"></asp:Label>
+         <asp:TextBox ID="txtRequiredQualification" runat="server" Width="300" Height="50px" ReadOnly="true"></asp:TextBox><br /><br />
+        <asp:Label ID="lblOpenDate" runat="server" Width="150" Text="Open Date :"></asp:Label>
+         <asp:TextBox ID="txtOpenDate" ReadOnly="true" Width="150" runat="server" ></asp:TextBox><br /><br />
+         <asp:Label ID="lblCloseDate" runat="server" Width="150" Text="Close Date :"></asp:Label>
+         <asp:TextBox ID="txtCloseDate" ReadOnly="true" Width="150" runat="server" ></asp:TextBox>&nbsp;
+         <br />
+            <br />
+            </div>
+        <div style="margin-top:50px;" align="center">
+        <asp:Button ID="btnApply" runat="server"  Text="Apply" OnClick="btnApply_Click" />&nbsp;&nbsp;
+        <asp:Button ID="btnBack" runat="server"  Text="Back" OnClick="btnBack_Click" />
+            <br />
+            <asp:SqlDataSource ID="SqlData" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" SelectCommand="SELECT * FROM [vacancy]"></asp:SqlDataSource>
+        </div>
     
-    </div>
+    
+        
+    
+    
     </form>
 </body>
 </html>

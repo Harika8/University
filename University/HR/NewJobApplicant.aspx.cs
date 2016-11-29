@@ -13,6 +13,8 @@ namespace University.HR
         {
             if (Session["user_id"] == null)
             {
+                string sessionsend = "jobapplicant";
+                Session["sender"] = sessionsend;
                 Response.Redirect("../UserRegistration.aspx");
             }
         }

@@ -19,7 +19,7 @@ namespace University.HR
 
        
 
-        protected void linkView_Click(object sender, EventArgs e)
+        protected void lnkView_Click(object sender, EventArgs e)
         {
             LinkButton btn = sender as LinkButton;
             GridViewRow row = btn.NamingContainer as GridViewRow;
@@ -28,7 +28,7 @@ namespace University.HR
             Response.Redirect("JobDetails.aspx");
         }
 
-        protected void linkApply_Click(object sender, EventArgs e)
+        protected void lnkApply_Click(object sender, EventArgs e)
         {
             LinkButton btn = sender as LinkButton;
             GridViewRow row = btn.NamingContainer as GridViewRow;

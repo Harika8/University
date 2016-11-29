@@ -63,51 +63,42 @@
         <div style="margin-left: 100px">
 
          
-         <asp:Label ID="lblPosition" Width="150" runat="server" Text="Select Designation :"></asp:Label> 
-         <asp:DropDownList ID="selPosition" runat="server" Width="150px" AutoPostBack="true" AppendDataBoundItems="True" EnableViewState="False"  DataSourceID="SqlPosition" DataTextField="designation" DataValueField="position_id" OnSelectedIndexChanged="selPosition_SelectedIndexChanged">
-                <asp:ListItem Selected="True" Value="-1">Select Designation</asp:ListItem>
-            </asp:DropDownList>   <br /><br />
-
-            
-         <asp:Label ID="lblJobtype" Width="150" runat="server" Text="Job Type :"></asp:Label>         
-         <asp:TextBox ID="txtJobtype" runat="server" Width="150px"  ReadOnly="true"></asp:TextBox>        
-        <br /><br />
-         <asp:Label ID="lbldepartment" runat="server" Text="Department :" Width="150"></asp:Label>
-         <asp:TextBox ID="txtDepartment" runat="server" Width="150" ReadOnly="true"></asp:TextBox>        
-        <br /><br />
-        <asp:Label ID="lblSalary" runat="server" Width="150" Text="Salary :"></asp:Label>
-        <asp:TextBox ID="txtSalary" runat="server" Width="150" ReadOnly="true"></asp:TextBox><br /><br />
-        <asp:Label ID="lblPayfrequency" runat="server" Width="150" Text="Pay Frequency :"></asp:Label>
-        <asp:TextBox ID="txtPayFrequency" runat="server" Width="150" ReadOnly="true"></asp:TextBox><br /><br />     
-         <asp:Label ID="lblRoles_resp" runat="server" Width="150" Height="50px" Text="Job Description :"></asp:Label>
-         <asp:TextBox ID="txtrolesresp" runat="server" Width="500" Height="50px" ReadOnly="true"></asp:TextBox><br /><br />
-        <asp:Label ID="lblRequiredQualification" runat="server" Width="200px" Text="Required Qualification :" Height="50px"></asp:Label>
-         <asp:TextBox ID="txtRequiredQualification" runat="server" Width="500" Height="50px"></asp:TextBox><br /><br />
-        <asp:Label ID="lblDuration" runat="server" Width="150" Text="Duration :"></asp:Label>
-         <asp:TextBox ID="txtDuration" runat="server" Width="150"></asp:TextBox><br /><br />
-        <asp:Label ID="lblnoofVacancies" runat="server" Width="200" Text="Number of Vacancies :"></asp:Label>
-         <asp:TextBox ID="txtnoofvacancies" runat="server" Width="150"></asp:TextBox><br /><br />
-         <asp:Label ID="lblCloseDate" runat="server" Width="150" Text="Close Date :"></asp:Label>
-         <asp:TextBox ID="txtCloseDate" ReadOnly="false" Width="150" runat="server"></asp:TextBox>&nbsp;
-        <asp:ImageButton ID="calimgCloseDate" runat="server" height="30px" ImageUrl="~/images/calender.png" OnClick="calimgCloseDate_Click" Width="25px" />
-        <asp:Panel ID="calpanelCloseDate" runat="server" Visible="false">
-          <asp:Calendar ID="calCloseDate" runat="server" OnSelectionChanged="calCloseDate_SelectionChanged"></asp:Calendar>           
-          <br />
-        </asp:Panel>
-          <br />
-            <br />
-
-              
-                
-            <br />            
+         <asp:Label ID="lblUserid" Width="150" runat="server" Text="User ID :"></asp:Label>       
+         <asp:TextBox ID="txtUserid" runat="server" Width="150px"></asp:TextBox>        
+         <br /><br />
+          
         </div>
          <div style="margin-top:50px;" align="center">
         <asp:Button ID="btnsubmit" runat="server"  Text="Submit" OnClick="btnsubmit_Click" />&nbsp;&nbsp;
-        <asp:Button ID="btnclear" runat="server"  Text="Clear" OnClick="btnclear_Click" />
             <br />
-        </div>
+        </div> 
 
- 
+        <asp:SqlDataSource ID="Sqljobapplication" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" DeleteCommand="DELETE FROM [job_application] WHERE [job_application_id] = @original_job_application_id AND [juser_id] = @original_juser_id AND [vacancy_id] = @original_vacancy_id AND [date_applied] = @original_date_applied AND (([status] = @original_status) OR ([status] IS NULL AND @original_status IS NULL))" InsertCommand="INSERT INTO [job_application] ([juser_id], [vacancy_id], [date_applied], [status]) VALUES (@juser_id, @vacancy_id, @date_applied, @status)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [job_application]" UpdateCommand="UPDATE [job_application] SET [juser_id] = @juser_id, [vacancy_id] = @vacancy_id, [date_applied] = @date_applied, [status] = @status WHERE [job_application_id] = @original_job_application_id AND [juser_id] = @original_juser_id AND [vacancy_id] = @original_vacancy_id AND [date_applied] = @original_date_applied AND (([status] = @original_status) OR ([status] IS NULL AND @original_status IS NULL))">
+            <DeleteParameters>
+                <asp:Parameter Name="original_job_application_id" Type="Int32" />
+                <asp:Parameter Name="original_juser_id" Type="Int32" />
+                <asp:Parameter Name="original_vacancy_id" Type="Int16" />
+                <asp:Parameter DbType="Date" Name="original_date_applied" />
+                <asp:Parameter Name="original_status" Type="String" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="juser_id" Type="Int32" />
+                <asp:Parameter Name="vacancy_id" Type="Int16" />
+                <asp:Parameter DbType="Date" Name="date_applied" />
+                <asp:Parameter Name="status" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="juser_id" Type="Int32" />
+                <asp:Parameter Name="vacancy_id" Type="Int16" />
+                <asp:Parameter DbType="Date" Name="date_applied" />
+                <asp:Parameter Name="status" Type="String" />
+                <asp:Parameter Name="original_job_application_id" Type="Int32" />
+                <asp:Parameter Name="original_juser_id" Type="Int32" />
+                <asp:Parameter Name="original_vacancy_id" Type="Int16" />
+                <asp:Parameter DbType="Date" Name="original_date_applied" />
+                <asp:Parameter Name="original_status" Type="String" />
+            </UpdateParameters>
+        </asp:SqlDataSource> 
 
     </form>
 </body>

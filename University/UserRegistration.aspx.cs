@@ -57,7 +57,11 @@ namespace University
 
             string userid = dvView[0].Row["user_id"].ToString();
             Session["user_id"] = userid;
-            Response.Redirect(Request.UrlReferrer.ToString());
+            string strsender = (string)Session["sender"];
+            if ( strsender.Equals("jobapplicant"))
+            {
+                Response.Redirect("HR/NewJobApplicant.aspx");
+            }
         }
 
         protected void btnCancelUser_Click(object sender, EventArgs e)

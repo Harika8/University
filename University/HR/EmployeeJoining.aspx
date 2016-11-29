@@ -54,8 +54,7 @@
         </nav><!--/nav-->
  
     </header>
-    <div>
-        <div style="margin-top:75px;" align="center">
+    <div style="margin-top:75px;" align="center">
          Employee Joining <br />
          <br /><br />
         </div>
@@ -141,17 +140,13 @@
                  
             <asp:SqlDataSource ID="SqlData" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>"  SelectCommand="SELECT * FROM [position]">
             </asp:SqlDataSource>
+            </div>
 
          <div style="margin-top:50px;" align="center">
         <asp:Button ID="btnsubmit" runat="server"  Text="Submit" OnClick="btnsubmit_Click" />&nbsp;&nbsp;
         <asp:Button ID="btnclear" runat="server"  Text="Clear" OnClick="btnclear_Click" />
             <br />
         </div>
-
-    
-
-    </div>
-       
     </form>
 </body>
 </html>
