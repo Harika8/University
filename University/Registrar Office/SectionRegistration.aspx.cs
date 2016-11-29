@@ -12,16 +12,21 @@ namespace University.Registrar_Office
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void RadioButton6_CheckedChanged(object sender, EventArgs e)
-        {
-
+            //if (!IsPostBack)
+            //{
+            //    CourseDropdown.AppendDataBoundItems = true;
+            //    SqlCourse.SelectCommand = "select course_name,course_id from course";
+            //    CourseDropdown.DataTextField = "course_name";
+            //    CourseDropdown.DataValueField = "course_id";
+            //    CourseDropdown.DataBind();
+            //}
+            SectionDropDown.Items.Clear();
+            SectionDropDown.Items.Add(new ListItem("--Select Section--", ""));
         }
 
         protected void ApplicationButton_Click(object sender, EventArgs e)
         {
+            try { 
             DateTime dt = DateTime.Now;
             Sqlsectionregistration.InsertParameters["suser_id"].DefaultValue = StudentId.Text;
             Sqlsectionregistration.InsertParameters["section_id"].DefaultValue = SectionDropDown.SelectedValue;
@@ -32,10 +37,22 @@ namespace University.Registrar_Office
             string strcurrentavailability = dvView[0].Row["section_availabilty"].ToString();
             int currentavailability = 0;
             currentavailability = Convert.ToInt32(strcurrentavailability);
+            String index = RegordropRadioButton.SelectedValue;
             if (currentavailability > 0)
             {
-                Sqlsectionregistration.InsertParameters["registration_status"].DefaultValue ="Y";
-                int newcurrentavailability = currentavailability - 1;
+                int newcurrentavailability = 0;
+                if (index.Equals("0"))
+                {
+                    Sqlsectionregistration.InsertParameters["registration_status"].DefaultValue = "Y";
+                    newcurrentavailability = currentavailability - 1;
+
+                }
+                else if (index.Equals("1"))
+                {
+                    Sqlsectionregistration.InsertParameters["registration_status"].DefaultValue = "N";
+                    newcurrentavailability = currentavailability + 1;
+                }
+
                 SqlSectionUpdate.UpdateParameters["section_availabilty"].DefaultValue = Convert.ToString(newcurrentavailability);
                 SqlSectionUpdate.UpdateParameters["original_section_id"].DefaultValue = SectionDropDown.SelectedValue;
                 SqlSectionUpdate.UpdateParameters["original_section_availabilty"].DefaultValue = Convert.ToString(currentavailability);
@@ -45,12 +62,44 @@ namespace University.Registrar_Office
 
             if (currentavailability <= 0)
             {
-                Sqlsectionregistration.InsertParameters["registration_status"].DefaultValue ="N";
+                Sqlsectionregistration.InsertParameters["registration_status"].DefaultValue = "N";
                 RegistrationStatusLabel.Text = "No Availability";
             }
             Sqlsectionregistration.InsertParameters["registration_date"].DefaultValue = dt.ToString();
 
             Sqlsectionregistration.Insert();
+           }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Sorry for the inconvenience", ex);
+            }
+        }
+
+       
+        protected void course_changed(object sender, EventArgs e)
+        {
+            try {
+                SectionDropDown.Items.Clear();
+                SectionDropDown.Items.Add(new ListItem("--Select Section--", ""));
+                SectionDropDown.AppendDataBoundItems = true;
+                SqlSection.SelectCommand = "select section_id from section as s " +
+                                   "where s.course_id = '" + CourseDropdown.SelectedValue + "'";
+                SectionDropDown.DataTextField = "section_id";
+                SectionDropDown.DataValueField = "section_id";
+                SectionDropDown.DataBind();
+                //if (SectionDropDown.Items.Count >= 1)
+                //{
+                //    SectionDropDown.Enabled = true;
+                //}
+                //else
+                //{
+                //    SectionDropDown.Enabled = false;
+                //}
+            }
+            catch(Exception ex)
+            {
+                throw new ApplicationException("Sorry for the inconvenience",ex);
+            }
         }
     }
 }

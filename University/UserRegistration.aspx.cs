@@ -93,6 +93,9 @@ namespace University
             calpanel.Visible = true;
         }
 
+        protected void SqlUser_info_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
 
+        }
     }
 }
