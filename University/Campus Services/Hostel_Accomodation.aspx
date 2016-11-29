@@ -56,15 +56,12 @@
                 <asp:ListItem>12 Months</asp:ListItem>
             </asp:RadioButtonList>
             <br />
-            Passport Number :
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-            <br />
             <br />
             Full Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox ID="TextBox10" runat="server"></asp:TextBox>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Signature(Initials):<br />
             <br />
             Date:<asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
-&nbsp;(DD/MM/YYYY)</p>
+&nbsp;(MM/DD/YYYY)</p>
         <p style="margin-left: 320px">
             <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" />
             <asp:Button ID="Button2" runat="server" Text="Cancel" OnClick="Button2_Click" />
