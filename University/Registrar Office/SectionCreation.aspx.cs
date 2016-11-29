@@ -23,8 +23,13 @@ namespace University.Registrar_Office
             SqlSection.InsertParameters["credits"].DefaultValue = CreditsTxt.Text;
             SqlSection.InsertParameters["semester"].DefaultValue = SemesterTxt.Text;
             SqlSection.Insert();
+            //int affectedRows=
+            msg.Text = "Saved Successfully";
         }
 
-        
+        protected void SectionClearButton_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
