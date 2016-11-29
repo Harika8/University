@@ -22,6 +22,15 @@ namespace University.Academics
             ContractHoursTB.Text = string.Empty;
 
         }
-        
+
+        protected void FacultyCreateSubmitButton_Click(object sender, EventArgs e)
+        {
+            FacultyInsertDataSource.InsertParameters["fuser_id"].DefaultValue = FacultyIDDDL.SelectedValue;
+            FacultyInsertDataSource.InsertParameters["specalization"].DefaultValue = FacultySpecializationTB.Text.ToUpper().Trim();
+            FacultyInsertDataSource.InsertParameters["education"].DefaultValue = FacultyEducationTB.Text.ToUpper().Trim();
+            FacultyInsertDataSource.InsertParameters["contract"].DefaultValue = ContractHoursTB.Text.Trim();
+            FacultyInsertDataSource.InsertParameters["department_id"].DefaultValue = DeptIDDDL.SelectedValue;
+            FacultyInsertDataSource.Insert();
+        }
     }
 }

@@ -40,31 +40,31 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.SqlDataSource FacultyTBLDataSource;
         
         /// <summary>
-        /// DeptName control.
+        /// DeptIDLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptName;
+        protected global::System.Web.UI.WebControls.Label DeptIDLbl;
         
         /// <summary>
-        /// DeptNameDDList control.
+        /// DeptIDDDL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DeptNameDDList;
+        protected global::System.Web.UI.WebControls.DropDownList DeptIDDDL;
         
         /// <summary>
-        /// FacultyDeptNameDataSource control.
+        /// DeptIDs_DataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource FacultyDeptNameDataSource;
+        protected global::System.Web.UI.WebControls.SqlDataSource DeptIDs_DataSource;
         
         /// <summary>
         /// FacultyIDLbl control.
@@ -173,5 +173,14 @@ namespace University.Academics {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button FacultyCreateClearButton;
+        
+        /// <summary>
+        /// FacultyInsertDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource FacultyInsertDataSource;
     }
 }

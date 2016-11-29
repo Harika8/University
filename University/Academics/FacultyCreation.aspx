@@ -80,10 +80,10 @@
         <hr />
         <br />
     
-        <asp:Label ID="DeptName" runat="server" Text="Department Name:"></asp:Label>
-        <asp:DropDownList ID="DeptNameDDList" runat="server" DataSourceID="FacultyDeptNameDataSource" DataTextField="department_name" DataValueField="department_name">
+        <asp:Label ID="DeptIDLbl" runat="server" Text="Department ID:"></asp:Label>
+        <asp:DropDownList ID="DeptIDDDL" runat="server" DataSourceID="DeptIDs_DataSource" DataTextField="department_id" DataValueField="department_id">
         </asp:DropDownList>
-        <asp:SqlDataSource ID="FacultyDeptNameDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="select dept.department_name from dbo.department as dept, dbo.program as prg where dept.department_id = prg.department_id;"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="DeptIDs_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT [department_id] FROM [department]"></asp:SqlDataSource>
         <br />
     
         <asp:Label ID="FacultyIDLbl" runat="server" Text="Faculty ID:"></asp:Label>
@@ -109,10 +109,42 @@
         <p>
             &nbsp;</p>
         <p>
-            <asp:Button ID="FacultyCreateSubmitButton" runat="server" Text="Submit" />
+            <asp:Button ID="FacultyCreateSubmitButton" runat="server" Text="Submit" OnClick="FacultyCreateSubmitButton_Click" />
 &nbsp;&nbsp;&nbsp;
             <asp:Button ID="FacultyCreateClearButton" runat="server" Text="Clear" OnClick="FacultyCreateClearButton_Click" />
         </p>
+    
+            
+        <asp:SqlDataSource ID="FacultyInsertDataSource" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [faculty] WHERE [fuser_id] = @original_fuser_id AND [specalization] = @original_specalization AND [education] = @original_education AND [contract] = @original_contract AND [department_id] = @original_department_id" InsertCommand="INSERT INTO [faculty] ([fuser_id], [specalization], [education], [contract], [department_id]) VALUES (@fuser_id, @specalization, @education, @contract, @department_id)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [faculty]" UpdateCommand="UPDATE [faculty] SET [specalization] = @specalization, [education] = @education, [contract] = @contract, [department_id] = @department_id WHERE [fuser_id] = @original_fuser_id AND [specalization] = @original_specalization AND [education] = @original_education AND [contract] = @original_contract AND [department_id] = @original_department_id">
+            <DeleteParameters>
+                <asp:Parameter Name="original_fuser_id" Type="Int32" />
+                <asp:Parameter Name="original_specalization" Type="String" />
+                <asp:Parameter Name="original_education" Type="String" />
+                <asp:Parameter Name="original_contract" Type="Int16" />
+                <asp:Parameter Name="original_department_id" Type="Int16" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="fuser_id" Type="Int32" />
+                <asp:Parameter Name="specalization" Type="String" />
+                <asp:Parameter Name="education" Type="String" />
+                <asp:Parameter Name="contract" Type="Int16" />
+                <asp:Parameter Name="department_id" Type="Int16" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="specalization" Type="String" />
+                <asp:Parameter Name="education" Type="String" />
+                <asp:Parameter Name="contract" Type="Int16" />
+                <asp:Parameter Name="department_id" Type="Int16" />
+                <asp:Parameter Name="original_fuser_id" Type="Int32" />
+                <asp:Parameter Name="original_specalization" Type="String" />
+                <asp:Parameter Name="original_education" Type="String" />
+                <asp:Parameter Name="original_contract" Type="Int16" />
+                <asp:Parameter Name="original_department_id" Type="Int16" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
+    
+            
+        <br />
     
             
     </form>
