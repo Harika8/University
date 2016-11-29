@@ -13,5 +13,19 @@ namespace University.Academics
         {
 
         }
+
+       protected void ProgramSubmitButton_Click(object sender, EventArgs e)
+        {
+            Faculty_Course_TBL.InsertParameters["fuser_id"].DefaultValue = FacultyIDDDL.SelectedValue;
+            Faculty_Course_TBL.InsertParameters["course_id"].DefaultValue = CourseIDDDL.SelectedValue;
+            Faculty_Course_TBL.InsertParameters["department_id"].DefaultValue = DeptIDDDList.SelectedValue;
+
+            Faculty_Course_TBL.Insert();
+        }
+
+        protected void ProgramClearButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("FacultyCourseAssignment.aspx");
+        }
     }
 }

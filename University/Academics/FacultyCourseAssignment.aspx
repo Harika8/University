@@ -55,25 +55,57 @@
         <p style="width: 203px; margin-left: 600px">
             <b>Form to Assign a Faculty to a Course</b></p>
     
-        <asp:Label ID="DeptName" runat="server" Text="Department Name:"></asp:Label>
-        <asp:DropDownList ID="DeptNameDDList" runat="server" DataSourceID="UniversityDatabase" DataTextField="department_name" DataValueField="department_name">
+        <asp:Label ID="DeptIDLbl" runat="server" Text="Department ID:"></asp:Label>
+        <asp:DropDownList ID="DeptIDDDList" runat="server" DataSourceID="UniversityDatabase" DataTextField="department_name" DataValueField="department_name">
         </asp:DropDownList>
-        <asp:SqlDataSource ID="UniversityDatabase" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_name] FROM [department]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="UniversityDatabase" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_id] FROM [department]"></asp:SqlDataSource>
         <p>
             Course ID:
-            <asp:DropDownList ID="CourseIDDDL" runat="server">
+            <asp:DropDownList ID="CourseIDDDL" runat="server" DataSourceID="CourseIDs_DeptIDbased_DataSource" DataTextField="course_id" DataValueField="course_id">
             </asp:DropDownList>
+            <asp:SqlDataSource ID="CourseIDs_DeptIDbased_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [course_id] FROM [course] WHERE ([department_id] = @department_id)">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="DeptIDDDList" DefaultValue="17" Name="department_id" PropertyName="SelectedValue" Type="Int16" />
+                </SelectParameters>
+            </asp:SqlDataSource>
 &nbsp;Course Name:<asp:TextBox ID="CourseNameTB" runat="server" Enabled="False"></asp:TextBox>
         </p>
         <p>
             Faculty ID:
-            <asp:DropDownList ID="FacultyIDDDL" runat="server">
+            <asp:DropDownList ID="FacultyIDDDL" runat="server" DataSourceID="FacutyIDs_DeptIDbased_DataSource" DataTextField="fuser_id" DataValueField="fuser_id">
             </asp:DropDownList>
+            <asp:SqlDataSource ID="FacutyIDs_DeptIDbased_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [fuser_id] FROM [faculty] WHERE ([department_id] = @department_id)">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="DeptIDDDList" DefaultValue="17" Name="department_id" PropertyName="SelectedValue" Type="Int16" />
+                </SelectParameters>
+            </asp:SqlDataSource>
 &nbsp;Faculty Name:<asp:TextBox ID="FacultyNameTB" runat="server" Enabled="False"></asp:TextBox>
         </p>
+        <p style="margin-left: 200px">
+        
+        <asp:Button ID="ProgramSubmitButton" runat="server" Text="Submit" OnClick="ProgramSubmitButton_Click" />
+        &nbsp;&nbsp;&nbsp;
+        <asp:Button ID="ProgramClearButton" runat="server" Text="Clear" OnClick="ProgramClearButton_Click" />
+        </p>
         <p>
-            <asp:Button ID="ProgramSubmitButton" runat="server" Text="Submit" />
-            <asp:Button ID="ProgramClearButton" runat="server" Text="Clear" />
+            <asp:SqlDataSource ID="Faculty_Course_TBL" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [faculty_course] WHERE [fuser_id] = @original_fuser_id AND [course_id] = @original_course_id AND [department_id] = @original_department_id" InsertCommand="INSERT INTO [faculty_course] ([fuser_id], [course_id], [department_id]) VALUES (@fuser_id, @course_id, @department_id)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [faculty_course]" UpdateCommand="UPDATE [faculty_course] SET [department_id] = @department_id WHERE [fuser_id] = @original_fuser_id AND [course_id] = @original_course_id AND [department_id] = @original_department_id">
+                <DeleteParameters>
+                    <asp:Parameter Name="original_fuser_id" Type="Int32" />
+                    <asp:Parameter Name="original_course_id" Type="Int16" />
+                    <asp:Parameter Name="original_department_id" Type="Int16" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="fuser_id" Type="Int32" />
+                    <asp:Parameter Name="course_id" Type="Int16" />
+                    <asp:Parameter Name="department_id" Type="Int16" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="department_id" Type="Int16" />
+                    <asp:Parameter Name="original_fuser_id" Type="Int32" />
+                    <asp:Parameter Name="original_course_id" Type="Int16" />
+                    <asp:Parameter Name="original_department_id" Type="Int16" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
         </p>
     </form>
 </body>
