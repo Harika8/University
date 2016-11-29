@@ -25,7 +25,8 @@ namespace University.Campus_Services
            /* TextBox4.Text = view[0].Row["first_name"].ToString();*/
             TextBox9.Text = view[0].Row["duration_stay"].ToString();
             TextBox8.Text = view[0].Row["date"].ToString();
-            
+            TextBox7.Text= view[0].Row["availability"].ToString();
+
         }
     }
 }
