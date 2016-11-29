@@ -42,10 +42,10 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="AcademicsHome.aspx">Academics - Home</a></li>
-                        <li><a href="DepartmentCreation.aspx">Create Department</a></li>
-                        <li><a href="ProgramManagement.aspx">Program Management</a></li>                        
-                        <li><a href="CourseCreation.aspx">Create Course</a></li>                  
-                        <li><a href="AssignFacultyToCourse.aspx">Faculty Course Assignments</a></li> 
+                        <li><a href="DepartmentManagement.aspx">Manage Department</a></li>
+                        <li><a href="ProgramManagement.aspx">Manage Program</a></li>                        
+                        <li><a href="CourseManagement.aspx">Manage Course</a></li>                     
+                        <li><a href="AssignFacultyToCourse1.aspx">Faculty Course Assignments</a></li> 
                         <li><a href="FacultyLoadReport.aspx">Faculty Load Report</a></li>                  
                     </ul>
                 </div>
@@ -59,8 +59,12 @@
     
     </div>
         <p>
-            <asp:Button ID="NewProgramButton" runat="server" Text="Enter New" OnClick="NewProgramButton_Click" />
-            <asp:Button ID="DeleteProgramButton" runat="server" Text="Delete Existing" Width="112px" OnClick="DeleteProgramButton_Click" />
+            <asp:Button ID="NewProgramButton" runat="server" Text="Enter New Program" OnClick="NewProgramButton_Click" />
+        </p>
+        <p>
+            &nbsp;</p>
+        <p>
+            <asp:Button ID="DeleteProgramButton" runat="server" Text="Update/Delete Existing Program" Width="258px" OnClick="DeleteProgramButton_Click" />
         </p>
     </form>
 </body>

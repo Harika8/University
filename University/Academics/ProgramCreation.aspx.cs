@@ -30,6 +30,9 @@ namespace University.Academics
         {
             ProgramNameTB.Text = string.Empty;
             ProgramCodeTB.Text = string.Empty;
+            Response.Redirect("ProgramCreation.aspx");
         }
+
+        
     }
 }

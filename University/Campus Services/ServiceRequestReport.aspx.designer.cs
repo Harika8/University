@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HostelAccomodationApplication {
+namespace University.Campus_Services {
     
     
-    public partial class ServiceRequestReport {
+    public partial class Service_RequestReport {
         
         /// <summary>
         /// form1 control.

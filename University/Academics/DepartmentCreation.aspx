@@ -42,29 +42,46 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="AcademicsHome.aspx">Academics - Home</a></li>
-                        <li><a href="DepartmentCreation.aspx">Create Department</a></li>
-                        <li><a href="ProgramManagement.aspx">Program Management</a></li>                           
-                        <li><a href="CourseCreation.aspx">Create Course</a></li>                  
-                        <li><a href="AssignFacultyToCourse.aspx">Faculty Course Assignments</a></li> 
-                        <li><a href="FacultyLoadReport.aspx">Faculty Load Report</a></li>                                          
+                        <li><a href="DepartmentManagement.aspx">Manage Department</a></li>
+                        <li><a href="ProgramManagement.aspx">Manage Program</a></li>                        
+                        <li><a href="CourseManagement.aspx">Manage Course</a></li>                     
+                        <li><a href="AssignFacultyToCourse1.aspx">Faculty Course Assignments</a></li> 
+                        <li><a href="FacultyLoadReport.aspx">Faculty Load Report</a></li>                  
                     </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
     </header>
-    <div>
+
         <p style="width: 203px; margin-left: 600px">
-        <b>Department Creation Form</b></p><br />
-        <asp:Button ID="NewDeptButton" runat="server" Text="Enter New Department" />
-        <asp:Button ID="UpdateDeptButton" runat="server" Text="Update Existing Department" Width="196px" />
-        <asp:Button ID="DeleteDeptButton" runat="server" Text="Delete Existing Department" Width="196px" />
+        <b>Department - Creation Form</b></p>
+        <asp:GridView ID="DepartmentTBLGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="department_id" DataSourceID="DepartmentTBLDataSource" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" AllowPaging="True" PageSize="5">
+            <Columns>
+                <asp:BoundField DataField="department_id" HeaderText="department_id" InsertVisible="False" ReadOnly="True" SortExpression="department_id" />
+                <asp:BoundField DataField="department_name" HeaderText="department_name" SortExpression="department_name" />
+                <asp:BoundField DataField="department_location" HeaderText="department_location" SortExpression="department_location" />
+                <asp:BoundField DataField="department_phone_num" HeaderText="department_phone_num" SortExpression="department_phone_num" />
+                <asp:BoundField DataField="department_email_id" HeaderText="department_email_id" SortExpression="department_email_id" />
+            </Columns>
+            <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+            <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+            <RowStyle ForeColor="#330099" BackColor="White" />
+            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+            <SortedAscendingCellStyle BackColor="#FEFCEB" />
+            <SortedAscendingHeaderStyle BackColor="#AF0101" />
+            <SortedDescendingCellStyle BackColor="#F6F0C0" />
+            <SortedDescendingHeaderStyle BackColor="#7E0000" />
+        </asp:GridView>
+        <asp:SqlDataSource ID="DepartmentTBLDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [department]"></asp:SqlDataSource>
         <br />
+        <hr />
         <br />
-        <br />
-        <asp:Label ID="DeptName" runat="server" Text="Department Name:"></asp:Label>
+        <asp:Label ID="DepartmentName" runat="server" Text="Department Name:"></asp:Label>
         <asp:TextBox ID="DepartmentNameTB" runat="server"></asp:TextBox>
-        <asp:Label ID="DeptName0" runat="server" Text="Department ID:"></asp:Label>
-        <asp:TextBox ID="DepartmentIDTB" runat="server" Enabled="False"></asp:TextBox>
+        &nbsp;&nbsp;&nbsp;
+        <asp:Label ID="DepartmentIDLbl" runat="server" Text="Department ID:"></asp:Label>
+        <asp:TextBox ID="DepartmentIDTB" runat="server" Enabled="False" Width="79px"></asp:TextBox>
         <br />
         <br />
         <br />
@@ -74,26 +91,47 @@
         <asp:Label ID="DepartmentLocationLbl" runat="server" Text="Department Location:"></asp:Label>
         <asp:DropDownList ID="DepartmentLocationDDL" runat="server">
             <asp:ListItem>Block A - Room 101</asp:ListItem>
-            <asp:ListItem>Block B - Room 101</asp:ListItem>
-            <asp:ListItem>Block B - Room 201</asp:ListItem>
-            <asp:ListItem Value="Block C - Room 201"></asp:ListItem>
-            <asp:ListItem>Block A - Room 301</asp:ListItem>
+            <asp:ListItem>Block A - Room 120</asp:ListItem>
             <asp:ListItem>Block A - Room 302</asp:ListItem>
-            <asp:ListItem>Block A - Room 140</asp:ListItem>
+            <asp:ListItem>Block A - Room 311</asp:ListItem>
+            <asp:ListItem>Block A - Room 312</asp:ListItem>
+            <asp:ListItem>Block B - Room 101</asp:ListItem>
+            <asp:ListItem>Block B - Room 111</asp:ListItem>
+            <asp:ListItem>Block B - Room 111</asp:ListItem>
+            <asp:ListItem>Block B - Room 119</asp:ListItem>
+            <asp:ListItem>Block B - Room 129</asp:ListItem>
+            <asp:ListItem>Block B - Room 201</asp:ListItem>
+            <asp:ListItem>Block B - Room 204</asp:ListItem>
+            <asp:ListItem>Block B - Room 211</asp:ListItem>
+            <asp:ListItem>Block B - Room 212</asp:ListItem>
+            <asp:ListItem>Block B - Room 214</asp:ListItem>
+            <asp:ListItem>Block B - Room 221</asp:ListItem>
+            <asp:ListItem>Block C - Room 119</asp:ListItem>
+            <asp:ListItem>Block C - Room 201</asp:ListItem>
+            <asp:ListItem>Block C - Room 210</asp:ListItem>
+            <asp:ListItem>Block C - Room 219</asp:ListItem>
+            <asp:ListItem>Block C - Room 310</asp:ListItem>
+            <asp:ListItem>Block A - Room 111</asp:ListItem>
+            <asp:ListItem>Block A - Room 221</asp:ListItem>
+            <asp:ListItem>Block A - Room 222</asp:ListItem>
+            <asp:ListItem>Block A - Room 121</asp:ListItem>
+            <asp:ListItem>Block A - Room 301</asp:ListItem>
+            <asp:ListItem>Block C - Room 101</asp:ListItem>
             <asp:ListItem>Block B - Room 222</asp:ListItem>
-            <asp:ListItem></asp:ListItem>
         </asp:DropDownList>
         <br />
         <br />
         <asp:Label ID="DepartmentNoLbl" runat="server" Text="Phone Number:"></asp:Label>
         <asp:TextBox ID="DepartmentPhoneNoTB" runat="server"></asp:TextBox>
+        &nbsp;&nbsp;&nbsp;
         <asp:Label ID="DepartmentEmailIDLbl" runat="server" Text="Email ID:"></asp:Label>
         <asp:TextBox ID="DepartmentEmailIDTB" runat="server"></asp:TextBox>
         <br />
         <br />
         
         <asp:Button ID="ProgramSubmitButton" runat="server" Text="Submit" OnClick="ProgramSubmitButton_Click" />
-        <asp:Button ID="ProgramClearButton" runat="server" Text="Clear" />
+        &nbsp;&nbsp;&nbsp;
+        <asp:Button ID="ProgramClearButton" runat="server" Text="Clear" OnClick="ProgramClearButton_Click" />
         <br />
         <br />
         <asp:SqlDataSource ID="sqldepartment" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [department] WHERE [department_id] = @original_department_id AND [department_name] = @original_department_name AND [department_location] = @original_department_location AND [department_phone_num] = @original_department_phone_num AND [department_email_id] = @original_department_email_id" InsertCommand="INSERT INTO [department] ([department_name], [department_location], [department_phone_num], [department_email_id]) VALUES (@department_name, @department_location, @department_phone_num, @department_email_id)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [department]" UpdateCommand="UPDATE [department] SET [department_name] = @department_name, [department_location] = @department_location, [department_phone_num] = @department_phone_num, [department_email_id] = @department_email_id WHERE [department_id] = @original_department_id AND [department_name] = @original_department_name AND [department_location] = @original_department_location AND [department_phone_num] = @original_department_phone_num AND [department_email_id] = @original_department_email_id">
