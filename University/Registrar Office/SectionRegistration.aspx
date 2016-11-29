@@ -1,12 +1,22 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Section Registration.aspx.cs" Inherits="University.Registrar_Office.Course_Registration" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SectionRegistration.aspx.cs" Inherits="University.Registrar_Office.Course_Registration" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style>
+.highlight
+{
+  color:red;
+  font-weight:bold;
+}
+</style>
 </head>
 <body>
+     <iframe src="RegistrarHome.aspx" onload="this.width=screen.width;"> 
+         <p>Your browser does not support iframes.</p>
+    </iframe>
     <form id="form1" runat="server">
     <div>
     <asp:Label ID="Label8" runat="server" Font-Size="XX-Large" Text="Course Registration/Drop Form:"></asp:Label>
@@ -14,30 +24,24 @@
         <br />
         Student ID: <asp:TextBox ID="StudentId" runat="server" Width="196px"></asp:TextBox>
         <br />
+&nbsp;<asp:RadioButtonList ID="RegordropRadioButton" runat="server">
+            <asp:ListItem>Register</asp:ListItem>
+            <asp:ListItem>Drop</asp:ListItem>
+        </asp:RadioButtonList>
         <br />
-        <br />
-        <asp:RadioButton ID="Registerbutton" runat="server" OnCheckedChanged="RadioButton6_CheckedChanged" Text="Register" />
-&nbsp;<br />
-        <asp:RadioButton ID="DropRadiobutton" runat="server" Text="Drop" />
-        <br />
-        &nbsp;&nbsp;&nbsp;
-        <br />
-        Semester:<br />
-        <br />
-        <asp:RadioButton ID="SpringRadioButton" runat="server" Text="Spring" />
-        <br />
-        <asp:RadioButton ID="MaymesterRadioButton" runat="server" Text="Maymester" />
-        <br />
-        <asp:RadioButton ID="SummerRadioButton" runat="server" Text="Summer" />
-        <br />
-        <asp:RadioButton ID="LSummerRadioButton" runat="server" Text="Long Summer" />
-        <br />
-        <asp:RadioButton ID="FallRadioButton" runat="server" Text="Fall" />
+        &nbsp;Semester:<br />
+        <asp:RadioButtonList ID="SemRadioButton" runat="server">
+            <asp:ListItem>Spring</asp:ListItem>
+            <asp:ListItem>Summer</asp:ListItem>
+            <asp:ListItem>Maymester</asp:ListItem>
+            <asp:ListItem>Fall</asp:ListItem>
+        </asp:RadioButtonList>
         <br />
         <br />
         Year:&nbsp;
-        <asp:TextBox ID="YearTextBox" runat="server" Width="398px"></asp:TextBox>
+        <asp:TextBox ID="YearTextBox" runat="server" Width="207px"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp;
+        <br />
         <br />
         <br />
         <br />
@@ -117,8 +121,8 @@
             </UpdateParameters>
         </asp:SqlDataSource>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Registration Status:&nbsp;
-        <asp:TextBox ID="RegistrationStatusTextBox" runat="server" Width="398px"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="RegistrationStatusLabel" runat="server" Text="Label" CssClass="highlight"></asp:Label>
         </form>
 </body>
 </html>
