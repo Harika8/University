@@ -44,19 +44,66 @@
                         <li><a href="JobSearch.aspx">Job Search</a></li>
                         <li class="active"><a href="JobApplication.aspx">Job Application</a></li>                        
                         <li><a href="JobNotification.aspx">Create Vacancy</a></li> 
-                        <li><a href="Payroll.aspx">Check Payroll</a></li>
                         <li><a href="Position.aspx">Create Position</a></li> 
-                        <li><a href="Timesheet.aspx">Update Timesheet</a></li>
-                        <li><a href="EmployeeJoining.aspx">Employee</a></li>                      
+                        <li><a href="EmployeeJoining.aspx">Employee Joining</a></li>
+                        <li><a href="EmployeeScreen.aspx">Employee</a></li>                       
                     </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
  
     </header>
-    <div>
-    
-    </div>
+      <div style="margin-top:75px;" align="center">
+         Job Application<br />
+
+         <br /><br />
+            <asp:Button ID="btnNewUser" runat="server" Width="150" Text="New User" OnClick="btnNewUser_Click" />
+          <br /><br />
+        </div>
+        <div style="margin-left: 100px">
+
+         
+         <asp:Label ID="lblPosition" Width="150" runat="server" Text="Select Designation :"></asp:Label> 
+         <asp:DropDownList ID="selPosition" runat="server" Width="150px" AutoPostBack="true" AppendDataBoundItems="True" EnableViewState="False"  DataSourceID="SqlPosition" DataTextField="designation" DataValueField="position_id" OnSelectedIndexChanged="selPosition_SelectedIndexChanged">
+                <asp:ListItem Selected="True" Value="-1">Select Designation</asp:ListItem>
+            </asp:DropDownList>   <br /><br />
+
+            
+         <asp:Label ID="lblJobtype" Width="150" runat="server" Text="Job Type :"></asp:Label>         
+         <asp:TextBox ID="txtJobtype" runat="server" Width="150px"  ReadOnly="true"></asp:TextBox>        
+        <br /><br />
+         <asp:Label ID="lbldepartment" runat="server" Text="Department :" Width="150"></asp:Label>
+         <asp:TextBox ID="txtDepartment" runat="server" Width="150" ReadOnly="true"></asp:TextBox>        
+        <br /><br />
+        <asp:Label ID="lblSalary" runat="server" Width="150" Text="Salary :"></asp:Label>
+        <asp:TextBox ID="txtSalary" runat="server" Width="150" ReadOnly="true"></asp:TextBox><br /><br />
+        <asp:Label ID="lblPayfrequency" runat="server" Width="150" Text="Pay Frequency :"></asp:Label>
+        <asp:TextBox ID="txtPayFrequency" runat="server" Width="150" ReadOnly="true"></asp:TextBox><br /><br />     
+         <asp:Label ID="lblRoles_resp" runat="server" Width="150" Height="50px" Text="Job Description :"></asp:Label>
+         <asp:TextBox ID="txtrolesresp" runat="server" Width="500" Height="50px" ReadOnly="true"></asp:TextBox><br /><br />
+        <asp:Label ID="lblRequiredQualification" runat="server" Width="200px" Text="Required Qualification :" Height="50px"></asp:Label>
+         <asp:TextBox ID="txtRequiredQualification" runat="server" Width="500" Height="50px"></asp:TextBox><br /><br />
+        <asp:Label ID="lblDuration" runat="server" Width="150" Text="Duration :"></asp:Label>
+         <asp:TextBox ID="txtDuration" runat="server" Width="150"></asp:TextBox><br /><br />
+        <asp:Label ID="lblnoofVacancies" runat="server" Width="200" Text="Number of Vacancies :"></asp:Label>
+         <asp:TextBox ID="txtnoofvacancies" runat="server" Width="150"></asp:TextBox><br /><br />
+         <asp:Label ID="lblCloseDate" runat="server" Width="150" Text="Close Date :"></asp:Label>
+         <asp:TextBox ID="txtCloseDate" ReadOnly="false" Width="150" runat="server"></asp:TextBox>&nbsp;
+        <asp:ImageButton ID="calimgCloseDate" runat="server" height="30px" ImageUrl="~/images/calender.png" OnClick="calimgCloseDate_Click" Width="25px" />
+        <asp:Panel ID="calpanelCloseDate" runat="server" Visible="false">
+          <asp:Calendar ID="calCloseDate" runat="server" OnSelectionChanged="calCloseDate_SelectionChanged"></asp:Calendar>           
+          <br />
+        </asp:Panel>
+          <br />
+            <br />
+
+              
+                
+            <br />            
+        </div>
+
+ 
+
     </form>
 </body>
 </html>

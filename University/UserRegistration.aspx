@@ -202,7 +202,7 @@
               </div>
             </asp:Panel>
             </div>
-       
+        <asp:SqlDataSource ID="Sqlgetuserid" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" SelectCommand="SELECT * FROM [user_info]"></asp:SqlDataSource>
     </form>
 </body>
 </html>

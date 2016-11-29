@@ -45,10 +45,9 @@
                         <li><a href="JobSearch.aspx">Job Search</a></li>
                         <li><a href="JobApplication.aspx">Job Application</a></li>                        
                         <li><a href="JobNotification.aspx">Create Vacancy</a></li> 
-                        <li><a href="Payroll.aspx">Check Payroll</a></li>
                         <li><a href="Position.aspx">Create Position</a></li> 
-                        <li><a href="Timesheet.aspx">Update Timesheet</a></li>
-                        <li><a href="EmployeeJoining.aspx">Employee</a></li>                      
+                        <li><a href="EmployeeJoining.aspx">Employee Joining</a></li>
+                        <li><a href="EmployeeScreen.aspx">Employee</a></li>                           
                     </ul>
                 </div>
             </div><!--/.container-->

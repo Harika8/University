@@ -45,19 +45,61 @@
                         <li class="active"><a href="JobSearch.aspx">Job Search</a></li>
                         <li><a href="JobApplication.aspx">Job Application</a></li>                        
                         <li><a href="JobNotification.aspx">Create Vacancy</a></li> 
-                        <li><a href="Payroll.aspx">Check Payroll</a></li>
                         <li><a href="Position.aspx">Create Position</a></li> 
-                        <li><a href="Timesheet.aspx">Update Timesheet</a></li>
-                        <li><a href="EmployeeJoining.aspx">Employee</a></li>                      
+                        <li><a href="EmployeeJoining.aspx">Employee Joining</a></li>
+                        <li><a href="EmployeeScreen.aspx">Employee</a></li>                      
                     </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
  
     </header>
-    <div>
-    
-    </div>
+     <div style="margin-top:75px;" align="center">
+         Job Search Portal<br />
+         <br /><br />
+        </div>
+      <div style="margin-left: 100px">
+         Search By : <br /><br />
+         <asp:Label ID="lblPositionType" runat="server" Width="150" Text="Position Type :"></asp:Label>
+         <asp:DropDownList ID="selPositionType" Width="150" runat="server" OnSelectedIndexChanged="selPositionType_SelectedIndexChanged">
+              <asp:ListItem Value="-1">Select Position Type</asp:ListItem>
+             <asp:ListItem>Full Time Monthly</asp:ListItem>
+             <asp:ListItem>Staff- Bi-Weekly</asp:ListItem>
+         </asp:DropDownList> 
+          <br /><br />
+         <asp:Label ID="lblDepartment" runat="server" Width="150" Text="Department :"></asp:Label>
+            <asp:DropDownList ID="seldept" runat="server" Width="150px" AppendDataBoundItems="True" EnableViewState="False" DataSourceID="SqlDepartment" DataTextField="department_name" DataValueField="department_id">
+                <asp:ListItem Selected="True" Value="-1">Select Department</asp:ListItem>
+            </asp:DropDownList>  
+             <br /><br />
+         <div align="center">
+          <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <asp:Button ID="btnClearsearch" runat="server" Text="Clear Filters" OnClick="btnClearsearch_Click"  /><br /><br />
+        </div>
+          
+          
+        
+        <asp:Panel ID="PanelResults" runat="server">
+            <asp:GridView ID="gvSearchResults" runat="server" AutoGenerateColumns="False" DataKeyNames="vacancy_id" DataSourceID="SqlSearchResults" >
+                <Columns>
+                    <asp:BoundField DataField="vacancy_id" HeaderText="vacancy_id" InsertVisible="False" ReadOnly="True" SortExpression="vacancy_id" />
+                    <asp:BoundField DataField="Job_Title" HeaderText="Job_Title" SortExpression="Job_Title" />
+                    <asp:BoundField DataField="Department" HeaderText="Department" SortExpression="Department" />
+                    <asp:BoundField DataField="Position_Type" HeaderText="Position_Type" SortExpression="Position_Type" />
+                    <asp:BoundField DataField="Job_Description" HeaderText="Job_Description" SortExpression="Job_Description" />
+                </Columns>
+            </asp:GridView>
+            <asp:SqlDataSource ID="SqlSearchResults" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" SelectCommand="Select vacancy.vacancy_id,  position.designation as Job_Title, department.department_name as Department, position.pay_frequency as Position_Type, position.roles_responsibilities as Job_Description from vacancy, position,department where vacancy.position_id=position.position_id and position.department_id = department.department_id">
+            </asp:SqlDataSource>
+            </asp:Panel>
+
+       
+        <asp:SqlDataSource ID="SqlDepartment" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" SelectCommand="SELECT [department_id], [department_name], [department_location], [department_phone_num], [department_email_id] FROM [department]"></asp:SqlDataSource>
+      </div>
+        
+        
+        
     </form>
 </body>
 </html>

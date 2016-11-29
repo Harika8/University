@@ -90,6 +90,8 @@
     <Content Include="Campus Services\ServiceAllotedForm.aspx" />
     <Content Include="Campus Services\ServiceRequestForm.aspx" />
     <Content Include="Campus Services\ServiceRequestReport.aspx" />
+    <Content Include="HR\JobDetails.aspx" />
+    <Content Include="HR\NewJobApplicant.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -105,7 +107,7 @@
     <Content Include="HR\JobApplication.aspx" />
     <Content Include="HR\JobNotification.aspx" />
     <Content Include="HR\JobSearch.aspx" />
-    <Content Include="HR\Payroll.aspx" />
+    <Content Include="HR\EmployeeScreen.aspx" />
     <Content Include="HR\Position.aspx" />
     <Content Include="HR\Timesheet.aspx" />
     <Content Include="UserRegistration.aspx" />
@@ -263,6 +265,13 @@
     <Compile Include="HR\JobApplication.aspx.designer.cs">
       <DependentUpon>JobApplication.aspx</DependentUpon>
     </Compile>
+    <Compile Include="HR\JobDetails.aspx.cs">
+      <DependentUpon>JobDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HR\JobDetails.aspx.designer.cs">
+      <DependentUpon>JobDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HR\JobNotification.aspx.cs">
       <DependentUpon>JobNotification.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -277,12 +286,19 @@
     <Compile Include="HR\JobSearch.aspx.designer.cs">
       <DependentUpon>JobSearch.aspx</DependentUpon>
     </Compile>
-    <Compile Include="HR\Payroll.aspx.cs">
-      <DependentUpon>Payroll.aspx</DependentUpon>
+    <Compile Include="HR\EmployeeScreen.aspx.cs">
+      <DependentUpon>EmployeeScreen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="HR\Payroll.aspx.designer.cs">
-      <DependentUpon>Payroll.aspx</DependentUpon>
+    <Compile Include="HR\EmployeeScreen.aspx.designer.cs">
+      <DependentUpon>EmployeeScreen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HR\NewJobApplicant.aspx.cs">
+      <DependentUpon>NewJobApplicant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HR\NewJobApplicant.aspx.designer.cs">
+      <DependentUpon>NewJobApplicant.aspx</DependentUpon>
     </Compile>
     <Compile Include="HR\Position.aspx.cs">
       <DependentUpon>Position.aspx</DependentUpon>
