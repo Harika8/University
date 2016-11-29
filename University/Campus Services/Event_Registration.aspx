@@ -101,13 +101,10 @@
         <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" />
         <asp:Button ID="Button2" runat="server" Text="Cancel" OnClick="Button2_Click" />
         <br />
-        <asp:SqlDataSource ID="eventsource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" DeleteCommand="DELETE FROM [event] WHERE [event_id] = @event_id" InsertCommand="INSERT INTO [event] ([event_title], [event_start_date], [multi_day_event], [event_end_date], [event_end_time], [event_start_time], [event_place], [event_capacity], [audio_visual]) VALUES (@event_title, @event_start_date, @multi_day_event, @event_end_date, @event_end_time, @event_start_time, @event_place, @event_capacity, @audio_visual)" SelectCommand="SELECT * FROM [event]" UpdateCommand="UPDATE [event] SET [event_title] = @event_title, [event_start_date] = @event_start_date, [multi_day_event] = @multi_day_event, [event_end_date] = @event_end_date, [event_end_time] = @event_end_time, [event_start_time] = @event_start_time, [event_place] = @event_place, [event_capacity] = @event_capacity, [audio_visual] = @audio_visual WHERE [event_id] = @event_id">
-         
+        <asp:SqlDataSource ID="eventsource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" DeleteCommand="DELETE FROM [event] WHERE [event_id] = @event_id" InsertCommand="INSERT INTO [event] ([event_title], [event_start_date], [multi_day_event], [event_end_date], [event_end_time], [event_start_time], [event_place], [event_capacity], [audio_visual], [user_id]) VALUES (@event_title, @event_start_date, @multi_day_event, @event_end_date, @event_end_time, @event_start_time, @event_place, @event_capacity, @audio_visual, @user_id)" SelectCommand="SELECT * FROM [event]" UpdateCommand="UPDATE [event] SET [event_title] = @event_title, [event_start_date] = @event_start_date, [multi_day_event] = @multi_day_event, [event_end_date] = @event_end_date, [event_end_time] = @event_end_time, [event_start_time] = @event_start_time, [event_place] = @event_place, [event_capacity] = @event_capacity, [audio_visual] = @audio_visual, [user_id] = @user_id WHERE [event_id] = @event_id">
             <DeleteParameters>
                 <asp:Parameter Name="event_id" Type="Int16" />
-
             </DeleteParameters>
-         
             <InsertParameters>
                 <asp:Parameter Name="event_title" Type="String" />
                 <asp:Parameter DbType="Date" Name="event_start_date" />
@@ -118,6 +115,7 @@
                 <asp:Parameter Name="event_place" Type="String" />
                 <asp:Parameter Name="event_capacity" Type="Int16" />
                 <asp:Parameter Name="audio_visual" Type="String" />
+                <asp:Parameter Name="user_id" Type="Int32" />
             </InsertParameters>
             <UpdateParameters>
                 <asp:Parameter Name="event_title" Type="String" />
@@ -129,6 +127,7 @@
                 <asp:Parameter Name="event_place" Type="String" />
                 <asp:Parameter Name="event_capacity" Type="Int16" />
                 <asp:Parameter Name="audio_visual" Type="String" />
+                <asp:Parameter Name="user_id" Type="Int32" />
                 <asp:Parameter Name="event_id" Type="Int16" />
             </UpdateParameters>
         </asp:SqlDataSource>

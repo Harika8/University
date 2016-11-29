@@ -20,6 +20,7 @@
             <p style="margin-left: 40px">
                 <span class="auto-style1"><strong>Service Allotment Form</strong></span></p>
             <p style="margin-left: 40px">
+                Room No :<asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
                 <br />
         Service Completion Time:&nbsp;&nbsp;
         <asp:DropDownList ID="DropDownList4" runat="server">

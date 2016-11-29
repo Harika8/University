@@ -55,9 +55,113 @@
         </nav><!--/nav-->
  
     </header>
-    <div>
-    
-    </div>
+        <div style="margin-left: 100px">
+        <asp:Panel ID="EmpSearchPanel" runat="server">
+            <br />
+            
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="EmpIDTxtBox" runat="server" Text="Employee ID: "></asp:Label>
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label2" runat="server" Text="Employee Name: "></asp:Label>
+            <asp:TextBox ID="EmpNameTxtBox" runat="server"></asp:TextBox>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="SearchBtn" runat="server" OnClick="Button1_Click" Text="Search " />
+            <br />
+            <br />
+            <br />
+        </asp:Panel>
+            <asp:Button ID="TimesheetBtn" runat="server" Text="Timesheet" Width="151px" />
+            <asp:Button ID="Payrollbtn" runat="server" Text="Payroll" Width="166px" />
+        <br />
+            <asp:Panel ID="WrknPayPanel" runat="server">
+                <br />
+               
+                &nbsp;<asp:Table ID="MonTimeshtTable" runat="server" Width="333px">
+                    <asp:TableRow runat="server">
+                        <asp:TableCell ID="Date" runat="server" BorderColor="#0066FF">Week</asp:TableCell>
+                        <asp:TableCell runat="server" BorderColor="#0066FF">Number of Hours</asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow runat="server">
+                        <asp:TableCell runat="server">Week 1</asp:TableCell>
+                        <asp:TableCell runat="server"></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow runat="server">
+                        <asp:TableCell runat="server">Week 2</asp:TableCell>
+                        <asp:TableCell runat="server"></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow runat="server">
+                        <asp:TableCell runat="server">Week 3</asp:TableCell>
+                        <asp:TableCell runat="server"></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow runat="server">
+                        <asp:TableCell runat="server">Week 4</asp:TableCell>
+                        <asp:TableCell runat="server"></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow runat="server">
+                        <asp:TableCell runat="server">Total Hours</asp:TableCell>
+                        <asp:TableCell runat="server"></asp:TableCell>
+                    </asp:TableRow>
+                </asp:Table>
+                <br />
+                <br />
+               
+                <asp:Table ID="BiwktimeshtTable" runat="server" Width="327px">
+                    <asp:TableRow runat="server">
+                        <asp:TableCell runat="server">Week </asp:TableCell>
+                        <asp:TableCell runat="server">Number of Hours</asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow runat="server">
+                        <asp:TableCell runat="server">Week 1</asp:TableCell>
+                        <asp:TableCell runat="server"></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow runat="server">
+                        <asp:TableCell runat="server">Week 2</asp:TableCell>
+                        <asp:TableCell runat="server"></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow runat="server">
+                        <asp:TableCell runat="server">Total Hours</asp:TableCell>
+                        <asp:TableCell runat="server"></asp:TableCell>
+                    </asp:TableRow>
+                </asp:Table>
+               
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="Submitbtn" runat="server" Text="Submit" />
+                &nbsp;&nbsp;
+                <asp:Button ID="Clearbtn" runat="server" Text="Clear" Width="62px" />
+                <br />
+            </asp:Panel>
+            <br />
+            <asp:Panel ID="PayRollPanel" runat="server">
+                Payroll :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                <br />
+                <br />
+                Gross Pay :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                <br />
+                <br />
+                Deducations:&nbsp;&nbsp;
+                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                <br />
+                <br />
+                Net pay :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                <br />
+                <br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="OkBtn" runat="server" Text="Okay" />
+                <br />
+                <br />
+            </asp:Panel>
+            <br />
+
+           
+            <br />
+            </div>
     </form>
+    
 </body>
 </html>

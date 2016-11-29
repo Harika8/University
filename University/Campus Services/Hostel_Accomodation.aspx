@@ -46,8 +46,8 @@
             <br />
             Type of accomodation : 
             .<asp:RadioButtonList ID="RadioButtonList1" runat="server">
-                <asp:ListItem Value="Single">Single bed room</asp:ListItem>
-                <asp:ListItem Value="Double">Double bed room</asp:ListItem>
+                <asp:ListItem Value="1">Single bed room</asp:ListItem>
+                <asp:ListItem Value="2">Double bed room</asp:ListItem>
             </asp:RadioButtonList>
             <br />
             Duration of stay :
@@ -71,7 +71,7 @@
         </p>
     
     </div>
-        <asp:SqlDataSource ID="roomsource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" DeleteCommand="DELETE FROM [room] WHERE [room_no] = @room_no" InsertCommand="INSERT INTO [room] ([room_no], [room_type], [availability], [status]) VALUES (@room_no, @room_type, @availability, @status)" SelectCommand="SELECT * FROM [room]" UpdateCommand="UPDATE [room] SET [room_type] = @room_type, [availability] = @availability, [status] = @status WHERE [room_no] = @room_no">
+        <asp:SqlDataSource ID="roomsource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" DeleteCommand="DELETE FROM [room] WHERE [room_no] = @room_no" InsertCommand="INSERT INTO [room] ([room_no], [room_type], [availability], [status], [user_id], [duration_stay]) VALUES (@room_no, @room_type, @availability, @status, @user_id, @duration_stay)" SelectCommand="SELECT * FROM [room]" UpdateCommand="UPDATE [room] SET [room_type] = @room_type, [availability] = @availability, [status] = @status, [user_id] = @user_id, [duration_stay] = @duration_stay WHERE [room_no] = @room_no">
             <DeleteParameters>
                 <asp:Parameter Name="room_no" Type="Int16" />
             </DeleteParameters>
@@ -80,11 +80,15 @@
                 <asp:Parameter Name="room_type" Type="String" />
                 <asp:Parameter DbType="Date" Name="availability" />
                 <asp:Parameter Name="status" Type="String" />
+                <asp:Parameter Name="user_id" Type="Int32" />
+                <asp:Parameter Name="duration_stay" Type="String" />
             </InsertParameters>
             <UpdateParameters>
                 <asp:Parameter Name="room_type" Type="String" />
                 <asp:Parameter DbType="Date" Name="availability" />
                 <asp:Parameter Name="status" Type="String" />
+                <asp:Parameter Name="user_id" Type="Int32" />
+                <asp:Parameter Name="duration_stay" Type="String" />
                 <asp:Parameter Name="room_no" Type="Int16" />
             </UpdateParameters>
         </asp:SqlDataSource>
