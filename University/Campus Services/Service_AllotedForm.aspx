@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Service_AllotedForm.aspx.cs" Inherits="University.Campus_Services.Service_AllotedForm" %>
 
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ServiceAllotedForm.aspx.cs" Inherits="University.Campus_Services.ServiceAllotedForm" %>
+
 
 <!DOCTYPE html>
 

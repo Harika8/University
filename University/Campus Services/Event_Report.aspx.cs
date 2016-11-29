@@ -13,10 +13,11 @@ namespace University.Campus_Services
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            eventSource2.SelectCommand = "Select * from event where event_start_date between" + TextBox1.Text + " and '"+TextBox2.Text+"' and event_place ='" + DropDownList1.SelectedValue+"'";
+            GridView1.Visible = true;
+            /*eventSource2.SelectCommand = "Select * from event where event_start_date between" + TextBox1.Text + " and '"+TextBox2.Text+"' and event_place ='" + DropDownList1.SelectedValue+"'";
             DataSourceSelectArguments data = new DataSourceSelectArguments();
             GridView view = new GridView();
-            view = (GridView)eventSource2.Select(data);
+            view = (GridView)eventSource2.Select(data);*/
         }
     }
 }
