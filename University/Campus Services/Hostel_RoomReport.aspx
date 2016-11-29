@@ -33,16 +33,11 @@
         <br />
         Room Number:&nbsp;&nbsp;
         <asp:DropDownList ID="DropDownList2" runat="server">
-            <asp:ListItem>100</asp:ListItem>
+            <asp:ListItem>select value</asp:ListItem>
             <asp:ListItem>101</asp:ListItem>
+            <asp:ListItem>102</asp:ListItem>
         </asp:DropDownList>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Room Status:&nbsp;
-        <asp:DropDownList ID="DropDownList1" runat="server">
-            <asp:ListItem>Vacant</asp:ListItem>
-            <asp:ListItem>Occupied</asp:ListItem>
-        </asp:DropDownList>
-&nbsp;&nbsp;&nbsp;
-        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -64,27 +59,22 @@
                 <asp:Parameter Name="original_allocation_room_no" Type="Int16" />
             </UpdateParameters>
         </asp:SqlDataSource>
-        <asp:SqlDataSource ID="roomSource2" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" DeleteCommand="DELETE FROM [room] WHERE [room_no] = @room_no" InsertCommand="INSERT INTO [room] ([room_no], [room_type], [availability], [status], [user_id], [duration_stay]) VALUES (@room_no, @room_type, @availability, @status, @user_id, @duration_stay)" SelectCommand="SELECT * FROM [room]" UpdateCommand="UPDATE [room] SET [room_type] = @room_type, [availability] = @availability, [status] = @status, [user_id] = @user_id, [duration_stay] = @duration_stay WHERE [room_no] = @room_no">
-            <DeleteParameters>
-                <asp:Parameter Name="room_no" Type="Int16" />
-            </DeleteParameters>
-            <InsertParameters>
-                <asp:Parameter Name="room_no" Type="Int16" />
-                <asp:Parameter Name="room_type" Type="String" />
-                <asp:Parameter DbType="Date" Name="availability" />
-                <asp:Parameter Name="status" Type="String" />
-                <asp:Parameter Name="user_id" Type="Int32" />
-                <asp:Parameter Name="duration_stay" Type="String" />
-            </InsertParameters>
-            <UpdateParameters>
-                <asp:Parameter Name="room_type" Type="String" />
-                <asp:Parameter DbType="Date" Name="availability" />
-                <asp:Parameter Name="status" Type="String" />
-                <asp:Parameter Name="user_id" Type="Int32" />
-                <asp:Parameter Name="duration_stay" Type="String" />
-                <asp:Parameter Name="room_no" Type="Int16" />
-            </UpdateParameters>
+        <asp:SqlDataSource ID="roomSource2" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" SelectCommand="Select * from room where availability between @availability1  and @availability2  and room_no=@room_no;">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="TextBox1" Name="availability1" PropertyName="Text" />
+                <asp:ControlParameter ControlID="TextBox2" Name="availability2" PropertyName="Text" />
+                <asp:ControlParameter ControlID="DropDownList2" Name="room_no" PropertyName="SelectedValue" />
+            </SelectParameters>
         </asp:SqlDataSource>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="room_no" DataSourceID="roomSource2">
+            <Columns>
+                <asp:BoundField DataField="room_no" HeaderText="room_no" ReadOnly="True" SortExpression="room_no" />
+                <asp:BoundField DataField="room_type" HeaderText="room_type" SortExpression="room_type" />
+                <asp:BoundField DataField="availability" HeaderText="availability" SortExpression="availability" />
+                <asp:BoundField DataField="user_id" HeaderText="user_id" SortExpression="user_id" />
+                <asp:BoundField DataField="duration_stay" HeaderText="duration_stay" SortExpression="duration_stay" />
+            </Columns>
+        </asp:GridView>
     </form>
 </body>
 </html>

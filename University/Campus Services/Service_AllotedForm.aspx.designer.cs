@@ -31,6 +31,15 @@ namespace University.Campus_Services {
         protected global::System.Web.UI.WebControls.TextBox TextBox6;
         
         /// <summary>
+        /// TextBox7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        
+        /// <summary>
         /// DropDownList4 control.
         /// </summary>
         /// <remarks>
@@ -67,12 +76,30 @@ namespace University.Campus_Services {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList5;
         
         /// <summary>
-        /// TextBox5 control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
+        /// servicesource1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource servicesource1;
+        
+        /// <summary>
+        /// roomsource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource roomsource;
     }
 }

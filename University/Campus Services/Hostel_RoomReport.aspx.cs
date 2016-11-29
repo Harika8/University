@@ -16,10 +16,7 @@ namespace University.Campus_Services
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            roomSource2.SelectCommand = "Select * from room where date between" + TextBox1.Text + " and '" + TextBox2.Text + "' and room_no ='" + DropDownList2.SelectedValue + "'";
-            DataSourceSelectArguments data = new DataSourceSelectArguments();
-            GridView view = new GridView();
-            view = (GridView)roomSource2.Select(data);
+            GridView1.Visible = true;
         }
     }
 }
