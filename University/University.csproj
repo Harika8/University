@@ -115,9 +115,12 @@
     <Content Include="HR\Payroll.aspx" />
     <Content Include="HR\Position.aspx" />
     <Content Include="HR\Timesheet.aspx" />
-    <Content Include="Registrar Office\Section Creation.aspx" />
-    <Content Include="Registrar Office\Section Registration.aspx" />
-    <Content Include="Registrar Office\Student Grade Form.aspx" />
+    <Content Include="Registrar Office\AdmissionDetails.aspx" />
+    <Content Include="Registrar Office\RegistrarHome.aspx" />
+    <Content Include="Registrar Office\SectionCreation.aspx" />
+    <Content Include="Registrar Office\SectionRegistration.aspx" />
+    <Content Include="Registrar Office\AdmissionStatus.aspx" />
+    <Content Include="Registrar Office\StudentGrade.aspx" />
     <Content Include="Registrar Office\UniversityApplication.aspx" />
     <Content Include="UserRegistration.aspx" />
     <Content Include="Web.config" />
@@ -359,26 +362,47 @@
       <DependentUpon>Timesheet.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registrar Office\Section Creation.aspx.cs">
-      <DependentUpon>Section Creation.aspx</DependentUpon>
+    <Compile Include="Registrar Office\AdmissionDetails.aspx.cs">
+      <DependentUpon>AdmissionDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Registrar Office\Section Creation.aspx.designer.cs">
-      <DependentUpon>Section Creation.aspx</DependentUpon>
+    <Compile Include="Registrar Office\AdmissionDetails.aspx.designer.cs">
+      <DependentUpon>AdmissionDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Registrar Office\Section Registration.aspx.cs">
-      <DependentUpon>Section Registration.aspx</DependentUpon>
+    <Compile Include="Registrar Office\RegistrarHome.aspx.cs">
+      <DependentUpon>RegistrarHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Registrar Office\Section Registration.aspx.designer.cs">
-      <DependentUpon>Section Registration.aspx</DependentUpon>
+    <Compile Include="Registrar Office\RegistrarHome.aspx.designer.cs">
+      <DependentUpon>RegistrarHome.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Registrar Office\Student Grade Form.aspx.cs">
-      <DependentUpon>Student Grade Form.aspx</DependentUpon>
+    <Compile Include="Registrar Office\SectionCreation.aspx.cs">
+      <DependentUpon>SectionCreation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Registrar Office\Student Grade Form.aspx.designer.cs">
-      <DependentUpon>Student Grade Form.aspx</DependentUpon>
+    <Compile Include="Registrar Office\SectionCreation.aspx.designer.cs">
+      <DependentUpon>SectionCreation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registrar Office\SectionRegistration.aspx.cs">
+      <DependentUpon>SectionRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrar Office\SectionRegistration.aspx.designer.cs">
+      <DependentUpon>SectionRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registrar Office\AdmissionStatus.aspx.cs">
+      <DependentUpon>AdmissionStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrar Office\AdmissionStatus.aspx.designer.cs">
+      <DependentUpon>AdmissionStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registrar Office\StudentGrade.aspx.cs">
+      <DependentUpon>StudentGrade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrar Office\StudentGrade.aspx.designer.cs">
+      <DependentUpon>StudentGrade.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registrar Office\UniversityApplication.aspx.cs">
       <DependentUpon>UniversityApplication.aspx</DependentUpon>
