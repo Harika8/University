@@ -40,12 +40,13 @@ namespace University.Registrar_Office
                 SqlSectionUpdate.UpdateParameters["original_section_id"].DefaultValue = SectionDropDown.SelectedValue;
                 SqlSectionUpdate.UpdateParameters["original_section_availabilty"].DefaultValue = Convert.ToString(currentavailability);
                 SqlSectionUpdate.Update();
-                RegistrationStatusTextBox.Text = "Registered" + dt.ToString();
+                RegistrationStatusLabel.Text = "Registered Successfully" + dt.ToString();
             }
 
             if (currentavailability <= 0)
             {
                 Sqlsectionregistration.InsertParameters["registration_status"].DefaultValue ="N";
+                RegistrationStatusLabel.Text = "No Availability";
             }
             Sqlsectionregistration.InsertParameters["registration_date"].DefaultValue = dt.ToString();
 

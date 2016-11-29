@@ -21,9 +21,8 @@
     <link rel="shortcut icon" href="../images/favicon.ico" />
 </head>
 <body>
-    <form id="RegistrarHome" runat="server">
-        
-<header id="header">
+    <form id="RegistrarHome" runat="server">     
+    <header id="headerRegistrar">
     <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
                 <div class="navbar-header">
@@ -49,7 +48,6 @@
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
- 
     </header>
     </form>
 </body>

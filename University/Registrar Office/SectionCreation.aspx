@@ -1,12 +1,17 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SectionCreation.aspx.cs" Inherits="University.Registrar_Office.Section_Creation" %>
 
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Section Creation</title>
-   </head>
-   
+    <title>Section Creation</title>  
+<style>
+.highlight
+{
+  color:red;
+  font-weight:bold;
+}
+</style>
+</head>
 <body>
      <iframe src="RegistrarHome.aspx" onload="this.width=screen.width;"> 
          <p>Your browser does not support iframes.</p>
@@ -15,7 +20,7 @@
     <div>
          <p style="width: 203px; margin-left: 600px">
         <b>Section Creation Form</b></p><br />
-        <asp:Label runat="server" id="msg" color="Red"></asp:Label>
+        <asp:Label runat="server" id="msg" CssClass="highlight"></asp:Label>
         <p>
             &nbsp;</p>
         <asp:Label ID="lblCourse" runat="server" Text="Course Name:"></asp:Label>
