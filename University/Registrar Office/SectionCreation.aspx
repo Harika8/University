@@ -24,7 +24,7 @@
         <p>
             &nbsp;</p>
         <asp:Label ID="lblCourse" runat="server" Text="Course Name:"></asp:Label>
-        <asp:DropDownList ID="selCourse" runat="server" DataSourceID="SqlCourse" DataTextField="course_name" DataValueField="course_id">
+        <asp:DropDownList ID="selCourse" runat="server" AutoPostBack="true" DataSourceID="SqlCourse" DataTextField="course_name" DataValueField="course_id">
         </asp:DropDownList>
         <asp:SqlDataSource ID="SqlCourse" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT [course_id], [course_name], [Effective_start_date], [course_description], [department_id], [course_level], [program_id] FROM [course]"></asp:SqlDataSource>
          <p>

@@ -49,22 +49,22 @@ namespace University.Registrar_Office {
         protected global::System.Web.UI.WebControls.RadioButtonList RegordropRadioButton;
         
         /// <summary>
-        /// SemRadioButton control.
+        /// SemDropdown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList SemRadioButton;
+        protected global::System.Web.UI.WebControls.DropDownList SemDropdown;
         
         /// <summary>
-        /// YearTextBox control.
+        /// SqlSem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox YearTextBox;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlSem;
         
         /// <summary>
         /// CourseDropdown control.

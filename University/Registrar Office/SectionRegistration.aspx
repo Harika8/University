@@ -14,6 +14,7 @@
 </style>
 </head>
 <body>
+
      <iframe src="RegistrarHome.aspx" onload="this.width=screen.width;"> 
          <p>Your browser does not support iframes.</p>
     </iframe>
@@ -25,42 +26,29 @@
         Student ID: <asp:TextBox ID="StudentId" runat="server" Width="196px"></asp:TextBox>
         <br />
 &nbsp;<asp:RadioButtonList ID="RegordropRadioButton" runat="server">
-            <asp:ListItem>Register</asp:ListItem>
-            <asp:ListItem>Drop</asp:ListItem>
+            <asp:ListItem Value="0">Register</asp:ListItem>
+            <asp:ListItem Value="1">Drop</asp:ListItem>
         </asp:RadioButtonList>
         <br />
-        &nbsp;Semester:<br />
-        <asp:RadioButtonList ID="SemRadioButton" runat="server">
-            <asp:ListItem>Spring</asp:ListItem>
-            <asp:ListItem>Summer</asp:ListItem>
-            <asp:ListItem>Maymester</asp:ListItem>
-            <asp:ListItem>Fall</asp:ListItem>
-        </asp:RadioButtonList>
+        &nbsp;Semester:
+        <asp:DropDownList ID="SemDropdown" runat="server" DataSourceID="SqlSem" DataTextField="semester" DataValueField="semester">
+            
+        </asp:DropDownList>
+        <asp:SqlDataSource ID="SqlSem" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [semester] FROM [section]"></asp:SqlDataSource>
         <br />
-        <br />
-        Year:&nbsp;
-        <asp:TextBox ID="YearTextBox" runat="server" Width="207px"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;
-        <br />
-        <br />
+        &nbsp;
         <br />
         <br />
         Courses:&nbsp;
-        <asp:DropDownList ID="CourseDropdown" runat="server" DataSourceID="SqlCourse" DataTextField="course_name" DataValueField="course_id">
-            <asp:ListItem>MIS</asp:ListItem>
-            <asp:ListItem>English</asp:ListItem>
-            <asp:ListItem>Psychology</asp:ListItem>
-            <asp:ListItem>Physics</asp:ListItem>
+        <asp:DropDownList ID="CourseDropdown" runat="server" AutoPostBack="true" OnSelectedIndexChanged="course_changed" DataSourceID="SqlCourse" DataTextField="course_name" DataValueField="course_id">
+            <asp:ListItem Text = "--Select Course--" Value = ""></asp:ListItem>
         </asp:DropDownList>
 &nbsp;
         <br />
         <br />
-        Section :&nbsp;
-        <asp:DropDownList ID="SectionDropDown" runat="server" DataSourceID="SqlSection" DataTextField="section_id" DataValueField="section_id">
-            <asp:ListItem>MIS</asp:ListItem>
-            <asp:ListItem>English</asp:ListItem>
-            <asp:ListItem>Psychology</asp:ListItem>
-            <asp:ListItem>Physics</asp:ListItem>
+        Section ID :&nbsp;
+        <asp:DropDownList ID="SectionDropDown" runat="server" DataSourceID="SqlSection">
+            <asp:ListItem Text = "--Select Section--" Value = ""></asp:ListItem>
         </asp:DropDownList>
 &nbsp;
         <br />
@@ -89,7 +77,8 @@
         </asp:SqlDataSource>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;
-        <asp:SqlDataSource ID="SqlCourse" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT [course_id], [course_name], [Effective_start_date], [course_description], [course_level], [department_id], [program_id] FROM [course]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlCourse" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT [course_id], [course_name] FROM [course]">
+        </asp:SqlDataSource>
         <br />
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -98,9 +87,9 @@
         <asp:Button ID="Button2" runat="server" Font-Size="Medium" Height="40px" Text="Clear Fields" Width="183px" />
         <br />
     </div>
-        <asp:SqlDataSource ID="SqlSection" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT [section_id], [course_id], [fuser_id], [section_availabilty], [semester], [credits] FROM [section] WHERE ([course_id] = @course_id)">
+        <asp:SqlDataSource ID="SqlSection" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT s.section_id,s.course_id FROM section as s,course as c WHERE (s.course_id = @course_id) and s.course_id = c.course_id">
             <SelectParameters>
-                <asp:ControlParameter ControlID="CourseDropdown" Name="course_id" PropertyName="SelectedValue" Type="Int16" />
+                <asp:ControlParameter ControlID="CourseDropdown" Name="course_id" PropertyName="SelectedValue" Type="Int16" DefaultValue="6" />
             </SelectParameters>
         </asp:SqlDataSource>
         <br />
@@ -122,7 +111,7 @@
         </asp:SqlDataSource>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Registration Status:&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Label ID="RegistrationStatusLabel" runat="server" Text="Label" CssClass="highlight"></asp:Label>
+        <asp:Label ID="RegistrationStatusLabel" runat="server" CssClass="highlight"></asp:Label>
         </form>
 </body>
 </html>
