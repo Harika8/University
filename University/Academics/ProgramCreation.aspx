@@ -57,32 +57,32 @@
         <p style="width: 203px; margin-left: 600px">
         <b>Program Creation Form</b></p>
           <br />
-          <asp:GridView ID="ProgramTBLGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="program_id" DataSourceID="ProgramTBLDataSource" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
+          <asp:GridView ID="ProgramTBLGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="program_id" DataSourceID="ProgramTBLDataSource" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" AllowPaging="True" PageSize="5">
               <Columns>
                   <asp:BoundField DataField="program_id" HeaderText="program_id" ReadOnly="True" SortExpression="program_id" />
                   <asp:BoundField DataField="program_name" HeaderText="program_name" SortExpression="program_name" />
                   <asp:BoundField DataField="department_id" HeaderText="department_id" SortExpression="department_id" />
                   <asp:BoundField DataField="course_level" HeaderText="course_level" SortExpression="course_level" />
               </Columns>
-              <FooterStyle BackColor="White" ForeColor="#000066" />
-              <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
-              <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
-              <RowStyle ForeColor="#000066" />
-              <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
-              <SortedAscendingCellStyle BackColor="#F1F1F1" />
-              <SortedAscendingHeaderStyle BackColor="#007DBB" />
-              <SortedDescendingCellStyle BackColor="#CAC9C9" />
-              <SortedDescendingHeaderStyle BackColor="#00547E" />
+              <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+              <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+              <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+              <RowStyle ForeColor="#330099" BackColor="White" />
+              <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+              <SortedAscendingCellStyle BackColor="#FEFCEB" />
+              <SortedAscendingHeaderStyle BackColor="#AF0101" />
+              <SortedDescendingCellStyle BackColor="#F6F0C0" />
+              <SortedDescendingHeaderStyle BackColor="#7E0000" />
           </asp:GridView>
           <asp:SqlDataSource ID="ProgramTBLDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [program]"></asp:SqlDataSource>
           <hr />
           <br />
-        <asp:Label ID="DeptName" runat="server" Text="Department ID:"></asp:Label>
+        <asp:Label ID="DeptIDLbl" runat="server" Text="Department ID:"></asp:Label>
         <asp:DropDownList ID="DepartmentIDDDList" runat="server" DataSourceID="UniversityDatabase" DataTextField="department_id" DataValueField="department_id">
         </asp:DropDownList>
         <asp:SqlDataSource ID="UniversityDatabase" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT [department_id] FROM [department]"></asp:SqlDataSource>
         <p>
-        <asp:Label ID="CourseLevel" runat="server" Text="Course Level:"></asp:Label>
+        <asp:Label ID="CourseLevelLbl" runat="server" Text="Course Level:"></asp:Label>
         <asp:DropDownList ID="CourseLevelDDList" runat="server">
                 <asp:ListItem>Grad</asp:ListItem>
                 <asp:ListItem>PhD</asp:ListItem>
@@ -93,12 +93,12 @@
               &nbsp;</p>
         <p>
 
-            <asp:Label ID="ProgramName" runat="server" Text="Program Name:"></asp:Label>
-            <asp:TextBox ID="ProgramNameTB" runat="server" OnTextChanged="ProgramNameTB_TextChanged"></asp:TextBox>
+            <asp:Label ID="ProgramNameLbl" runat="server" Text="Program Name:"></asp:Label>
+            <asp:TextBox ID="ProgramNameTB" runat="server"></asp:TextBox>
         </p>
         <p>
-            <asp:Label ID="ProgramCode" runat="server" Text="Program Code:"></asp:Label>
-            <asp:TextBox ID="ProgramCodeTB" runat="server" Width="125px" OnTextChanged="ProgramCodeTB_TextChanged"></asp:TextBox>
+            <asp:Label ID="ProgramCodeLbl" runat="server" Text="Program Code:"></asp:Label>
+            <asp:TextBox ID="ProgramCodeTB" runat="server" Width="125px" ></asp:TextBox>
         </p>
           <p>
               &nbsp;</p>
