@@ -74,8 +74,7 @@ namespace University.Campus_Services
             TextBox3.Text = view[0].Row["last_name"].ToString();
             TextBox5.Text = view[0].Row["contact_no"].ToString();
             TextBox6.Text = view[0].Row["email_id"].ToString();
-
-
+            TextBox25.Text = view[0].Row["user_id"].ToString();
         }
     }
     }

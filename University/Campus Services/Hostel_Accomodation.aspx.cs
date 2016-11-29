@@ -50,6 +50,7 @@ namespace University.Campus_Services
             DataSourceSelectArguments data = new DataSourceSelectArguments();
             DataView view = new DataView();
             view = (DataView)roomsource.Select(data);
+            TextBox11.Text = view[0].Row["user_id"].ToString();
             TextBox12.Text = view[0].Row["first_name"].ToString();
             TextBox3.Text = view[0].Row["last_name"].ToString();
             TextBox5.Text = view[0].Row["contact_no"].ToString();
