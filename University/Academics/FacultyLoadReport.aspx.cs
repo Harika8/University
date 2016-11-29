@@ -13,5 +13,10 @@ namespace University.Academics
         {
 
         }
+
+        protected void GenReportButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

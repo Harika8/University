@@ -94,11 +94,11 @@
         <p>
 
             <asp:Label ID="ProgramName" runat="server" Text="Program Name:"></asp:Label>
-            <asp:TextBox ID="ProgramNameTB" runat="server"></asp:TextBox>
+            <asp:TextBox ID="ProgramNameTB" runat="server" OnTextChanged="ProgramNameTB_TextChanged"></asp:TextBox>
         </p>
         <p>
             <asp:Label ID="ProgramCode" runat="server" Text="Program Code:"></asp:Label>
-            <asp:TextBox ID="ProgramCodeTB" runat="server" Width="125px"></asp:TextBox>
+            <asp:TextBox ID="ProgramCodeTB" runat="server" Width="125px" OnTextChanged="ProgramCodeTB_TextChanged"></asp:TextBox>
         </p>
           <p>
               &nbsp;</p>

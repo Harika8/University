@@ -78,7 +78,6 @@
         </asp:GridView>
         <asp:SqlDataSource ID="CourseTBLDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [course]"></asp:SqlDataSource>
         <hr />
-        <br />
     
         <asp:Label ID="DepartmentIDLbl" runat="server" Text="Department ID:"></asp:Label>
         <asp:DropDownList ID="DepartmentIDDDList" runat="server" DataSourceID="DepartmentIDList" DataTextField="department_id" DataValueField="department_id">
@@ -94,7 +93,7 @@
                 <asp:ListItem>UnderGrad</asp:ListItem>
             </asp:DropDownList>
             <asp:Label ID="ProgramIDLbl" runat="server" Text="Program ID:"></asp:Label>
-            <asp:DropDownList ID="ProgramIDDDL" runat="server" DataSourceID="ProgramIDList_DeptID_CRSLVL" DataTextField="program_id" DataValueField="program_id">
+            <asp:DropDownList ID="ProgramIDDDL" runat="server" DataSourceID="ProgramIDList_DeptID_CRSLVL" DataTextField="program_id" DataValueField="program_id" Height="16px" Width="180px" AutoPostBack="True">
             </asp:DropDownList>
             <asp:SqlDataSource ID="ProgramIDList_DeptID_CRSLVL" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [program_id] FROM [program] WHERE (([department_id] = @department_id) AND ([course_level] = @course_level))">
                 <SelectParameters>
@@ -107,7 +106,7 @@
             &nbsp;</p>
         <p>
             <asp:Label ID="CourseNameLbl" runat="server" Text="Course Name:"></asp:Label>
-            <asp:TextBox ID="CourseNameTB" runat="server"></asp:TextBox>
+            <asp:TextBox ID="CourseNameTB" runat="server" Width="127px"></asp:TextBox>
             <asp:Label ID="CourseNumberLbl" runat="server" Text="Course Number:"></asp:Label>
             <asp:TextBox ID="CourseNumberTB" runat="server" Width="125px" Enabled="False"></asp:TextBox>
         </p>
@@ -125,6 +124,7 @@
             &nbsp;</p>
         <p style="margin-left: 200px">
             <asp:Button ID="CourseSubmitButton" runat="server" Text="Submit" OnClick="CourseSubmitButton_Click" />
+            &nbsp;&nbsp;&nbsp;
             <asp:Button ID="CourseClearButton" runat="server" Text="Clear" OnClick="CourseClearButton_Click" />
         </p>
 

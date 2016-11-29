@@ -78,9 +78,14 @@
         <br />
     
         <asp:Label ID="FacultyIDLbl" runat="server" Text="Faculty ID:"></asp:Label>
-        <asp:DropDownList ID="FacultyIDDDL" runat="server" DataSourceID="FacultyIDListEMPLOYEE" DataTextField="EUSER_ID" DataValueField="EUSER_ID" >
+        <asp:DropDownList ID="FacultyIDDDL" runat="server" DataSourceID="FacultyIDListEMPLOYEE" DataTextField="EUSER_ID" DataValueField="EUSER_ID" OnSelectedIndexChanged="FacultyIDDDL_SelectedIndexChanged" >
         </asp:DropDownList>
-        <asp:SqlDataSource ID="FacultyIDListEMPLOYEE" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="select EUSER_ID from EMPLOYEE where employement_status = 'Active' and employee_type = 'Teaching';"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="FacultyIDListEMPLOYEE" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [euser_id] FROM [employee] WHERE (([employee_type] = @employee_type) AND ([employement_status] = @employement_status))">
+            <SelectParameters>
+                <asp:Parameter DefaultValue="Teaching" Name="employee_type" Type="String" />
+                <asp:Parameter DefaultValue="Activ" Name="employement_status" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
         &nbsp;&nbsp;&nbsp; Faculty Name:
         <asp:TextBox ID="FacultyNameTB" runat="server" Enabled="False" Width="125px"></asp:TextBox>
 &nbsp;<br />

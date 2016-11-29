@@ -62,7 +62,7 @@
       </div>
         <asp:GridView ID="ProgramGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="program_id" DataSourceID="ProgramDataSource">
             <Columns>
-                <asp:CommandField ShowDeleteButton="True" />
+                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                 <asp:BoundField DataField="program_id" HeaderText="program_id" ReadOnly="True" SortExpression="program_id" />
                 <asp:BoundField DataField="program_name" HeaderText="program_name" SortExpression="program_name" />
                 <asp:BoundField DataField="department_id" HeaderText="department_id" SortExpression="department_id" />
