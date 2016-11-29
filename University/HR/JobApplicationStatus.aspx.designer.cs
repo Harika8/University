@@ -10,7 +10,7 @@
 namespace University.HR {
     
     
-    public partial class JobSearch {
+    public partial class JobApplicationStatus {
         
         /// <summary>
         /// form1 control.
@@ -22,39 +22,21 @@ namespace University.HR {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// PanelResults control.
+        /// gvJobApplications control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelResults;
+        protected global::System.Web.UI.WebControls.GridView gvJobApplications;
         
         /// <summary>
-        /// gvSearchResults control.
+        /// SqlJobApplications control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvSearchResults;
-        
-        /// <summary>
-        /// SqlSearchResults control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlSearchResults;
-        
-        /// <summary>
-        /// SqlDepartment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDepartment;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlJobApplications;
     }
 }

@@ -7,180 +7,144 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace University.Academics {
+namespace University.Registrar_Office {
     
     
-    public partial class FacultyCreation {
+    public partial class Course_Registration {
         
         /// <summary>
-        /// FacultyCreationForm control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm FacultyCreationForm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// FacultyTBLGridView control.
+        /// Label8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView FacultyTBLGridView;
+        protected global::System.Web.UI.WebControls.Label Label8;
         
         /// <summary>
-        /// FacultyTBLDataSource control.
+        /// StudentId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource FacultyTBLDataSource;
+        protected global::System.Web.UI.WebControls.TextBox StudentId;
         
         /// <summary>
-        /// DeptIDLbl control.
+        /// RegordropRadioButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeptIDLbl;
+        protected global::System.Web.UI.WebControls.RadioButtonList RegordropRadioButton;
         
         /// <summary>
-        /// DeptIDDDL control.
+        /// SemDropdown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DeptIDDDL;
+        protected global::System.Web.UI.WebControls.DropDownList SemDropdown;
         
         /// <summary>
-        /// DeptIDs_DataSource control.
+        /// SqlSem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource DeptIDs_DataSource;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlSem;
         
         /// <summary>
-        /// FacultyIDLbl control.
+        /// CourseDropdown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label FacultyIDLbl;
+        protected global::System.Web.UI.WebControls.DropDownList CourseDropdown;
         
         /// <summary>
-        /// FacultyIDDDL control.
+        /// SectionDropDown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList FacultyIDDDL;
+        protected global::System.Web.UI.WebControls.DropDownList SectionDropDown;
         
         /// <summary>
-        /// FacultyIDListEMPLOYEE control.
+        /// Sqlsectionregistration control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource FacultyIDListEMPLOYEE;
+        protected global::System.Web.UI.WebControls.SqlDataSource Sqlsectionregistration;
         
         /// <summary>
-        /// FacultyNameTB control.
+        /// SqlCourse control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FacultyNameTB;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlCourse;
         
         /// <summary>
-        /// FacultySpecializationLbl control.
+        /// ApplicationButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label FacultySpecializationLbl;
+        protected global::System.Web.UI.WebControls.Button ApplicationButton;
         
         /// <summary>
-        /// FacultySpecializationTB control.
+        /// Button2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FacultySpecializationTB;
+        protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// FacultyEducationLbl control.
+        /// SqlSection control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label FacultyEducationLbl;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlSection;
         
         /// <summary>
-        /// FacultyEducationTB control.
+        /// SqlSectionUpdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FacultyEducationTB;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlSectionUpdate;
         
         /// <summary>
-        /// ContractHoursLbl control.
+        /// RegistrationStatusLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ContractHoursLbl;
-        
-        /// <summary>
-        /// ContractHoursTB control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ContractHoursTB;
-        
-        /// <summary>
-        /// FacultyCreateSubmitButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button FacultyCreateSubmitButton;
-        
-        /// <summary>
-        /// FacultyCreateClearButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button FacultyCreateClearButton;
-        
-        /// <summary>
-        /// FacultyInsertDataSource control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource FacultyInsertDataSource;
+        protected global::System.Web.UI.WebControls.Label RegistrationStatusLabel;
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Payroll.aspx.cs" Inherits="University.HR.Payroll" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="JobApplicationStatus.aspx.cs" Inherits="University.HR.JobApplicationStatus" %>
 
 <!DOCTYPE html>
 
@@ -6,9 +6,9 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Pay Roll" />
+    <meta name="description" content="Employee Joining" />
     <meta name="author" content="Harika" />
-    <title>Pay Roll</title>
+    <title>Employee Joining Formalities</title>
     <%-- ------ css ------ --%>
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -45,18 +45,29 @@
                         <li><a href="JobSearch.aspx">Job Search</a></li>
                         <li><a href="JobApplication.aspx">Job Application</a></li>                        
                         <li><a href="JobNotification.aspx">Create Vacancy</a></li> 
-                        <li class="active"><a href="Payroll.aspx">Check Payroll</a></li>
                         <li><a href="Position.aspx">Create Position</a></li> 
-                        <li><a href="Timesheet.aspx">Update Timesheet</a></li>
-                        <li><a href="EmployeeJoining.aspx">Employee</a></li>                      
+                        <li class="active"><a href="EmployeeJoining.aspx">Employee Joining</a></li>
+                        <li><a href="EmployeeScreen.aspx">Employee</a></li>                 
                     </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
  
     </header>
-    <div>
-    
+    <div style="margin-top:75px;" align="center">
+        <asp:GridView ID="gvJobApplications" runat="server" AutoGenerateColumns="False" DataKeyNames="job_application_id" DataSourceID="SqlJobApplications">
+            <Columns>
+                <asp:BoundField DataField="job_application_id" HeaderText="job_application_id" InsertVisible="False" ReadOnly="True" SortExpression="job_application_id" />
+                <asp:BoundField DataField="juser_id" HeaderText="juser_id" InsertVisible="False" ReadOnly="True" SortExpression="juser_id" />
+                <asp:BoundField DataField="vacancy_id" HeaderText="vacancy_id" InsertVisible="False" ReadOnly="True" SortExpression="vacancy_id" />
+                <asp:BoundField DataField="first_name" HeaderText="first_name" ReadOnly="True" SortExpression="first_name" />
+                <asp:BoundField DataField="Job_Title" HeaderText="Job_Title" ReadOnly="True" SortExpression="Job_Title" />
+                <asp:BoundField DataField="Department" HeaderText="Department" ReadOnly="True" SortExpression="Department" />
+                <asp:BoundField DataField="Status_of_Application" HeaderText="Status_of_Application" SortExpression="Status_of_Application" />
+                <asp:CommandField ShowEditButton="True" />
+            </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlJobApplications" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" SelectCommand="Select job_application_id, juser_id, job_application.vacancy_id,  first_name, position.designation as Job_Title, department.department_name as Department, job_application.status as Status_of_Application from job_application, user_info, vacancy, position, department where job_application.vacancy_id = vacancy.vacancy_id and vacancy.position_id=position.position_id and position.department_id = department.department_id and juser_id  = user_id;"></asp:SqlDataSource>
     </div>
     </form>
 </body>

@@ -1,24 +1,35 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Section Creation.aspx.cs" Inherits="University.Registrar_Office.Section_Creation" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SectionCreation.aspx.cs" Inherits="University.Registrar_Office.Section_Creation" %>
 
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Section Creation</title>  
+<style>
+.highlight
+{
+  color:red;
+  font-weight:bold;
+}
+</style>
 </head>
 <body>
+     <iframe src="RegistrarHome.aspx" onload="this.width=screen.width;"> 
+         <p>Your browser does not support iframes.</p>
+    </iframe>
     <form id="form1" runat="server">
     <div>
          <p style="width: 203px; margin-left: 600px">
         <b>Section Creation Form</b></p><br />
-    
+        <asp:Label runat="server" id="msg" CssClass="highlight"></asp:Label>
+        <p>
+            &nbsp;</p>
         <asp:Label ID="lblCourse" runat="server" Text="Course Name:"></asp:Label>
-        <asp:DropDownList ID="selCourse" runat="server" DataSourceID="SqlCourse" DataTextField="course_name" DataValueField="course_id">
+        <asp:DropDownList ID="selCourse" runat="server" AutoPostBack="true" DataSourceID="SqlCourse" DataTextField="course_name" DataValueField="course_id">
         </asp:DropDownList>
         <asp:SqlDataSource ID="SqlCourse" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT [course_id], [course_name], [Effective_start_date], [course_description], [department_id], [course_level], [program_id] FROM [course]"></asp:SqlDataSource>
          <p>
             <asp:Label ID="lblFaculty5" runat="server" Text="Faculty ID:"></asp:Label>
-        <asp:DropDownList ID="selFaculty" runat="server" DataSourceID="SqlFaculty" DataTextField="fuser_id" DataValueField="fuser_id">
+        <asp:DropDownList ID="selFaculty" runat="server" DataSourceID="SqlFaculty" DataTextField="Faculty_Name" DataValueField="fuser_id">
         </asp:DropDownList>
          </p>
         <p>
@@ -43,7 +54,7 @@
             &nbsp;</p>
         <p style="margin-left: 200px">
             <asp:Button ID="SectionSubmitButton" runat="server" Text="Submit" OnClick="SectionSubmitButton_Click" />
-            <asp:Button ID="SectionClearButton" runat="server" Text="Clear" />
+            <asp:Button ID="SectionClearButton" runat="server" Text="Clear" OnClick="SectionClearButton_Click" />
         </p>
     
     
@@ -79,9 +90,10 @@
                 <asp:Parameter Name="original_credits" Type="Int16" />
             </UpdateParameters>
         </asp:SqlDataSource>
-        <asp:SqlDataSource ID="SqlFaculty" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT [fuser_id], [course_id] FROM [faculty_course] WHERE ([course_id] = @course_id)">
+        <asp:SqlDataSource ID="SqlFaculty" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT info.first_name as 'Faculty_Name',fc.fuser_id FROM faculty_course as fc,user_info as info WHERE (fc.course_id = @course_id) and fc.fuser_id = info.user_id
+">
             <SelectParameters>
-                <asp:ControlParameter ControlID="selCourse" Name="course_id" PropertyName="SelectedValue" Type="Int16" />
+                <asp:ControlParameter ControlID="selCourse" Name="course_id" PropertyName="SelectedValue" Type="Int16" DefaultValue="1" />
             </SelectParameters>
         </asp:SqlDataSource>
     </form>

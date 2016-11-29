@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace University.Registrar_Office
 {
-    public partial class Student_Grade_Form : System.Web.UI.Page
+    public partial class RegistrarHome : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

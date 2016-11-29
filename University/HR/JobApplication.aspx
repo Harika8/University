@@ -44,19 +44,62 @@
                         <li><a href="JobSearch.aspx">Job Search</a></li>
                         <li class="active"><a href="JobApplication.aspx">Job Application</a></li>                        
                         <li><a href="JobNotification.aspx">Create Vacancy</a></li> 
-                        <li><a href="Payroll.aspx">Check Payroll</a></li>
                         <li><a href="Position.aspx">Create Position</a></li> 
-                        <li><a href="Timesheet.aspx">Update Timesheet</a></li>
-                        <li><a href="EmployeeJoining.aspx">Employee</a></li>                      
+                        <li><a href="EmployeeJoining.aspx">Employee Joining</a></li>
+                        <li><a href="EmployeeScreen.aspx">Employee</a></li>                       
                     </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
  
     </header>
-    <div>
-    
-    </div>
+      <div style="margin-top:75px;" align="center">
+         Job Application<br />
+
+         <br /><br />
+            <asp:Button ID="btnNewUser" runat="server" Width="150" Text="New User" OnClick="btnNewUser_Click" />
+          <br /><br />
+        </div>
+        <div style="margin-left: 100px">
+
+         
+         <asp:Label ID="lblUserid" Width="150" runat="server" Text="User ID :"></asp:Label>       
+         <asp:TextBox ID="txtUserid" runat="server" Width="150px"></asp:TextBox>        
+         <br /><br />
+          
+        </div>
+         <div style="margin-top:50px;" align="center">
+        <asp:Button ID="btnsubmit" runat="server"  Text="Submit" OnClick="btnsubmit_Click" />&nbsp;&nbsp;
+            <br />
+        </div> 
+
+        <asp:SqlDataSource ID="Sqljobapplication" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" DeleteCommand="DELETE FROM [job_application] WHERE [job_application_id] = @original_job_application_id AND [juser_id] = @original_juser_id AND [vacancy_id] = @original_vacancy_id AND [date_applied] = @original_date_applied AND (([status] = @original_status) OR ([status] IS NULL AND @original_status IS NULL))" InsertCommand="INSERT INTO [job_application] ([juser_id], [vacancy_id], [date_applied], [status]) VALUES (@juser_id, @vacancy_id, @date_applied, @status)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [job_application]" UpdateCommand="UPDATE [job_application] SET [juser_id] = @juser_id, [vacancy_id] = @vacancy_id, [date_applied] = @date_applied, [status] = @status WHERE [job_application_id] = @original_job_application_id AND [juser_id] = @original_juser_id AND [vacancy_id] = @original_vacancy_id AND [date_applied] = @original_date_applied AND (([status] = @original_status) OR ([status] IS NULL AND @original_status IS NULL))">
+            <DeleteParameters>
+                <asp:Parameter Name="original_job_application_id" Type="Int32" />
+                <asp:Parameter Name="original_juser_id" Type="Int32" />
+                <asp:Parameter Name="original_vacancy_id" Type="Int16" />
+                <asp:Parameter DbType="Date" Name="original_date_applied" />
+                <asp:Parameter Name="original_status" Type="String" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="juser_id" Type="Int32" />
+                <asp:Parameter Name="vacancy_id" Type="Int16" />
+                <asp:Parameter DbType="Date" Name="date_applied" />
+                <asp:Parameter Name="status" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="juser_id" Type="Int32" />
+                <asp:Parameter Name="vacancy_id" Type="Int16" />
+                <asp:Parameter DbType="Date" Name="date_applied" />
+                <asp:Parameter Name="status" Type="String" />
+                <asp:Parameter Name="original_job_application_id" Type="Int32" />
+                <asp:Parameter Name="original_juser_id" Type="Int32" />
+                <asp:Parameter Name="original_vacancy_id" Type="Int16" />
+                <asp:Parameter DbType="Date" Name="original_date_applied" />
+                <asp:Parameter Name="original_status" Type="String" />
+            </UpdateParameters>
+        </asp:SqlDataSource> 
+
     </form>
 </body>
 </html>

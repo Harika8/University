@@ -63,71 +63,98 @@
             <asp:Label ID="EmpIDTxtBox" runat="server" Text="Employee ID: "></asp:Label>
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="Label2" runat="server" Text="Employee Name: "></asp:Label>
+            <asp:Label ID="empnamelabel" runat="server" Text="Employee Name: "></asp:Label>
             <asp:TextBox ID="EmpNameTxtBox" runat="server"></asp:TextBox>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="SearchBtn" runat="server" OnClick="Button1_Click" Text="Search " />
+            <asp:Button ID="SearchBtn" runat="server" OnClick="SearchBtn_Click" Text="Search " />
             <br />
+            <asp:SqlDataSource ID="SqlData" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString2 %>" SelectCommand="SELECT * FROM [user_info]"></asp:SqlDataSource>
+            
             <br />
             <br />
         </asp:Panel>
-            <asp:Button ID="TimesheetBtn" runat="server" Text="Timesheet" Width="151px" />
-            <asp:Button ID="Payrollbtn" runat="server" Text="Payroll" Width="166px" />
+            <asp:Button ID="TimesheetBtn" runat="server" Text="Timesheet" Width="151px" OnClick="TimesheetBtn_Click"/>
+               
+            <asp:Button ID="Payrollbtn" runat="server" Text="Payroll" Width="166px" OnClick="Payrollbtn_Click" />
         <br />
             <asp:Panel ID="WrknPayPanel" runat="server">
                 <br />
                
-                &nbsp;<asp:Table ID="MonTimeshtTable" runat="server" Width="333px">
+                &nbsp;<asp:Label ID="Label3" runat="server"></asp:Label>
+                <asp:Table ID="MonTimeshtTable" runat="server" Width="384px">
                     <asp:TableRow runat="server">
                         <asp:TableCell ID="Date" runat="server" BorderColor="#0066FF">Week</asp:TableCell>
                         <asp:TableCell runat="server" BorderColor="#0066FF">Number of Hours</asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow runat="server">
                         <asp:TableCell runat="server">Week 1</asp:TableCell>
-                        <asp:TableCell runat="server"></asp:TableCell>
+                        <asp:TableCell runat="server"><asp:TextBox ID="week1txtbox" runat="server"></asp:TextBox>
+</asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow runat="server">
                         <asp:TableCell runat="server">Week 2</asp:TableCell>
-                        <asp:TableCell runat="server"></asp:TableCell>
+                        
+                            <asp:TableCell runat="server"><asp:TextBox ID="week2txtbox" runat="server"></asp:TextBox>
+</asp:TableCell>
+                      
                     </asp:TableRow>
                     <asp:TableRow runat="server">
                         <asp:TableCell runat="server">Week 3</asp:TableCell>
-                        <asp:TableCell runat="server"></asp:TableCell>
+                        <asp:TableCell runat="server"><asp:TextBox ID="week3txtbox" runat="server"></asp:TextBox>
+</asp:TableCell>
+                        
+
                     </asp:TableRow>
                     <asp:TableRow runat="server">
                         <asp:TableCell runat="server">Week 4</asp:TableCell>
-                        <asp:TableCell runat="server"></asp:TableCell>
+                        <asp:TableCell runat="server"><asp:TextBox ID="week4txtbox" runat="server"></asp:TextBox>
+</asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow runat="server">
                         <asp:TableCell runat="server">Total Hours</asp:TableCell>
-                        <asp:TableCell runat="server"></asp:TableCell>
+                        <asp:TableCell runat="server">
+                            <asp:Label ID="montotalhrs" runat="server" Text=""></asp:Label>
+                        
+</asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>
                 <br />
                 <br />
                
-                <asp:Table ID="BiwktimeshtTable" runat="server" Width="327px">
+                <asp:Table ID="BiwktimeshtTable" runat="server" Width="390px">
                     <asp:TableRow runat="server">
-                        <asp:TableCell runat="server">Week </asp:TableCell>
-                        <asp:TableCell runat="server">Number of Hours</asp:TableCell>
+                        <asp:TableCell ID="TableCell1" runat="server" BorderColor="#0066FF">Week</asp:TableCell>
+                        <asp:TableCell runat="server" BorderColor="#0066FF">Number of Hours</asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow runat="server">
                         <asp:TableCell runat="server">Week 1</asp:TableCell>
-                        <asp:TableCell runat="server"></asp:TableCell>
+
+                        
+                        <asp:TableCell runat="server"> <asp:TextBox ID="week1txtboxbw" runat="server"></asp:TextBox>
+</asp:TableCell>
+
                     </asp:TableRow>
                     <asp:TableRow runat="server">
                         <asp:TableCell runat="server">Week 2</asp:TableCell>
-                        <asp:TableCell runat="server"></asp:TableCell>
+
+                        <asp:TableCell runat="server">
+                            <asp:TextBox ID="weeek2textboxbw" runat="server"></asp:TextBox>
+                            
+</asp:TableCell>
+
                     </asp:TableRow>
+                    
                     <asp:TableRow runat="server">
                         <asp:TableCell runat="server">Total Hours</asp:TableCell>
-                        <asp:TableCell runat="server"></asp:TableCell>
+                        <asp:TableCell runat="server">
+                        <asp:Label ID="totalbwhrs" runat="server" Text=""></asp:Label>        
+</asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>
                
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Submitbtn" runat="server" Text="Submit" />
+                <asp:Button ID="Submitbtn" runat="server" Text="Submit" OnClick="Submitbtn_Click" />
                 &nbsp;&nbsp;
                 <asp:Button ID="Clearbtn" runat="server" Text="Clear" Width="62px" />
                 <br />
@@ -135,19 +162,22 @@
             <br />
             <asp:Panel ID="PayRollPanel" runat="server">
                 Payroll :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                <asp:Label ID="payrolllabel" runat="server" Text=""></asp:Label>
                 <br />
                 <br />
                 Gross Pay :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                <asp:Label ID="grosspaylabel" runat="server" Text=""></asp:Label>
+                
                 <br />
                 <br />
                 Deducations:&nbsp;&nbsp;
-                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                <asp:Label ID="deducationsLabel" runat="server" Text=""></asp:Label>
+                
                 <br />
                 <br />
                 Net pay :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                <asp:Label ID="netpaylabel" runat="server" Text=""></asp:Label>
+                
                 <br />
                 <br />
                 <br />
@@ -156,6 +186,60 @@
                 <br />
                 <br />
             </asp:Panel>
+            <asp:SqlDataSource ID="SqlTimesheet" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString2 %>" DeleteCommand="DELETE FROM [timesheet] WHERE [timesheet_id] = @original_timesheet_id AND [euser_id] = @original_euser_id AND [start_date] = @original_start_date AND [end_date] = @original_end_date AND [total_hours] = @original_total_hours" InsertCommand="INSERT INTO [timesheet] ([euser_id], [start_date], [end_date], [total_hours]) VALUES (@euser_id, @start_date, @end_date, @total_hours)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [timesheet]" UpdateCommand="UPDATE [timesheet] SET [euser_id] = @euser_id, [start_date] = @start_date, [end_date] = @end_date, [total_hours] = @total_hours WHERE [timesheet_id] = @original_timesheet_id AND [euser_id] = @original_euser_id AND [start_date] = @original_start_date AND [end_date] = @original_end_date AND [total_hours] = @original_total_hours">
+                <DeleteParameters>
+                    <asp:Parameter Name="original_timesheet_id" Type="Int16" />
+                    <asp:Parameter Name="original_euser_id" Type="Int32" />
+                    <asp:Parameter DbType="Date" Name="original_start_date" />
+                    <asp:Parameter DbType="Date" Name="original_end_date" />
+                    <asp:Parameter Name="original_total_hours" Type="Decimal" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="euser_id" Type="Int32" />
+                    <asp:Parameter Name="total_hours" Type="Decimal" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="euser_id" Type="Int32" />
+                    <asp:Parameter DbType="Date" Name="start_date" />
+                    <asp:Parameter DbType="Date" Name="end_date" />
+                    <asp:Parameter Name="total_hours" Type="Decimal" />
+                    <asp:Parameter Name="original_timesheet_id" Type="Int16" />
+                    <asp:Parameter Name="original_euser_id" Type="Int32" />
+                    <asp:Parameter DbType="Date" Name="original_start_date" />
+                    <asp:Parameter DbType="Date" Name="original_end_date" />
+                    <asp:Parameter Name="original_total_hours" Type="Decimal" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataPayroll" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString2 %>" DeleteCommand="DELETE FROM [payroll] WHERE [payroll_id] = @original_payroll_id AND [euser_id] = @original_euser_id AND [timesheet_id] = @original_timesheet_id AND [base_pay] = @original_base_pay AND [total_deduction] = @original_total_deduction AND [net_pay] = @original_net_pay" InsertCommand="INSERT INTO [payroll] ([euser_id], [timesheet_id], [base_pay], [total_deduction], [net_pay]) VALUES (@euser_id, @timesheet_id, @base_pay, @total_deduction, @net_pay)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [payroll]" UpdateCommand="UPDATE [payroll] SET [euser_id] = @euser_id, [timesheet_id] = @timesheet_id, [base_pay] = @base_pay, [total_deduction] = @total_deduction, [net_pay] = @net_pay WHERE [payroll_id] = @original_payroll_id AND [euser_id] = @original_euser_id AND [timesheet_id] = @original_timesheet_id AND [base_pay] = @original_base_pay AND [total_deduction] = @original_total_deduction AND [net_pay] = @original_net_pay">
+                <DeleteParameters>
+                    <asp:Parameter Name="original_payroll_id" Type="Int32" />
+                    <asp:Parameter Name="original_euser_id" Type="Int32" />
+                    <asp:Parameter Name="original_timesheet_id" Type="Int16" />
+                    <asp:Parameter Name="original_base_pay" Type="Decimal" />
+                    <asp:Parameter Name="original_total_deduction" Type="Decimal" />
+                    <asp:Parameter Name="original_net_pay" Type="Decimal" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="euser_id" Type="Int32" />
+                    <asp:Parameter Name="timesheet_id" Type="Int16" />
+                    <asp:Parameter Name="base_pay" Type="Decimal" />
+                    <asp:Parameter Name="total_deduction" Type="Decimal" />
+                    <asp:Parameter Name="net_pay" Type="Decimal" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="euser_id" Type="Int32" />
+                    <asp:Parameter Name="timesheet_id" Type="Int16" />
+                    <asp:Parameter Name="base_pay" Type="Decimal" />
+                    <asp:Parameter Name="total_deduction" Type="Decimal" />
+                    <asp:Parameter Name="net_pay" Type="Decimal" />
+                    <asp:Parameter Name="original_payroll_id" Type="Int32" />
+                    <asp:Parameter Name="original_euser_id" Type="Int32" />
+                    <asp:Parameter Name="original_timesheet_id" Type="Int16" />
+                    <asp:Parameter Name="original_base_pay" Type="Decimal" />
+                    <asp:Parameter Name="original_total_deduction" Type="Decimal" />
+                    <asp:Parameter Name="original_net_pay" Type="Decimal" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
             <br />
 
            
