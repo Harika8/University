@@ -82,12 +82,12 @@
             
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:GridView ID="FacultyLoadGridView" runat="server" DataSourceID="FacultyReportDataSource" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="section_id" AllowPaging="True" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" PageSize="5">
             <Columns>
-                <asp:BoundField DataField="Faculty_Name" HeaderText="Faculty_Name" SortExpression="Faculty_Name" />
-                <asp:BoundField DataField="Faculty_ID" HeaderText="Faculty_ID" SortExpression="Faculty_ID" />
-                <asp:BoundField DataField="course_name" HeaderText="course_name" SortExpression="course_name" />
-                <asp:BoundField DataField="section_id" HeaderText="section_id" ReadOnly="True" SortExpression="section_id" />
-                <asp:BoundField DataField="credits" HeaderText="credits" SortExpression="credits" />
-                <asp:BoundField DataField="semester" HeaderText="semester" SortExpression="semester" />
+                <asp:BoundField DataField="Faculty_Name" HeaderText="Faculty Name" SortExpression="Faculty_Name" />
+                <asp:BoundField DataField="Faculty_ID" HeaderText="Faculty ID" SortExpression="Faculty_ID" />
+                <asp:BoundField DataField="course_name" HeaderText="Course Name" SortExpression="course_name" />
+                <asp:BoundField DataField="section_id" HeaderText="Section ID" ReadOnly="True" SortExpression="section_id" />
+                <asp:BoundField DataField="credits" HeaderText="Credits" SortExpression="credits" />
+                <asp:BoundField DataField="semester" HeaderText="Semester" SortExpression="semester" />
             </Columns>
             <FooterStyle BackColor="#CCCCCC" />
             <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />

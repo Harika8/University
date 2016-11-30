@@ -62,11 +62,11 @@
             <AlternatingRowStyle BackColor="#CCCCCC" />
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                <asp:BoundField DataField="fuser_id" HeaderText="fuser_id" ReadOnly="True" SortExpression="fuser_id" />
-                <asp:BoundField DataField="specalization" HeaderText="specalization" SortExpression="specalization" />
-                <asp:BoundField DataField="education" HeaderText="education" SortExpression="education" />
-                <asp:BoundField DataField="contract" HeaderText="contract" SortExpression="contract" />
-                <asp:BoundField DataField="department_id" HeaderText="department_id" SortExpression="department_id" />
+                <asp:BoundField DataField="fuser_id" HeaderText="Faculty ID" ReadOnly="True" SortExpression="fuser_id" />
+                <asp:BoundField DataField="specalization" HeaderText="Specalization" SortExpression="specalization" />
+                <asp:BoundField DataField="education" HeaderText="Education" SortExpression="education" />
+                <asp:BoundField DataField="contract" HeaderText="Contract" SortExpression="contract" />
+                <asp:BoundField DataField="department_id" HeaderText="Department ID" SortExpression="department_id" />
             </Columns>
             <FooterStyle BackColor="#CCCCCC" />
             <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />

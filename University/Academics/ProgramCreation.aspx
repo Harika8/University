@@ -118,10 +118,10 @@
       </div>
           <asp:GridView ID="ProgramTBLGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="program_id" DataSourceID="ProgramTBLDataSource" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" AllowPaging="True" PageSize="5">
               <Columns>
-                  <asp:BoundField DataField="program_id" HeaderText="program_id" ReadOnly="True" SortExpression="program_id" />
-                  <asp:BoundField DataField="program_name" HeaderText="program_name" SortExpression="program_name" />
-                  <asp:BoundField DataField="department_id" HeaderText="department_id" SortExpression="department_id" />
-                  <asp:BoundField DataField="course_level" HeaderText="course_level" SortExpression="course_level" />
+                  <asp:BoundField DataField="program_id" HeaderText="Program ID" ReadOnly="True" SortExpression="program_id" />
+                  <asp:BoundField DataField="program_name" HeaderText="Program Name" SortExpression="program_name" />
+                  <asp:BoundField DataField="department_id" HeaderText="Department ID" SortExpression="department_id" />
+                  <asp:BoundField DataField="course_level" HeaderText="Course Level" SortExpression="course_level" />
               </Columns>
               <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
               <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />

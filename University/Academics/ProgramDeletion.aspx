@@ -68,10 +68,10 @@
             <AlternatingRowStyle BackColor="#CCCCCC" />
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                <asp:BoundField DataField="program_id" HeaderText="program_id" ReadOnly="True" SortExpression="program_id" />
-                <asp:BoundField DataField="program_name" HeaderText="program_name" SortExpression="program_name" />
-                <asp:BoundField DataField="department_id" HeaderText="department_id" SortExpression="department_id" />
-                <asp:BoundField DataField="course_level" HeaderText="course_level" SortExpression="course_level" />
+                <asp:BoundField DataField="program_id" HeaderText="Program ID" ReadOnly="True" SortExpression="program_id" />
+                <asp:BoundField DataField="program_name" HeaderText="Program Name" SortExpression="program_name" />
+                <asp:BoundField DataField="department_id" HeaderText="Department ID" SortExpression="department_id" />
+                <asp:BoundField DataField="course_level" HeaderText="Course Level" SortExpression="course_level" />
             </Columns>
             <FooterStyle BackColor="#CCCCCC" />
             <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />

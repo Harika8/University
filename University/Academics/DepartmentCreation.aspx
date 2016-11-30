@@ -147,11 +147,11 @@
         <hr />
         <asp:GridView ID="DepartmentTBLGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="department_id" DataSourceID="DepartmentTBLDataSource" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" AllowPaging="True" PageSize="5">
             <Columns>
-                <asp:BoundField DataField="department_id" HeaderText="department_id" InsertVisible="False" ReadOnly="True" SortExpression="department_id" />
-                <asp:BoundField DataField="department_name" HeaderText="department_name" SortExpression="department_name" />
-                <asp:BoundField DataField="department_location" HeaderText="department_location" SortExpression="department_location" />
-                <asp:BoundField DataField="department_phone_num" HeaderText="department_phone_num" SortExpression="department_phone_num" />
-                <asp:BoundField DataField="department_email_id" HeaderText="department_email_id" SortExpression="department_email_id" />
+                <asp:BoundField DataField="department_id" HeaderText="Department ID" InsertVisible="False" ReadOnly="True" SortExpression="department_id" />
+                <asp:BoundField DataField="department_name" HeaderText="Department Name" SortExpression="department_name" />
+                <asp:BoundField DataField="department_location" HeaderText="Department Ofc Location" SortExpression="department_location" />
+                <asp:BoundField DataField="department_phone_num" HeaderText="Department Phone No" SortExpression="department_phone_num" />
+                <asp:BoundField DataField="department_email_id" HeaderText="Department Email_ID" SortExpression="department_email_id" />
             </Columns>
             <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
             <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
