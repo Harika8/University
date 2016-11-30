@@ -41,7 +41,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="CampusServicesHome.aspx">Campus - Home</a></li>
                         <li><a href="Hostel_Accomodation.aspx">Hostel Accomodation</a></li>
-                        <li><a href="Hostel_Confirmation.aspx">Hostel Accomodation</a></li>                        
+                        <li><a href="Hostel_Confirmation.aspx">Hostel Confirmation</a></li>                        
                         <li><a href="Hostel_RoomReport.aspx">Room Report</a></li> 
                         <li><a href="Event_Registration.aspx">Event Registration</a></li> 
                         <li class="active"><a href="Event_Confirmation.aspx">Event Confirmation</a></li>
@@ -55,12 +55,16 @@
         </nav><!--/nav-->
  
     </header>
-    <div>        
+    <div>     
+        <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblhead" ForeColor="Blue" Width="600" runat="server" Text="Confirmed Event Details"/>
+         </h2> <br />
+         <br />
+            </div>  
+        
         <p style="margin-left: 40px">
-            <span class="auto-style2"><strong>Confirmed Event Details</strong></span><br />
-        </p>
-        <p style="margin-left: 40px">
-            User Id:
+            User ID:&nbsp;
             <asp:TextBox ID="TextBox24" runat="server"></asp:TextBox>
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Go" />
         </p>

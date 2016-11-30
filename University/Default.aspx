@@ -46,7 +46,7 @@
                         <li><a href="Academics/AcademicsHome.aspx">Academics</a></li>                        
                         <li><a href="contactus.aspx">Financial Aid</a></li> 
                         <li><a href="HR/HRDefault.aspx">HR</a></li>
-                        <li><a href="services.aspx">Campus Services</a></li>                       
+                        <li><a href="Campus Services/CampusServicesHome.aspx">Campus Services</a></li>                       
                     </ul>
                 </div>
             </div><!--/.container-->

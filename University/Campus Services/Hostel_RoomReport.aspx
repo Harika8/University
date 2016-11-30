@@ -40,7 +40,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="CampusServicesHome.aspx">Campus - Home</a></li>
                         <li><a href="Hostel_Accomodation.aspx">Hostel Accomodation</a></li>
-                        <li><a href="Hostel_Confirmation.aspx">Hostel Accomodation</a></li>                        
+                        <li><a href="Hostel_Confirmation.aspx">Hostel Confirmation</a></li>                        
                         <li class="active"><a href="Hostel_RoomReport.aspx">Room Report</a></li> 
                         <li><a href="Event_Registration.aspx">Event Registration</a></li> 
                         <li><a href="Event_Confirmation.aspx">Event Confirmation</a></li>
@@ -55,8 +55,13 @@
  
     </header>
     <div>
+    <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblhead" ForeColor="Blue" Width="600" runat="server" Text="Hostel Room Report"/>
+         </h2> <br />
+         <br />
+            </div> 
     
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="auto-style2">Hostel Room Report</span><br />
         <br />
         <span class="auto-style1">From:&nbsp;
         <asp:TextBox ID="TextBox1" runat="server" Height="22px" Width="130px"></asp:TextBox>
@@ -74,6 +79,20 @@
             <asp:ListItem>select value</asp:ListItem>
             <asp:ListItem>101</asp:ListItem>
             <asp:ListItem>102</asp:ListItem>
+            <asp:ListItem>103</asp:ListItem>
+            <asp:ListItem>104</asp:ListItem>
+            <asp:ListItem>105</asp:ListItem>
+            <asp:ListItem>106</asp:ListItem>
+            <asp:ListItem>107</asp:ListItem>
+            <asp:ListItem>108</asp:ListItem>
+            <asp:ListItem>109</asp:ListItem>
+            <asp:ListItem>110</asp:ListItem>
+            <asp:ListItem>111</asp:ListItem>
+            <asp:ListItem>112</asp:ListItem>
+            <asp:ListItem>113</asp:ListItem>
+            <asp:ListItem>114</asp:ListItem>
+            <asp:ListItem>115</asp:ListItem>
+            <asp:ListItem>116</asp:ListItem>
         </asp:DropDownList>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
