@@ -32,6 +32,13 @@ namespace University.Academics
             FacultyInsertDataSource.InsertParameters["contract"].DefaultValue = ContractHoursTB.Text.Trim();
             FacultyInsertDataSource.InsertParameters["department_id"].DefaultValue = DeptIDDDL.SelectedValue;
             FacultyInsertDataSource.Insert();
+
+            string message = "Selected Faculty is now works under the selected Department - Successful.";
+            string script = "window.onload = function(){ alert('";
+            script += message;
+            script += "')};";
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+
         }
 
         protected void FacultyIDDDL_SelectedIndexChanged(object sender, EventArgs e)

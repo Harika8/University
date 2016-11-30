@@ -60,9 +60,15 @@
 
         <asp:Button ID="BackButton" runat="server" OnClick="BackButton_Click" Text="Back" />
           </p>
-          <p>
-
-              &nbsp;</p>
+                  <br />
+        <br />
+        <div>        
+            <p>
+                <b>Don't Update or Delete the Values in the Grid View, if there is data dependency!</b>
+            </p>
+        </div>
+        <br />
+        <br />
       </div>
         <asp:GridView ID="ProgramGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="program_id" DataSourceID="ProgramDataSource" AllowPaging="True" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
             <AlternatingRowStyle BackColor="#CCCCCC" />

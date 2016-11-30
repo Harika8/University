@@ -58,6 +58,13 @@
         <asp:Button ID="BackButton" runat="server" OnClick="BackButton_Click" Text="Back" />
         <br />
         <br />
+        <div>        
+            <p>
+                <b>Don't Update or Delete the Values in the Grid View, if there is data dependency!</b>
+            </p>
+        </div>
+        <br />
+        <br />
         <asp:GridView ID="CourseGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="course_id" DataSourceID="CourseUpdationSQLDataSource" AllowPaging="True" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
             <AlternatingRowStyle BackColor="#CCCCCC" />
             <Columns>
