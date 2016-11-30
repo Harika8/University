@@ -54,7 +54,10 @@
     </header>
 
         <p style="width: 203px; margin-left: 600px">
-        <b>Department - Updation/Deletion Form</b></p><br />
+        <b>Department - Updation/Deletion Form</b></p>
+        <asp:Button ID="BackButton" runat="server" OnClick="BackButton_Click" Text="Back" />
+        <br />
+        <br />
     <div>    
         <asp:GridView ID="DepartmentGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="department_id" DataSourceID="DeptUpdationDataSource" AllowPaging="True" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
             <AlternatingRowStyle BackColor="#CCCCCC" />
