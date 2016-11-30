@@ -63,9 +63,6 @@
         <br />
         <asp:Label ID="DepartmentName" runat="server" Text="Department Name:"></asp:Label>
         <asp:TextBox ID="DepartmentNameTB" runat="server"></asp:TextBox>
-        &nbsp;&nbsp;&nbsp;
-        <asp:Label ID="DepartmentIDLbl" runat="server" Text="Department ID:"></asp:Label>
-        <asp:TextBox ID="DepartmentIDTB" runat="server" Enabled="False" Width="79px"></asp:TextBox>
         <br />
         <br />
         <br />
@@ -113,9 +110,9 @@
         <br />
         <br />
         
-        <asp:Button ID="ProgramSubmitButton" runat="server" Text="Submit" OnClick="ProgramSubmitButton_Click" />
+        <asp:Button ID="DepartmentSubmitButton" runat="server" Text="Submit" OnClick="DepartmentSubmitButton_Click" />
         &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="ProgramClearButton" runat="server" Text="Clear" OnClick="ProgramClearButton_Click" />
+        <asp:Button ID="DepartmentClearButton" runat="server" Text="Clear" OnClick="DepartmentClearButton_Click" />
         <br />
         <br />
         <asp:SqlDataSource ID="sqldepartment" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [department] WHERE [department_id] = @original_department_id AND [department_name] = @original_department_name AND [department_location] = @original_department_location AND [department_phone_num] = @original_department_phone_num AND [department_email_id] = @original_department_email_id" InsertCommand="INSERT INTO [department] ([department_name], [department_location], [department_phone_num], [department_email_id]) VALUES (@department_name, @department_location, @department_phone_num, @department_email_id)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [department]" UpdateCommand="UPDATE [department] SET [department_name] = @department_name, [department_location] = @department_location, [department_phone_num] = @department_phone_num, [department_email_id] = @department_email_id WHERE [department_id] = @original_department_id AND [department_name] = @original_department_name AND [department_location] = @original_department_location AND [department_phone_num] = @original_department_phone_num AND [department_email_id] = @original_department_email_id">

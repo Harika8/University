@@ -62,10 +62,11 @@
           <asp:SqlDataSource ID="ProgramTBLDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [program]"></asp:SqlDataSource>
           <hr />
           <br />
-        <asp:Label ID="DeptIDLbl" runat="server" Text="Department ID:"></asp:Label>
-        <asp:DropDownList ID="DepartmentIDDDList" runat="server" DataSourceID="UniversityDatabase" DataTextField="department_id" DataValueField="department_id">
+        <asp:Label ID="DeptIDLbl" runat="server" Text="Department Name:"></asp:Label>
+        <asp:DropDownList ID="DepartmentIDDDList" runat="server" DataSourceID="UniversityDatabase" DataTextField="department_name" DataValueField="department_id" OnSelectedIndexChanged="DepartmentIDDDList_SelectedIndexChanged" Height="24px" Width="211px">
         </asp:DropDownList>
-        <asp:SqlDataSource ID="UniversityDatabase" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT [department_id] FROM [department]"></asp:SqlDataSource>
+        &nbsp;Department ID:<asp:TextBox ID="DepartmentIDTB" runat="server" Height="23px" Width="84px" Enabled="False"></asp:TextBox>
+        <asp:SqlDataSource ID="UniversityDatabase" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_id], [department_name] FROM [department] WHERE ([department_id] not in (10,11,12,13,19,20,21,22,24))"></asp:SqlDataSource>
         <p>
         <asp:Label ID="CourseLevelLbl" runat="server" Text="Course Level:"></asp:Label>
         <asp:DropDownList ID="CourseLevelDDList" runat="server">
@@ -89,6 +90,7 @@
               &nbsp;</p>
         <p style="margin-left: 200px">
             <asp:Button ID="ProgramSubmitButton" runat="server" Text="Submit" OnClick="ProgramSubmitButton_Click" />
+            &nbsp;&nbsp;&nbsp;
             <asp:Button ID="ProgramClearButton" runat="server" Text="Clear" OnClick="ProgramClearButton_Click" />
         </p>
         <asp:SqlDataSource ID="sqlprogram" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [program] WHERE [program_id] = @original_program_id AND (([program_name] = @original_program_name) OR ([program_name] IS NULL AND @original_program_name IS NULL)) AND (([department_id] = @original_department_id) OR ([department_id] IS NULL AND @original_department_id IS NULL)) AND (([course_level] = @original_course_level) OR ([course_level] IS NULL AND @original_course_level IS NULL))" InsertCommand="INSERT INTO [program] ([program_id], [program_name], [department_id], [course_level]) VALUES (@program_id, @program_name, @department_id, @course_level)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [program]" UpdateCommand="UPDATE [program] SET [program_name] = @program_name, [department_id] = @department_id, [course_level] = @course_level WHERE [program_id] = @original_program_id AND (([program_name] = @original_program_name) OR ([program_name] IS NULL AND @original_program_name IS NULL)) AND (([department_id] = @original_department_id) OR ([department_id] IS NULL AND @original_department_id IS NULL)) AND (([course_level] = @original_course_level) OR ([course_level] IS NULL AND @original_course_level IS NULL))">

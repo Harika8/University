@@ -58,6 +58,15 @@
             <b>Form to Update/Delete a Faculty under a Department</b></p>
         <asp:Button ID="BackButton" runat="server" OnClick="BackButton_Click" Text="Back" />
         <br />
+                <br />
+        <br />
+        <div>        
+            <p>
+                <b>Don't Update or Delete the Values in the Grid View, if there is data dependency!</b>
+            </p>
+        </div>
+        <br />
+        <br />
         <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="fuser_id" DataSourceID="FacultytblDataSource" AllowPaging="True" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
             <AlternatingRowStyle BackColor="#CCCCCC" />
             <Columns>

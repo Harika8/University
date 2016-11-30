@@ -61,20 +61,23 @@
             <b>Faculty Load Report</b></p><br/>
         </div>
             
-        <asp:Label ID="DeptIDLbl" runat="server" Text="Department ID:"></asp:Label>
-        <asp:DropDownList ID="DeptIDDDL" runat="server" DataSourceID="DeptIDs_DataSource" DataTextField="department_id" DataValueField="department_id" AutoPostBack="True">
+        <asp:Label ID="DeptIDLbl" runat="server" Text="Department Name:"></asp:Label>
+        <asp:DropDownList ID="DeptIDDDL" runat="server" DataSourceID="DeptIDs_DataSource" DataTextField="department_name" DataValueField="department_id" AutoPostBack="True" Height="25px" OnSelectedIndexChanged="DeptIDDDL_SelectedIndexChanged" Width="199px">
         </asp:DropDownList>
-        <asp:SqlDataSource ID="DeptIDs_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_id] FROM [department]"></asp:SqlDataSource>
+        &nbsp;Department ID:<asp:TextBox ID="DepartmentIDTB" runat="server" Height="24px" Width="85px" Enabled="False"></asp:TextBox>
+&nbsp;<asp:SqlDataSource ID="DeptIDs_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_id], [department_name] FROM [department] WHERE ([department_id] not in (10,11,12,13,19,20,21,22,24))"></asp:SqlDataSource>
         <p>
             &nbsp;</p>
     
-        <asp:Label ID="FacultyIDLbl" runat="server" Text="Faculty ID:"></asp:Label>
-        <asp:DropDownList ID="FacultyIDDDL" runat="server" DataSourceID="FacultyIDs_DeptID_DataSource" DataTextField="fuser_id" DataValueField="fuser_id" AutoPostBack="True">
+        <asp:Label ID="FacultyNameLbl" runat="server" Text="Faculty Name:"></asp:Label>
+        <asp:DropDownList ID="FacultyIDDDL" runat="server" DataSourceID="FacultyIDs_DeptID_DataSource" DataTextField="Name" DataValueField="Faculty_ID" AutoPostBack="True" Height="25px" OnSelectedIndexChanged="FacultyIDDDL_SelectedIndexChanged" Width="255px">
         </asp:DropDownList>
             
-        <asp:SqlDataSource ID="FacultyIDs_DeptID_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [fuser_id] FROM [faculty] WHERE ([department_id] = @department_id)">
+        &nbsp;<asp:Label ID="FacultyIDLbl" runat="server" Text="Faculty ID: "></asp:Label>
+        <asp:TextBox ID="FacultyIDTB" runat="server" Height="24px" Width="85px" Enabled="False"></asp:TextBox>
+&nbsp;<asp:SqlDataSource ID="FacultyIDs_DeptID_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT (info.user_id) as Faculty_ID, (info.first_name+','+info.last_name) as Name FROM [faculty] as fac, [user_info] as info WHERE info.user_id = fac.fuser_id and (fac.department_id= @department_id)">
             <SelectParameters>
-                <asp:ControlParameter ControlID="DeptIDDDL" DefaultValue="17" Name="department_id" PropertyName="SelectedValue" Type="Int16" />
+                <asp:ControlParameter ControlID="DeptIDDDL" DefaultValue="" Name="department_id" PropertyName="SelectedValue" Type="Int16" />
             </SelectParameters>
         </asp:SqlDataSource>
             

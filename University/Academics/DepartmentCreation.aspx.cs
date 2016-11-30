@@ -14,19 +14,26 @@ namespace University.Academics
 
         }
 
-        protected void ProgramSubmitButton_Click(object sender, EventArgs e)
+        protected void DepartmentSubmitButton_Click(object sender, EventArgs e)
         {
             sqldepartment.InsertParameters["department_name"].DefaultValue = DepartmentNameTB.Text.ToUpper().Trim();
             sqldepartment.InsertParameters["department_location"].DefaultValue = DepartmentLocationDDL.SelectedValue;
             sqldepartment.InsertParameters["department_phone_num"].DefaultValue = DepartmentPhoneNoTB.Text.ToUpper().Trim();
             sqldepartment.InsertParameters["department_email_id"].DefaultValue = DepartmentEmailIDTB.Text.ToUpper().Trim();
             sqldepartment.Insert();
+
+            string message = "New Department is created successfully.";
+            string script = "window.onload = function(){ alert('";
+            script += message;
+            script += "')};";
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+            
+
         }
 
-        protected void ProgramClearButton_Click(object sender, EventArgs e)
+        protected void DepartmentClearButton_Click(object sender, EventArgs e)
         {
             DepartmentNameTB.Text = string.Empty;
-            DepartmentIDTB.Text = string.Empty;
             DepartmentPhoneNoTB.Text = string.Empty;
             DepartmentEmailIDTB.Text = string.Empty;
         }

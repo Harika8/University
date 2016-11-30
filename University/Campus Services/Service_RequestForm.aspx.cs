@@ -15,15 +15,20 @@ namespace University.Campus_Services
             servicesource.InsertParameters["service_req_time"].DefaultValue = DropDownList2.SelectedValue;
             servicesource.InsertParameters["service_req_date"].DefaultValue = TextBox2.Text.ToUpper().Trim();
             servicesource.InsertParameters["room_no"].DefaultValue = DropDownList3.SelectedValue;
+           
             servicesource.Insert();
 
             TextBox2.Text = string.Empty;
-           
+            TextBox3.Text = string.Empty;
+
+
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
             TextBox2.Text = string.Empty;
+            TextBox3.Text = string.Empty;
+
         }
     }
 }
