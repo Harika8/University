@@ -22,6 +22,24 @@ namespace University.Academics {
         protected global::System.Web.UI.HtmlControls.HtmlForm DepartmentCreationForm;
         
         /// <summary>
+        /// lblHeading control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblHeading;
+        
+        /// <summary>
+        /// msg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label msg;
+        
+        /// <summary>
         /// BackButton control.
         /// </summary>
         /// <remarks>
@@ -56,24 +74,6 @@ namespace University.Academics {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox DepartmentNameTB;
-        
-        /// <summary>
-        /// DepartmentIDLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DepartmentIDLbl;
-        
-        /// <summary>
-        /// DepartmentIDTB control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DepartmentIDTB;
         
         /// <summary>
         /// DepartmentDetailsLbl control.
@@ -139,22 +139,22 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.TextBox DepartmentEmailIDTB;
         
         /// <summary>
-        /// ProgramSubmitButton control.
+        /// DepartmentSubmitButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ProgramSubmitButton;
+        protected global::System.Web.UI.WebControls.Button DepartmentSubmitButton;
         
         /// <summary>
-        /// ProgramClearButton control.
+        /// DepartmentClearButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ProgramClearButton;
+        protected global::System.Web.UI.WebControls.Button DepartmentClearButton;
         
         /// <summary>
         /// sqldepartment control.

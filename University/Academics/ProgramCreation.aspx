@@ -41,7 +41,7 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="AcademicsHome.aspx">Academics - Home</a></li>
+                        <li><a href="AcademicsHome.aspx">Academics - Home</a></li>
                         <li><a href="DepartmentManagement.aspx">Manage Department</a></li>
                         <li><a href="ProgramManagement.aspx">Manage Program</a></li>                        
                         <li><a href="CourseManagement.aspx">Manage Course</a></li>                  
@@ -53,9 +53,14 @@
         </nav><!--/nav-->
     </header>
       <div>
-
-        <p style="width: 203px; margin-left: 600px">
-        <b>Program Creation Form</b></p>
+     <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Program Creation Form"></asp:Label>
+         </h2> <br />
+         <br />
+        <asp:Label ID="msg" Width="150" runat="server"></asp:Label> 
+        <br />
+        </div>
     
         <asp:Button ID="BackButton" runat="server" OnClick="BackButton_Click" Text="Back" />
           <br />
@@ -63,9 +68,9 @@
           <hr />
           <br />
         <asp:Label ID="DeptIDLbl" runat="server" Text="Department Name:"></asp:Label>
-        <asp:DropDownList ID="DepartmentIDDDList" runat="server" DataSourceID="UniversityDatabase" DataTextField="department_name" DataValueField="department_id" OnSelectedIndexChanged="DepartmentIDDDList_SelectedIndexChanged">
+        <asp:DropDownList ID="DepartmentIDDDList" runat="server" DataSourceID="UniversityDatabase" DataTextField="department_name" DataValueField="department_id" OnSelectedIndexChanged="DepartmentIDDDList_SelectedIndexChanged" Height="24px" Width="211px">
         </asp:DropDownList>
-        &nbsp;Department ID:<asp:TextBox ID="DepartmentIDTB" runat="server" Height="21px" Width="98px"></asp:TextBox>
+        &nbsp;Department ID:<asp:TextBox ID="DepartmentIDTB" runat="server" Height="23px" Width="84px" Enabled="False"></asp:TextBox>
         <asp:SqlDataSource ID="UniversityDatabase" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_id], [department_name] FROM [department] WHERE ([department_id] not in (10,11,12,13,19,20,21,22,24))"></asp:SqlDataSource>
         <p>
         <asp:Label ID="CourseLevelLbl" runat="server" Text="Course Level:"></asp:Label>
@@ -90,6 +95,7 @@
               &nbsp;</p>
         <p style="margin-left: 200px">
             <asp:Button ID="ProgramSubmitButton" runat="server" Text="Submit" OnClick="ProgramSubmitButton_Click" />
+            &nbsp;&nbsp;&nbsp;
             <asp:Button ID="ProgramClearButton" runat="server" Text="Clear" OnClick="ProgramClearButton_Click" />
         </p>
         <asp:SqlDataSource ID="sqlprogram" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [program] WHERE [program_id] = @original_program_id AND (([program_name] = @original_program_name) OR ([program_name] IS NULL AND @original_program_name IS NULL)) AND (([department_id] = @original_department_id) OR ([department_id] IS NULL AND @original_department_id IS NULL)) AND (([course_level] = @original_course_level) OR ([course_level] IS NULL AND @original_course_level IS NULL))" InsertCommand="INSERT INTO [program] ([program_id], [program_name], [department_id], [course_level]) VALUES (@program_id, @program_name, @department_id, @course_level)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [program]" UpdateCommand="UPDATE [program] SET [program_name] = @program_name, [department_id] = @department_id, [course_level] = @course_level WHERE [program_id] = @original_program_id AND (([program_name] = @original_program_name) OR ([program_name] IS NULL AND @original_program_name IS NULL)) AND (([department_id] = @original_department_id) OR ([department_id] IS NULL AND @original_department_id IS NULL)) AND (([course_level] = @original_course_level) OR ([course_level] IS NULL AND @original_course_level IS NULL))">

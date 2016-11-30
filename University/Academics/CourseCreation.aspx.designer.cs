@@ -22,6 +22,24 @@ namespace University.Academics {
         protected global::System.Web.UI.HtmlControls.HtmlForm CourseCreationForm;
         
         /// <summary>
+        /// lblHeading control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblHeading;
+        
+        /// <summary>
+        /// msg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label msg;
+        
+        /// <summary>
         /// BackButton control.
         /// </summary>
         /// <remarks>
@@ -112,15 +130,6 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.DropDownList ProgramIDDDL;
         
         /// <summary>
-        /// ProgramIDTB control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ProgramIDTB;
-        
-        /// <summary>
         /// ProgramIDList_DeptID_CRSLVL control.
         /// </summary>
         /// <remarks>
@@ -146,24 +155,6 @@ namespace University.Academics {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CourseNameTB;
-        
-        /// <summary>
-        /// CourseNumberLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CourseNumberLbl;
-        
-        /// <summary>
-        /// CourseNumberTB control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CourseNumberTB;
         
         /// <summary>
         /// CourseEffDtLbl control.

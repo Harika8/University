@@ -35,7 +35,7 @@ namespace University.Registrar_Office
 
         protected void SectionClearButton_Click(object sender, EventArgs e)
         {
-            
+            Response.Redirect("SectionCreation.aspx");
         }
 
     }

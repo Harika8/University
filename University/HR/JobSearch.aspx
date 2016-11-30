@@ -55,11 +55,36 @@
  
     </header>
      <div style="margin-top:75px;" align="center">
-         Job Search Portal<br />
-         <br /><br />
-                 
+          <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Job Search"></asp:Label>
+         </h2> <br />
+         <br />
+         </div>
+        <div style="margin-left: 150px">
+            <asp:Label ID="lblsearch"  Width="150" runat="server" Text="Search By :"></asp:Label><br /><br />
+            <asp:Label ID="lblDepartmeent"  Width="150" runat="server" Text="Department :"></asp:Label>
+             <asp:DropDownList ID="seldept" runat="server" Width="150px" AppendDataBoundItems="true" EnableViewState="false" DataSourceID="SqlDepartment" DataTextField="department_name" DataValueField="department_id">
+                <asp:ListItem Selected="True" Value="-1">Select Department</asp:ListItem>
+            </asp:DropDownList>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <asp:Label ID="lblPositionType"  Width="150" runat="server" Text="Position Type :"></asp:Label>
+             <asp:DropDownList ID="selPayfrequency" Width="150" runat="server">
+              <asp:ListItem Value="-1">Select Position Type</asp:ListItem>
+             <asp:ListItem>Monthly</asp:ListItem>
+             <asp:ListItem>Bi-Weekly</asp:ListItem>
+            </asp:DropDownList><br /><br />
+            <div style="margin-left: 150px">
+            <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnClear" runat="server" Text="Clear Filters" OnClick="btnClear_Click" />
+            </div>
+        </div>
+     
+        
+         <div style="margin-top:50px;" align="center">       
         <asp:Panel ID="PanelResults" runat="server">
-            <asp:GridView ID="gvSearchResults" runat="server" AutoGenerateColumns="False" DataKeyNames="vacancy_id" DataSourceID="SqlSearchResults" >
+            <asp:GridView ID="gvSearchResults" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataKeyNames="vacancy_id" DataSourceID="SqlSearchResults" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" >
+                <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="vacancy_id" HeaderText="vacancy_id" InsertVisible="False" ReadOnly="True" SortExpression="vacancy_id" />
                     <asp:BoundField DataField="Job_Title" HeaderText="Job_Title" SortExpression="Job_Title" />
@@ -80,6 +105,15 @@
                     </asp:TemplateField>
                     
                 </Columns>
+                <FooterStyle BackColor="#CCCC99" />
+                <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+                <RowStyle BackColor="#F7F7DE" />
+                <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#FBFBF2" />
+                <SortedAscendingHeaderStyle BackColor="#848384" />
+                <SortedDescendingCellStyle BackColor="#EAEAD3" />
+                <SortedDescendingHeaderStyle BackColor="#575357" />
             </asp:GridView>
             <asp:SqlDataSource ID="SqlSearchResults" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" SelectCommand="Select vacancy.vacancy_id,  position.designation as Job_Title, department.department_name as Department, position.pay_frequency as Position_Type, position.roles_responsibilities as Job_Description from vacancy, position,department where vacancy.position_id=position.position_id and position.department_id = department.department_id">
             </asp:SqlDataSource>

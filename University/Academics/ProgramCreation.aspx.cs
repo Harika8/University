@@ -24,6 +24,13 @@ namespace University.Academics
             sqlprogram.InsertParameters["department_id"].DefaultValue = DepartmentIDDDList.SelectedValue;
             sqlprogram.InsertParameters["course_level"].DefaultValue = CourseLevelDDList.SelectedValue;
             sqlprogram.Insert();
+
+            string message = "New Program is created successfully under the selected Department.";
+            string script = "window.onload = function(){ alert('";
+            script += message;
+            script += "')};";
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+
         }
 
         protected void ProgramClearButton_Click(object sender, EventArgs e)

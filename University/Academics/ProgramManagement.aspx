@@ -41,7 +41,7 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="AcademicsHome.aspx">Academics - Home</a></li>
+                        <li><a href="AcademicsHome.aspx">Academics - Home</a></li>
                         <li><a href="DepartmentManagement.aspx">Manage Department</a></li>
                         <li><a href="ProgramManagement.aspx">Manage Program</a></li>                        
                         <li><a href="CourseManagement.aspx">Manage Course</a></li>                     
@@ -53,19 +53,22 @@
         </nav><!--/nav-->
     </header>
       <div>
+          <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Academics' Programs Management - Creation/Deletion"></asp:Label>
+         </h2> <br />
+         <br />
+        <asp:Label ID="msg" Width="150" runat="server"></asp:Label> 
+        <br />
+        </div>          
 
-        <p style="width: 203px; margin-left: 600px">
-        <b>Academics' Programs Management - Creation/Deletion</b></p><br />
-    
     </div>
-        <p>
+        
+        <div style="margin-left: 480px">
             <asp:Button ID="NewProgramButton" runat="server" Text="Enter New Program" OnClick="NewProgramButton_Click" />
-        </p>
-        <p>
-            &nbsp;</p>
-        <p>
+        &nbsp;&nbsp;
             <asp:Button ID="DeleteProgramButton" runat="server" Text="Update/Delete Existing Program" Width="258px" OnClick="DeleteProgramButton_Click" />
-        </p>
+        </div>
     </form>
 </body>
 </html>

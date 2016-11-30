@@ -41,7 +41,7 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="AcademicsHome.aspx">Academics - Home</a></li>
+                        <li><a href="AcademicsHome.aspx">Academics - Home</a></li>
                         <li><a href="DepartmentManagement.aspx">Manage Department</a></li>
                         <li><a href="ProgramManagement.aspx">Manage Program</a></li>                        
                         <li><a href="CourseManagement.aspx">Manage Course</a></li>                     
@@ -52,9 +52,15 @@
             </div><!--/.container-->
         </nav><!--/nav-->
     </header>
+        <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Course Creation Form"></asp:Label>
+         </h2> <br />
+         <br />
+        <asp:Label ID="msg" Width="150" runat="server"></asp:Label> 
+        <br />
+        </div>
 
-        <p style="width: 203px; margin-left: 600px">
-        <b>Course Creation Form</b></p>
         <br />
         <asp:Button ID="BackButton" runat="server" OnClick="BackButton_Click" Text="Back" />
         <br />
@@ -78,8 +84,7 @@
             <asp:Label ID="ProgramIDLbl" runat="server" Text="Program Name:"></asp:Label>
             <asp:DropDownList ID="ProgramIDDDL" runat="server" DataSourceID="ProgramIDList_DeptID_CRSLVL" DataTextField="program_name" DataValueField="program_id" Height="26px" Width="318px" AutoPostBack="True" OnSelectedIndexChanged="ProgramIDDDL_SelectedIndexChanged">
             </asp:DropDownList>
-            &nbsp;&nbsp;&nbsp; Program ID:<asp:TextBox ID="ProgramIDTB" runat="server" Enabled="False" Width="47px"></asp:TextBox>
-&nbsp;<asp:SqlDataSource ID="ProgramIDList_DeptID_CRSLVL" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [program_id], program_name FROM [program] WHERE (([department_id] = @department_id) AND ([course_level] = @course_level))">
+            &nbsp;<asp:SqlDataSource ID="ProgramIDList_DeptID_CRSLVL" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [program_id], program_name FROM [program] WHERE (([department_id] = @department_id) AND ([course_level] = @course_level))">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="DepartmentIDDDList" DefaultValue="" Name="department_id" PropertyName="SelectedValue" Type="Int16" />
                     <asp:ControlParameter ControlID="CourseLevelDDList" DefaultValue="Grad" Name="course_level" PropertyName="SelectedValue" Type="String" />
@@ -90,9 +95,7 @@
             &nbsp;</p>
         <p>
             <asp:Label ID="CourseNameLbl" runat="server" Text="Course Name:"></asp:Label>
-            <asp:TextBox ID="CourseNameTB" runat="server" Width="127px"></asp:TextBox>
-            <asp:Label ID="CourseNumberLbl" runat="server" Text="Course Number:"></asp:Label>
-            <asp:TextBox ID="CourseNumberTB" runat="server" Width="125px" Enabled="False"></asp:TextBox>
+            <asp:TextBox ID="CourseNameTB" runat="server" Width="216px" Height="25px"></asp:TextBox>
         </p>
         <p>
             &nbsp;</p>

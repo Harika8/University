@@ -9,51 +9,10 @@
     <meta name="description" content="LandingPage" />
     <meta name="author" content="Harika" />
     <title>Home | University DBMS Project</title>
-    <%-- ------ CSS ------ --%>
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/animate.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" />
-    <link href="css/main.css" rel="stylesheet" type="text/css" />
-    <link href="css/responsive.css" rel="stylesheet" type="text/css" />
-     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
-        rel="stylesheet" type="text/css" />
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
-    <link rel="shortcut icon" href="images/favicon.ico" />
 </head>
 <body>
     <form id="form2" runat="server">
-    <header id="header">
-    <nav class="navbar navbar-inverse" role="banner">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="Default.aspx">University</a>
-                </div>
-				
-                <div class="collapse navbar-collapse navbar-right">
-                    <ul class="nav navbar-nav">
-                        <li ><a href="Default.aspx">Home</a></li>
-                        <li><a href="services.aspx">Registrar</a></li>
-                        <li><a href="services.aspx">Academics</a></li>                        
-                        <li><a href="contactus.aspx">Financial Aid</a></li> 
-                        <li><a href="HR/HRDefault.aspx">HR</a></li>
-                        <li><a href="services.aspx">Campus Services</a></li>  
-                        <li class="active"><a href="UserRegistration.aspx">User Registration</a></li>                     
-                    </ul>
-                </div>
-            </div><!--/.container-->
-        </nav><!--/nav-->
- 
-    </header>
+
         <br />
         
         <asp:SqlDataSource ID="SqlUser_info" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" DeleteCommand="DELETE FROM [user_info] WHERE [user_id] = @original_user_id AND [first_name] = @original_first_name AND [last_name] = @original_last_name AND [date_of_birth] = @original_date_of_birth AND [gender] = @original_gender AND [email_id] = @original_email_id AND [contact_no] = @original_contact_no AND [nationality] = @original_nationality AND (([ssn] = @original_ssn) OR ([ssn] IS NULL AND @original_ssn IS NULL)) AND [address_line1] = @original_address_line1 AND (([address_line2] = @original_address_line2) OR ([address_line2] IS NULL AND @original_address_line2 IS NULL)) AND [city] = @original_city AND [state_of_res] = @original_state_of_res AND [zip_code] = @original_zip_code AND [country] = @original_country" InsertCommand="INSERT INTO [user_info] ([first_name], [last_name], [date_of_birth], [gender], [email_id], [contact_no], [nationality], [ssn], [address_line1], [address_line2], [city], [state_of_res], [zip_code], [country]) VALUES (@first_name, @last_name, @date_of_birth, @gender, @email_id, @contact_no, @nationality, @ssn, @address_line1, @address_line2, @city, @state_of_res, @zip_code, @country)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [user_info]" UpdateCommand="UPDATE [user_info] SET [first_name] = @first_name, [last_name] = @last_name, [date_of_birth] = @date_of_birth, [gender] = @gender, [email_id] = @email_id, [contact_no] = @contact_no, [nationality] = @nationality, [ssn] = @ssn, [address_line1] = @address_line1, [address_line2] = @address_line2, [city] = @city, [state_of_res] = @state_of_res, [zip_code] = @zip_code, [country] = @country WHERE [user_id] = @original_user_id AND [first_name] = @original_first_name AND [last_name] = @original_last_name AND [date_of_birth] = @original_date_of_birth AND [gender] = @original_gender AND [email_id] = @original_email_id AND [contact_no] = @original_contact_no AND [nationality] = @original_nationality AND (([ssn] = @original_ssn) OR ([ssn] IS NULL AND @original_ssn IS NULL)) AND [address_line1] = @original_address_line1 AND (([address_line2] = @original_address_line2) OR ([address_line2] IS NULL AND @original_address_line2 IS NULL)) AND [city] = @original_city AND [state_of_res] = @original_state_of_res AND [zip_code] = @original_zip_code AND [country] = @original_country" OnSelecting="SqlUser_info_Selecting">
@@ -124,9 +83,12 @@
         </asp:SqlDataSource>
         
     <div style="margin-top:100px;" align="center">
-         User Registration Form
-        <br /> <br />
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="300" runat="server" Text="User Registration"></asp:Label>
+         </h2> <br />
          <br />
+        <asp:Label ID="msg" runat="server" Width="150"></asp:Label>
+        <br />
      </div>
         <div style="margin-left: 75px">
         <asp:Panel ID="PaneladdUser" runat="server">
@@ -198,7 +160,7 @@
              <div style="margin-top:100px;" align="center">
               <asp:Button ID="btnSaveUser" runat="server" Text="Save" OnClick="btnSaveUser_Click"/>
                     &nbsp;&nbsp;
-                    <asp:Button ID="btnCancelUser" runat="server"  OnClick="btnCancelUser_Click" Text="Cancel" />
+                    <asp:Button ID="btnCancelUser" runat="server"  OnClick="btnCancelUser_Click" Text="Clear" />
               </div>
             </asp:Panel>
             </div>

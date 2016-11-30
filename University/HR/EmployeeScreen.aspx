@@ -54,7 +54,13 @@
         </nav><!--/nav-->
  
     </header>
-<div style="margin-left: 100px">
+        <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Employee Portal"></asp:Label>
+         </h2> <br />
+         <br /><br />
+        </div>
+       <div style="margin-left: 100px">
         <asp:Panel ID="EmpSearchPanel" runat="server">
             <br />
             

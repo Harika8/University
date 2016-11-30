@@ -18,18 +18,12 @@ namespace University.Academics
         protected void CourseIDDDL_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-           /* CourseIDs_DeptIDbased_DataSource.SelectCommand = "select distinct Course_Name from course where course_id '" + CourseIDDDL.SelectedValue + "'";
-            DataSourceSelectArguments dsArguments = new DataSourceSelectArguments();
-            DataView dvView = new DataView();
-            dvView = (DataView)CourseIDs_DeptIDbased_DataSource.Select(dsArguments);
-            CourseNameTB.Text = dvView[0].Row["Course_Name"].ToString();*/
-            
-            CourseNameTB.Text = "select Course_Name from course where course_id = @courseDDList.SelectedValue";
+            CourseNameTB.Text = CourseIDDDL.SelectedValue;
         }
 
         protected void FacultyIDDDL_SelectedIndexChanged(object sender, EventArgs e)
         {
-             FacultyNameTB.Text = "select first_name from user_info where user_id = @FacultyIDDDL.SelectedValue";
+            FacultyNameTB.Text = FacultyIDDDL.SelectedValue;
         }
 
         protected void FacCrsSubmitBtn_Click(object sender, EventArgs e)
@@ -38,6 +32,13 @@ namespace University.Academics
             Faculty_Course_TBL.InsertParameters["course_id"].DefaultValue = CourseIDDDL.SelectedValue;
             Faculty_Course_TBL.InsertParameters["department_id"].DefaultValue = DeptIDDDList.SelectedValue;
             Faculty_Course_TBL.Insert();
+
+            string message = "The selected Faculty, now, can teach the selected Course, successfully.";
+            string script = "window.onload = function(){ alert('";
+            script += message;
+            script += "')};";
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+
         }
 
         protected void FacCrsResetBtn_Click(object sender, EventArgs e)
@@ -47,7 +48,12 @@ namespace University.Academics
 
         protected void BackButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AssignFacultyToCourse1Management.aspx");
+            Response.Redirect("AssignFacultyToCourse1.aspx");
+        }
+
+        protected void DeptIDDDList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DepartmentIDTB.Text = DeptIDDDList.SelectedValue;
         }
     }
 }

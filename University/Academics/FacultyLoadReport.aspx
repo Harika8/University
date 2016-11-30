@@ -45,7 +45,7 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="AcademicsHome.aspx">Academics - Home</a></li>
+                        <li><a href="AcademicsHome.aspx">Academics - Home</a></li>
                         <li><a href="DepartmentCreation.aspx">Create Department</a></li>
                         <li><a href="ProgramCreation.aspx">Create Program</a></li>                        
                         <li><a href="CourseCreation.aspx">Create Course</a></li>                  
@@ -56,25 +56,33 @@
             </div><!--/.container-->
         </nav><!--/nav-->
     </header>
-        <div>
-            <p style="width: 203px; margin-left: 600px">
-            <b>Faculty Load Report</b></p><br/>
+         <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Faculty Load Report"></asp:Label>
+         </h2> <br />
+         <br />
+        <asp:Label ID="msg" Width="150" runat="server"></asp:Label> 
+        <br />
         </div>
+
             
-        <asp:Label ID="DeptIDLbl" runat="server" Text="Department ID:"></asp:Label>
-        <asp:DropDownList ID="DeptIDDDL" runat="server" DataSourceID="DeptIDs_DataSource" DataTextField="department_id" DataValueField="department_id" AutoPostBack="True">
+        <asp:Label ID="DeptIDLbl" runat="server" Text="Department Name:"></asp:Label>
+        <asp:DropDownList ID="DeptIDDDL" runat="server" DataSourceID="DeptIDs_DataSource" DataTextField="department_name" DataValueField="department_id" AutoPostBack="True" Height="25px" OnSelectedIndexChanged="DeptIDDDL_SelectedIndexChanged" Width="199px">
         </asp:DropDownList>
-        <asp:SqlDataSource ID="DeptIDs_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_id] FROM [department]"></asp:SqlDataSource>
+        &nbsp;Department ID:<asp:TextBox ID="DepartmentIDTB" runat="server" Height="24px" Width="85px" Enabled="False"></asp:TextBox>
+&nbsp;<asp:SqlDataSource ID="DeptIDs_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_id], [department_name] FROM [department] WHERE ([department_id] not in (10,11,12,13,19,20,21,22,24))"></asp:SqlDataSource>
         <p>
             &nbsp;</p>
     
-        <asp:Label ID="FacultyIDLbl" runat="server" Text="Faculty ID:"></asp:Label>
-        <asp:DropDownList ID="FacultyIDDDL" runat="server" DataSourceID="FacultyIDs_DeptID_DataSource" DataTextField="fuser_id" DataValueField="fuser_id" AutoPostBack="True">
+        <asp:Label ID="FacultyNameLbl" runat="server" Text="Faculty Name:"></asp:Label>
+        <asp:DropDownList ID="FacultyIDDDL" runat="server" DataSourceID="FacultyIDs_DeptID_DataSource" DataTextField="Name" DataValueField="Faculty_ID" AutoPostBack="True" Height="25px" OnSelectedIndexChanged="FacultyIDDDL_SelectedIndexChanged" Width="255px">
         </asp:DropDownList>
             
-        <asp:SqlDataSource ID="FacultyIDs_DeptID_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [fuser_id] FROM [faculty] WHERE ([department_id] = @department_id)">
+        &nbsp;<asp:Label ID="FacultyIDLbl" runat="server" Text="Faculty ID: "></asp:Label>
+        <asp:TextBox ID="FacultyIDTB" runat="server" Height="24px" Width="85px" Enabled="False"></asp:TextBox>
+&nbsp;<asp:SqlDataSource ID="FacultyIDs_DeptID_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT (info.user_id) as Faculty_ID, (info.first_name+','+info.last_name) as Name FROM [faculty] as fac, [user_info] as info WHERE info.user_id = fac.fuser_id and (fac.department_id= @department_id)">
             <SelectParameters>
-                <asp:ControlParameter ControlID="DeptIDDDL" DefaultValue="17" Name="department_id" PropertyName="SelectedValue" Type="Int16" />
+                <asp:ControlParameter ControlID="DeptIDDDL" DefaultValue="" Name="department_id" PropertyName="SelectedValue" Type="Int16" />
             </SelectParameters>
         </asp:SqlDataSource>
             
@@ -108,7 +116,6 @@
         <br />
         Total No. of Credits taken by the selected Faculty is
         <asp:TextBox ID="CreditsSUMTB" runat="server" Enabled="False">&lt;Sum of all Credits&gt;</asp:TextBox>
-        <br />
-        Total No. of Credits the selected Faculty handles is &lt;Contract Hours&gt;</form>
+        </form>
 </body>
 </html>

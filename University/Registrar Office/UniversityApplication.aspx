@@ -4,20 +4,66 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="HR Landing Page" />
+    <meta name="author" content="Harika" />
+    <title>University Application</title>
+    <%-- ------ css ------ --%>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/animate.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/prettyPhoto.css" rel="stylesheet" type="text/css" />
+    <link href="../css/main.css" rel="stylesheet" type="text/css" />
+    <link href="../css/responsive.css" rel="stylesheet" type="text/css" />
+     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+        rel="stylesheet" type="text/css" />
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="../images/favicon.ico" />
 </head>
 <body>
-    <iframe src="RegistrarHome.aspx" onload="this.width=screen.width;"> 
-         <p>Your browser does not support iframes.</p>
-    </iframe>
-    <form id="form1" runat="server">
+    <form id="form2" runat="server">
+    <header id="header">
+    <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../Default.aspx">University</a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li ><a href="RegistrarHome.aspx">Registration - Home</a></li>
+                        <li class="active"><a href="UniversirtyApplication.aspx">University Application</a></li>
+                        <li><a href="AdmissionStatus.aspx">Admission Status</a></li>                        
+                        <li><a href="AdmissionDetails.aspx">Admission Details</a></li> 
+                        <li><a href="SectionCreation.aspx">Section Creation</a></li> 
+                        <li><a href="SectionRegistration.aspx">Section Registration</a></li>
+                        <li><a href="StudentGrade.aspx">Student Grade</a></li>                           
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+ 
+    </header>
+
+    
     <div>
          <asp:Label ID="Label1" runat="server" Font-Size="XX-Large" Text="Application For University"></asp:Label>
         <br />
         (Please Fill out the Application form carefully)<br />
         <br />
          SUserID:&nbsp;
-        <asp:TextBox ID="TextBox35" runat="server" Width="184px"></asp:TextBox>
+         <asp:TextBox ID="txtSuserid" runat="server" Width="354px"></asp:TextBox>
+
          <br />
         <br />
         <asp:Label ID="Label12" runat="server" Font-Size="X-Large" Text="Course Information"></asp:Label>
@@ -25,99 +71,102 @@
         <br />
         <asp:Label ID="Label13" runat="server" Font-Size="Large" Text="Degree Applying"></asp:Label>
         :<br />
-        <br />
-        <asp:RadioButton ID="RadioButton3" runat="server" Text="Under-Graduate" />
-        <br />
-        <asp:RadioButton ID="RadioButton4" runat="server" Text="Graduate" />
-        <br />
+         <asp:RadioButtonList ID="DegreeRadioButton" runat="server">
+             <asp:ListItem>Graduate</asp:ListItem>
+             <asp:ListItem>UnderGraduate</asp:ListItem>
+         </asp:RadioButtonList>
         <br />
         <asp:Label ID="Label14" runat="server" Font-Size="Large" Text="Major field of Study"></asp:Label>
         <br />
         <br />
-        <asp:DropDownList ID="DropDownList1" runat="server" Width="132px">
+        <asp:DropDownList ID="MajorDropDown" runat="server" Width="132px" DataSourceID="SqlMajor" DataTextField="program_name" DataValueField="program_id">
             <asp:ListItem></asp:ListItem>
         </asp:DropDownList>
+         <asp:SqlDataSource ID="SqlMajor" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [program]"></asp:SqlDataSource>
         <br />
         <br />
         <asp:Label ID="Label15" runat="server" Font-Size="X-Large" Text="Education Background"></asp:Label>
         <br />
         (List your previous schools beginning with the most recent)<br />
         <br />
-        <asp:Label ID="Label16" runat="server" Font-Size="Large" Text="School name"></asp:Label>
-        <br />
-        <br />
-        <asp:TextBox ID="TextBox16" runat="server" Width="354px"></asp:TextBox>
-        <br />
-        <br />
-        <asp:Label ID="Label17" runat="server" Font-Size="Large" Text="GPA"></asp:Label>
-        <br />
-        <br />
-        <asp:TextBox ID="TextBox17" runat="server" Width="80px"></asp:TextBox>
-        <br />
-        <br />
-        <asp:Label ID="Label18" runat="server" Font-Size="Large" Text="Graduated"></asp:Label>
-        <br />
-        <br />
-        <asp:RadioButton ID="RadioButton5" runat="server" Text="Yes" />
-        <br />
-        <asp:RadioButton ID="RadioButton6" runat="server" Text="No" />
-        <br />
-        <br />
-&nbsp;<asp:Label ID="Label21" runat="server" Font-Size="Large" Text="Graduated Date"></asp:Label>
-        :&nbsp;
-        <asp:TextBox ID="TextBox19" runat="server"></asp:TextBox>
+        <asp:Panel ID="PanelGVEducationHistory" Visible="true" runat="server">
+            
+           <asp:Button ID="btnaddEduHistory" runat="server" OnClick="btnaddEduHistory_Click" Text="Add" style="height: 26px" /><br /> <br />
+                <asp:GridView ID="gvEducationHistory" ShowHeaderWhenEmpty="True" runat="server" AutoGenerateColumns="False" DataKeyNames="user_id,school_name" DataSourceID="SqlEducationHistory" AllowPaging="True" AllowSorting="True"  BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" HorizontalAlign="Center" >
+                    <Columns>
+                        <asp:BoundField DataField="user_id" HeaderText="user_id" ReadOnly="True" SortExpression="user_id" />
+                        <asp:BoundField DataField="school_name" HeaderText="school_name" SortExpression="school_name" ReadOnly="True" />
+                        <asp:BoundField DataField="degree" HeaderText="degree" SortExpression="degree" />
+                        <asp:BoundField DataField="major" HeaderText="major" SortExpression="major" />
+                        <asp:BoundField DataField="gpa" HeaderText="gpa" SortExpression="gpa" />
+                        <asp:BoundField DataField="graduated_year" HeaderText="graduated_year" SortExpression="graduated_year" />
+                    </Columns>
+                        <FooterStyle BackColor="#CCCCCC" />
+                        <EditRowStyle BackColor="Yellow"/>
+                        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                        <SortedAscendingHeaderStyle BackColor="#808080" />
+                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                        <SortedDescendingHeaderStyle BackColor="#383838" />
+            </asp:GridView> 
+            <asp:SqlDataSource ID="SqlEducationHistory" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [education_history] WHERE [user_id] = @original_user_id AND [school_name] = @original_school_name AND [degree] = @original_degree AND [major] = @original_major AND [gpa] = @original_gpa AND [graduated_year] = @original_graduated_year" InsertCommand="INSERT INTO [education_history] ([user_id], [school_name], [degree], [major], [gpa], [graduated_year]) VALUES (@user_id, @school_name, @degree, @major, @gpa, @graduated_year)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [education_history] WHERE ([user_id] = @user_id)" UpdateCommand="UPDATE [education_history] SET [degree] = @degree, [major] = @major, [gpa] = @gpa, [graduated_year] = @graduated_year WHERE [user_id] = @original_user_id AND [school_name] = @original_school_name AND [degree] = @original_degree AND [major] = @original_major AND [gpa] = @original_gpa AND [graduated_year] = @original_graduated_year">
+                <DeleteParameters>
+                    <asp:Parameter Name="original_user_id" Type="Int32" />
+                    <asp:Parameter Name="original_school_name" Type="String" />
+                    <asp:Parameter Name="original_degree" Type="String" />
+                    <asp:Parameter Name="original_major" Type="String" />
+                    <asp:Parameter Name="original_gpa" Type="Decimal" />
+                    <asp:Parameter Name="original_graduated_year" Type="Int16" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="user_id" Type="Int32" />
+                    <asp:Parameter Name="school_name" Type="String" />
+                    <asp:Parameter Name="degree" Type="String" />
+                    <asp:Parameter Name="major" Type="String" />
+                    <asp:Parameter Name="gpa" Type="Decimal" />
+                    <asp:Parameter Name="graduated_year" Type="Int16" />
+                </InsertParameters>
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="txtSuserid" Name="user_id" PropertyName="Text" Type="Int32" />
+                </SelectParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="degree" Type="String" />
+                    <asp:Parameter Name="major" Type="String" />
+                    <asp:Parameter Name="gpa" Type="Decimal" />
+                    <asp:Parameter Name="graduated_year" Type="Int16" />
+                    <asp:Parameter Name="original_user_id" Type="Int32" />
+                    <asp:Parameter Name="original_school_name" Type="String" />
+                    <asp:Parameter Name="original_degree" Type="String" />
+                    <asp:Parameter Name="original_major" Type="String" />
+                    <asp:Parameter Name="original_gpa" Type="Decimal" />
+                    <asp:Parameter Name="original_graduated_year" Type="Int16" />
+                </UpdateParameters>
+            </asp:SqlDataSource>   
+         </asp:Panel>
+<asp:Panel ID="PanelAddEducationHistory" Visible="false" runat="server">
+         <asp:Label ID="lblSchoolName" Width="150" runat="server" Text="School Name :"></asp:Label> 
+         <asp:TextBox ID="txtSchoolName" runat="server" Width="150px" ></asp:TextBox>
+         <br /><br />
+         <asp:Label ID="lbldegree" Width="150" runat="server" Text="Degree :"></asp:Label>         
+         <asp:TextBox ID="txtdegree" runat="server" Width="150px" ></asp:TextBox>        
+        <br /><br />
+         <asp:Label ID="lblmajor" runat="server" Text="Major :" Width="150"></asp:Label>
+         <asp:TextBox ID="txtmajor" runat="server" Width="150"></asp:TextBox>        
+        <br /><br />
+        <asp:Label ID="lblgpa" runat="server" Width="150" Text="GPA :"></asp:Label>
+        <asp:TextBox ID="txtgpa" runat="server" Width="150"></asp:TextBox><br /><br />
+        <asp:Label ID="lblgraduated_year" runat="server" Width="150" Text="Graduated Year :"></asp:Label>
+        <asp:TextBox ID="txtgraduated_year" runat="server" Width="150"></asp:TextBox><br /><br />
+         <div style="margin-top:50px;" align="center">
+        <asp:Button ID="btnedusubmit" runat="server"  Text="Submit" OnClick="btnedusubmit_Click" />&nbsp;&nbsp;
+        <asp:Button ID="btneduclear" runat="server"  Text="Clear" OnClick="btneduclear_Click" />
+            <br />
+        </div>
+        </asp:Panel>
 &nbsp;
-        <asp:Label ID="Label22" runat="server" Text="YYYY-MM-DD"></asp:Label>
-&nbsp;&nbsp;
-        <br />
-        <br />
-        <asp:Label ID="Label23" runat="server" Font-Size="Large" Text="School name"></asp:Label>
-        <br />
-        <br />
-        <asp:TextBox ID="TextBox20" runat="server" Width="354px"></asp:TextBox>
-        <br />
-        <br />
-        <asp:Label ID="Label24" runat="server" Font-Size="Large" Text="GPA"></asp:Label>
-        <br />
-        <br />
-        <asp:TextBox ID="TextBox21" runat="server" Width="65px"></asp:TextBox>
-         <br />
-        <br />
-         <asp:Label ID="Label49" runat="server" Font-Size="Large" Text="Graduated Date"></asp:Label>
-        :&nbsp;
-        <asp:TextBox ID="TextBox34" runat="server"></asp:TextBox>
-&nbsp;
-        <asp:Label ID="Label50" runat="server" Text="YYYY-MM-DD"></asp:Label>
-&nbsp;&nbsp;
-         &nbsp;
-        <br />
-        <br />
-&nbsp;&nbsp;
-        <br />
-    
-    </div>
-    <div>
-    
-        <br />
-        <asp:Label ID="Label30" runat="server" Font-Size="Large" Text="School name"></asp:Label>
-        <br />
-        <br />
-        <asp:TextBox ID="TextBox24" runat="server" Width="354px"></asp:TextBox>
-        <br />
-        <br />
-        <asp:Label ID="Label31" runat="server" Font-Size="Large" Text="GPA"></asp:Label>
-        <br />
-        <br />
-        <asp:TextBox ID="TextBox25" runat="server" Width="64px"></asp:TextBox>
-        <br />
-        <br />
-&nbsp;<asp:Label ID="Label33" runat="server" Font-Size="Large" Text="Graduated year"></asp:Label>
-        :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox26" runat="server"></asp:TextBox>
-&nbsp;
-        <asp:Label ID="Label34" runat="server" Text="YYYY-MM-DD"></asp:Label>
-&nbsp;&nbsp;
-        <br />
+        YYYY<br />
         <br />
 &nbsp;<br />
         <br />
@@ -127,14 +176,14 @@
         <asp:Label ID="Label38" runat="server" Font-Size="Large" Text="GRE Score Combined"></asp:Label>
         <br />
         <br />
-        <asp:TextBox ID="TextBox28" runat="server" Width="102px"></asp:TextBox>
+        <asp:TextBox ID="GRETextBox" runat="server" Width="102px"></asp:TextBox>
         <br />
         <br />
         <asp:Label ID="Label39" runat="server" Font-Size="Large" Text="Test Date"></asp:Label>
         :&nbsp;
-        <asp:TextBox ID="TextBox29" runat="server"></asp:TextBox>
+        <asp:TextBox ID="GDATETextBox" runat="server"></asp:TextBox>
 &nbsp;
-        <asp:Label ID="Label40" runat="server" Text="(MM/DD/YYYY)"></asp:Label>
+        <asp:Label ID="Label51" runat="server" Text="YYYY-MM-DD"></asp:Label>
 &nbsp;
         <br />
         <br />
@@ -144,14 +193,14 @@
         <asp:Label ID="Label42" runat="server" Font-Size="Large" Text="TOEFL Score"></asp:Label>
         <br />
         <br />
-        <asp:TextBox ID="TextBox30" runat="server" Width="102px"></asp:TextBox>
+        <asp:TextBox ID="TOEFLTextBox" runat="server" Width="102px"></asp:TextBox>
         <br />
         <br />
         <asp:Label ID="Label43" runat="server" Font-Size="Large" Text="Test Date"></asp:Label>
         :&nbsp;
-        <asp:TextBox ID="TextBox31" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TDATETextBox" runat="server"></asp:TextBox>
 &nbsp;
-        <asp:Label ID="Label44" runat="server" Text="(MM/DD/YYYY)"></asp:Label>
+        <asp:Label ID="Label52" runat="server" Text="YYYY-MM-DD"></asp:Label>
 &nbsp;
         <br />
         <br />
@@ -161,19 +210,74 @@
         <asp:Label ID="Label46" runat="server" Font-Size="Large" Text="IELTS Score"></asp:Label>
         <br />
         <br />
-        <asp:TextBox ID="TextBox32" runat="server" Width="102px"></asp:TextBox>
+        <asp:TextBox ID="IELTSTextBox" runat="server" Width="102px"></asp:TextBox>
         <br />
         <br />
         <asp:Label ID="Label47" runat="server" Font-Size="Large" Text="Test Date"></asp:Label>
         :&nbsp;
-        <asp:TextBox ID="TextBox33" runat="server"></asp:TextBox>
+        <asp:TextBox ID="IDATETextBox" runat="server"></asp:TextBox>
 &nbsp;
-        <asp:Label ID="Label48" runat="server" Text="(MM/DD/YYYY)"></asp:Label>
-&nbsp;
+        <asp:Label ID="Label53" runat="server" Text="YYYY-MM-DD"></asp:Label>
+&nbsp;<br />
+        Application Status:&nbsp;
+        <asp:DropDownList ID="DropDownList1" runat="server">
+            <asp:ListItem>Submit</asp:ListItem>
+            <asp:ListItem>Save for later</asp:ListItem>
+        </asp:DropDownList>
+        <asp:SqlDataSource ID="SqlStudentAppli" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [student_application] WHERE [application_id] = @original_application_id AND [suser_id] = @original_suser_id AND [degree] = @original_degree AND [major] = @original_major AND [gre_score] = @original_gre_score AND (([gre_test_date] = @original_gre_test_date) OR ([gre_test_date] IS NULL AND @original_gre_test_date IS NULL)) AND (([ielts_score] = @original_ielts_score) OR ([ielts_score] IS NULL AND @original_ielts_score IS NULL)) AND (([ielts_test_date] = @original_ielts_test_date) OR ([ielts_test_date] IS NULL AND @original_ielts_test_date IS NULL)) AND (([toefl] = @original_toefl) OR ([toefl] IS NULL AND @original_toefl IS NULL)) AND (([toefl_test_date] = @original_toefl_test_date) OR ([toefl_test_date] IS NULL AND @original_toefl_test_date IS NULL)) AND [admission_status] = @original_admission_status" InsertCommand="INSERT INTO [student_application] ([suser_id], [degree], [major], [gre_score], [gre_test_date], [ielts_score], [ielts_test_date], [toefl], [toefl_test_date], [admission_status]) VALUES (@suser_id, @degree, @major, @gre_score, @gre_test_date, @ielts_score, @ielts_test_date, @toefl, @toefl_test_date, @admission_status)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [student_application]" UpdateCommand="UPDATE [student_application] SET [suser_id] = @suser_id, [degree] = @degree, [major] = @major, [gre_score] = @gre_score, [gre_test_date] = @gre_test_date, [ielts_score] = @ielts_score, [ielts_test_date] = @ielts_test_date, [toefl] = @toefl, [toefl_test_date] = @toefl_test_date, [admission_status] = @admission_status WHERE [application_id] = @original_application_id AND [suser_id] = @original_suser_id AND [degree] = @original_degree AND [major] = @original_major AND [gre_score] = @original_gre_score AND (([gre_test_date] = @original_gre_test_date) OR ([gre_test_date] IS NULL AND @original_gre_test_date IS NULL)) AND (([ielts_score] = @original_ielts_score) OR ([ielts_score] IS NULL AND @original_ielts_score IS NULL)) AND (([ielts_test_date] = @original_ielts_test_date) OR ([ielts_test_date] IS NULL AND @original_ielts_test_date IS NULL)) AND (([toefl] = @original_toefl) OR ([toefl] IS NULL AND @original_toefl IS NULL)) AND (([toefl_test_date] = @original_toefl_test_date) OR ([toefl_test_date] IS NULL AND @original_toefl_test_date IS NULL)) AND [admission_status] = @original_admission_status">
+            <DeleteParameters>
+                <asp:Parameter Name="original_application_id" Type="Int16" />
+                <asp:Parameter Name="original_suser_id" Type="Int32" />
+                <asp:Parameter Name="original_degree" Type="String" />
+                <asp:Parameter Name="original_major" Type="String" />
+                <asp:Parameter Name="original_gre_score" Type="Int16" />
+                <asp:Parameter DbType="Date" Name="original_gre_test_date" />
+                <asp:Parameter Name="original_ielts_score" Type="Decimal" />
+                <asp:Parameter DbType="Date" Name="original_ielts_test_date" />
+                <asp:Parameter Name="original_toefl" Type="Int16" />
+                <asp:Parameter DbType="Date" Name="original_toefl_test_date" />
+                <asp:Parameter Name="original_admission_status" Type="String" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="suser_id" Type="Int32" />
+                <asp:Parameter Name="degree" Type="String" />
+                <asp:Parameter Name="major" Type="String" />
+                <asp:Parameter Name="gre_score" Type="Int16" />
+                <asp:Parameter DbType="Date" Name="gre_test_date" />
+                <asp:Parameter Name="ielts_score" Type="Decimal" />
+                <asp:Parameter DbType="Date" Name="ielts_test_date" />
+                <asp:Parameter Name="toefl" Type="Int16" />
+                <asp:Parameter DbType="Date" Name="toefl_test_date" />
+                <asp:Parameter Name="admission_status" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="suser_id" Type="Int32" />
+                <asp:Parameter Name="degree" Type="String" />
+                <asp:Parameter Name="major" Type="String" />
+                <asp:Parameter Name="gre_score" Type="Int16" />
+                <asp:Parameter DbType="Date" Name="gre_test_date" />
+                <asp:Parameter Name="ielts_score" Type="Decimal" />
+                <asp:Parameter DbType="Date" Name="ielts_test_date" />
+                <asp:Parameter Name="toefl" Type="Int16" />
+                <asp:Parameter DbType="Date" Name="toefl_test_date" />
+                <asp:Parameter Name="admission_status" Type="String" />
+                <asp:Parameter Name="original_application_id" Type="Int16" />
+                <asp:Parameter Name="original_suser_id" Type="Int32" />
+                <asp:Parameter Name="original_degree" Type="String" />
+                <asp:Parameter Name="original_major" Type="String" />
+                <asp:Parameter Name="original_gre_score" Type="Int16" />
+                <asp:Parameter DbType="Date" Name="original_gre_test_date" />
+                <asp:Parameter Name="original_ielts_score" Type="Decimal" />
+                <asp:Parameter DbType="Date" Name="original_ielts_test_date" />
+                <asp:Parameter Name="original_toefl" Type="Int16" />
+                <asp:Parameter DbType="Date" Name="original_toefl_test_date" />
+                <asp:Parameter Name="original_admission_status" Type="String" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
         <br />
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button1" runat="server" Font-Size="Large" Height="48px" Text="Submit" Width="157px" />
+        <asp:Button ID="SubButton" runat="server" Font-Size="Large" Height="48px" Text="Submit" Width="157px" OnClick="SubButton_Click" />
         <br />
     
     

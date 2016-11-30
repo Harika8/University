@@ -60,6 +60,11 @@ namespace University.HR
             SqlVacancy.InsertParameters["close_date"].DefaultValue = txtCloseDate.Text.ToUpper().Trim(); ;
             SqlVacancy.Insert();
 
+
+            gvVacancy.DataBind();
+            PanelAddVacancy.Visible = false;
+            PanelgvVacancy.Visible = true;
+
             selPosition.SelectedIndex = 0;
             txtJobtype.Text = string.Empty;
             txtDepartment.Text = string.Empty;
@@ -87,6 +92,12 @@ namespace University.HR
             txtDuration.Text = string.Empty;
             txtCloseDate.Text = string.Empty;
 
+        }
+
+        protected void btnaddVacancy_Click(object sender, EventArgs e)
+        {
+            PanelAddVacancy.Visible = true;
+            PanelgvVacancy.Visible = false;
         }
     }
 }

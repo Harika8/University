@@ -41,7 +41,7 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="AcademicsHome.aspx">Academics - Home</a></li>
+                        <li><a href="AcademicsHome.aspx">Academics - Home</a></li>
                         <li><a href="DepartmentManagement.aspx">Manage Department</a></li>
                         <li><a href="ProgramManagement.aspx">Manage Program</a></li>                        
                         <li><a href="CourseManagement.aspx">Manage Course</a></li>                     
@@ -52,9 +52,15 @@
             </div><!--/.container-->
         </nav><!--/nav-->
     </header>
+            <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Department - Creation Form"></asp:Label>
+         </h2> <br />
+         <br />
+        <asp:Label ID="msg" Width="150" runat="server"></asp:Label> 
+        <br />
+        </div>
 
-        <p style="width: 203px; margin-left: 600px">
-        <b>Department - Creation Form</b></p>
         <asp:Button ID="BackButton" runat="server" OnClick="BackButton_Click" Text="Back" />
         <br />
         <asp:SqlDataSource ID="DepartmentTBLDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [department]"></asp:SqlDataSource>
@@ -63,9 +69,6 @@
         <br />
         <asp:Label ID="DepartmentName" runat="server" Text="Department Name:"></asp:Label>
         <asp:TextBox ID="DepartmentNameTB" runat="server"></asp:TextBox>
-        &nbsp;&nbsp;&nbsp;
-        <asp:Label ID="DepartmentIDLbl" runat="server" Text="Department ID:"></asp:Label>
-        <asp:TextBox ID="DepartmentIDTB" runat="server" Enabled="False" Width="79px"></asp:TextBox>
         <br />
         <br />
         <br />
@@ -113,9 +116,9 @@
         <br />
         <br />
         
-        <asp:Button ID="ProgramSubmitButton" runat="server" Text="Submit" OnClick="ProgramSubmitButton_Click" />
+        <asp:Button ID="DepartmentSubmitButton" runat="server" Text="Submit" OnClick="DepartmentSubmitButton_Click" />
         &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="ProgramClearButton" runat="server" Text="Clear" OnClick="ProgramClearButton_Click" />
+        <asp:Button ID="DepartmentClearButton" runat="server" Text="Clear" OnClick="DepartmentClearButton_Click" />
         <br />
         <br />
         <asp:SqlDataSource ID="sqldepartment" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [department] WHERE [department_id] = @original_department_id AND [department_name] = @original_department_name AND [department_location] = @original_department_location AND [department_phone_num] = @original_department_phone_num AND [department_email_id] = @original_department_email_id" InsertCommand="INSERT INTO [department] ([department_name], [department_location], [department_phone_num], [department_email_id]) VALUES (@department_name, @department_location, @department_phone_num, @department_email_id)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [department]" UpdateCommand="UPDATE [department] SET [department_name] = @department_name, [department_location] = @department_location, [department_phone_num] = @department_phone_num, [department_email_id] = @department_email_id WHERE [department_id] = @original_department_id AND [department_name] = @original_department_name AND [department_location] = @original_department_location AND [department_phone_num] = @original_department_phone_num AND [department_email_id] = @original_department_email_id">

@@ -17,7 +17,7 @@ namespace University.Academics
         protected void CourseClearButton_Click(object sender, EventArgs e)
         {
             CourseNameTB.Text = string.Empty;
-            CourseNumberTB.Text = string.Empty;
+           // CourseNumberTB.Text = string.Empty;
             CourseDescriptionTB.Text = string.Empty;
             Response.Redirect("CourseCreation.aspx");
         }
@@ -33,6 +33,13 @@ namespace University.Academics
             CourseInsertSqlDataSource.InsertParameters["program_id"].DefaultValue = ProgramIDDDL.Text;
             CourseInsertSqlDataSource.Insert();
             //eventsource.SelectCommand = "Select first_name,last_name,email_id,contact_no from user_info where user_id='" + TextBox25.Text + "'";
+
+            string message = "New Course is created successfully under the selected Program and Department.";
+            string script = "window.onload = function(){ alert('";
+            script += message;
+            script += "')};";
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+
         }
 
         protected void BackButton_Click(object sender, EventArgs e)
@@ -42,7 +49,7 @@ namespace University.Academics
 
         protected void ProgramIDDDL_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ProgramIDTB.Text = ProgramIDDDL.SelectedValue;
+            //ProgramIDTB.Text = ProgramIDDDL.SelectedValue;
         }
 
         protected void DepartmentIDDDList_SelectedIndexChanged(object sender, EventArgs e)
