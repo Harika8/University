@@ -91,7 +91,7 @@
         Service Status:&nbsp;&nbsp;
         <asp:DropDownList ID="DropDownList5" runat="server">
             <asp:ListItem>Completed</asp:ListItem>
-            <asp:ListItem>Work in Progress</asp:ListItem>
+            <asp:ListItem>InProgress</asp:ListItem>
             <asp:ListItem>Pending</asp:ListItem>
         </asp:DropDownList>
         <br />
