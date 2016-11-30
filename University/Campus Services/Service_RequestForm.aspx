@@ -19,14 +19,9 @@
         </span></strong>
         <br />
         <br />
-        Room Number:&nbsp;&nbsp;
-        <asp:DropDownList ID="DropDownList3" runat="server">
-            <asp:ListItem>100</asp:ListItem>
-            <asp:ListItem>101</asp:ListItem>
-            <asp:ListItem>102</asp:ListItem>
-            <asp:ListItem>103</asp:ListItem>
-            <asp:ListItem>104</asp:ListItem>
+        Room Number:&nbsp;<asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="roomservice2" DataTextField="room_no" DataValueField="room_no">
         </asp:DropDownList>
+        &nbsp;
         <br />
         <br />
         Service Type:&nbsp;&nbsp;
@@ -53,9 +48,6 @@
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
         Description:&nbsp;&nbsp;
         <asp:TextBox ID="TextBox3" runat="server" Height="64px" TextMode="MultiLine" Width="276px"></asp:TextBox>
         <br />
@@ -65,7 +57,7 @@
         <asp:Button ID="Button2" runat="server" Text="Cancel" OnClick="Button2_Click" />
         <br />
         <br />
-        <asp:SqlDataSource ID="servicesource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" DeleteCommand="DELETE FROM [service] WHERE [service_id] = @service_id" InsertCommand="INSERT INTO [service] ([room_no], [service_type], [service_req_time], [service_req_date]) VALUES (@room_no, @service_type, @service_req_time, @service_req_date)" SelectCommand="SELECT [service_id], [room_no], [service_type], [service_req_time], [service_req_date] FROM [service]" UpdateCommand="UPDATE [service] SET [room_no] = @room_no, [service_type] = @service_type, [service_req_time] = @service_req_time, [service_req_date] = @service_req_date WHERE [service_id] = @service_id">
+        <asp:SqlDataSource ID="servicesource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" DeleteCommand="DELETE FROM [service] WHERE [service_id] = @service_id" InsertCommand="INSERT INTO [service] ([room_no], [service_type], [service_req_time], [service_req_date], [service_alloted_time], [service_alloted_date], [status]) VALUES (@room_no, @service_type, @service_req_time, @service_req_date, @service_alloted_time, @service_alloted_date, @status)" SelectCommand="SELECT * FROM [service]" UpdateCommand="UPDATE [service] SET [room_no] = @room_no, [service_type] = @service_type, [service_req_time] = @service_req_time, [service_req_date] = @service_req_date, [service_alloted_time] = @service_alloted_time, [service_alloted_date] = @service_alloted_date, [status] = @status WHERE [service_id] = @service_id">
             <DeleteParameters>
                 <asp:Parameter Name="service_id" Type="Int16" />
             </DeleteParameters>
@@ -74,13 +66,38 @@
                 <asp:Parameter Name="service_type" Type="String" />
                 <asp:Parameter Name="service_req_time" Type="DateTime" />
                 <asp:Parameter DbType="Date" Name="service_req_date" />
+                <asp:Parameter Name="service_alloted_time" Type="DateTime" />
+                <asp:Parameter DbType="Date" Name="service_alloted_date" />
+                <asp:Parameter Name="status" Type="String" />
             </InsertParameters>
             <UpdateParameters>
                 <asp:Parameter Name="room_no" Type="Int16" />
                 <asp:Parameter Name="service_type" Type="String" />
                 <asp:Parameter Name="service_req_time" Type="DateTime" />
                 <asp:Parameter DbType="Date" Name="service_req_date" />
+                <asp:Parameter Name="service_alloted_time" Type="DateTime" />
+                <asp:Parameter DbType="Date" Name="service_alloted_date" />
+                <asp:Parameter Name="status" Type="String" />
                 <asp:Parameter Name="service_id" Type="Int16" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="roomservice2" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" DeleteCommand="DELETE FROM [room] WHERE [room_no] = @room_no" InsertCommand="INSERT INTO [room] ([room_no], [room_type], [availability], [user_id], [duration_stay]) VALUES (@room_no, @room_type, @availability, @user_id, @duration_stay)" SelectCommand="SELECT * FROM [room]" UpdateCommand="UPDATE [room] SET [room_type] = @room_type, [availability] = @availability, [user_id] = @user_id, [duration_stay] = @duration_stay WHERE [room_no] = @room_no">
+            <DeleteParameters>
+                <asp:Parameter Name="room_no" Type="Int16" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="room_no" Type="Int16" />
+                <asp:Parameter Name="room_type" Type="String" />
+                <asp:Parameter DbType="Date" Name="availability" />
+                <asp:Parameter Name="user_id" Type="Int32" />
+                <asp:Parameter Name="duration_stay" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="room_type" Type="String" />
+                <asp:Parameter DbType="Date" Name="availability" />
+                <asp:Parameter Name="user_id" Type="Int32" />
+                <asp:Parameter Name="duration_stay" Type="String" />
+                <asp:Parameter Name="room_no" Type="Int16" />
             </UpdateParameters>
         </asp:SqlDataSource>
         <br />

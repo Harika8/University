@@ -47,10 +47,11 @@
         <br />
         </span>Type of accomodation : 
             
-            <asp:RadioButtonList ID="RadioButtonList1" runat="server">
+            <asp:DropDownList ID="DropDownList2" runat="server">
+                <asp:ListItem Value="Select">Selected value</asp:ListItem>
                 <asp:ListItem Value="Single">Single bed room</asp:ListItem>
                 <asp:ListItem Value="Double">Double bed room</asp:ListItem>
-            </asp:RadioButtonList>
+            </asp:DropDownList>
         </p>
         <p style="margin-left: 40px">
             Select available room:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -88,7 +89,32 @@
         </p>
     
     </div>
-        <asp:SqlDataSource ID="roomsource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" SelectCommand="SELECT * FROM [room]">
+        <asp:SqlDataSource ID="roomsource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" SelectCommand="SELECT * FROM [room]" ConflictDetection="CompareAllValues" DeleteCommand="DELETE FROM [room] WHERE [room_no] = @original_room_no AND [room_type] = @original_room_type AND [availability] = @original_availability AND (([user_id] = @original_user_id) OR ([user_id] IS NULL AND @original_user_id IS NULL)) AND (([duration_stay] = @original_duration_stay) OR ([duration_stay] IS NULL AND @original_duration_stay IS NULL))" InsertCommand="INSERT INTO [room] ([room_no], [room_type], [availability], [user_id], [duration_stay]) VALUES (@room_no, @room_type, @availability, @user_id, @duration_stay)" OldValuesParameterFormatString="original_{0}" UpdateCommand="UPDATE [room] SET [room_type] = @room_type, [availability] = @availability, [user_id] = @user_id, [duration_stay] = @duration_stay WHERE [room_no] = @original_room_no AND [room_type] = @original_room_type AND [availability] = @original_availability AND (([user_id] = @original_user_id) OR ([user_id] IS NULL AND @original_user_id IS NULL)) AND (([duration_stay] = @original_duration_stay) OR ([duration_stay] IS NULL AND @original_duration_stay IS NULL))">
+            <DeleteParameters>
+                <asp:Parameter Name="original_room_no" Type="Int16" />
+                <asp:Parameter Name="original_room_type" Type="String" />
+                <asp:Parameter DbType="Date" Name="original_availability" />
+                <asp:Parameter Name="original_user_id" Type="Int32" />
+                <asp:Parameter Name="original_duration_stay" Type="String" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="room_no" Type="Int16" />
+                <asp:Parameter Name="room_type" Type="String" />
+                <asp:Parameter DbType="Date" Name="availability" />
+                <asp:Parameter Name="user_id" Type="Int32" />
+                <asp:Parameter Name="duration_stay" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="room_type" Type="String" />
+                <asp:Parameter DbType="Date" Name="availability" />
+                <asp:Parameter Name="user_id" Type="Int32" />
+                <asp:Parameter Name="duration_stay" Type="String" />
+                <asp:Parameter Name="original_room_no" Type="Int16" />
+                <asp:Parameter Name="original_room_type" Type="String" />
+                <asp:Parameter DbType="Date" Name="original_availability" />
+                <asp:Parameter Name="original_user_id" Type="Int32" />
+                <asp:Parameter Name="original_duration_stay" Type="String" />
+            </UpdateParameters>
         </asp:SqlDataSource>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" DeleteCommand="DELETE FROM [user_info] WHERE [user_id] = @user_id" InsertCommand="INSERT INTO [user_info] ([first_name], [last_name]) VALUES (@first_name, @last_name)" SelectCommand="SELECT [first_name], [user_id], [last_name] FROM [user_info]" UpdateCommand="UPDATE [user_info] SET [first_name] = @first_name, [last_name] = @last_name WHERE [user_id] = @user_id">
             <DeleteParameters>

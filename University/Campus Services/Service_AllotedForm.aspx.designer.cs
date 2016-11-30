@@ -22,22 +22,22 @@ namespace University.Campus_Services {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// TextBox6 control.
+        /// DropDownList6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList6;
         
         /// <summary>
-        /// TextBox7 control.
+        /// DropDownList7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList7;
         
         /// <summary>
         /// DropDownList4 control.
@@ -85,21 +85,21 @@ namespace University.Campus_Services {
         protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// servicesource1 control.
+        /// servicesource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource servicesource1;
+        protected global::System.Web.UI.WebControls.SqlDataSource servicesource;
         
         /// <summary>
-        /// roomsource control.
+        /// roomservice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource roomsource;
+        protected global::System.Web.UI.WebControls.SqlDataSource roomservice;
     }
 }

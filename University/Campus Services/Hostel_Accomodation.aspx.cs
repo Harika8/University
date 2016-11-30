@@ -19,7 +19,7 @@ namespace University.Campus_Services
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            roomsource.InsertParameters["room_type"].DefaultValue = RadioButtonList1.SelectedValue;
+            roomsource.InsertParameters["room_type"].DefaultValue = DropDownList2.SelectedValue;
             roomsource.InsertParameters["user_id"].DefaultValue = TextBox11.Text.Trim();
             roomsource.InsertParameters["duration_stay"].DefaultValue = RadioButtonList2.SelectedValue;
             roomsource.InsertParameters["room_no"].DefaultValue = DropDownList1.SelectedValue;
@@ -28,11 +28,12 @@ namespace University.Campus_Services
 
             TextBox11.Text = string.Empty;
             TextBox10.Text = string.Empty;
-           TextBox14.Text = string.Empty;
+            TextBox14.Text = string.Empty;
             TextBox12.Text = string.Empty;
             TextBox3.Text = string.Empty;
             TextBox5.Text = string.Empty;
             TextBox13.Text = string.Empty;
+            TextBox6.Text = string.Empty;
 
         }
            //protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
