@@ -8,12 +8,13 @@
 </head>
 <body>
     <form id="form1" runat="server">
-      <div style="margin-top:75px;" align="center">
-         Job Details<br />
+     <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Job Details"></asp:Label>
+         </h2> <br />
          <br /><br />
         </div>
         <div style="margin-left: 100px">        
-           <asp:TextBox ID="txtVacancyID" runat="server" Width="150px"  ReadOnly="true"></asp:TextBox><br /><br /> 
          <asp:Label ID="lblPositiontitle" Width="150" runat="server" Text="Position Title :"></asp:Label>
          <asp:TextBox ID="txtDesignation" runat="server" Width="150px"  ReadOnly="true"></asp:TextBox><br /><br />
          <asp:Label ID="lbldepartment" runat="server" Text="Department :" Width="150"></asp:Label>

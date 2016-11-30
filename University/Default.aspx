@@ -67,7 +67,7 @@
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">University</h1>
+                                    <h1 class="animation animated-item-1">HR</h1>
                                     <h2 class="animation animated-item-2">About</h2>                                
                                 </div>
                             </div>
@@ -85,7 +85,7 @@
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">University</h1>
+                                    <h1 class="animation animated-item-1">Content</h1>
                                     <h2 class="animation animated-item-2">About</h2>                                    
                                 </div>
                             </div>
@@ -125,67 +125,6 @@
         </a>
     </section>
     <!--/#main-slider-->
-    <section id="feature">
-        <div class="container">
-           <div class="center wow fadeInDown">
-                <h2>Features</h2>
-                <p class="lead">Easy to use, Responsive features, Mobile-first approach <br> Browser compatibility Bootstrap is compatible with all modern browsers</p>
-            </div>
-
-            <div class="row">
-                <div class="features">
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-th-list"></i>
-                            <h2>Menu or Navbar</h2>
-                            <h3>A standard navigation class navbar navbar-default</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-th"></i>
-                            <h2>Grid System</h2>
-                            <h3>grid system allows up to 12 columns across the page</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-cloud-download"></i>
-                            <h2>Easy to customize</h2>
-                            <h3>Bootstrap Grid system has four classes - xs, sm, md & lg</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-                
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-comment"></i>
-                            <h2>Modal & Tooltip</h2>
-                            <h3>Modal is a dialog box/popup, Tooltip is small pop-up box</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-cogs"></i>
-                            <h2>Grid Settings</h2>
-                            <h3>xs (<768px), sm (>=768px), md (>=992px), lg (>=1200px)</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-heart"></i>
-                            <h2>The Carousel Plugin</h2>
-                            <h3>The Carousel plugin is a Slideshow</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-                </div><!--/.services-->
-            </div><!--/.row-->    
-        </div><!--/.container-->
-    </section>
-    <!--/#feature-->
     <script type="text/javascript">
         jQuery(document).ready(function () {
             var offset = 300;

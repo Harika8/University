@@ -24,6 +24,10 @@ namespace University.HR
             SqlPosition.InsertParameters["pay_frequency"].DefaultValue = selPayfrequency.SelectedValue;
             SqlPosition.Insert();
 
+            gvPosition.DataBind();
+            PanelAddPosition.Visible = false;
+            PanelgvPosition.Visible = true;
+
             selJobtype.SelectedIndex = 0;
             txtdesignation.Text = string.Empty;
             txtrolesresp.Text = string.Empty;
@@ -41,6 +45,12 @@ namespace University.HR
             seldept.SelectedIndex = -1;
             txtSalary.Text = string.Empty;
             selPayfrequency.SelectedIndex = 0;
+        }
+
+        protected void btnaddPosition_Click(object sender, EventArgs e)
+        {
+            PanelAddPosition.Visible = true;
+            PanelgvPosition.Visible = false;
         }
     }
 }

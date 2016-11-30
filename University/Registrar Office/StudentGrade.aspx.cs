@@ -26,7 +26,10 @@ namespace University.Registrar_Office
 
         protected void GradeButton_Click(object sender, EventArgs e)
         {
-            
+            GridView2.Visible = true;
+            //SqlGrade.InsertParameters["grade"].DefaultValue = GridView2.gr;
         }
+
+       
     }
 }

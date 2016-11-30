@@ -9,15 +9,20 @@
 <body>
     <form id="form1" runat="server">
      <div style="margin-top:75px;" align="center">
-         New Job Applicant<br />
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="New Job Applicant"></asp:Label>
+         </h2> <br />
+         <br /><br />
+        
 
          <asp:Label ID="lblUserid" Width="150" runat="server" Text="User ID :"></asp:Label>       
          <asp:TextBox ID="txtUserid" runat="server" Width="150px" ReadOnly="true"></asp:TextBox> 
         <br /><br /><br /> <br />
         <asp:Panel ID="PanelGVEducationHistory" Visible="true" runat="server">
-            ADD EDUCATION HISTORY <br /> <br />
-           <asp:Button ID="btnaddEduHistory" runat="server" OnClick="btnaddEduHistory_Click" Text="Add" style="height: 26px" /><br /> <br />
-                <asp:GridView ID="gvEducationHistory" ShowHeaderWhenEmpty="True" runat="server" AutoGenerateColumns="False" DataKeyNames="user_id,school_name" DataSourceID="SqlEducationHistory" AllowPaging="True" AllowSorting="True"  BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" HorizontalAlign="Center" >
+            ADD EDUCATION HISTORY <br /> <br /><br />
+           <asp:Button ID="btnaddEduHistory" runat="server" OnClick="btnaddEduHistory_Click" Text="Add" style="height: 26px" /><br /> <br /><br /> <br />
+                <asp:GridView ID="gvEducationHistory" ShowHeaderWhenEmpty="True" runat="server" AutoGenerateColumns="False" DataKeyNames="user_id,school_name" DataSourceID="SqlEducationHistory"   GridLines="Vertical" HorizontalAlign="Center" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" >
+                    <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField DataField="school_name" HeaderText="school_name" ReadOnly="True" SortExpression="school_name" />
                         <asp:BoundField DataField="degree" HeaderText="degree" SortExpression="degree" />
@@ -25,15 +30,15 @@
                         <asp:BoundField DataField="gpa" HeaderText="gpa" SortExpression="gpa" />
                         <asp:BoundField DataField="graduated_year" HeaderText="graduated_year" SortExpression="graduated_year" />
                     </Columns>
-                        <FooterStyle BackColor="#CCCCCC" />
-                        <EditRowStyle BackColor="Yellow"/>
-                        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-                        <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-                        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                        <SortedAscendingHeaderStyle BackColor="#808080" />
-                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                        <SortedDescendingHeaderStyle BackColor="#383838" />
+                    <FooterStyle BackColor="#CCCC99" />
+                    <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+                    <RowStyle BackColor="#F7F7DE" />
+                    <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#FBFBF2" />
+                    <SortedAscendingHeaderStyle BackColor="#848384" />
+                    <SortedDescendingCellStyle BackColor="#EAEAD3" />
+                    <SortedDescendingHeaderStyle BackColor="#575357" />
             </asp:GridView> 
             <asp:SqlDataSource ID="SqlEducationHistory" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" DeleteCommand="DELETE FROM [education_history] WHERE [user_id] = @original_user_id AND [school_name] = @original_school_name AND [degree] = @original_degree AND [major] = @original_major AND [gpa] = @original_gpa AND [graduated_year] = @original_graduated_year" InsertCommand="INSERT INTO [education_history] ([user_id], [school_name], [degree], [major], [gpa], [graduated_year]) VALUES (@user_id, @school_name, @degree, @major, @gpa, @graduated_year)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [education_history] WHERE ([user_id] = @user_id)" UpdateCommand="UPDATE [education_history] SET [degree] = @degree, [major] = @major, [gpa] = @gpa, [graduated_year] = @graduated_year WHERE [user_id] = @original_user_id AND [school_name] = @original_school_name AND [degree] = @original_degree AND [major] = @original_major AND [gpa] = @original_gpa AND [graduated_year] = @original_graduated_year">
                 <DeleteParameters>
@@ -93,20 +98,32 @@
         </div>
         </asp:Panel>
         </div>
+        <br /> <br /><br /> <br />
         <div style="margin-top:75px;" align="center">
         <asp:Panel ID="PanelgvEmploymentHistory" Visible="true" runat="server">
            ADD EMPLOYMENT HISTORY <br /> <br />
-           <asp:Button ID="btnaddEmpHistory" runat="server" OnClick="btnaddEmpHistory_Click" Text="Add" /><br /> <br />
-                <asp:GridView ID="gvEmpHistory" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataKeyNames="juser_id,employer_name" DataSourceID="SqlEmpHistory">
+           <asp:Button ID="btnaddEmpHistory" runat="server" OnClick="btnaddEmpHistory_Click" Text="Add" /><br /> <br /><br /> <br />
+                <asp:GridView ID="gvEmpHistory" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataKeyNames="juser_id,employer_name" DataSourceID="SqlEmpHistory" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
                    
+                    <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField DataField="employer_name" HeaderText="employer_name" ReadOnly="True" SortExpression="employer_name" />
                         <asp:BoundField DataField="designation" HeaderText="designation" SortExpression="designation" />
                         <asp:BoundField DataField="duration" HeaderText="duration" SortExpression="duration" />
                         <asp:BoundField DataField="job_description" HeaderText="job_description" SortExpression="job_description" />
                     </Columns>
+                    <FooterStyle BackColor="#CCCC99" />
+                    <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+                    <RowStyle BackColor="#F7F7DE" />
+                    <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#FBFBF2" />
+                    <SortedAscendingHeaderStyle BackColor="#848384" />
+                    <SortedDescendingCellStyle BackColor="#EAEAD3" />
+                    <SortedDescendingHeaderStyle BackColor="#575357" />
                    
-            </asp:GridView> 
+            </asp:GridView>
+            <br /> <br /><br /> <br /> 
             <asp:SqlDataSource ID="SqlEmpHistory" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" DeleteCommand="DELETE FROM [employement_history] WHERE [juser_id] = @original_juser_id AND [employer_name] = @original_employer_name AND [designation] = @original_designation AND [duration] = @original_duration AND (([job_description] = @original_job_description) OR ([job_description] IS NULL AND @original_job_description IS NULL))" InsertCommand="INSERT INTO [employement_history] ([juser_id], [employer_name], [designation], [duration], [job_description]) VALUES (@juser_id, @employer_name, @designation, @duration, @job_description)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [employement_history] WHERE ([juser_id] = @juser_id)" UpdateCommand="UPDATE [employement_history] SET [designation] = @designation, [duration] = @duration, [job_description] = @job_description WHERE [juser_id] = @original_juser_id AND [employer_name] = @original_employer_name AND [designation] = @original_designation AND [duration] = @original_duration AND (([job_description] = @original_job_description) OR ([job_description] IS NULL AND @original_job_description IS NULL))">
                 <DeleteParameters>
                     <asp:Parameter Name="original_juser_id" Type="Int32" />
@@ -138,6 +155,7 @@
             </asp:SqlDataSource>
          </asp:Panel>
         </div>
+        <br /> <br /><br /> <br />
         <div style="margin-left: 100px">
         <asp:Panel ID="PanelAddEmpHistory" Visible="false" runat="server">
          <asp:Label ID="lblemployer_name" Width="150" runat="server" Text="Employer Name :"></asp:Label> 
