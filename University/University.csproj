@@ -115,9 +115,8 @@
     <Content Include="HR\JobApplication.aspx" />
     <Content Include="HR\JobNotification.aspx" />
     <Content Include="HR\JobSearch.aspx" />
-    <Content Include="HR\EmployeeScreen.aspx" />
     <Content Include="HR\Position.aspx" />
-    <Content Include="HR\Timesheet.aspx" />
+    <Content Include="HR\EmployeeScreen.aspx" />
     <Content Include="Registrar Office\AdmissionDetails.aspx" />
     <Content Include="Registrar Office\RegistrarHome.aspx" />
     <Content Include="Registrar Office\SectionCreation.aspx" />
@@ -357,13 +356,6 @@
     <Compile Include="HR\JobSearch.aspx.designer.cs">
       <DependentUpon>JobSearch.aspx</DependentUpon>
     </Compile>
-    <Compile Include="HR\EmployeeScreen.aspx.cs">
-      <DependentUpon>EmployeeScreen.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="HR\EmployeeScreen.aspx.designer.cs">
-      <DependentUpon>EmployeeScreen.aspx</DependentUpon>
-    </Compile>
     <Compile Include="HR\NewJobApplicant.aspx.cs">
       <DependentUpon>NewJobApplicant.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -378,12 +370,12 @@
     <Compile Include="HR\Position.aspx.designer.cs">
       <DependentUpon>Position.aspx</DependentUpon>
     </Compile>
-    <Compile Include="HR\Timesheet.aspx.cs">
-      <DependentUpon>Timesheet.aspx</DependentUpon>
+    <Compile Include="HR\EmployeeScreen.aspx.cs">
+      <DependentUpon>EmployeeScreen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="HR\Timesheet.aspx.designer.cs">
-      <DependentUpon>Timesheet.aspx</DependentUpon>
+    <Compile Include="HR\EmployeeScreen.aspx.designer.cs">
+      <DependentUpon>EmployeeScreen.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registrar Office\AdmissionDetails.aspx.cs">

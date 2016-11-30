@@ -30,5 +30,10 @@ namespace University.Academics
             DepartmentPhoneNoTB.Text = string.Empty;
             DepartmentEmailIDTB.Text = string.Empty;
         }
+
+        protected void BackButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("DepartmentManagement.aspx");
+        }
     }
 }

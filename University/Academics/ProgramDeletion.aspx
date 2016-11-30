@@ -58,16 +58,20 @@
         <b>Program Deletion Form</b></p>
         <p>
 
-            &nbsp;</p>
+        <asp:Button ID="BackButton" runat="server" OnClick="BackButton_Click" Text="Back" />
+          </p>
+          <p>
+
+              &nbsp;</p>
       </div>
         <asp:GridView ID="ProgramGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="program_id" DataSourceID="ProgramDataSource" AllowPaging="True" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
             <AlternatingRowStyle BackColor="#CCCCCC" />
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                <asp:BoundField DataField="program_id" HeaderText="program_id" ReadOnly="True" SortExpression="program_id" />
-                <asp:BoundField DataField="program_name" HeaderText="program_name" SortExpression="program_name" />
-                <asp:BoundField DataField="department_id" HeaderText="department_id" SortExpression="department_id" />
-                <asp:BoundField DataField="course_level" HeaderText="course_level" SortExpression="course_level" />
+                <asp:BoundField DataField="program_id" HeaderText="Program ID" ReadOnly="True" SortExpression="program_id" />
+                <asp:BoundField DataField="program_name" HeaderText="Program Name" SortExpression="program_name" />
+                <asp:BoundField DataField="department_id" HeaderText="Department ID" SortExpression="department_id" />
+                <asp:BoundField DataField="course_level" HeaderText="Course Level" SortExpression="course_level" />
             </Columns>
             <FooterStyle BackColor="#CCCCCC" />
             <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />

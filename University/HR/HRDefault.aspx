@@ -43,7 +43,7 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="HRDefault.aspx">HR - Home</a></li>
                         <li><a href="JobSearch.aspx">Job Search</a></li>
-                        <li><a href="JobApplication.aspx">Job Application</a></li>                        
+                        <li><a href="JobApplicationStatus.aspx">Job Application Status</a></li>                        
                         <li><a href="JobNotification.aspx">Create Vacancy</a></li> 
                         <li><a href="Position.aspx">Create Position</a></li> 
                         <li><a href="EmployeeJoining.aspx">Employee Joining</a></li>

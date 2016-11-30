@@ -62,7 +62,7 @@
         </div>
             
         <asp:Label ID="DeptIDLbl" runat="server" Text="Department ID:"></asp:Label>
-        <asp:DropDownList ID="DeptIDDDL" runat="server" DataSourceID="DeptIDs_DataSource" DataTextField="department_id" DataValueField="department_id">
+        <asp:DropDownList ID="DeptIDDDL" runat="server" DataSourceID="DeptIDs_DataSource" DataTextField="department_id" DataValueField="department_id" AutoPostBack="True">
         </asp:DropDownList>
         <asp:SqlDataSource ID="DeptIDs_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_id] FROM [department]"></asp:SqlDataSource>
         <p>
@@ -78,14 +78,16 @@
             </SelectParameters>
         </asp:SqlDataSource>
             
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:GridView ID="FacultyLoadGridView" runat="server" DataSourceID="FacultyReportDataSource" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="section_id" AllowPaging="True" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" PageSize="5">
+        <br />
+            
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:GridView ID="FacultyLoadGridView" runat="server" DataSourceID="FacultyReportDataSource" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="section_id" AllowPaging="True" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" PageSize="5">
             <Columns>
-                <asp:BoundField DataField="Faculty_Name" HeaderText="Faculty_Name" SortExpression="Faculty_Name" />
-                <asp:BoundField DataField="Faculty_ID" HeaderText="Faculty_ID" SortExpression="Faculty_ID" />
-                <asp:BoundField DataField="course_name" HeaderText="course_name" SortExpression="course_name" />
-                <asp:BoundField DataField="section_id" HeaderText="section_id" ReadOnly="True" SortExpression="section_id" />
-                <asp:BoundField DataField="semester" HeaderText="semester" SortExpression="semester" />
+                <asp:BoundField DataField="Faculty_Name" HeaderText="Faculty Name" SortExpression="Faculty_Name" />
+                <asp:BoundField DataField="Faculty_ID" HeaderText="Faculty ID" SortExpression="Faculty_ID" />
+                <asp:BoundField DataField="course_name" HeaderText="Course Name" SortExpression="course_name" />
+                <asp:BoundField DataField="section_id" HeaderText="Section ID" ReadOnly="True" SortExpression="section_id" />
+                <asp:BoundField DataField="credits" HeaderText="Credits" SortExpression="credits" />
+                <asp:BoundField DataField="semester" HeaderText="Semester" SortExpression="semester" />
             </Columns>
             <FooterStyle BackColor="#CCCCCC" />
             <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
@@ -97,12 +99,16 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#383838" />
         </asp:GridView>
-        <asp:SqlDataSource ID="FacultyReportDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="select info.first_name as 'Faculty_Name', sec.fuser_id as 'Faculty_ID', crs.course_name, sec.section_id, sec.semester from section as sec, user_info as info, course as crs where sec.fuser_id = @fuser_id and sec.fuser_id = info.user_id and sec.course_id = crs.course_name">
+        <asp:SqlDataSource ID="FacultyReportDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="select info.first_name as 'Faculty_Name', sec.fuser_id as 'Faculty_ID', crs.course_name, sec.section_id, sec.credits, sec.semester from section as sec, user_info as info, course as crs where sec.fuser_id = @fuser_id and sec.fuser_id = info.user_id and sec.course_id = crs.course_id">
             <SelectParameters>
-                <asp:ControlParameter ControlID="FacultyIDDDL" DefaultValue="57" Name="fuser_id" PropertyName="SelectedValue" />
+                <asp:ControlParameter ControlID="FacultyIDDDL" DefaultValue="" Name="fuser_id" PropertyName="SelectedValue" />
             </SelectParameters>
         </asp:SqlDataSource>
             
-    </form>
+        <br />
+        Total No. of Credits taken by the selected Faculty is
+        <asp:TextBox ID="CreditsSUMTB" runat="server" Enabled="False">&lt;Sum of all Credits&gt;</asp:TextBox>
+        <br />
+        Total No. of Credits the selected Faculty handles is &lt;Contract Hours&gt;</form>
 </body>
 </html>

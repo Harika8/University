@@ -57,37 +57,20 @@
         <p style="width: 203px; margin-left: 600px">
             <b>Form to create a Faculty under a Department</b></p>
     
-        <asp:GridView ID="FacultyTBLGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="fuser_id" DataSourceID="FacultyTBLDataSource" AllowPaging="True" AllowSorting="True" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" PageSize="5">
-            <Columns>
-                <asp:BoundField DataField="fuser_id" HeaderText="fuser_id" ReadOnly="True" SortExpression="fuser_id" />
-                <asp:BoundField DataField="specalization" HeaderText="specalization" SortExpression="specalization" />
-                <asp:BoundField DataField="education" HeaderText="education" SortExpression="education" />
-                <asp:BoundField DataField="contract" HeaderText="contract" SortExpression="contract" />
-                <asp:BoundField DataField="department_id" HeaderText="department_id" SortExpression="department_id" />
-            </Columns>
-            <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
-            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
-            <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
-            <RowStyle BackColor="White" ForeColor="#330099" />
-            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
-            <SortedAscendingCellStyle BackColor="#FEFCEB" />
-            <SortedAscendingHeaderStyle BackColor="#AF0101" />
-            <SortedDescendingCellStyle BackColor="#F6F0C0" />
-            <SortedDescendingHeaderStyle BackColor="#7E0000" />
-        </asp:GridView>
-        <asp:SqlDataSource ID="FacultyTBLDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [faculty]"></asp:SqlDataSource>
+        <asp:Button ID="BackButton" runat="server" OnClick="BackButton_Click" Text="Back" />
         <br />
+        <asp:SqlDataSource ID="FacultyTBLDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [faculty]"></asp:SqlDataSource>
         <hr />
         <br />
     
         <asp:Label ID="DeptIDLbl" runat="server" Text="Department ID:"></asp:Label>
-        <asp:DropDownList ID="DeptIDDDL" runat="server" DataSourceID="DeptIDs_DataSource" DataTextField="department_id" DataValueField="department_id">
+        <asp:DropDownList ID="DeptIDDDL" runat="server" DataSourceID="DeptIDs_DataSource" DataTextField="department_id" DataValueField="department_id" AutoPostBack="True">
         </asp:DropDownList>
         <asp:SqlDataSource ID="DeptIDs_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT [department_id] FROM [department]"></asp:SqlDataSource>
         <br />
     
         <asp:Label ID="FacultyIDLbl" runat="server" Text="Faculty ID:"></asp:Label>
-        <asp:DropDownList ID="FacultyIDDDL" runat="server" DataSourceID="FacultyIDListEMPLOYEE" DataTextField="EUSER_ID" DataValueField="EUSER_ID" >
+        <asp:DropDownList ID="FacultyIDDDL" runat="server" DataSourceID="FacultyIDListEMPLOYEE" DataTextField="EUSER_ID" DataValueField="EUSER_ID" AutoPostBack="True" OnSelectedIndexChanged="FacultyIDDDL_SelectedIndexChanged" >
         </asp:DropDownList>
         <asp:SqlDataSource ID="FacultyIDListEMPLOYEE" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [euser_id] FROM [employee] WHERE (([employee_type] = @employee_type) AND ([employement_status] = @employement_status))">
             <SelectParameters>
@@ -144,7 +127,30 @@
         </asp:SqlDataSource>
     
             
+        <hr />
+    
+            
         <br />
+    
+            
+        <asp:GridView ID="FacultyTBLGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="fuser_id" DataSourceID="FacultyTBLDataSource" AllowPaging="True" AllowSorting="True" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" PageSize="5">
+            <Columns>
+                <asp:BoundField DataField="fuser_id" HeaderText="Faculty ID" ReadOnly="True" SortExpression="fuser_id" />
+                <asp:BoundField DataField="specalization" HeaderText="Specalization" SortExpression="specalization" />
+                <asp:BoundField DataField="education" HeaderText="Education" SortExpression="education" />
+                <asp:BoundField DataField="contract" HeaderText="Contract - Credit Hours" SortExpression="contract" />
+                <asp:BoundField DataField="department_id" HeaderText="Department ID" SortExpression="department_id" />
+            </Columns>
+            <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+            <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+            <RowStyle BackColor="White" ForeColor="#330099" />
+            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+            <SortedAscendingCellStyle BackColor="#FEFCEB" />
+            <SortedAscendingHeaderStyle BackColor="#AF0101" />
+            <SortedDescendingCellStyle BackColor="#F6F0C0" />
+            <SortedDescendingHeaderStyle BackColor="#7E0000" />
+        </asp:GridView>
     
             
     </form>

@@ -32,5 +32,15 @@ namespace University.Academics
             FacultyInsertDataSource.InsertParameters["department_id"].DefaultValue = DeptIDDDL.SelectedValue;
             FacultyInsertDataSource.Insert();
         }
+
+        protected void FacultyIDDDL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FacultyNameTB.Text = "select first_name from user_info where user_id = @FacultyIDDDL.SelectedValue";
+        }
+
+        protected void BackButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AssignFacultyToCourse1.aspx");
+        }
     }
 }

@@ -9,15 +9,10 @@ namespace University.Academics
 {
     public partial class ProgramDeletion : System.Web.UI.Page
     {
-        protected void ProgramDelClearButton_Click(object sender, EventArgs e)
+
+        protected void BackButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-
-       protected void ProgramDelButton_Click(object sender, EventArgs e)
-        {
-
+            Response.Redirect("ProgramManagement.aspx");
         }
     }
 }

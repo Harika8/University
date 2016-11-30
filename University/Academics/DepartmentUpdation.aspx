@@ -54,17 +54,20 @@
     </header>
 
         <p style="width: 203px; margin-left: 600px">
-        <b>Department - Updation/Deletion Form</b></p><br />
+        <b>Department - Updation/Deletion Form</b></p>
+        <asp:Button ID="BackButton" runat="server" OnClick="BackButton_Click" Text="Back" />
+        <br />
+        <br />
     <div>    
         <asp:GridView ID="DepartmentGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="department_id" DataSourceID="DeptUpdationDataSource" AllowPaging="True" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
             <AlternatingRowStyle BackColor="#CCCCCC" />
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                <asp:BoundField DataField="department_id" HeaderText="department_id" InsertVisible="False" ReadOnly="True" SortExpression="department_id" />
-                <asp:BoundField DataField="department_name" HeaderText="department_name" SortExpression="department_name" />
-                <asp:BoundField DataField="department_location" HeaderText="department_location" SortExpression="department_location" />
-                <asp:BoundField DataField="department_phone_num" HeaderText="department_phone_num" SortExpression="department_phone_num" />
-                <asp:BoundField DataField="department_email_id" HeaderText="department_email_id" SortExpression="department_email_id" />
+                <asp:BoundField DataField="department_id" HeaderText="Department ID" InsertVisible="False" ReadOnly="True" SortExpression="department_id" />
+                <asp:BoundField DataField="department_name" HeaderText="Department Name" SortExpression="department_name" />
+                <asp:BoundField DataField="department_location" HeaderText="Department Location" SortExpression="department_location" />
+                <asp:BoundField DataField="department_phone_num" HeaderText="Department Phone_No" SortExpression="department_phone_num" />
+                <asp:BoundField DataField="department_email_id" HeaderText="Department Email_ID" SortExpression="department_email_id" />
             </Columns>
             <FooterStyle BackColor="#CCCCCC" />
             <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
