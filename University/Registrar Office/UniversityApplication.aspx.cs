@@ -11,12 +11,53 @@ namespace University.Registrar_Office
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Session["user_id"] == null)
+            {
+                string sessionsend = "studentapplicant";
+                Session["sender"] = sessionsend;
+                Response.Redirect("../UserRegistration.aspx");
+            }
+            txtSuserid.Text = (string)Session["user_id"];
+
+        }
+        protected void btnaddEduHistory_Click(object sender, EventArgs e)
+        {
+            PanelAddEducationHistory.Visible = true;
+            PanelGVEducationHistory.Visible = false;
+        }
+
+        protected void btnedusubmit_Click(object sender, EventArgs e)
+        {
+            SqlEducationHistory.InsertParameters["user_id"].DefaultValue = (string)txtSuserid.Text.ToUpper().Trim();
+            SqlEducationHistory.InsertParameters["school_name"].DefaultValue = txtSchoolName.Text.ToUpper().Trim();
+            SqlEducationHistory.InsertParameters["degree"].DefaultValue = txtdegree.Text.ToUpper().Trim();
+            SqlEducationHistory.InsertParameters["major"].DefaultValue = txtmajor.Text.ToUpper().Trim();
+            SqlEducationHistory.InsertParameters["gpa"].DefaultValue = (string)txtgpa.Text.Trim();
+            SqlEducationHistory.InsertParameters["graduated_year"].DefaultValue = (string)txtgraduated_year.Text.Trim();
+            SqlEducationHistory.Insert();
+            gvEducationHistory.DataBind();
+            PanelAddEducationHistory.Visible = false;
+            PanelGVEducationHistory.Visible = true;
+            txtSchoolName.Text = string.Empty;
+            txtdegree.Text = string.Empty;
+            txtmajor.Text = string.Empty;
+            txtgpa.Text = string.Empty;
+            txtgraduated_year.Text = string.Empty;
+
+        }
+
+        protected void btneduclear_Click(object sender, EventArgs e)
+        {
+            txtSchoolName.Text = string.Empty;
+            txtdegree.Text = string.Empty;
+            txtmajor.Text = string.Empty;
+            txtgpa.Text = string.Empty;
+            txtgraduated_year.Text = string.Empty;
         }
 
         protected void SubButton_Click(object sender, EventArgs e)
         {
-            SqlStudentAppli.InsertParameters["suser_id"].DefaultValue = SuseridDropDown.SelectedValue;
+            SqlStudentAppli.InsertParameters["suser_id"].DefaultValue = txtSuserid.Text;
             SqlStudentAppli.InsertParameters["degree"].DefaultValue = DegreeRadioButton.SelectedValue;
             SqlStudentAppli.InsertParameters["major"].DefaultValue = MajorDropDown.SelectedValue;
             SqlStudentAppli.InsertParameters["gre_score"].DefaultValue = GRETextBox.Text;
@@ -29,13 +70,7 @@ namespace University.Registrar_Office
             SqlStudentAppli.InsertParameters["admission_status"].DefaultValue = DropDownList1.SelectedValue;
             SqlStudentAppli.Insert();
             
-            SqlEdu.InsertParameters["user_id"].DefaultValue = SuseridDropDown.SelectedValue;
-            SqlEdu.InsertParameters["school_name"].DefaultValue = Schoolname1TextBox.Text;
-            SqlEdu.InsertParameters["degree"].DefaultValue = DegreeRadioButton.SelectedValue;
-            SqlEdu.InsertParameters["major"].DefaultValue = MajorDropDown.SelectedValue;
-            SqlEdu.InsertParameters["gpa"].DefaultValue = GPA1TextBox.Text;
-            SqlEdu.InsertParameters["graduated_year"].DefaultValue = Graddate1TextBox.Text;
-            SqlEdu.Insert();
+           
             
         }
     }

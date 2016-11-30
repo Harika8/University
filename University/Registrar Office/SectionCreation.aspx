@@ -1,28 +1,71 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SectionCreation.aspx.cs" Inherits="University.Registrar_Office.Section_Creation" %>
-
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Section Creation</title>  
-<style>
-.highlight
-{
-  color:red;
-  font-weight:bold;
-}
-</style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Admission Details" />
+    <meta name="author" content="Harika" />
+    <title>Section Creation</title>
+    <%-- ------ css ------ --%>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/animate.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/prettyPhoto.css" rel="stylesheet" type="text/css" />
+    <link href="../css/main.css" rel="stylesheet" type="text/css" />
+    <link href="../css/responsive.css" rel="stylesheet" type="text/css" />
+     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+        rel="stylesheet" type="text/css" />
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="../images/favicon.ico" />
 </head>
 <body>
-     <iframe src="RegistrarHome.aspx" onload="this.width=screen.width;"> 
-         <p>Your browser does not support iframes.</p>
-    </iframe>
-    <form id="form1" runat="server">
+    <form id="form2" runat="server">
+    <header id="header">
+    <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../Default.aspx">University</a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li ><a href="RegistrarHome.aspx">Registration - Home</a></li>
+                        <li ><a href="UniversirtyApplication.aspx">University Application</a></li>
+                        <li><a href="AdmissionStatus.aspx">Admission Status</a></li>                        
+                        <li><a href="AdmissionDetails.aspx">Admission Details</a></li> 
+                        <li class="active"><a href="SectionCreation.aspx">Section Creation</a></li> 
+                        <li><a href="SectionRegistration.aspx">Section Registration</a></li>
+                        <li><a href="StudentGrade.aspx">Student Grade</a></li>                           
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+ 
+    </header>
+
+    
     <div>
-         <p style="width: 203px; margin-left: 600px">
-        <b>Section Creation Form</b></p><br />
+         
+        <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Section Creation Form"></asp:Label>
+         </h2> <br />
+         <br /><br />
+        </div>
+        
         <asp:Label runat="server" id="msg" CssClass="highlight"></asp:Label>
-        <p>
-            &nbsp;</p>
+        <br />
         <asp:Label ID="lblCourse" runat="server" Text="Course Name:"></asp:Label>
         <asp:DropDownList ID="selCourse" runat="server" AutoPostBack="true" DataSourceID="SqlCourse" DataTextField="course_name" DataValueField="course_id">
         </asp:DropDownList>

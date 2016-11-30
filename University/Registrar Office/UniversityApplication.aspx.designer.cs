@@ -13,13 +13,13 @@ namespace University.Registrar_Office {
     public partial class UniversityApplication {
         
         /// <summary>
-        /// form1 control.
+        /// form2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
         
         /// <summary>
         /// Label1 control.
@@ -31,22 +31,13 @@ namespace University.Registrar_Office {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// SuseridDropDown control.
+        /// txtSuserid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList SuseridDropDown;
-        
-        /// <summary>
-        /// SqlSuserId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlSuserId;
+        protected global::System.Web.UI.WebControls.TextBox txtSuserid;
         
         /// <summary>
         /// Label12 control.
@@ -112,184 +103,157 @@ namespace University.Registrar_Office {
         protected global::System.Web.UI.WebControls.Label Label15;
         
         /// <summary>
-        /// Label16 control.
+        /// PanelGVEducationHistory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label16;
+        protected global::System.Web.UI.WebControls.Panel PanelGVEducationHistory;
         
         /// <summary>
-        /// Schoolname1TextBox control.
+        /// btnaddEduHistory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Schoolname1TextBox;
+        protected global::System.Web.UI.WebControls.Button btnaddEduHistory;
         
         /// <summary>
-        /// Label17 control.
+        /// gvEducationHistory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label17;
+        protected global::System.Web.UI.WebControls.GridView gvEducationHistory;
         
         /// <summary>
-        /// GPA1TextBox control.
+        /// SqlEducationHistory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GPA1TextBox;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlEducationHistory;
         
         /// <summary>
-        /// Label21 control.
+        /// PanelAddEducationHistory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label21;
+        protected global::System.Web.UI.WebControls.Panel PanelAddEducationHistory;
         
         /// <summary>
-        /// Graddate1TextBox control.
+        /// lblSchoolName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Graddate1TextBox;
+        protected global::System.Web.UI.WebControls.Label lblSchoolName;
         
         /// <summary>
-        /// Label22 control.
+        /// txtSchoolName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label22;
+        protected global::System.Web.UI.WebControls.TextBox txtSchoolName;
         
         /// <summary>
-        /// Label23 control.
+        /// lbldegree control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label23;
+        protected global::System.Web.UI.WebControls.Label lbldegree;
         
         /// <summary>
-        /// Schoolname2TextBox control.
+        /// txtdegree control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Schoolname2TextBox;
+        protected global::System.Web.UI.WebControls.TextBox txtdegree;
         
         /// <summary>
-        /// Label24 control.
+        /// lblmajor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label24;
+        protected global::System.Web.UI.WebControls.Label lblmajor;
         
         /// <summary>
-        /// GPA2TextBox control.
+        /// txtmajor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GPA2TextBox;
+        protected global::System.Web.UI.WebControls.TextBox txtmajor;
         
         /// <summary>
-        /// Label49 control.
+        /// lblgpa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label49;
+        protected global::System.Web.UI.WebControls.Label lblgpa;
         
         /// <summary>
-        /// Graddate2TextBox control.
+        /// txtgpa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Graddate2TextBox;
+        protected global::System.Web.UI.WebControls.TextBox txtgpa;
         
         /// <summary>
-        /// Label30 control.
+        /// lblgraduated_year control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label30;
+        protected global::System.Web.UI.WebControls.Label lblgraduated_year;
         
         /// <summary>
-        /// Schoolname3TextBox control.
+        /// txtgraduated_year control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Schoolname3TextBox;
+        protected global::System.Web.UI.WebControls.TextBox txtgraduated_year;
         
         /// <summary>
-        /// Label31 control.
+        /// btnedusubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label31;
+        protected global::System.Web.UI.WebControls.Button btnedusubmit;
         
         /// <summary>
-        /// GPA3TextBox control.
+        /// btneduclear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GPA3TextBox;
-        
-        /// <summary>
-        /// Label33 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label33;
-        
-        /// <summary>
-        /// Graddate3TextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Graddate3TextBox;
-        
-        /// <summary>
-        /// Label34 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label34;
+        protected global::System.Web.UI.WebControls.Button btneduclear;
         
         /// <summary>
         /// Label37 control.
@@ -470,15 +434,6 @@ namespace University.Registrar_Office {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlStudentAppli;
-        
-        /// <summary>
-        /// SqlEdu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlEdu;
         
         /// <summary>
         /// SubButton control.

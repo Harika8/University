@@ -62,6 +62,10 @@ namespace University
             {
                 Response.Redirect("HR/NewJobApplicant.aspx");
             }
+            if (strsender.Equals("studentapplicant"))
+            {
+                Response.Redirect("Registrar Office/UniversityApplication.aspx");
+            }
         }
 
         protected void btnCancelUser_Click(object sender, EventArgs e)

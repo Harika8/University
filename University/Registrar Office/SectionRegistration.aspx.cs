@@ -26,7 +26,7 @@ namespace University.Registrar_Office
 
         protected void ApplicationButton_Click(object sender, EventArgs e)
         {
-            try { 
+           // try { 
             DateTime dt = DateTime.Now;
             Sqlsectionregistration.InsertParameters["suser_id"].DefaultValue = StudentId.Text;
             Sqlsectionregistration.InsertParameters["section_id"].DefaultValue = SectionDropDown.SelectedValue;
@@ -58,7 +58,10 @@ namespace University.Registrar_Office
                 SqlSectionUpdate.UpdateParameters["original_section_availabilty"].DefaultValue = Convert.ToString(currentavailability);
                 SqlSectionUpdate.Update();
                 RegistrationStatusLabel.Text = "Registered Successfully" + dt.ToString();
-            }
+                SqlGrade.InsertParameters["suser_id"].DefaultValue = StudentId.Text;
+                SqlGrade.InsertParameters["section_id"].DefaultValue = SectionDropDown.SelectedValue;
+                SqlGrade.Insert();
+                }
 
             if (currentavailability <= 0)
             {
@@ -68,11 +71,11 @@ namespace University.Registrar_Office
             Sqlsectionregistration.InsertParameters["registration_date"].DefaultValue = dt.ToString();
 
             Sqlsectionregistration.Insert();
-           }
-            catch (Exception ex)
-            {
-                throw new ApplicationException("Sorry for the inconvenience", ex);
-            }
+          // }
+            //catch (Exception ex)
+            //{
+             //   throw new ApplicationException("Sorry for the inconvenience", ex);
+            //}
         }
 
 
@@ -97,7 +100,7 @@ namespace University.Registrar_Office
 
         protected void SemDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 CourseDropdown.Items.Clear();
                 CourseDropdown.AppendDataBoundItems = true;
@@ -110,7 +113,12 @@ namespace University.Registrar_Office
             catch (Exception ex)
             {
                 throw new ApplicationException("Sorry for the inconvenience", ex);
-            }
+            }*/
+        }
+
+        protected void SqlGrade_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
         }
     }
 }
