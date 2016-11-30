@@ -50,6 +50,8 @@ namespace University
             txtZipcode.Text = string.Empty;
             txtCountry.Text = string.Empty;
 
+            msg.Text = "User Registered";
+
             Sqlgetuserid.SelectCommand = "Select MAX(user_id) as user_id from user_info";
             DataSourceSelectArguments dsArguments = new DataSourceSelectArguments();
             DataView dvView = new DataView();
@@ -61,6 +63,10 @@ namespace University
             if ( strsender.Equals("jobapplicant"))
             {
                 Response.Redirect("HR/NewJobApplicant.aspx");
+            }
+            if (strsender.Equals("studentapplicant"))
+            {
+                Response.Redirect("Registrar Office/UniversityApplication.aspx");
             }
         }
 

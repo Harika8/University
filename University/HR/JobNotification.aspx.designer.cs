@@ -22,6 +22,51 @@ namespace University.HR {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// lblHeading control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblHeading;
+        
+        /// <summary>
+        /// btnaddVacancy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnaddVacancy;
+        
+        /// <summary>
+        /// PanelgvVacancy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelgvVacancy;
+        
+        /// <summary>
+        /// gvVacancy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvVacancy;
+        
+        /// <summary>
+        /// PanelAddVacancy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelAddVacancy;
+        
+        /// <summary>
         /// lblPosition control.
         /// </summary>
         /// <remarks>
@@ -229,6 +274,24 @@ namespace University.HR {
         protected global::System.Web.UI.WebControls.Calendar calCloseDate;
         
         /// <summary>
+        /// btnsubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnsubmit;
+        
+        /// <summary>
+        /// btnclear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnclear;
+        
+        /// <summary>
         /// SqlDepartment control.
         /// </summary>
         /// <remarks>
@@ -263,23 +326,5 @@ namespace University.HR {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlVacancy;
-        
-        /// <summary>
-        /// btnsubmit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnsubmit;
-        
-        /// <summary>
-        /// btnclear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnclear;
     }
 }

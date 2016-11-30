@@ -111,7 +111,6 @@
         <br />
         Total No. of Credits taken by the selected Faculty is
         <asp:TextBox ID="CreditsSUMTB" runat="server" Enabled="False">&lt;Sum of all Credits&gt;</asp:TextBox>
-        <br />
-        Total No. of Credits the selected Faculty handles is &lt;Contract Hours&gt;</form>
+        </form>
 </body>
 </html>

@@ -13,13 +13,13 @@ namespace University.Registrar_Office {
     public partial class UniversityApplication {
         
         /// <summary>
-        /// form1 control.
+        /// form2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
         
         /// <summary>
         /// Label1 control.
@@ -31,13 +31,13 @@ namespace University.Registrar_Office {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// TextBox35 control.
+        /// txtSuserid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox35;
+        protected global::System.Web.UI.WebControls.TextBox txtSuserid;
         
         /// <summary>
         /// Label12 control.
@@ -58,22 +58,13 @@ namespace University.Registrar_Office {
         protected global::System.Web.UI.WebControls.Label Label13;
         
         /// <summary>
-        /// RadioButton3 control.
+        /// DegreeRadioButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButton3;
-        
-        /// <summary>
-        /// RadioButton4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButton4;
+        protected global::System.Web.UI.WebControls.RadioButtonList DegreeRadioButton;
         
         /// <summary>
         /// Label14 control.
@@ -85,13 +76,22 @@ namespace University.Registrar_Office {
         protected global::System.Web.UI.WebControls.Label Label14;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// MajorDropDown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList MajorDropDown;
+        
+        /// <summary>
+        /// SqlMajor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlMajor;
         
         /// <summary>
         /// Label15 control.
@@ -103,220 +103,157 @@ namespace University.Registrar_Office {
         protected global::System.Web.UI.WebControls.Label Label15;
         
         /// <summary>
-        /// Label16 control.
+        /// PanelGVEducationHistory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label16;
+        protected global::System.Web.UI.WebControls.Panel PanelGVEducationHistory;
         
         /// <summary>
-        /// TextBox16 control.
+        /// btnaddEduHistory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox16;
+        protected global::System.Web.UI.WebControls.Button btnaddEduHistory;
         
         /// <summary>
-        /// Label17 control.
+        /// gvEducationHistory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label17;
+        protected global::System.Web.UI.WebControls.GridView gvEducationHistory;
         
         /// <summary>
-        /// TextBox17 control.
+        /// SqlEducationHistory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox17;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlEducationHistory;
         
         /// <summary>
-        /// Label18 control.
+        /// PanelAddEducationHistory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label18;
+        protected global::System.Web.UI.WebControls.Panel PanelAddEducationHistory;
         
         /// <summary>
-        /// RadioButton5 control.
+        /// lblSchoolName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButton5;
+        protected global::System.Web.UI.WebControls.Label lblSchoolName;
         
         /// <summary>
-        /// RadioButton6 control.
+        /// txtSchoolName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButton6;
+        protected global::System.Web.UI.WebControls.TextBox txtSchoolName;
         
         /// <summary>
-        /// Label21 control.
+        /// lbldegree control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label21;
+        protected global::System.Web.UI.WebControls.Label lbldegree;
         
         /// <summary>
-        /// TextBox19 control.
+        /// txtdegree control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox19;
+        protected global::System.Web.UI.WebControls.TextBox txtdegree;
         
         /// <summary>
-        /// Label22 control.
+        /// lblmajor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label22;
+        protected global::System.Web.UI.WebControls.Label lblmajor;
         
         /// <summary>
-        /// Label23 control.
+        /// txtmajor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label23;
+        protected global::System.Web.UI.WebControls.TextBox txtmajor;
         
         /// <summary>
-        /// TextBox20 control.
+        /// lblgpa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox20;
+        protected global::System.Web.UI.WebControls.Label lblgpa;
         
         /// <summary>
-        /// Label24 control.
+        /// txtgpa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label24;
+        protected global::System.Web.UI.WebControls.TextBox txtgpa;
         
         /// <summary>
-        /// TextBox21 control.
+        /// lblgraduated_year control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox21;
+        protected global::System.Web.UI.WebControls.Label lblgraduated_year;
         
         /// <summary>
-        /// Label49 control.
+        /// txtgraduated_year control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label49;
+        protected global::System.Web.UI.WebControls.TextBox txtgraduated_year;
         
         /// <summary>
-        /// TextBox34 control.
+        /// btnedusubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox34;
+        protected global::System.Web.UI.WebControls.Button btnedusubmit;
         
         /// <summary>
-        /// Label50 control.
+        /// btneduclear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label50;
-        
-        /// <summary>
-        /// Label30 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label30;
-        
-        /// <summary>
-        /// TextBox24 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox24;
-        
-        /// <summary>
-        /// Label31 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label31;
-        
-        /// <summary>
-        /// TextBox25 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox25;
-        
-        /// <summary>
-        /// Label33 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label33;
-        
-        /// <summary>
-        /// TextBox26 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox26;
-        
-        /// <summary>
-        /// Label34 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label34;
+        protected global::System.Web.UI.WebControls.Button btneduclear;
         
         /// <summary>
         /// Label37 control.
@@ -337,13 +274,13 @@ namespace University.Registrar_Office {
         protected global::System.Web.UI.WebControls.Label Label38;
         
         /// <summary>
-        /// TextBox28 control.
+        /// GRETextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox28;
+        protected global::System.Web.UI.WebControls.TextBox GRETextBox;
         
         /// <summary>
         /// Label39 control.
@@ -355,22 +292,22 @@ namespace University.Registrar_Office {
         protected global::System.Web.UI.WebControls.Label Label39;
         
         /// <summary>
-        /// TextBox29 control.
+        /// GDATETextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox29;
+        protected global::System.Web.UI.WebControls.TextBox GDATETextBox;
         
         /// <summary>
-        /// Label40 control.
+        /// Label51 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label40;
+        protected global::System.Web.UI.WebControls.Label Label51;
         
         /// <summary>
         /// Label41 control.
@@ -391,13 +328,13 @@ namespace University.Registrar_Office {
         protected global::System.Web.UI.WebControls.Label Label42;
         
         /// <summary>
-        /// TextBox30 control.
+        /// TOEFLTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox30;
+        protected global::System.Web.UI.WebControls.TextBox TOEFLTextBox;
         
         /// <summary>
         /// Label43 control.
@@ -409,22 +346,22 @@ namespace University.Registrar_Office {
         protected global::System.Web.UI.WebControls.Label Label43;
         
         /// <summary>
-        /// TextBox31 control.
+        /// TDATETextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox31;
+        protected global::System.Web.UI.WebControls.TextBox TDATETextBox;
         
         /// <summary>
-        /// Label44 control.
+        /// Label52 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label44;
+        protected global::System.Web.UI.WebControls.Label Label52;
         
         /// <summary>
         /// Label45 control.
@@ -445,13 +382,13 @@ namespace University.Registrar_Office {
         protected global::System.Web.UI.WebControls.Label Label46;
         
         /// <summary>
-        /// TextBox32 control.
+        /// IELTSTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox32;
+        protected global::System.Web.UI.WebControls.TextBox IELTSTextBox;
         
         /// <summary>
         /// Label47 control.
@@ -463,30 +400,48 @@ namespace University.Registrar_Office {
         protected global::System.Web.UI.WebControls.Label Label47;
         
         /// <summary>
-        /// TextBox33 control.
+        /// IDATETextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox33;
+        protected global::System.Web.UI.WebControls.TextBox IDATETextBox;
         
         /// <summary>
-        /// Label48 control.
+        /// Label53 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label48;
+        protected global::System.Web.UI.WebControls.Label Label53;
         
         /// <summary>
-        /// Button1 control.
+        /// DropDownList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        
+        /// <summary>
+        /// SqlStudentAppli control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlStudentAppli;
+        
+        /// <summary>
+        /// SubButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SubButton;
     }
 }

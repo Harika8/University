@@ -38,15 +38,43 @@ namespace University.HR
 
         }
 
-        protected void btnClearsearch_Click(object sender, EventArgs e)
-        {
-        
-
-        }
-
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
+            if(seldept.SelectedIndex != 0 )
+            {
+                if (selPayfrequency.SelectedIndex != 0)
+                {
+                    SqlSearchResults.SelectCommand = "Select vacancy.vacancy_id,  position.designation as Job_Title, department.department_name as Department, position.pay_frequency as Position_Type, position.roles_responsibilities as Job_Description from vacancy, position,department where vacancy.position_id=position.position_id and position.department_id = department.department_id and position.department_id = '" + seldept.SelectedValue + "' and position.pay_frequency = '" + selPayfrequency.SelectedValue + "'";
+                    SqlSearchResults.DataBind();
+                    gvSearchResults.DataBind();
+                }
+                else
+                {
+                    SqlSearchResults.SelectCommand = "Select vacancy.vacancy_id,  position.designation as Job_Title, department.department_name as Department, position.pay_frequency as Position_Type, position.roles_responsibilities as Job_Description from vacancy, position,department where vacancy.position_id=position.position_id and position.department_id = department.department_id and position.department_id = '" + seldept.SelectedValue + "'";
+                    SqlSearchResults.DataBind();
+                    gvSearchResults.DataBind();
+
+                }
+            }
+            else
+            {
+                if (selPayfrequency.SelectedIndex != 0)
+                {
+                    SqlSearchResults.SelectCommand = "Select vacancy.vacancy_id,  position.designation as Job_Title, department.department_name as Department, position.pay_frequency as Position_Type, position.roles_responsibilities as Job_Description from vacancy, position,department where vacancy.position_id=position.position_id and position.department_id = department.department_id and position.pay_frequency = '" + selPayfrequency.SelectedValue + "'";
+                    SqlSearchResults.DataBind();
+                    gvSearchResults.DataBind();
+                }
+            }
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            selPayfrequency.SelectedIndex = 0;
+            seldept.SelectedIndex = 0;
+            SqlSearchResults.SelectCommand = "Select vacancy.vacancy_id,  position.designation as Job_Title, department.department_name as Department, position.pay_frequency as Position_Type, position.roles_responsibilities as Job_Description from vacancy, position,department where vacancy.position_id=position.position_id and position.department_id = department.department_id";
+            SqlSearchResults.DataBind();
+            gvSearchResults.DataBind();
 
         }
     }

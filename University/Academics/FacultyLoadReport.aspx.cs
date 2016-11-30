@@ -22,6 +22,10 @@ namespace University.Academics
         protected void FacultyIDDDL_SelectedIndexChanged(object sender, EventArgs e)
         {
             FacultyIDTB.Text = FacultyIDDDL.SelectedValue;
+
+            CreditsSUMTB.Text = "7";
+
+
         }
     }
 }
