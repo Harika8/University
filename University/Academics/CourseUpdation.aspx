@@ -52,9 +52,15 @@
             </div><!--/.container-->
         </nav><!--/nav-->
     </header>
+    <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Course - Updation/Deletion Form"></asp:Label>
+         </h2> <br />
+         <br />
+        <asp:Label ID="msg" Width="150" runat="server"></asp:Label> 
+        <br />
+        </div>
 
-        <p style="width: 203px; margin-left: 600px">
-        <b>Course - Updation/Deletion Form</b></p>
         <asp:Button ID="BackButton" runat="server" OnClick="BackButton_Click" Text="Back" />
         <br />
         <br />

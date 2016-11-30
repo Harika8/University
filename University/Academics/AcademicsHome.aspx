@@ -54,7 +54,14 @@
         </nav><!--/nav-->
  
     </header>
-
+       <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Academics FlowChart"></asp:Label>
+         </h2> <br />
+         <br />
+        <asp:Label ID="msg" Width="150" runat="server"></asp:Label> 
+        <br />
+        </div>
 <!--    <section id="main-slider" class="no-margin">
          <div class="carousel slide">
             <ol class="carousel-indicators">

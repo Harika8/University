@@ -52,17 +52,20 @@
             </div><!--/.container-->
         </nav><!--/nav-->
     </header>
-
-        <p style="width: 203px; margin-left: 600px">
-        <b>Course Management Form</b></p><br />
-        <p>
+        <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Course Management Form"></asp:Label>
+         </h2> <br />
+         <br />
+        <asp:Label ID="msg" Width="150" runat="server"></asp:Label> 
+        <br />
+        </div>
+        
+        <div style="margin-left: 480px">
             <asp:Button ID="NewCourseButton" runat="server" Text="Create New Course" OnClick="NewCourseButton_Click" />
-            </p>
-        <p>
-            &nbsp;</p>
-        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="UpdateDeleteCourseButton" runat="server" Text="Update/Delete Existing Course" Width="298px" OnClick="UpdateDeleteCourseButton_Click" />
-        </p>
+            &nbsp;</div>
     </form>
 </body>
 </html>

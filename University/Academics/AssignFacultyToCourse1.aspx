@@ -52,16 +52,24 @@
             </div><!--/.container-->
         </nav><!--/nav-->
     </header>
+        <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Form to create Faculty and then assign them to a Course"></asp:Label>
+         </h2> <br />
+         <br />
+        <asp:Label ID="msg" Width="150" runat="server"></asp:Label> 
+        <br />
+        </div>
 
-        <p style="width: 203px; margin-left: 600px">
-        <b>Form to create Faculty and then assign them to a Course</b></p><br />        
-    
+        <div style="margin-left: 480px">
         <asp:Button ID="FacultyCreateButton" runat="server" OnClick="FacultyCreateButton_Click1" Text="Create Faculty" />
-&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="FacultyUpdateButton" runat="server" Text="Update/Delete Faculty" OnClick="FacultyUpdateButton_Click" />
         <br />
-&nbsp;&nbsp;&nbsp;
+        <br />
+        <br />
         <asp:Button ID="FacultyAssignButton" runat="server" Text="Assign Faculty to Course" OnClick="FacultyAssignButton_Click" />
+        </div>
     </form>
 </body>
 </html>

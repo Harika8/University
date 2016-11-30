@@ -51,10 +51,15 @@
             </div><!--/.container-->
         </nav><!--/nav-->
     </header>
-
-        <p style="width: 203px; margin-left: 600px">
-            <b>Form to Assign a Faculty to a Course</b></p>
-    
+         <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Form to Assign a Faculty to a Course"></asp:Label>
+         </h2> <br />
+         <br />
+        <asp:Label ID="msg" Width="150" runat="server"></asp:Label> 
+        <br />
+        </div>
+            
         <asp:Button ID="BackButton" runat="server" OnClick="BackButton_Click" Text="Back" />
         <br />
         <hr />
