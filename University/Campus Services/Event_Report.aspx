@@ -88,17 +88,17 @@
         
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="event_id" DataSourceID="eventSource2" Visible="False">
             <Columns>
-                <asp:BoundField DataField="event_id" HeaderText="event_id" InsertVisible="False" ReadOnly="True" SortExpression="event_id" />
-                <asp:BoundField DataField="event_title" HeaderText="event_title" SortExpression="event_title" />
-                <asp:BoundField DataField="event_start_date" HeaderText="event_start_date" SortExpression="event_start_date" />
-                <asp:BoundField DataField="multi_day_event" HeaderText="multi_day_event" SortExpression="multi_day_event" />
-                <asp:BoundField DataField="event_end_date" HeaderText="event_end_date" SortExpression="event_end_date" />
-                <asp:BoundField DataField="event_end_time" HeaderText="event_end_time" SortExpression="event_end_time" />
-                <asp:BoundField DataField="event_start_time" HeaderText="event_start_time" SortExpression="event_start_time" />
-                <asp:BoundField DataField="event_place" HeaderText="event_place" SortExpression="event_place" />
-                <asp:BoundField DataField="event_capacity" HeaderText="event_capacity" SortExpression="event_capacity" />
-                <asp:BoundField DataField="audio_visual" HeaderText="audio_visual" SortExpression="audio_visual" />
-                <asp:BoundField DataField="user_id" HeaderText="user_id" SortExpression="user_id" />
+                <asp:BoundField DataField="user_id" HeaderText="User ID" SortExpression="user_id" />
+                <asp:BoundField DataField="event_id" HeaderText="Event ID" InsertVisible="False" ReadOnly="True" SortExpression="event_id" />
+                <asp:BoundField DataField="event_title" HeaderText="Event Title" SortExpression="event_title" />
+                <asp:BoundField DataField="multi_day_event" HeaderText="Multi Day Event" SortExpression="multi_day_event" />
+                <asp:BoundField DataField="event_start_date" HeaderText="Event Start Date" SortExpression="event_start_date" />
+                <asp:BoundField DataField="event_end_date" HeaderText="Event End Date" SortExpression="event_end_date" />
+                <asp:BoundField DataField="event_start_time" HeaderText="Event Start Time" SortExpression="event_start_time" />
+                <asp:BoundField DataField="event_end_time" HeaderText="Event End Time" SortExpression="event_end_time" />
+                <asp:BoundField DataField="event_place" HeaderText="Event Place" SortExpression="event_place" />
+                <asp:BoundField DataField="event_capacity" HeaderText="Event Capacity" SortExpression="event_capacity" />
+                <asp:BoundField DataField="audio_visual" HeaderText="Audio Visual" SortExpression="audio_visual" />
             </Columns>
         </asp:GridView>
         <br />
