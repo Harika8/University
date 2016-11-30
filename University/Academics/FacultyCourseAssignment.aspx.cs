@@ -32,6 +32,13 @@ namespace University.Academics
             Faculty_Course_TBL.InsertParameters["course_id"].DefaultValue = CourseIDDDL.SelectedValue;
             Faculty_Course_TBL.InsertParameters["department_id"].DefaultValue = DeptIDDDList.SelectedValue;
             Faculty_Course_TBL.Insert();
+
+            string message = "The selected Faculty, now, can teach the selected Course, successfully.";
+            string script = "window.onload = function(){ alert('";
+            script += message;
+            script += "')};";
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+
         }
 
         protected void FacCrsResetBtn_Click(object sender, EventArgs e)
