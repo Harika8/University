@@ -84,9 +84,11 @@
         
     <div style="margin-top:100px;" align="center">
          <h2>
-         <asp:Label ID="lblHeading" ForeColor="Blue" Width="300" runat="server" Text="User Registration">
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="300" runat="server" Text="User Registration"></asp:Label>
          </h2> <br />
-         <br /><br />
+         <br />
+        <asp:Label ID="msg" runat="server" Width="150"></asp:Label>
+        <br />
      </div>
         <div style="margin-left: 75px">
         <asp:Panel ID="PaneladdUser" runat="server">
@@ -158,7 +160,7 @@
              <div style="margin-top:100px;" align="center">
               <asp:Button ID="btnSaveUser" runat="server" Text="Save" OnClick="btnSaveUser_Click"/>
                     &nbsp;&nbsp;
-                    <asp:Button ID="btnCancelUser" runat="server"  OnClick="btnCancelUser_Click" Text="Cancel" />
+                    <asp:Button ID="btnCancelUser" runat="server"  OnClick="btnCancelUser_Click" Text="Clear" />
               </div>
             </asp:Panel>
             </div>

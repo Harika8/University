@@ -60,7 +60,7 @@
          </h2> <br />
          <br /><br />
        </div>
-    <div style="margin-top:75px;" align="center">
+    <div align="center">
         <asp:GridView ID="gvJobApplications" runat="server" AutoGenerateColumns="False" DataKeyNames="job_application_id" DataSourceID="SqlJobApplications" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
             <AlternatingRowStyle BackColor="White" />
             <Columns>

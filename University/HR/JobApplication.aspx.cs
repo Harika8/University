@@ -31,8 +31,14 @@ namespace University.HR
             Sqljobapplication.InsertParameters["date_applied"].DefaultValue = dt.ToString();
             Sqljobapplication.Insert();
             txtUserid.Text = string.Empty;
-            Response.Redirect("JobSearch.aspx");
+            msg.Text = "Job Application Submitted";
+            
 
+        }
+
+        protected void btnback_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("JobSearch.aspx");
         }
     }
 }

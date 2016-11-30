@@ -43,6 +43,7 @@ namespace University.HR
             txtDepartment.Text = string.Empty;
             txtSalaryperhour.Text = string.Empty;
             txtempType.Text = string.Empty;
+            msg.Text = "New Employee Joined Successfully";
             
         }
 
@@ -55,6 +56,7 @@ namespace University.HR
             txtEmail.Text = string.Empty;
             txtContactno.Text = string.Empty;
             txtAddressLine.Text = string.Empty;
+            txtPositionId.Text = string.Empty;
             txtJobtype.Text = string.Empty;
             txtPayFrequency.Text = string.Empty;
             txtDesignation.Text = string.Empty;

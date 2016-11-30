@@ -97,6 +97,15 @@
     <Content Include="Campus Services\Service_AllotedForm.aspx" />
     <Content Include="Campus Services\Service_RequestForm.aspx" />
     <Content Include="Campus Services\ServiceRequestReport.aspx" />
+    <Content Include="FinancialAid\Applications_FA.aspx" />
+    <Content Include="FinancialAid\Application_Review_FA.aspx" />
+    <Content Include="FinancialAid\Application_Status_FA.aspx" />
+    <Content Include="FinancialAid\Employee_FA.aspx" />
+    <Content Include="FinancialAid\Employee_GridScreen_FA.aspx" />
+    <Content Include="FinancialAid\FinancialAid_Application_FA.aspx" />
+    <Content Include="FinancialAid\homeFA.aspx" />
+    <Content Include="FinancialAid\Scholarship_Info_FA.aspx" />
+    <Content Include="FinancialAid\Student_Application_Status.aspx" />
     <Content Include="HR\JobApplicationStatus.aspx" />
     <Content Include="HR\JobDetails.aspx" />
     <Content Include="HR\NewJobApplicant.aspx" />
@@ -306,6 +315,69 @@
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinancialAid\Applications_FA.aspx.cs">
+      <DependentUpon>Applications_FA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinancialAid\Applications_FA.aspx.designer.cs">
+      <DependentUpon>Applications_FA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FinancialAid\Application_Review_FA.aspx.cs">
+      <DependentUpon>Application_Review_FA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinancialAid\Application_Review_FA.aspx.designer.cs">
+      <DependentUpon>Application_Review_FA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FinancialAid\Application_Status_FA.aspx.cs">
+      <DependentUpon>Application_Status_FA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinancialAid\Application_Status_FA.aspx.designer.cs">
+      <DependentUpon>Application_Status_FA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FinancialAid\Employee_FA.aspx.cs">
+      <DependentUpon>Employee_FA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinancialAid\Employee_FA.aspx.designer.cs">
+      <DependentUpon>Employee_FA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FinancialAid\Employee_GridScreen_FA.aspx.cs">
+      <DependentUpon>Employee_GridScreen_FA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinancialAid\Employee_GridScreen_FA.aspx.designer.cs">
+      <DependentUpon>Employee_GridScreen_FA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FinancialAid\FinancialAid_Application_FA.aspx.cs">
+      <DependentUpon>FinancialAid_Application_FA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinancialAid\FinancialAid_Application_FA.aspx.designer.cs">
+      <DependentUpon>FinancialAid_Application_FA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FinancialAid\homeFA.aspx.cs">
+      <DependentUpon>homeFA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinancialAid\homeFA.aspx.designer.cs">
+      <DependentUpon>homeFA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FinancialAid\Scholarship_Info_FA.aspx.cs">
+      <DependentUpon>Scholarship_Info_FA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinancialAid\Scholarship_Info_FA.aspx.designer.cs">
+      <DependentUpon>Scholarship_Info_FA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FinancialAid\Student_Application_Status.aspx.cs">
+      <DependentUpon>Student_Application_Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinancialAid\Student_Application_Status.aspx.designer.cs">
+      <DependentUpon>Student_Application_Status.aspx</DependentUpon>
     </Compile>
     <Compile Include="HR\EmployeeJoining.aspx.cs">
       <DependentUpon>EmployeeJoining.aspx</DependentUpon>

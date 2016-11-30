@@ -58,10 +58,9 @@
          <h2>
          <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Job Notification"></asp:Label>
          </h2> <br />
-         <br /><br />
+         <br />
         </div>
         <div align="center">
-                <br />
                   <asp:Button ID="btnaddVacancy" runat="server" CssClass="bg-primary" Text="Add" OnClick="btnaddVacancy_Click"/><br /><br /><br />
                   <asp:Panel ID="PanelgvVacancy" runat="server">
                       <asp:GridView ID="gvVacancy" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="vacancy_id" DataSourceID="SqlVacancy" ForeColor="Black" GridLines="Vertical">

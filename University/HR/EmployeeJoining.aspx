@@ -58,7 +58,9 @@
          <h2>
          <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Employee Joining"></asp:Label>
          </h2> <br />
-         <br /><br />
+         <br />
+        <asp:Label ID="msg" Width="150" runat="server"></asp:Label> 
+        <br />
         </div>
         <div style="margin-left: 100px">
 

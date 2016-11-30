@@ -16,7 +16,9 @@
          <h2>
          <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Job Application"></asp:Label>
          </h2> <br />
-         <br /><br />
+         <br />
+        <asp:Label ID="msg" Width="150" runat="server"></asp:Label>
+        <br />
         <asp:Button ID="btnNewUser" runat="server" Width="150" Text="New User" OnClick="btnNewUser_Click" />
           <br /><br />
         </div>
@@ -30,6 +32,7 @@
         </div>
          <div style="margin-top:50px;" align="center">
         <asp:Button ID="btnsubmit" runat="server"  Text="Submit" OnClick="btnsubmit_Click" />&nbsp;&nbsp;
+        <asp:Button ID="btnBack" runat="server"  Text="Back" OnClick="btnback_Click" />
             <br />
         </div> 
 

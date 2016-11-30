@@ -54,14 +54,13 @@
         </nav><!--/nav-->
  
     </header>
-     <div style="margin-top:75px;" align="center">
+     <div style="margin-top:50px;" align="center">
          <h2>
          <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Position Creation"></asp:Label>
          </h2> <br />
-         <br /><br />
+         <br />
         </div>
         <div align="center">
-                <br />
                   <asp:Button ID="btnaddPosition" runat="server" CssClass="bg-primary" Text="Add" OnClick="btnaddPosition_Click"/><br /><br /><br />
                   <asp:Panel ID="PanelgvPosition" runat="server">
                       <asp:GridView ID="gvPosition" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="position_id" DataSourceID="SqlPosition" ForeColor="Black" GridLines="Vertical">

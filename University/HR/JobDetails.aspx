@@ -15,7 +15,6 @@
          <br /><br />
         </div>
         <div style="margin-left: 100px">        
-           <asp:TextBox ID="txtVacancyID" runat="server" Width="150px"  ReadOnly="true"></asp:TextBox><br /><br /> 
          <asp:Label ID="lblPositiontitle" Width="150" runat="server" Text="Position Title :"></asp:Label>
          <asp:TextBox ID="txtDesignation" runat="server" Width="150px"  ReadOnly="true"></asp:TextBox><br /><br />
          <asp:Label ID="lbldepartment" runat="server" Text="Department :" Width="150"></asp:Label>
