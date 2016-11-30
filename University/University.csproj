@@ -78,6 +78,7 @@
     <Content Include="Academics\FacultyCourseAssignment.aspx" />
     <Content Include="Academics\FacultyCreation.aspx" />
     <Content Include="Academics\FacultyLoadReport.aspx" />
+    <Content Include="Academics\FacCrsAssignmentUpdation.aspx" />
     <Content Include="Academics\FacultyUpdation.aspx" />
     <Content Include="Academics\ProgramManagement.aspx">
       <BrowseToURL>~/Academics/ProgramManagement.aspx</BrowseToURL>
@@ -206,6 +207,13 @@
     </Compile>
     <Compile Include="Academics\FacultyLoadReport.aspx.designer.cs">
       <DependentUpon>FacultyLoadReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academics\FacCrsAssignmentUpdation.aspx.cs">
+      <DependentUpon>FacCrsAssignmentUpdation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academics\FacCrsAssignmentUpdation.aspx.designer.cs">
+      <DependentUpon>FacCrsAssignmentUpdation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Academics\FacultyUpdation.aspx.cs">
       <DependentUpon>FacultyUpdation.aspx</DependentUpon>

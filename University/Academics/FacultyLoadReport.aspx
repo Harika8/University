@@ -45,7 +45,7 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="AcademicsHome.aspx">Academics - Home</a></li>
+                        <li><a href="AcademicsHome.aspx">Academics - Home</a></li>
                         <li><a href="DepartmentCreation.aspx">Create Department</a></li>
                         <li><a href="ProgramCreation.aspx">Create Program</a></li>                        
                         <li><a href="CourseCreation.aspx">Create Course</a></li>                  

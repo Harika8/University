@@ -33,5 +33,10 @@ namespace University.Academics
         {
             Response.Redirect("FacultyCreation.aspx");
         }
+
+        protected void UpdDelButon_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("FacCrsAssignmentUpdation.aspx");
+        }
     }
 }
