@@ -81,6 +81,8 @@
         <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>&nbsp;<strong><br />
         <br />
         <br />
+        <br />
+        <br />
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString3 %>" SelectCommand="Select * from service where service_req_date between @service_req_date1 and @service_req_date2  and service_type=@service_type;">
             <SelectParameters>
                 <asp:ControlParameter ControlID="TextBox4" Name="service_req_date1" PropertyName="Text" />
@@ -88,17 +90,27 @@
                 <asp:ControlParameter ControlID="DropDownList1" Name="service_type" PropertyName="SelectedValue" />
             </SelectParameters>
         </asp:SqlDataSource>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="service_id" DataSourceID="SqlDataSource1">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="service_id" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
+            <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:BoundField DataField="service_id" HeaderText="service_id" InsertVisible="False" ReadOnly="True" SortExpression="service_id" />
-                <asp:BoundField DataField="room_no" HeaderText="room_no" SortExpression="room_no" />
-                <asp:BoundField DataField="service_type" HeaderText="service_type" SortExpression="service_type" />
-                <asp:BoundField DataField="service_req_time" HeaderText="service_req_time" SortExpression="service_req_time" />
-                <asp:BoundField DataField="service_req_date" HeaderText="service_req_date" SortExpression="service_req_date" />
-                <asp:BoundField DataField="service_alloted_time" HeaderText="service_alloted_time" SortExpression="service_alloted_time" />
-                <asp:BoundField DataField="service_alloted_date" HeaderText="service_alloted_date" SortExpression="service_alloted_date" />
-                <asp:BoundField DataField="status" HeaderText="status" SortExpression="status" />
+                <asp:BoundField DataField="service_id" HeaderText="Service ID" InsertVisible="False" ReadOnly="True" SortExpression="service_id" />
+                <asp:BoundField DataField="room_no" HeaderText="Room No" SortExpression="room_no" />
+                <asp:BoundField DataField="service_type" HeaderText="Service Type" SortExpression="service_type" />
+                <asp:BoundField DataField="service_req_date" HeaderText="Service Req Date" SortExpression="service_req_date" />
+                <asp:BoundField DataField="service_req_time" HeaderText="Service Req Time" SortExpression="service_req_time" />
+                <asp:BoundField DataField="service_alloted_date" HeaderText="service Alloted Date" SortExpression="service_alloted_date" />
+                <asp:BoundField DataField="service_alloted_time" HeaderText="Service Alloted Time" SortExpression="service_alloted_time" />
+                <asp:BoundField DataField="status" HeaderText="status" SortExpression="Status" />
             </Columns>
+            <FooterStyle BackColor="#CCCC99" />
+            <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+            <RowStyle BackColor="#F7F7DE" />
+            <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#FBFBF2" />
+            <SortedAscendingHeaderStyle BackColor="#848384" />
+            <SortedDescendingCellStyle BackColor="#EAEAD3" />
+            <SortedDescendingHeaderStyle BackColor="#575357" />
         </asp:GridView>
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

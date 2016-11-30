@@ -123,14 +123,24 @@
                 <asp:ControlParameter ControlID="DropDownList2" Name="room_no" PropertyName="SelectedValue" />
             </SelectParameters>
         </asp:SqlDataSource>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="room_no" DataSourceID="roomSource2">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="room_no" DataSourceID="roomSource2" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
+            <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:BoundField DataField="room_no" HeaderText="room_no" ReadOnly="True" SortExpression="room_no" />
-                <asp:BoundField DataField="room_type" HeaderText="room_type" SortExpression="room_type" />
-                <asp:BoundField DataField="availability" HeaderText="availability" SortExpression="availability" />
-                <asp:BoundField DataField="user_id" HeaderText="user_id" SortExpression="user_id" />
-                <asp:BoundField DataField="duration_stay" HeaderText="duration_stay" SortExpression="duration_stay" />
+                <asp:BoundField DataField="user_id" HeaderText="User ID" SortExpression="user_id" />
+                <asp:BoundField DataField="room_no" HeaderText="Room No" ReadOnly="True" SortExpression="room_no" />
+                <asp:BoundField DataField="room_type" HeaderText="Room Type" SortExpression="room_type" />
+                <asp:BoundField DataField="availability" HeaderText="Availability" SortExpression="availability" />
+                <asp:BoundField DataField="duration_stay" HeaderText="Duration of Stay" SortExpression="duration_stay" />
             </Columns>
+            <FooterStyle BackColor="#CCCC99" />
+            <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+            <RowStyle BackColor="#F7F7DE" />
+            <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#FBFBF2" />
+            <SortedAscendingHeaderStyle BackColor="#848384" />
+            <SortedDescendingCellStyle BackColor="#EAEAD3" />
+            <SortedDescendingHeaderStyle BackColor="#575357" />
         </asp:GridView>
     </form>
 </body>
