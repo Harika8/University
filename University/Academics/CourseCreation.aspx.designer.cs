@@ -58,6 +58,15 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.DropDownList DepartmentIDDDList;
         
         /// <summary>
+        /// DepartmentIDTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DepartmentIDTB;
+        
+        /// <summary>
         /// DepartmentIDList control.
         /// </summary>
         /// <remarks>
@@ -101,6 +110,15 @@ namespace University.Academics {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ProgramIDDDL;
+        
+        /// <summary>
+        /// ProgramIDTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ProgramIDTB;
         
         /// <summary>
         /// ProgramIDList_DeptID_CRSLVL control.

@@ -11,7 +11,7 @@ namespace University.Academics
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void CourseClearButton_Click(object sender, EventArgs e)
@@ -38,6 +38,16 @@ namespace University.Academics
         protected void BackButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("CourseManagement.aspx");
+        }
+
+        protected void ProgramIDDDL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ProgramIDTB.Text = ProgramIDDDL.SelectedValue;
+        }
+
+        protected void DepartmentIDDDList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DepartmentIDTB.Text = DepartmentIDDDList.SelectedValue;
         }
 
         /*protected void DepartmentIDDDList_SelectedIndexChanged(object sender, EventArgs e)
