@@ -42,10 +42,10 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li ><a href="homeFA.aspx">Financial Aid Home</a></li>
-                        <li><a href="Applications_FA.aspx">Applications</a></li>
+                        <li class="active"><a href="Applications_FA.aspx">Applications</a></li>
                         <li><a href="Scholarship_Info_FA.aspx">Scholarships</a></li>                        
                         <li><a href="Student_Application_Status.aspx">Student Application Status</a></li> 
-                        <li class="active"><a href="Employee_GridScreen_FA.aspx">Employee</a></li>
+                        <li><a href="Employee_GridScreen_FA.aspx">Employee</a></li>
                                                
                     </ul>
                 </div>
