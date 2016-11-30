@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="LandingPage" />
-    <meta name="author" content="Harika, SriNuthalapati" />
+    <meta name="author" content="Harika" />
     <title>Home | University DBMS Project</title>
     <%-- ------ CSS ------ --%>
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -45,7 +45,7 @@
                         <li><a href="Registrar Office/RegistrarHome.aspx">Registrar</a></li>
                         <li><a href="Academics/AcademicsHome.aspx">Academics</a></li>                        
                         <li><a href="FinancialAid/homeFA.aspx">Financial Aid</a></li> 
-                        <li><a href="HR/HRDefault.aspx">HR</a></li>
+                        <li><a href="HR/HRDefault.aspx">Human Resources</a></li>
                         <li><a href="Campus Services/CampusServicesHome.aspx">Campus Services</a></li>                       
                     </ul>
                 </div>
@@ -67,13 +67,13 @@
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">HR</h1>
-                                    <h2 class="animation animated-item-2">About</h2>                                
+                                    <h1 class="animation animated-item-1">Registrar</h1>
+                                    <h2 class="animation animated-item-2"></h2>                                
                                 </div>
                             </div>
                             <div class="col-sm-6 hidden-xs animation animated-item-4">
                                 <div class="slider-img">
-                                    <img src="images/slider/img1.png" class="img-responsive">
+                                    
                                 </div>
                             </div>
                         </div>
@@ -85,13 +85,13 @@
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Academics</h1>
-                                    <h2 class="animation animated-item-2">About</h2>                                    
+                                    <h1 class="animation animated-item-1">Financial Aid</h1>
+                                    <h2 class="animation animated-item-2"></h2>                                    
                                 </div>
                             </div>
                             <div class="col-sm-6 hidden-xs animation animated-item-4">
                                 <div class="slider-img">
-                                    <img src="images/slider/img2.png" class="img-responsive">
+                                    
                                 </div>
                             </div>
                         </div>
@@ -103,13 +103,47 @@
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">University</h1>
-                                    <h2 class="animation animated-item-2">About</h2>
+                                    <h1 class="animation animated-item-1">Campus Services</h1>
+                                    <h2 class="animation animated-item-2"></h2>
                                 </div>
                             </div>
                             <div class="col-sm-6 hidden-xs animation animated-item-4">
                                 <div class="slider-img">
-                                    <img src="images/slider/img3.png" class="img-responsive">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.item-->
+                  <div class="item" style="background-image: url(../images/DSC_0833.JPG)">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1">Academics</h1>
+                                    <h2 class="animation animated-item-2"></h2>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.item-->
+                 <div class="item" style="background-image: url(../images/DSC_0778.JPG)">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1">Human Resources</h1>
+                                    <h2 class="animation animated-item-2"></h2>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+                                    
                                 </div>
                             </div>
                         </div>
