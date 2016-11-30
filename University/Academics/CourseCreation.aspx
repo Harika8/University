@@ -61,25 +61,27 @@
         <asp:SqlDataSource ID="CourseTBLDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [course]"></asp:SqlDataSource>
         <hr />
     
-        <asp:Label ID="DepartmentIDLbl" runat="server" Text="Department ID:"></asp:Label>
-        <asp:DropDownList ID="DepartmentIDDDList" runat="server" DataSourceID="DepartmentIDList" DataTextField="department_id" DataValueField="department_id" AutoPostBack="True">
+        <asp:Label ID="DepartmentIDLbl" runat="server" Text="Department Name:"></asp:Label>
+        <asp:DropDownList ID="DepartmentIDDDList" runat="server" DataSourceID="DepartmentIDList" DataTextField="department_name" DataValueField="department_id" AutoPostBack="True" Height="26px" OnSelectedIndexChanged="DepartmentIDDDList_SelectedIndexChanged" Width="337px">
         </asp:DropDownList>
         
-        <asp:SqlDataSource ID="DepartmentIDList" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_id] FROM [department]"></asp:SqlDataSource>
+        &nbsp;Department ID:<asp:TextBox ID="DepartmentIDTB" runat="server" Enabled="False" Width="54px"></asp:TextBox>
+&nbsp;<asp:SqlDataSource ID="DepartmentIDList" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_id], [department_name] FROM [department] WHERE ([department_id] not in (10,11,12,13,19,20,21,22,24))"></asp:SqlDataSource>
         
         <p>
         <asp:Label ID="CourseLevelLbl" runat="server" Text="Course Level:"></asp:Label>
-        <asp:DropDownList ID="CourseLevelDDList" runat="server">
+        <asp:DropDownList ID="CourseLevelDDList" runat="server" AutoPostBack="True">
                 <asp:ListItem>Grad</asp:ListItem>
                 <asp:ListItem>PhD</asp:ListItem>
                 <asp:ListItem>UnderGrad</asp:ListItem>
             </asp:DropDownList>
-            <asp:Label ID="ProgramIDLbl" runat="server" Text="Program ID:"></asp:Label>
-            <asp:DropDownList ID="ProgramIDDDL" runat="server" DataSourceID="ProgramIDList_DeptID_CRSLVL" DataTextField="program_id" DataValueField="program_id" Height="28px" Width="73px" AutoPostBack="True">
+            <asp:Label ID="ProgramIDLbl" runat="server" Text="Program Name:"></asp:Label>
+            <asp:DropDownList ID="ProgramIDDDL" runat="server" DataSourceID="ProgramIDList_DeptID_CRSLVL" DataTextField="program_name" DataValueField="program_id" Height="26px" Width="318px" AutoPostBack="True" OnSelectedIndexChanged="ProgramIDDDL_SelectedIndexChanged">
             </asp:DropDownList>
-            <asp:SqlDataSource ID="ProgramIDList_DeptID_CRSLVL" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [program_id] FROM [program] WHERE (([department_id] = @department_id) AND ([course_level] = @course_level))">
+            &nbsp;&nbsp;&nbsp; Program ID:<asp:TextBox ID="ProgramIDTB" runat="server" Enabled="False" Width="47px"></asp:TextBox>
+&nbsp;<asp:SqlDataSource ID="ProgramIDList_DeptID_CRSLVL" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [program_id], program_name FROM [program] WHERE (([department_id] = @department_id) AND ([course_level] = @course_level))">
                 <SelectParameters>
-                    <asp:ControlParameter ControlID="DepartmentIDDDList" DefaultValue="17" Name="department_id" PropertyName="SelectedValue" Type="Int16" />
+                    <asp:ControlParameter ControlID="DepartmentIDDDList" DefaultValue="" Name="department_id" PropertyName="SelectedValue" Type="Int16" />
                     <asp:ControlParameter ControlID="CourseLevelDDList" DefaultValue="Grad" Name="course_level" PropertyName="SelectedValue" Type="String" />
                 </SelectParameters>
             </asp:SqlDataSource>

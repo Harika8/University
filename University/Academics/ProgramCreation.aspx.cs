@@ -11,7 +11,7 @@ namespace University.Academics
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            DepartmentIDTB.Text = DepartmentIDDDList.SelectedValue;
         }
 
         protected void ProgramSubmitButton_Click(object sender, EventArgs e)
@@ -36,6 +36,11 @@ namespace University.Academics
         protected void BackButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("ProgramManagement.aspx");
+        }
+
+        protected void DepartmentIDDDList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DepartmentIDTB.Text = DepartmentIDDDList.SelectedValue;
         }
     }
 }

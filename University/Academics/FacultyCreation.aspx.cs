@@ -11,7 +11,8 @@ namespace University.Academics
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            DepartmentIDTB.Text = DeptIDDDL.SelectedValue;
+            FacultyIDTB.Text = FacultyIDDDL.SelectedValue;
         }
 
         protected void FacultyCreateClearButton_Click(object sender, EventArgs e)
@@ -41,6 +42,11 @@ namespace University.Academics
         protected void BackButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("AssignFacultyToCourse1.aspx");
+        }
+
+        protected void DeptIDDDL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DepartmentIDTB.Text = DeptIDDDL.SelectedValue;
         }
     }
 }
