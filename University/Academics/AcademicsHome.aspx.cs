@@ -13,5 +13,41 @@ namespace University.Academics
         {
 
         }
+
+        protected void AcademicsHomeBTN_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AcademicsHome.aspx");
+        }
+
+        protected void DepartmentBTN_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("DepartmentManagement.aspx");
+            
+        }
+
+        protected void ProgramBTN_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ProgramManagement.aspx");
+        }
+
+        protected void CourseBTN_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CourseManagement.aspx");
+        }
+
+        protected void FacultyBTN_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AssignFacultyToCourse1.aspx");
+        }
+
+        protected void AssignFacultyCourseBTN_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("FacultyCourseAssignment.aspx");
+        }
+
+        protected void FacultyLoadReportBTN_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("FacultyLoadReport.aspx");
+        }
     }
 }
