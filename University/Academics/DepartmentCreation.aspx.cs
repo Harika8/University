@@ -26,7 +26,6 @@ namespace University.Academics
         protected void ProgramClearButton_Click(object sender, EventArgs e)
         {
             DepartmentNameTB.Text = string.Empty;
-            DepartmentIDTB.Text = string.Empty;
             DepartmentPhoneNoTB.Text = string.Empty;
             DepartmentEmailIDTB.Text = string.Empty;
         }
