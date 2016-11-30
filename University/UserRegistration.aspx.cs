@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace University
 {
@@ -33,6 +34,7 @@ namespace University
             SqlUser_info.InsertParameters["country"].DefaultValue = txtCountry.Text.ToUpper().Trim();
             SqlUser_info.Insert();
 
+
             txtFirstName.Text = string.Empty;
             txtLastName.Text = string.Empty;
             txtDob.Text = string.Empty;
@@ -48,7 +50,18 @@ namespace University
             txtZipcode.Text = string.Empty;
             txtCountry.Text = string.Empty;
 
+            Sqlgetuserid.SelectCommand = "Select MAX(user_id) as user_id from user_info";
+            DataSourceSelectArguments dsArguments = new DataSourceSelectArguments();
+            DataView dvView = new DataView();
+            dvView = (DataView)Sqlgetuserid.Select(dsArguments);
 
+            string userid = dvView[0].Row["user_id"].ToString();
+            Session["user_id"] = userid;
+            string strsender = (string)Session["sender"];
+            if ( strsender.Equals("jobapplicant"))
+            {
+                Response.Redirect("HR/NewJobApplicant.aspx");
+            }
         }
 
         protected void btnCancelUser_Click(object sender, EventArgs e)
@@ -80,6 +93,9 @@ namespace University
             calpanel.Visible = true;
         }
 
+        protected void SqlUser_info_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
 
+        }
     }
 }

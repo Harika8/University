@@ -41,24 +41,112 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="HRDefault.aspx">HR - Home</a></li>
+                        <li><a href="HRDefault.aspx">HR - Home</a></li>
                         <li><a href="JobSearch.aspx">Job Search</a></li>
-                        <li><a href="JobApplication.aspx">Job Application</a></li>                        
+                        <li><a href="JobApplicationStatus.aspx">Job Application Status</a></li>                        
                         <li><a href="JobNotification.aspx">Create Vacancy</a></li> 
-                        <li><a href="Payroll.aspx">Check Payroll</a></li>
                         <li><a href="Position.aspx">Create Position</a></li> 
-                        <li><a href="Timesheet.aspx">Update Timesheet</a></li>
-                        <li><a href="EmployeeJoining.aspx">Employee</a></li>                      
+                        <li class="active"><a href="EmployeeJoining.aspx">Employee Joining</a></li>
+                        <li><a href="EmployeeScreen.aspx">Employee</a></li>                   
                     </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
  
     </header>
-    <div>
-    
-    </div>
-        <asp:SqlDataSource ID="SqlUser" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [user_info]"></asp:SqlDataSource>
+    <div style="margin-top:75px;" align="center">
+         Employee Joining <br />
+         <br /><br />
+        </div>
+        <div style="margin-left: 100px">
+
+         
+         <asp:Label ID="lblEmployeeId" Width="150" runat="server" Text="Employee ID :"></asp:Label> 
+         <asp:TextBox ID="txtuserID" Width="150" runat="server" OnTextChanged="txtuserID_TextChanged"></asp:TextBox><br /><br />
+         <asp:Label ID="lblFirstName" runat="server" Width="150" Text="First Name"></asp:Label>
+        <asp:TextBox ID="txtFirstName" Width="150" runat="server" ReadOnly="true"></asp:TextBox>            
+        <asp:Label ID="lblLastName" Width="81px" runat="server" Text="Last Name" style="margin-left: 55px"></asp:Label>
+        <asp:TextBox ID="txtLastName" Width="150" runat="server" ReadOnly="true"></asp:TextBox>
+        <br /> 
+            <br />
+        <asp:Label ID="lblDOB" runat="server" Width="150" Text="Date of Birth"></asp:Label> 
+
+        <asp:TextBox ID="txtDob" ReadOnly="true" Width="150" runat="server" ></asp:TextBox>
+         <br />
+            <br />
+      <asp:Label ID="lblEmail" runat="server" Width="150" Text="Email Id :"></asp:Label>                 
+      <asp:TextBox ID="txtEmail" runat="server" Width="208px" ReadOnly="true"></asp:TextBox>
+            <br />
+            <br />
+        <asp:Label ID="lblContactNo" Width="150" runat="server" Text="Contact No:"></asp:Label>
+            <asp:TextBox ID="txtContactno" runat="server" Width="150" ReadOnly="true"></asp:TextBox>
+            <br />
+            <br />
+         <asp:Label ID="lblAddressLine" Width="150" runat="server" Text="Address Line:"></asp:Label>
+         <asp:TextBox ID="txtAddressLine" runat="server" Width="500" Height="50px" ReadOnly="true"></asp:TextBox>
+            <br />
+            '<br />
+            <asp:Label ID="lblJobtype" Width="150" runat="server" Text="Job Type :"></asp:Label>         
+         <asp:TextBox ID="txtJobtype" runat="server" Width="150px"  ReadOnly="true"></asp:TextBox>        
+        <br /><br />
+        <asp:Label ID="lblDesignation" Width="150" runat="server" Text="Designation :"></asp:Label> 
+         <asp:TextBox ID="txtDesignation" runat="server" Width="150px"  ReadOnly="true"></asp:TextBox><br /><br />
+         <asp:Label ID="lbldepartment" runat="server" Text="Department :" Width="150"></asp:Label>
+         <asp:TextBox ID="txtDepartment" runat="server" Width="150" ReadOnly="true"></asp:TextBox>        
+        <br /><br />
+        <asp:Label ID="lblPayfrequency" runat="server" Width="150" Text="Pay Frequency :"></asp:Label>
+        <asp:TextBox ID="txtPayFrequency" runat="server" Width="150" ReadOnly="true"></asp:TextBox><br /><br /> 
+        <asp:Label ID="lblSalary" runat="server" Width="150" Text="Salary Per Hour :"></asp:Label>
+        <asp:TextBox ID="txtSalaryperhour" runat="server" Width="150" ></asp:TextBox><br /><br />
+        <asp:Label ID="lblempType" runat="server" Width="150" Text="Employee Type :"></asp:Label>
+        <asp:TextBox ID="txtempType" runat="server" Width="150" ></asp:TextBox><br /><br /> 
+  
+                 
+            <asp:SqlDataSource ID="SqlEmployee" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" DeleteCommand="DELETE FROM [employee] WHERE [euser_id] = @original_euser_id AND [employement_status] = @original_employement_status AND [date_of_joining] = @original_date_of_joining AND [position_id] = @original_position_id AND [employee_type] = @original_employee_type AND (([salaryperhour] = @original_salaryperhour) OR ([salaryperhour] IS NULL AND @original_salaryperhour IS NULL)) AND (([pay_frequency] = @original_pay_frequency) OR ([pay_frequency] IS NULL AND @original_pay_frequency IS NULL))" InsertCommand="INSERT INTO [employee] ([euser_id], [employement_status], [date_of_joining], [position_id], [employee_type], [salaryperhour], [pay_frequency]) VALUES (@euser_id, @employement_status, @date_of_joining, @position_id, @employee_type, @salaryperhour, @pay_frequency)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [employee]" UpdateCommand="UPDATE [employee] SET [employement_status] = @employement_status, [date_of_joining] = @date_of_joining, [position_id] = @position_id, [employee_type] = @employee_type, [salaryperhour] = @salaryperhour, [pay_frequency] = @pay_frequency WHERE [euser_id] = @original_euser_id AND [employement_status] = @original_employement_status AND [date_of_joining] = @original_date_of_joining AND [position_id] = @original_position_id AND [employee_type] = @original_employee_type AND (([salaryperhour] = @original_salaryperhour) OR ([salaryperhour] IS NULL AND @original_salaryperhour IS NULL)) AND (([pay_frequency] = @original_pay_frequency) OR ([pay_frequency] IS NULL AND @original_pay_frequency IS NULL))">
+                <DeleteParameters>
+                    <asp:Parameter Name="original_euser_id" Type="Int32" />
+                    <asp:Parameter Name="original_employement_status" Type="String" />
+                    <asp:Parameter DbType="Date" Name="original_date_of_joining" />
+                    <asp:Parameter Name="original_position_id" Type="Int16" />
+                    <asp:Parameter Name="original_employee_type" Type="String" />
+                    <asp:Parameter Name="original_salaryperhour" Type="Decimal" />
+                    <asp:Parameter Name="original_pay_frequency" Type="String" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="euser_id" Type="Int32" />
+                    <asp:Parameter Name="employement_status" Type="String" />
+                    <asp:Parameter DbType="Date" Name="date_of_joining" />
+                    <asp:Parameter Name="position_id" Type="Int16" />
+                    <asp:Parameter Name="employee_type" Type="String" />
+                    <asp:Parameter Name="salaryperhour" Type="Decimal" />
+                    <asp:Parameter Name="pay_frequency" Type="String" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="employement_status" Type="String" />
+                    <asp:Parameter DbType="Date" Name="date_of_joining" />
+                    <asp:Parameter Name="position_id" Type="Int16" />
+                    <asp:Parameter Name="employee_type" Type="String" />
+                    <asp:Parameter Name="salaryperhour" Type="Decimal" />
+                    <asp:Parameter Name="pay_frequency" Type="String" />
+                    <asp:Parameter Name="original_euser_id" Type="Int32" />
+                    <asp:Parameter Name="original_employement_status" Type="String" />
+                    <asp:Parameter DbType="Date" Name="original_date_of_joining" />
+                    <asp:Parameter Name="original_position_id" Type="Int16" />
+                    <asp:Parameter Name="original_employee_type" Type="String" />
+                    <asp:Parameter Name="original_salaryperhour" Type="Decimal" />
+                    <asp:Parameter Name="original_pay_frequency" Type="String" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
+                 
+            <asp:SqlDataSource ID="SqlData" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>"  SelectCommand="SELECT * FROM [position]">
+            </asp:SqlDataSource>
+            </div>
+
+         <div style="margin-top:50px;" align="center">
+        <asp:Button ID="btnsubmit" runat="server"  Text="Submit" OnClick="btnsubmit_Click" />&nbsp;&nbsp;
+        <asp:Button ID="btnclear" runat="server"  Text="Clear" OnClick="btnclear_Click" />
+            <br />
+        </div>
     </form>
 </body>
 </html>

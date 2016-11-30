@@ -56,24 +56,9 @@
 
         <p style="width: 203px; margin-left: 600px">
         <b>Program Creation Form</b></p>
+    
+        <asp:Button ID="BackButton" runat="server" OnClick="BackButton_Click" Text="Back" />
           <br />
-          <asp:GridView ID="ProgramTBLGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="program_id" DataSourceID="ProgramTBLDataSource" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" AllowPaging="True" PageSize="5">
-              <Columns>
-                  <asp:BoundField DataField="program_id" HeaderText="program_id" ReadOnly="True" SortExpression="program_id" />
-                  <asp:BoundField DataField="program_name" HeaderText="program_name" SortExpression="program_name" />
-                  <asp:BoundField DataField="department_id" HeaderText="department_id" SortExpression="department_id" />
-                  <asp:BoundField DataField="course_level" HeaderText="course_level" SortExpression="course_level" />
-              </Columns>
-              <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
-              <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
-              <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
-              <RowStyle ForeColor="#330099" BackColor="White" />
-              <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
-              <SortedAscendingCellStyle BackColor="#FEFCEB" />
-              <SortedAscendingHeaderStyle BackColor="#AF0101" />
-              <SortedDescendingCellStyle BackColor="#F6F0C0" />
-              <SortedDescendingHeaderStyle BackColor="#7E0000" />
-          </asp:GridView>
           <asp:SqlDataSource ID="ProgramTBLDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [program]"></asp:SqlDataSource>
           <hr />
           <br />
@@ -129,7 +114,25 @@
                 <asp:Parameter Name="original_course_level" Type="String" />
             </UpdateParameters>
         </asp:SqlDataSource>
+          <hr />
       </div>
+          <asp:GridView ID="ProgramTBLGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="program_id" DataSourceID="ProgramTBLDataSource" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" AllowPaging="True" PageSize="5">
+              <Columns>
+                  <asp:BoundField DataField="program_id" HeaderText="Program ID" ReadOnly="True" SortExpression="program_id" />
+                  <asp:BoundField DataField="program_name" HeaderText="Program Name" SortExpression="program_name" />
+                  <asp:BoundField DataField="department_id" HeaderText="Department ID" SortExpression="department_id" />
+                  <asp:BoundField DataField="course_level" HeaderText="Course Level" SortExpression="course_level" />
+              </Columns>
+              <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+              <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+              <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+              <RowStyle ForeColor="#330099" BackColor="White" />
+              <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+              <SortedAscendingCellStyle BackColor="#FEFCEB" />
+              <SortedAscendingHeaderStyle BackColor="#AF0101" />
+              <SortedDescendingCellStyle BackColor="#F6F0C0" />
+              <SortedDescendingHeaderStyle BackColor="#7E0000" />
+          </asp:GridView>
     </form>
 </body>
 </html>

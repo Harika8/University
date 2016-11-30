@@ -7,45 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace University.Academics {
+namespace University.HR {
     
     
-    public partial class FacultyUpdation {
+    public partial class JobApplicationStatus {
         
         /// <summary>
-        /// FacultyUpdationForm control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm FacultyUpdationForm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// BackButton control.
+        /// gvJobApplications control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BackButton;
+        protected global::System.Web.UI.WebControls.GridView gvJobApplications;
         
         /// <summary>
-        /// GridView1 control.
+        /// SqlJobApplications control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
-        
-        /// <summary>
-        /// FacultytblDataSource control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource FacultytblDataSource;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlJobApplications;
     }
 }

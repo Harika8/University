@@ -35,6 +35,14 @@ namespace University.Academics
             //eventsource.SelectCommand = "Select first_name,last_name,email_id,contact_no from user_info where user_id='" + TextBox25.Text + "'";
         }
 
-        
+        protected void BackButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CourseManagement.aspx");
+        }
+
+        /*protected void DepartmentIDDDList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Response.Redirect("CourseCreation.aspx");
+        }*/
     }
 }

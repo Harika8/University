@@ -33,6 +33,9 @@ namespace University.Academics
             Response.Redirect("ProgramCreation.aspx");
         }
 
-        
+        protected void BackButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ProgramManagement.aspx");
+        }
     }
 }

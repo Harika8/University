@@ -17,15 +17,16 @@ namespace University.Campus_Services
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            roomSource1.SelectCommand = "Select room_no,duration_stay,date from room where user_id='" + TextBox8.Text + "'";
+            roomSource1.SelectCommand = "Select room_no,duration_stay,availability from room where user_id='" + TextBox8.Text + "'";
             
            DataSourceSelectArguments data = new DataSourceSelectArguments();
             DataView view = new DataView();
             view = (DataView)roomSource1.Select(data);
-           /* TextBox4.Text = view[0].Row["first_name"].ToString();*/
+            TextBox4.Text = view[0].Row["room_no"].ToString();
             TextBox9.Text = view[0].Row["duration_stay"].ToString();
-            TextBox8.Text = view[0].Row["date"].ToString();
-            
+            /*TextBox8.Text = view[0].Row["date"].ToString();*/
+            TextBox7.Text= view[0].Row["availability"].ToString();
+
         }
     }
 }
