@@ -10,16 +10,7 @@
 namespace University.Academics {
     
     
-    public partial class ProgramDeletion {
-        
-        /// <summary>
-        /// ProgramDeletionForm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm ProgramDeletionForm;
+    public partial class FacCrsAssignmentUpdation {
         
         /// <summary>
         /// lblHeading control.
@@ -40,30 +31,30 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.Label msg;
         
         /// <summary>
-        /// BackButton control.
+        /// BackButton1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BackButton;
+        protected global::System.Web.UI.WebControls.Button BackButton1;
         
         /// <summary>
-        /// ProgramGridView control.
+        /// Faculty_Course_GridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ProgramGridView;
+        protected global::System.Web.UI.WebControls.GridView Faculty_Course_GridView;
         
         /// <summary>
-        /// ProgramDataSource control.
+        /// FacultyCourseTBLDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ProgramDataSource;
+        protected global::System.Web.UI.WebControls.SqlDataSource FacultyCourseTBLDataSource;
     }
 }

@@ -78,6 +78,7 @@
     <Content Include="Academics\FacultyCourseAssignment.aspx" />
     <Content Include="Academics\FacultyCreation.aspx" />
     <Content Include="Academics\FacultyLoadReport.aspx" />
+    <Content Include="Academics\FacCrsAssignmentUpdation.aspx" />
     <Content Include="Academics\FacultyUpdation.aspx" />
     <Content Include="Academics\ProgramManagement.aspx">
       <BrowseToURL>~/Academics/ProgramManagement.aspx</BrowseToURL>
@@ -133,6 +134,7 @@
     <Content Include="Registrar Office\AdmissionStatus.aspx" />
     <Content Include="Registrar Office\StudentGrade.aspx" />
     <Content Include="Registrar Office\UniversityApplication.aspx" />
+    <None Include="Resources\cs FLOWCHART.JPG" />
     <Content Include="UserRegistration.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -206,6 +208,13 @@
     </Compile>
     <Compile Include="Academics\FacultyLoadReport.aspx.designer.cs">
       <DependentUpon>FacultyLoadReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academics\FacCrsAssignmentUpdation.aspx.cs">
+      <DependentUpon>FacCrsAssignmentUpdation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academics\FacCrsAssignmentUpdation.aspx.designer.cs">
+      <DependentUpon>FacCrsAssignmentUpdation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Academics\FacultyUpdation.aspx.cs">
       <DependentUpon>FacultyUpdation.aspx</DependentUpon>
@@ -450,6 +459,11 @@
       <DependentUpon>EmployeeScreen.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Registrar Office\AdmissionDetails.aspx.cs">
       <DependentUpon>AdmissionDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -511,7 +525,13 @@
     <Folder Include="css\" />
     <Folder Include="fonts\" />
     <Folder Include="images\" />
-    <Folder Include="js\" />
+    <Folder Include="js\FinancialAid\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

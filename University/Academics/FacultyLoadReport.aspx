@@ -45,7 +45,7 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="AcademicsHome.aspx">Academics - Home</a></li>
+                        <li><a href="AcademicsHome.aspx">Academics - Home</a></li>
                         <li><a href="DepartmentCreation.aspx">Create Department</a></li>
                         <li><a href="ProgramCreation.aspx">Create Program</a></li>                        
                         <li><a href="CourseCreation.aspx">Create Course</a></li>                  
@@ -56,10 +56,15 @@
             </div><!--/.container-->
         </nav><!--/nav-->
     </header>
-        <div>
-            <p style="width: 203px; margin-left: 600px">
-            <b>Faculty Load Report</b></p><br/>
+         <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Faculty Load Report"></asp:Label>
+         </h2> <br />
+         <br />
+        <asp:Label ID="msg" Width="150" runat="server"></asp:Label> 
+        <br />
         </div>
+
             
         <asp:Label ID="DeptIDLbl" runat="server" Text="Department Name:"></asp:Label>
         <asp:DropDownList ID="DeptIDDDL" runat="server" DataSourceID="DeptIDs_DataSource" DataTextField="department_name" DataValueField="department_id" AutoPostBack="True" Height="25px" OnSelectedIndexChanged="DeptIDDDL_SelectedIndexChanged" Width="199px">
@@ -111,7 +116,6 @@
         <br />
         Total No. of Credits taken by the selected Faculty is
         <asp:TextBox ID="CreditsSUMTB" runat="server" Enabled="False">&lt;Sum of all Credits&gt;</asp:TextBox>
-        <br />
-        Total No. of Credits the selected Faculty handles is &lt;Contract Hours&gt;</form>
+        </form>
 </body>
 </html>

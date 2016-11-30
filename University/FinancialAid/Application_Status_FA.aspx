@@ -62,21 +62,24 @@
         <br />
         <br />
         <br />
-        <br />
-        <br />
        <p> --> Keep Checking for your updated application status
         <br />
          --> Generally Finanacial Aid department takes 6 to 8 weeks to process your applocation
-        <br />
+        </p>
+        <p> --&gt; If you don&#39;t Deny your Awarded Financial Aid before 5 days to the semester start date, it will be considered as Accepted .<br />
            <br />
+            <asp:Label ID="Label5" runat="server" Font-Size="Small" ForeColor="#CC3300" Text="--&gt; Click the &quot;Select&quot; button to Deny your respective Financial Aid. "></asp:Label>
+        </p>
+        <p> 
            <br />
         --> Below Is Your Current Application Status
         </p>
     
     </div>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="fapplication_id" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="fapplication_id" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
+                <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="fapplication_id" HeaderText="Application ID" InsertVisible="False" ReadOnly="True" SortExpression="fapplication_id" />
                 <asp:BoundField DataField="suser_id" HeaderText="Student ID" SortExpression="suser_id" />
                 <asp:BoundField DataField="validity_date" HeaderText="Valid Till" SortExpression="validity_date" />

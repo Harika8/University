@@ -17,7 +17,7 @@ namespace University.Academics
         protected void CourseClearButton_Click(object sender, EventArgs e)
         {
             CourseNameTB.Text = string.Empty;
-            CourseNumberTB.Text = string.Empty;
+           // CourseNumberTB.Text = string.Empty;
             CourseDescriptionTB.Text = string.Empty;
             Response.Redirect("CourseCreation.aspx");
         }
@@ -49,7 +49,7 @@ namespace University.Academics
 
         protected void ProgramIDDDL_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ProgramIDTB.Text = ProgramIDDDL.SelectedValue;
+            //ProgramIDTB.Text = ProgramIDDDL.SelectedValue;
         }
 
         protected void DepartmentIDDDList_SelectedIndexChanged(object sender, EventArgs e)

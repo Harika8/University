@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="LandingPage" />
-    <meta name="author" content="Harika" />
+    <meta name="author" content="Harika, SriNuthalapati" />
     <title>Home | University DBMS Project</title>
     <%-- ------ CSS ------ --%>
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -44,7 +44,7 @@
                         <li class="active"><a href="Default.aspx">Home</a></li>
                         <li><a href="Registrar Office/RegistrarHome.aspx">Registrar</a></li>
                         <li><a href="Academics/AcademicsHome.aspx">Academics</a></li>                        
-                        <li><a href="contactus.aspx">Financial Aid</a></li> 
+                        <li><a href="FinancialAid/homeFA.aspx">Financial Aid</a></li> 
                         <li><a href="HR/HRDefault.aspx">HR</a></li>
                         <li><a href="Campus Services/CampusServicesHome.aspx">Campus Services</a></li>                       
                     </ul>
@@ -85,7 +85,7 @@
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Content</h1>
+                                    <h1 class="animation animated-item-1">Academics</h1>
                                     <h2 class="animation animated-item-2">About</h2>                                    
                                 </div>
                             </div>

@@ -20,7 +20,7 @@ namespace University.Financial_Aid
         {
             GridViewRow row = GridView1.SelectedRow;
 
-            Response.Redirect("~/FinancialAid/Application_Review_FA.aspx?rowID=" + row.Cells[1].Text);
+            Response.Redirect("~/FinancialAid/Application_Review_FA.aspx?rowID=" + row.Cells[2].Text);
         }
 
         

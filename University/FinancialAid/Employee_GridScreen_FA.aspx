@@ -56,16 +56,21 @@
         <center><h1><asp:Label ID="Label1" ForeColor="Blue" runat="server" Text="Applicants Report"></asp:Label></h1></center>
     <br />
         <br />
-       <center> <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [financial_aid_application]"></asp:SqlDataSource>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="fapplication_id" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" ForeColor="Black" GridLines="Vertical" AllowPaging="True">
+       <center> <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [financial_aid_application] where status &lt;&gt; @status">
+           <SelectParameters>
+               <asp:Parameter DefaultValue="Denied" Name="status" />
+           </SelectParameters>
+           </asp:SqlDataSource>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="fapplication_id" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" ForeColor="Black" GridLines="Vertical" AllowPaging="True" AllowSorting="True">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:CommandField ShowSelectButton="True" HeaderText="Review" />
+                <asp:BoundField DataField="fapplication_id" HeaderText="Sr.No" ReadOnly="True" SortExpression="fapplication_id" />
+                <asp:CommandField ShowSelectButton="True" HeaderText="Review Application" />
                 <asp:BoundField DataField="fapplication_id" HeaderText="Application ID" InsertVisible="False" ReadOnly="True" SortExpression="fapplication_id" />
-                <asp:BoundField DataField="euser_id" HeaderText="Employee ID" SortExpression="euser_id" />
                 <asp:BoundField DataField="suser_id" HeaderText="Student ID" SortExpression="suser_id" />
                 <asp:BoundField DataField="faward_code" HeaderText="Award Code" SortExpression="faward_code" />
-                <asp:BoundField DataField="validity_date" HeaderText="Validity Date" SortExpression="validity_date" />
+                <asp:BoundField DataField="validity_date" HeaderText="Valid Till" SortExpression="validity_date" />
+                <asp:BoundField DataField="euser_id" HeaderText="Employee ID" SortExpression="euser_id" />
                 <asp:BoundField DataField="status" HeaderText="Status"  SortExpression="status" />
             </Columns>
             <FooterStyle BackColor="#CCCC99" />
