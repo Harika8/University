@@ -41,7 +41,7 @@ namespace University.Academics
 
         protected void BackButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AssignFacultyToCourse1Management.aspx");
+            Response.Redirect("AssignFacultyToCourse1.aspx");
         }
 
         protected void DeptIDDDList_SelectedIndexChanged(object sender, EventArgs e)
