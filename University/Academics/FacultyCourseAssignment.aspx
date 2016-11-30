@@ -63,7 +63,7 @@
         <asp:Label ID="DeptIDLbl" runat="server" Text="Department Name:"></asp:Label>
         <asp:DropDownList ID="DeptIDDDList" runat="server" DataSourceID="DeptIDs_DataSource" DataTextField="department_name" DataValueField="department_id" AutoPostBack="True" Height="26px" OnSelectedIndexChanged="DeptIDDDList_SelectedIndexChanged" Width="228px">
         </asp:DropDownList>
-        &nbsp;Department ID:<asp:TextBox ID="DepartmentIDTB" runat="server" Height="24px" Width="94px"></asp:TextBox>
+        &nbsp;Department ID:<asp:TextBox ID="DepartmentIDTB" runat="server" Height="24px" Width="94px" Enabled="False"></asp:TextBox>
 &nbsp;<asp:SqlDataSource ID="DeptIDs_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_id], [department_name] FROM [department] WHERE ([department_id] not in (10,11,12,13,19,20,21,22,24))"></asp:SqlDataSource>
         <asp:SqlDataSource ID="UniversityDatabase" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_id] FROM [department]"></asp:SqlDataSource>
         <p>
@@ -80,8 +80,7 @@
             Faculty Name:
             <asp:DropDownList ID="FacultyIDDDL" runat="server" DataSourceID="FacutyIDs_DeptIDbased_DataSource" DataTextField="Name" DataValueField="Faculty_ID" AutoPostBack="True" OnSelectedIndexChanged="FacultyIDDDL_SelectedIndexChanged" Height="25px" Width="258px">
             </asp:DropDownList>
-            <asp:SqlDataSource ID="FacutyIDs_DeptIDbased_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT (fac.fuser_id) as Faculty_ID, (info.first_name+','+info.last_name) as Name FROM Faculty as fac, user_info as info WHERE info.user_id = fac.fuser_id and
-department_id = @department_id">
+            <asp:SqlDataSource ID="FacutyIDs_DeptIDbased_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT (fac.fuser_id) as Faculty_ID, (info.first_name+','+info.last_name) as Name FROM Faculty as fac, user_info as info WHERE info.user_id = fac.fuser_id and department_id = @department_id">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="DeptIDDDList" DefaultValue="" Name="department_id" PropertyName="SelectedValue" Type="Int16" />
                 </SelectParameters>
