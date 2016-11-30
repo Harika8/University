@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="HR Landing Page" />
     <meta name="author" content="Harika" />
-    <title>HR Default</title>
+    <title>HR Home</title>
     <%-- ------ css ------ --%>
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -54,13 +54,51 @@
         </nav><!--/nav-->
  
     </header>
-    <div>
-         <div style="margin-top:75px;" align="center">
-         <h2>
+        <div style="margin-top:75px;" align="center">
+            <h2>
          <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="HR FLow Chart"></asp:Label>
          </h2> <br />
-         <br /><br />
+         <br />
         </div>
+
+        <div style="margin-top:50px; height: 475px; text-overflow:inherit; overflow:auto"  align="center">
+
+
+
+
+             <asp:Button ID="btnPosition" runat="server" Text="Position" Height="50" Width="200" OnClick="btnPosition_Click" /> <br />
+             <asp:ImageButton ID="arrowdown1" runat="server" height="30px" ImageUrl="~/images/arrow-down.jpg"  Width="25px" />
+             <br /> 
+             <asp:Button ID="btnJobNotification" runat="server"  Text="Job Notification" Height="50" Width="200" OnClick="btnJobNotification_Click" />
+
+             <br /> <asp:ImageButton ID="arrowdown2" runat="server" height="30px" ImageUrl="~/images/arrow-down.jpg"  Width="25px" />
+            <br />
+             <asp:Button ID="btnJobSearch" runat="server"  Text="Job Search" Height="50" Width="200" OnClick="btnJobSearch_Click" />
+
+              <br /><asp:ImageButton ID="arrowdown3" runat="server" height="30px" ImageUrl="~/images/arrow-down.jpg"  Width="25px" />
+             <br />
+
+
+             <asp:Button ID="btnJobstatus" runat="server"  Text="Job Applications" Height="50" Width="200" OnClick="btnJobstatus_Click" />
+
+             <br /><asp:ImageButton ID="arrowdown4" runat="server" height="30px" ImageUrl="~/images/arrow-down.jpg"  Width="25px" />
+             <br />
+
+
+             <asp:Button ID="btnEmployeeJoining" runat="server"  Text="Employee Joining" Height="50" Width="200" OnClick="btnEmployeeJoining_Click" />
+            
+              <br /><asp:ImageButton ID="arrowdown5" runat="server" height="30px" ImageUrl="~/images/arrow-down.jpg"  Width="25px" />
+             <br />
+
+
+
+             <asp:Button ID="btnEmployee" runat="server"  Text="Employee Portal" Height="50" Width="200" OnClick="btnEmployee_Click" />
+
+
+
+
+             <br /> <br /> <br />
+
     
     </div>
     </form>
