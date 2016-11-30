@@ -53,10 +53,14 @@
         </nav><!--/nav-->
  
     </header>
-
+        <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Section Registration"></asp:Label>
+         </h2> <br />
+         <br /><br />
+        </div>
     <div>
-    <asp:Label ID="Label8" runat="server" Font-Size="XX-Large" Text="Course Registration/Drop Form:"></asp:Label>
-        <br />
+    <br />
         <br />
         Student ID: <asp:TextBox ID="StudentId" runat="server" Width="196px"></asp:TextBox>
         <br />

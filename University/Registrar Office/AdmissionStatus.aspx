@@ -53,9 +53,14 @@
         </nav><!--/nav-->
  
     </header>
-
+<div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Admission Status"></asp:Label>
+         </h2> <br />
+         <br /><br />
+        </div>
     <div>
-    Application Admitted/Rejected Form<br />
+    <br />
         <br />
         <br />
         ApplicationID :&nbsp;
