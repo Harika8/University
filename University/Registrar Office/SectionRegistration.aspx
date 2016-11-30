@@ -31,7 +31,7 @@
         </asp:RadioButtonList>
         <br />
         &nbsp;Semester:
-        <asp:DropDownList ID="SemDropdown" runat="server" DataSourceID="SqlSem" DataTextField="semester" DataValueField="semester">
+        <asp:DropDownList ID="SemDropdown" runat="server" DataSourceID="SqlSem" DataTextField="semester" DataValueField="semester" AutoPostBack="true" OnSelectedIndexChanged="SemDropdown_SelectedIndexChanged">
             
         </asp:DropDownList>
         <asp:SqlDataSource ID="SqlSem" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [semester] FROM [section]"></asp:SqlDataSource>
@@ -40,15 +40,15 @@
         <br />
         <br />
         Courses:&nbsp;
-        <asp:DropDownList ID="CourseDropdown" runat="server" AutoPostBack="true" OnSelectedIndexChanged="course_changed" DataSourceID="SqlCourse" DataTextField="course_name" DataValueField="course_id">
-            <asp:ListItem Text = "--Select Course--" Value = ""></asp:ListItem>
+        <asp:DropDownList ID="CourseDropdown" runat="server" AutoPostBack="True" DataSourceID="SqlCourse" DataTextField="course_name" DataValueField="course_id">
+     
         </asp:DropDownList>
 &nbsp;
         <br />
         <br />
         Section ID :&nbsp;
-        <asp:DropDownList ID="SectionDropDown" runat="server" DataSourceID="SqlSection">
-            <asp:ListItem Text = "--Select Section--" Value = ""></asp:ListItem>
+        <asp:DropDownList ID="SectionDropDown" runat="server" DataSourceID="SqlSection" DataValueField="section_id" AutoPostBack="true">
+   
         </asp:DropDownList>
 &nbsp;
         <br />
@@ -77,7 +77,10 @@
         </asp:SqlDataSource>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;
-        <asp:SqlDataSource ID="SqlCourse" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT [course_id], [course_name] FROM [course]">
+        <asp:SqlDataSource ID="SqlCourse" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT c.course_id,c.course_name FROM section as s,course as c WHERE (s.semester = @semester) and s.course_id = c.course_id">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="CourseDropdown" DefaultValue="" Name="semester" PropertyName="SelectedValue" />
+            </SelectParameters>
         </asp:SqlDataSource>
         <br />
         <br />
@@ -87,9 +90,10 @@
         <asp:Button ID="Button2" runat="server" Font-Size="Medium" Height="40px" Text="Clear Fields" Width="183px" />
         <br />
     </div>
-        <asp:SqlDataSource ID="SqlSection" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT s.section_id,s.course_id FROM section as s,course as c WHERE (s.course_id = @course_id) and s.course_id = c.course_id">
+        <asp:SqlDataSource ID="SqlSection" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT s.section_id,s.course_id FROM section as s,course as c WHERE (s.course_id = @course_id) and s.course_id = c.course_id and s.semester = @semester">
             <SelectParameters>
-                <asp:ControlParameter ControlID="CourseDropdown" Name="course_id" PropertyName="SelectedValue" Type="Int16" DefaultValue="6" />
+                <asp:ControlParameter ControlID="SectionDropDown" Name="course_id" PropertyName="SelectedValue" Type="Int16"/>
+                <asp:ControlParameter ControlID="SectionDropDown" Name="semester" PropertyName="SelectedValue" />
             </SelectParameters>
         </asp:SqlDataSource>
         <br />

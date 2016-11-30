@@ -16,7 +16,7 @@
         <br />
         <br />
         <br />
-        <asp:GridView ID="GridView2" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="suser_id,section_id" DataSourceID="GradeTBLDataSource">
+        <asp:GridView ID="GridView2" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="suser_id,section_id" DataSourceID="GradeTBLDataSource" >
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                 <asp:BoundField DataField="suser_id" HeaderText="suser_id" ReadOnly="True" SortExpression="suser_id" />
@@ -50,12 +50,12 @@
         <br />
         <asp:Label ID="Label14" runat="server" Font-Size="Large" Text="Section ID"></asp:Label>
         :&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:DropDownList ID="SectionIDDDL" runat="server" Height="37px" Width="133px" DataSourceID="SectionIDsListDataSource" DataTextField="section_id" DataValueField="section_id" OnSelectedIndexChanged="SectionIDDDL_SelectedIndexChanged">
+        <asp:DropDownList ID="SectionIDDDL" runat="server" Height="37px" Width="133px" DataSourceID="SectionIDsListDataSource" DataTextField="section_id" DataValueField="section_id" >
             <asp:ListItem></asp:ListItem>
         </asp:DropDownList>
-        <asp:SqlDataSource ID="SectionIDsListDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [section_id] FROM [section]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SectionIDsListDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [section]"></asp:SqlDataSource>
         <br />
-&nbsp;<asp:SqlDataSource ID="SqlGrade" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [grade] WHERE [suser_id] = @original_suser_id AND [section_id] = @original_section_id AND (([grade] = @original_grade) OR ([grade] IS NULL AND @original_grade IS NULL))" InsertCommand="INSERT INTO [grade] ([suser_id], [section_id], [grade]) VALUES (@suser_id, @section_id, @grade)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [grade]" UpdateCommand="UPDATE [grade] SET [grade] = @grade WHERE [suser_id] = @original_suser_id AND [section_id] = @original_section_id AND (([grade] = @original_grade) OR ([grade] IS NULL AND @original_grade IS NULL))">
+&nbsp;<asp:SqlDataSource ID="SqlGrade" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [grade] WHERE [suser_id] = @original_suser_id AND [section_id] = @original_section_id AND (([grade] = @original_grade) OR ([grade] IS NULL AND @original_grade IS NULL))" InsertCommand="INSERT INTO [grade] ([suser_id], [section_id], [grade]) VALUES (@suser_id, @section_id, @grade)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [grade]" UpdateCommand="UPDATE [grade] SET [grade] = @grade WHERE [suser_id] = @original_suser_id AND [section_id] = @original_section_id AND (([grade] = @original_grade) OR ([grade] IS NULL AND @original_grade IS NULL))">
             <DeleteParameters>
                 <asp:Parameter Name="original_suser_id" Type="Int32" />
                 <asp:Parameter Name="original_section_id" Type="Int16" />
