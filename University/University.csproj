@@ -511,7 +511,7 @@
     <Folder Include="css\" />
     <Folder Include="fonts\" />
     <Folder Include="images\" />
-    <Folder Include="js\" />
+    <Folder Include="js\FinancialAid\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
