@@ -43,7 +43,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="CampusServicesHome.aspx">Campus - Home</a></li>
                         <li><a href="Hostel_Accomodation.aspx">Hostel Accomodation</a></li>
-                        <li><a href="Hostel_Confirmation.aspx">Hostel Accomodation</a></li>                        
+                        <li><a href="Hostel_Confirmation.aspx">Hostel Confirmation</a></li>                        
                         <li><a href="Hostel_RoomReport.aspx">Room Report</a></li> 
                         <li><a href="Event_Registration.aspx">Event Registration</a></li> 
                         <li><a href="Event_Confirmation.aspx">Event Confirmation</a></li>
@@ -61,8 +61,10 @@
          <h2>
          <asp:Label ID="lblhead" ForeColor="Blue" Width="600" runat="server" Text="Campus Services"/>
          </h2> <br />
-         <br />
-            </div> 
+            </div>
+        <div style="margin-left: 440px">
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/Resources/cs FLOWCHART.JPG" />
+        </div>
         </form>
 </body>
 </html>

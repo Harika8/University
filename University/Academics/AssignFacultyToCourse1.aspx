@@ -41,7 +41,7 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="AcademicsHome.aspx">Academics - Home</a></li>
+                        <li><a href="AcademicsHome.aspx">Academics - Home</a></li>
                         <li><a href="DepartmentManagement.aspx">Manage Department</a></li>
                         <li><a href="ProgramManagement.aspx">Manage Program</a></li>                        
                         <li><a href="CourseManagement.aspx">Manage Course</a></li>                     
@@ -52,16 +52,37 @@
             </div><!--/.container-->
         </nav><!--/nav-->
     </header>
+        <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Below buttons are links to create/update Faculty forms!"></asp:Label>
+         </h2> <br />
+         <br />
+        <asp:Label ID="msg" Width="150" runat="server"></asp:Label> 
+        <br />
+        </div>
 
-        <p style="width: 203px; margin-left: 600px">
-        <b>Form to create Faculty and then assign them to a Course</b></p><br />        
-    
+        <div style="margin-left: 480px">
         <asp:Button ID="FacultyCreateButton" runat="server" OnClick="FacultyCreateButton_Click1" Text="Create Faculty" />
-&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="FacultyUpdateButton" runat="server" Text="Update/Delete Faculty" OnClick="FacultyUpdateButton_Click" />
         <br />
-&nbsp;&nbsp;&nbsp;
+        <br />
+         </div>
+                   <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="Label1" ForeColor="Blue" Width="500" runat="server" Text="Below buttons are the links to the forms that assign newly/update assign of a Faculty to a Course"></asp:Label>
+         </h2> <br />
+         <br />
+        <asp:Label ID="Label2" Width="150" runat="server"></asp:Label> 
+        <br />
+        </div>
+        <br />
+        <div style="margin-left: 480px">
         <asp:Button ID="FacultyAssignButton" runat="server" Text="Assign Faculty to Course" OnClick="FacultyAssignButton_Click" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="UpdDelButon" runat="server" OnClick="UpdDelButon_Click" Text="Update/Delete the Assignments" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
     </form>
 </body>
 </html>

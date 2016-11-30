@@ -23,7 +23,7 @@ namespace University.Academics
         {
             FacultyIDTB.Text = FacultyIDDDL.SelectedValue;
 
-            CreditsSUMTB.Text = "7";
+            //CreditsSUMTB.Text = "7";
 
 
         }

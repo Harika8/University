@@ -53,10 +53,14 @@
         </nav><!--/nav-->
  
     </header>
-
+        <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Student Grade Report"></asp:Label>
+         </h2> <br />
+         <br /><br />
+        </div>
     <div>
-    <asp:Label ID="Label1" runat="server" Font-Size="XX-Large" Text="Student Grade Report"></asp:Label>
-        <br />
+    <br />
         <br />
         <br />
         <asp:GridView ID="GridView2" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="suser_id,section_id" DataSourceID="GradeTBLDataSource" >

@@ -41,7 +41,7 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="AcademicsHome.aspx">Academics - Home</a></li>
+                        <li><a href="AcademicsHome.aspx">Academics - Home</a></li>
                         <li><a href="DepartmentManagement.aspx">Manage Department</a></li>
                         <li><a href="ProgramManagement.aspx">Manage Program</a></li>                        
                         <li><a href="CourseManagement.aspx">Manage Course</a></li>                     
@@ -52,17 +52,21 @@
             </div><!--/.container-->
         </nav><!--/nav-->
     </header>
+    <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Department Management Form"></asp:Label>
+         </h2> <br />
+         <br />
+        <asp:Label ID="msg" Width="150" runat="server"></asp:Label> 
+        <br />
+        </div>
 
-        <p style="width: 203px; margin-left: 600px">
-        <b>Department Management Form</b></p><br />
         <br />
+        <div style="margin-left: 480px">
         <asp:Button ID="NewDeptButton" runat="server" Text="Enter New Department" OnClick="NewDeptButton_Click" />
-        <br />
-        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="UpdateDeptButton" runat="server" Text="Update/Delete Existing Department" Width="283px" OnClick="UpdateDeptButton_Click" />
-        <br />
-        <br />
-        <br />
+        </div>
     </form>
 </body>
 </html>

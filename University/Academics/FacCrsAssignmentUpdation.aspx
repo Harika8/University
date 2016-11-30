@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FacultyUpdation.aspx.cs" Inherits="University.Academics.FacultyUpdation" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FacCrsAssignmentUpdation.aspx.cs" Inherits="University.Academics.FacCrsAssignmentUpdation" %>
 
 <!DOCTYPE html>
 
@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Academics Module" />
     <meta name="author" content="Sri Nuthalapati" />
-    <title>Faculty</title>
+    <title>Assignment</title>
     <%-- ------ css ------ --%>
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -26,7 +26,7 @@
     <link rel="shortcut icon" href="../images/favicon.ico" />
 </head>
 <body>
-    <form id="FacultyUpdationForm" runat="server">
+    <form id="FacCrsAssignmentUpdation" runat="server">
        <header id="header">
     <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
@@ -55,14 +55,14 @@
     </header>
                  <div style="margin-top:75px;" align="center">
          <h2>
-         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Form to Update/Delete a Faculty under a Department"></asp:Label>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Form to Update/Delete Faculty Course Assignments"></asp:Label>
          </h2> <br />
          <br />
         <asp:Label ID="msg" Width="150" runat="server"></asp:Label> 
         <br />
         </div>
 
-        <asp:Button ID="BackButton" runat="server" OnClick="BackButton_Click" Text="Back" />
+        <asp:Button ID="BackButton1" runat="server" OnClick="BackButton1_Click" Text="Back" />
         <br />
                 <br />
         <br />
@@ -73,14 +73,12 @@
         </div>
         <br />
         <br />
-        <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="fuser_id" DataSourceID="FacultytblDataSource" AllowPaging="True" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+        <asp:GridView ID="Faculty_Course_GridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="fuser_id,course_id" DataSourceID="FacultyCourseTBLDataSource" AllowPaging="True" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
             <AlternatingRowStyle BackColor="#CCCCCC" />
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                 <asp:BoundField DataField="fuser_id" HeaderText="Faculty ID" ReadOnly="True" SortExpression="fuser_id" />
-                <asp:BoundField DataField="specalization" HeaderText="Specalization" SortExpression="specalization" />
-                <asp:BoundField DataField="education" HeaderText="Education" SortExpression="education" />
-                <asp:BoundField DataField="contract" HeaderText="Contract" SortExpression="contract" />
+                <asp:BoundField DataField="course_id" HeaderText="Course ID" SortExpression="course_id" ReadOnly="True" />
                 <asp:BoundField DataField="department_id" HeaderText="Department ID" SortExpression="department_id" />
             </Columns>
             <FooterStyle BackColor="#CCCCCC" />
@@ -92,30 +90,21 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#383838" />
         </asp:GridView>
-        <asp:SqlDataSource ID="FacultytblDataSource" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [faculty] WHERE [fuser_id] = @original_fuser_id AND [specalization] = @original_specalization AND [education] = @original_education AND [contract] = @original_contract AND [department_id] = @original_department_id" InsertCommand="INSERT INTO [faculty] ([fuser_id], [specalization], [education], [contract], [department_id]) VALUES (@fuser_id, @specalization, @education, @contract, @department_id)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [faculty]" UpdateCommand="UPDATE [faculty] SET [specalization] = @specalization, [education] = @education, [contract] = @contract, [department_id] = @department_id WHERE [fuser_id] = @original_fuser_id AND [specalization] = @original_specalization AND [education] = @original_education AND [contract] = @original_contract AND [department_id] = @original_department_id">
+        <asp:SqlDataSource ID="FacultyCourseTBLDataSource" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [faculty_course] WHERE [fuser_id] = @original_fuser_id AND [course_id] = @original_course_id AND [department_id] = @original_department_id" InsertCommand="INSERT INTO [faculty_course] ([fuser_id], [course_id], [department_id]) VALUES (@fuser_id, @course_id, @department_id)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [faculty_course]" UpdateCommand="UPDATE [faculty_course] SET [department_id] = @department_id WHERE [fuser_id] = @original_fuser_id AND [course_id] = @original_course_id AND [department_id] = @original_department_id">
             <DeleteParameters>
                 <asp:Parameter Name="original_fuser_id" Type="Int32" />
-                <asp:Parameter Name="original_specalization" Type="String" />
-                <asp:Parameter Name="original_education" Type="String" />
-                <asp:Parameter Name="original_contract" Type="Int16" />
+                <asp:Parameter Name="original_course_id" Type="Int16" />
                 <asp:Parameter Name="original_department_id" Type="Int16" />
             </DeleteParameters>
             <InsertParameters>
                 <asp:Parameter Name="fuser_id" Type="Int32" />
-                <asp:Parameter Name="specalization" Type="String" />
-                <asp:Parameter Name="education" Type="String" />
-                <asp:Parameter Name="contract" Type="Int16" />
+                <asp:Parameter Name="course_id" Type="Int16" />
                 <asp:Parameter Name="department_id" Type="Int16" />
             </InsertParameters>
             <UpdateParameters>
-                <asp:Parameter Name="specalization" Type="String" />
-                <asp:Parameter Name="education" Type="String" />
-                <asp:Parameter Name="contract" Type="Int16" />
                 <asp:Parameter Name="department_id" Type="Int16" />
                 <asp:Parameter Name="original_fuser_id" Type="Int32" />
-                <asp:Parameter Name="original_specalization" Type="String" />
-                <asp:Parameter Name="original_education" Type="String" />
-                <asp:Parameter Name="original_contract" Type="Int16" />
+                <asp:Parameter Name="original_course_id" Type="Int16" />
                 <asp:Parameter Name="original_department_id" Type="Int16" />
             </UpdateParameters>
         </asp:SqlDataSource>
