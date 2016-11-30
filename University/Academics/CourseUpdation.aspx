@@ -54,18 +54,28 @@
     </header>
 
         <p style="width: 203px; margin-left: 600px">
-        <b>Course - Updation/Deletion Form</b></p><br />
+        <b>Course - Updation/Deletion Form</b></p>
+        <asp:Button ID="BackButton" runat="server" OnClick="BackButton_Click" Text="Back" />
+        <br />
+        <br />
+        <div>        
+            <p>
+                <b>Don't Update or Delete the Values in the Grid View, if there is data dependency!</b>
+            </p>
+        </div>
+        <br />
+        <br />
         <asp:GridView ID="CourseGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="course_id" DataSourceID="CourseUpdationSQLDataSource" AllowPaging="True" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
             <AlternatingRowStyle BackColor="#CCCCCC" />
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                <asp:BoundField DataField="course_id" HeaderText="course_id" InsertVisible="False" ReadOnly="True" SortExpression="course_id" />
-                <asp:BoundField DataField="course_name" HeaderText="course_name" SortExpression="course_name" />
-                <asp:BoundField DataField="Effective_start_date" HeaderText="Effective_start_date" SortExpression="Effective_start_date" />
-                <asp:BoundField DataField="course_description" HeaderText="course_description" SortExpression="course_description" />
-                <asp:BoundField DataField="department_id" HeaderText="department_id" SortExpression="department_id" />
-                <asp:BoundField DataField="course_level" HeaderText="course_level" SortExpression="course_level" />
-                <asp:BoundField DataField="program_id" HeaderText="program_id" SortExpression="program_id" />
+                <asp:BoundField DataField="course_id" HeaderText="Course ID" InsertVisible="False" ReadOnly="True" SortExpression="course_id" />
+                <asp:BoundField DataField="course_name" HeaderText="Course Name" SortExpression="course_name" />
+                <asp:BoundField DataField="course_description" HeaderText="Course Description" SortExpression="course_description" />
+                <asp:BoundField DataField="Effective_start_date" HeaderText="Course - Eff Start Date" SortExpression="Effective_start_date" />
+                <asp:BoundField DataField="department_id" HeaderText="Department ID" SortExpression="department_id" />
+                <asp:BoundField DataField="course_level" HeaderText="Course Level" SortExpression="course_level" />
+                <asp:BoundField DataField="program_id" HeaderText="Program ID" SortExpression="program_id" />
             </Columns>
             <FooterStyle BackColor="#CCCCCC" />
             <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />

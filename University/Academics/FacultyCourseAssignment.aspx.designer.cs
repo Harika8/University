@@ -22,6 +22,15 @@ namespace University.Academics {
         protected global::System.Web.UI.HtmlControls.HtmlForm FacultyCourseAssignmentForm;
         
         /// <summary>
+        /// BackButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BackButton;
+        
+        /// <summary>
         /// DeptIDLbl control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace University.Academics {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DeptIDDDList;
+        
+        /// <summary>
+        /// DepartmentIDTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DepartmentIDTB;
         
         /// <summary>
         /// DeptIDs_DataSource control.
@@ -112,6 +130,24 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.TextBox FacultyNameTB;
         
         /// <summary>
+        /// FacCrsSubmitBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button FacCrsSubmitBtn;
+        
+        /// <summary>
+        /// FacCrsResetBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button FacCrsResetBtn;
+        
+        /// <summary>
         /// Faculty_Course_TBL control.
         /// </summary>
         /// <remarks>
@@ -119,5 +155,23 @@ namespace University.Academics {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource Faculty_Course_TBL;
+        
+        /// <summary>
+        /// Faculty_Course_GridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView Faculty_Course_GridView;
+        
+        /// <summary>
+        /// FacCrs_TBL_DataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource FacCrs_TBL_DataSource;
     }
 }

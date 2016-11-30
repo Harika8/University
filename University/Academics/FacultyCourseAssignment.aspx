@@ -55,32 +55,44 @@
         <p style="width: 203px; margin-left: 600px">
             <b>Form to Assign a Faculty to a Course</b></p>
     
-        <asp:Label ID="DeptIDLbl" runat="server" Text="Department ID:"></asp:Label>
-        <asp:DropDownList ID="DeptIDDDList" runat="server" DataSourceID="DeptIDs_DataSource" DataTextField="department_id" DataValueField="department_id">
+        <asp:Button ID="BackButton" runat="server" OnClick="BackButton_Click" Text="Back" />
+        <br />
+        <hr />
+        <br />
+    
+        <asp:Label ID="DeptIDLbl" runat="server" Text="Department Name:"></asp:Label>
+        <asp:DropDownList ID="DeptIDDDList" runat="server" DataSourceID="DeptIDs_DataSource" DataTextField="department_name" DataValueField="department_id" AutoPostBack="True" Height="26px" OnSelectedIndexChanged="DeptIDDDList_SelectedIndexChanged" Width="228px">
         </asp:DropDownList>
-        <asp:SqlDataSource ID="DeptIDs_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_id] FROM [department]"></asp:SqlDataSource>
+        &nbsp;Department ID:<asp:TextBox ID="DepartmentIDTB" runat="server" Height="24px" Width="94px" Enabled="False"></asp:TextBox>
+&nbsp;<asp:SqlDataSource ID="DeptIDs_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_id], [department_name] FROM [department] WHERE ([department_id] not in (10,11,12,13,19,20,21,22,24))"></asp:SqlDataSource>
         <asp:SqlDataSource ID="UniversityDatabase" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_id] FROM [department]"></asp:SqlDataSource>
         <p>
-            Course ID:
-            <asp:DropDownList ID="CourseIDDDL" runat="server" DataSourceID="CourseIDs_DeptIDbased_DataSource" DataTextField="course_id" DataValueField="course_id">
+            Course Name: <asp:DropDownList ID="CourseIDDDL" runat="server" DataSourceID="CourseIDs_DeptIDbased_DataSource" DataTextField="course_name" DataValueField="course_id" AutoPostBack="True" OnSelectedIndexChanged="CourseIDDDL_SelectedIndexChanged" Height="25px" Width="276px">
             </asp:DropDownList>
-            <asp:SqlDataSource ID="CourseIDs_DeptIDbased_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [course_id] FROM [course] WHERE ([department_id] = @department_id)">
+            <asp:SqlDataSource ID="CourseIDs_DeptIDbased_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [course_id], course_name FROM [course] WHERE ([department_id] = @department_id)">
                 <SelectParameters>
-                    <asp:ControlParameter ControlID="DeptIDDDList" DefaultValue="17" Name="department_id" PropertyName="SelectedValue" Type="Int16" />
+                    <asp:ControlParameter ControlID="DeptIDDDList" DefaultValue="" Name="department_id" PropertyName="SelectedValue" Type="Int16" />
                 </SelectParameters>
             </asp:SqlDataSource>
-&nbsp;Course Name:<asp:TextBox ID="CourseNameTB" runat="server" Enabled="False"></asp:TextBox>
+&nbsp;Course ID:<asp:TextBox ID="CourseNameTB" runat="server" Enabled="False" Height="23px" Width="96px"></asp:TextBox>
         </p>
         <p>
-            Faculty ID:
-            <asp:DropDownList ID="FacultyIDDDL" runat="server" DataSourceID="FacutyIDs_DeptIDbased_DataSource" DataTextField="fuser_id" DataValueField="fuser_id">
+            Faculty Name:
+            <asp:DropDownList ID="FacultyIDDDL" runat="server" DataSourceID="FacutyIDs_DeptIDbased_DataSource" DataTextField="Name" DataValueField="Faculty_ID" AutoPostBack="True" OnSelectedIndexChanged="FacultyIDDDL_SelectedIndexChanged" Height="25px" Width="258px">
             </asp:DropDownList>
-            <asp:SqlDataSource ID="FacutyIDs_DeptIDbased_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [fuser_id] FROM [faculty] WHERE ([department_id] = @department_id)">
+            <asp:SqlDataSource ID="FacutyIDs_DeptIDbased_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT (fac.fuser_id) as Faculty_ID, (info.first_name+','+info.last_name) as Name FROM Faculty as fac, user_info as info WHERE info.user_id = fac.fuser_id and department_id = @department_id">
                 <SelectParameters>
-                    <asp:ControlParameter ControlID="DeptIDDDList" DefaultValue="17" Name="department_id" PropertyName="SelectedValue" Type="Int16" />
+                    <asp:ControlParameter ControlID="DeptIDDDList" DefaultValue="" Name="department_id" PropertyName="SelectedValue" Type="Int16" />
                 </SelectParameters>
             </asp:SqlDataSource>
-&nbsp;Faculty Name:<asp:TextBox ID="FacultyNameTB" runat="server" Enabled="False"></asp:TextBox>
+&nbsp;Faculty ID:<asp:TextBox ID="FacultyNameTB" runat="server" Enabled="False" Height="23px" Width="97px"></asp:TextBox>
+        </p>
+        <p>
+            &nbsp;</p>
+        <p>
+            <asp:Button ID="FacCrsSubmitBtn" runat="server" OnClick="FacCrsSubmitBtn_Click" Text="Submit" />
+&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="FacCrsResetBtn" runat="server" OnClick="FacCrsResetBtn_Click" Text="Reset" />
         </p>
         <p>
             <asp:SqlDataSource ID="Faculty_Course_TBL" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [faculty_course] WHERE [fuser_id] = @original_fuser_id AND [course_id] = @original_course_id AND [department_id] = @original_department_id" InsertCommand="INSERT INTO [faculty_course] ([fuser_id], [course_id], [department_id]) VALUES (@fuser_id, @course_id, @department_id)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [faculty_course]" UpdateCommand="UPDATE [faculty_course] SET [department_id] = @department_id WHERE [fuser_id] = @original_fuser_id AND [course_id] = @original_course_id AND [department_id] = @original_department_id">
@@ -101,6 +113,26 @@
                     <asp:Parameter Name="original_department_id" Type="Int16" />
                 </UpdateParameters>
             </asp:SqlDataSource>
+        </p>
+        <hr />
+        <p>
+            <asp:GridView ID="Faculty_Course_GridView" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="fuser_id,course_id" DataSourceID="FacCrs_TBL_DataSource" PageSize="5">
+                <Columns>
+                    <asp:BoundField DataField="fuser_id" HeaderText="fuser_id" ReadOnly="True" SortExpression="fuser_id" />
+                    <asp:BoundField DataField="course_id" HeaderText="course_id" ReadOnly="True" SortExpression="course_id" />
+                    <asp:BoundField DataField="department_id" HeaderText="department_id" SortExpression="department_id" />
+                </Columns>
+                <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+                <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+                <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+                <RowStyle BackColor="White" ForeColor="#330099" />
+                <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+                <SortedAscendingCellStyle BackColor="#FEFCEB" />
+                <SortedAscendingHeaderStyle BackColor="#AF0101" />
+                <SortedDescendingCellStyle BackColor="#F6F0C0" />
+                <SortedDescendingHeaderStyle BackColor="#7E0000" />
+            </asp:GridView>
+            <asp:SqlDataSource ID="FacCrs_TBL_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [faculty_course]"></asp:SqlDataSource>
         </p>
     </form>
 </body>

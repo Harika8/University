@@ -56,31 +56,17 @@
 
         <p style="width: 203px; margin-left: 600px">
         <b>Program Creation Form</b></p>
+    
+        <asp:Button ID="BackButton" runat="server" OnClick="BackButton_Click" Text="Back" />
           <br />
-          <asp:GridView ID="ProgramTBLGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="program_id" DataSourceID="ProgramTBLDataSource" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" AllowPaging="True" PageSize="5">
-              <Columns>
-                  <asp:BoundField DataField="program_id" HeaderText="program_id" ReadOnly="True" SortExpression="program_id" />
-                  <asp:BoundField DataField="program_name" HeaderText="program_name" SortExpression="program_name" />
-                  <asp:BoundField DataField="department_id" HeaderText="department_id" SortExpression="department_id" />
-                  <asp:BoundField DataField="course_level" HeaderText="course_level" SortExpression="course_level" />
-              </Columns>
-              <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
-              <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
-              <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
-              <RowStyle ForeColor="#330099" BackColor="White" />
-              <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
-              <SortedAscendingCellStyle BackColor="#FEFCEB" />
-              <SortedAscendingHeaderStyle BackColor="#AF0101" />
-              <SortedDescendingCellStyle BackColor="#F6F0C0" />
-              <SortedDescendingHeaderStyle BackColor="#7E0000" />
-          </asp:GridView>
           <asp:SqlDataSource ID="ProgramTBLDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [program]"></asp:SqlDataSource>
           <hr />
           <br />
-        <asp:Label ID="DeptIDLbl" runat="server" Text="Department ID:"></asp:Label>
-        <asp:DropDownList ID="DepartmentIDDDList" runat="server" DataSourceID="UniversityDatabase" DataTextField="department_id" DataValueField="department_id">
+        <asp:Label ID="DeptIDLbl" runat="server" Text="Department Name:"></asp:Label>
+        <asp:DropDownList ID="DepartmentIDDDList" runat="server" DataSourceID="UniversityDatabase" DataTextField="department_name" DataValueField="department_id" OnSelectedIndexChanged="DepartmentIDDDList_SelectedIndexChanged" Height="24px" Width="211px">
         </asp:DropDownList>
-        <asp:SqlDataSource ID="UniversityDatabase" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT [department_id] FROM [department]"></asp:SqlDataSource>
+        &nbsp;Department ID:<asp:TextBox ID="DepartmentIDTB" runat="server" Height="23px" Width="84px" Enabled="False"></asp:TextBox>
+        <asp:SqlDataSource ID="UniversityDatabase" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_id], [department_name] FROM [department] WHERE ([department_id] not in (10,11,12,13,19,20,21,22,24))"></asp:SqlDataSource>
         <p>
         <asp:Label ID="CourseLevelLbl" runat="server" Text="Course Level:"></asp:Label>
         <asp:DropDownList ID="CourseLevelDDList" runat="server">
@@ -104,6 +90,7 @@
               &nbsp;</p>
         <p style="margin-left: 200px">
             <asp:Button ID="ProgramSubmitButton" runat="server" Text="Submit" OnClick="ProgramSubmitButton_Click" />
+            &nbsp;&nbsp;&nbsp;
             <asp:Button ID="ProgramClearButton" runat="server" Text="Clear" OnClick="ProgramClearButton_Click" />
         </p>
         <asp:SqlDataSource ID="sqlprogram" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [program] WHERE [program_id] = @original_program_id AND (([program_name] = @original_program_name) OR ([program_name] IS NULL AND @original_program_name IS NULL)) AND (([department_id] = @original_department_id) OR ([department_id] IS NULL AND @original_department_id IS NULL)) AND (([course_level] = @original_course_level) OR ([course_level] IS NULL AND @original_course_level IS NULL))" InsertCommand="INSERT INTO [program] ([program_id], [program_name], [department_id], [course_level]) VALUES (@program_id, @program_name, @department_id, @course_level)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [program]" UpdateCommand="UPDATE [program] SET [program_name] = @program_name, [department_id] = @department_id, [course_level] = @course_level WHERE [program_id] = @original_program_id AND (([program_name] = @original_program_name) OR ([program_name] IS NULL AND @original_program_name IS NULL)) AND (([department_id] = @original_department_id) OR ([department_id] IS NULL AND @original_department_id IS NULL)) AND (([course_level] = @original_course_level) OR ([course_level] IS NULL AND @original_course_level IS NULL))">
@@ -129,7 +116,25 @@
                 <asp:Parameter Name="original_course_level" Type="String" />
             </UpdateParameters>
         </asp:SqlDataSource>
+          <hr />
       </div>
+          <asp:GridView ID="ProgramTBLGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="program_id" DataSourceID="ProgramTBLDataSource" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" AllowPaging="True" PageSize="5">
+              <Columns>
+                  <asp:BoundField DataField="program_id" HeaderText="Program ID" ReadOnly="True" SortExpression="program_id" />
+                  <asp:BoundField DataField="program_name" HeaderText="Program Name" SortExpression="program_name" />
+                  <asp:BoundField DataField="department_id" HeaderText="Department ID" SortExpression="department_id" />
+                  <asp:BoundField DataField="course_level" HeaderText="Course Level" SortExpression="course_level" />
+              </Columns>
+              <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+              <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+              <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+              <RowStyle ForeColor="#330099" BackColor="White" />
+              <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+              <SortedAscendingCellStyle BackColor="#FEFCEB" />
+              <SortedAscendingHeaderStyle BackColor="#AF0101" />
+              <SortedDescendingCellStyle BackColor="#F6F0C0" />
+              <SortedDescendingHeaderStyle BackColor="#7E0000" />
+          </asp:GridView>
     </form>
 </body>
 </html>

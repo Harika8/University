@@ -56,48 +56,32 @@
         <p style="width: 203px; margin-left: 600px">
         <b>Course Creation Form</b></p>
         <br />
-        <asp:GridView ID="CourseTBLGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="course_id" DataSourceID="CourseTBLDataSource" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" AllowPaging="True" PageSize="5">
-            <Columns>
-                <asp:BoundField DataField="course_id" HeaderText="course_id" InsertVisible="False" ReadOnly="True" SortExpression="course_id" />
-                <asp:BoundField DataField="course_name" HeaderText="course_name" SortExpression="course_name" />
-                <asp:BoundField DataField="Effective_start_date" HeaderText="Effective_start_date" SortExpression="Effective_start_date" />
-                <asp:BoundField DataField="course_description" HeaderText="course_description" SortExpression="course_description" />
-                <asp:BoundField DataField="department_id" HeaderText="department_id" SortExpression="department_id" />
-                <asp:BoundField DataField="course_level" HeaderText="course_level" SortExpression="course_level" />
-                <asp:BoundField DataField="program_id" HeaderText="program_id" SortExpression="program_id" />
-            </Columns>
-            <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
-            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
-            <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
-            <RowStyle BackColor="White" ForeColor="#330099" />
-            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
-            <SortedAscendingCellStyle BackColor="#FEFCEB" />
-            <SortedAscendingHeaderStyle BackColor="#AF0101" />
-            <SortedDescendingCellStyle BackColor="#F6F0C0" />
-            <SortedDescendingHeaderStyle BackColor="#7E0000" />
-        </asp:GridView>
+        <asp:Button ID="BackButton" runat="server" OnClick="BackButton_Click" Text="Back" />
+        <br />
         <asp:SqlDataSource ID="CourseTBLDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [course]"></asp:SqlDataSource>
         <hr />
     
-        <asp:Label ID="DepartmentIDLbl" runat="server" Text="Department ID:"></asp:Label>
-        <asp:DropDownList ID="DepartmentIDDDList" runat="server" DataSourceID="DepartmentIDList" DataTextField="department_id" DataValueField="department_id">
+        <asp:Label ID="DepartmentIDLbl" runat="server" Text="Department Name:"></asp:Label>
+        <asp:DropDownList ID="DepartmentIDDDList" runat="server" DataSourceID="DepartmentIDList" DataTextField="department_name" DataValueField="department_id" AutoPostBack="True" Height="26px" OnSelectedIndexChanged="DepartmentIDDDList_SelectedIndexChanged" Width="337px">
         </asp:DropDownList>
         
-        <asp:SqlDataSource ID="DepartmentIDList" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_id] FROM [department]"></asp:SqlDataSource>
+        &nbsp;Department ID:<asp:TextBox ID="DepartmentIDTB" runat="server" Enabled="False" Width="54px"></asp:TextBox>
+&nbsp;<asp:SqlDataSource ID="DepartmentIDList" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_id], [department_name] FROM [department] WHERE ([department_id] not in (10,11,12,13,19,20,21,22,24))"></asp:SqlDataSource>
         
         <p>
         <asp:Label ID="CourseLevelLbl" runat="server" Text="Course Level:"></asp:Label>
-        <asp:DropDownList ID="CourseLevelDDList" runat="server">
+        <asp:DropDownList ID="CourseLevelDDList" runat="server" AutoPostBack="True">
                 <asp:ListItem>Grad</asp:ListItem>
                 <asp:ListItem>PhD</asp:ListItem>
                 <asp:ListItem>UnderGrad</asp:ListItem>
             </asp:DropDownList>
-            <asp:Label ID="ProgramIDLbl" runat="server" Text="Program ID:"></asp:Label>
-            <asp:DropDownList ID="ProgramIDDDL" runat="server" DataSourceID="ProgramIDList_DeptID_CRSLVL" DataTextField="program_id" DataValueField="program_id" Height="16px" Width="180px" AutoPostBack="True">
+            <asp:Label ID="ProgramIDLbl" runat="server" Text="Program Name:"></asp:Label>
+            <asp:DropDownList ID="ProgramIDDDL" runat="server" DataSourceID="ProgramIDList_DeptID_CRSLVL" DataTextField="program_name" DataValueField="program_id" Height="26px" Width="318px" AutoPostBack="True" OnSelectedIndexChanged="ProgramIDDDL_SelectedIndexChanged">
             </asp:DropDownList>
-            <asp:SqlDataSource ID="ProgramIDList_DeptID_CRSLVL" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [program_id] FROM [program] WHERE (([department_id] = @department_id) AND ([course_level] = @course_level))">
+            &nbsp;&nbsp;&nbsp; Program ID:<asp:TextBox ID="ProgramIDTB" runat="server" Enabled="False" Width="47px"></asp:TextBox>
+&nbsp;<asp:SqlDataSource ID="ProgramIDList_DeptID_CRSLVL" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [program_id], program_name FROM [program] WHERE (([department_id] = @department_id) AND ([course_level] = @course_level))">
                 <SelectParameters>
-                    <asp:ControlParameter ControlID="DepartmentIDDDList" DefaultValue="17" Name="department_id" PropertyName="SelectedValue" Type="Int16" />
+                    <asp:ControlParameter ControlID="DepartmentIDDDList" DefaultValue="" Name="department_id" PropertyName="SelectedValue" Type="Int16" />
                     <asp:ControlParameter ControlID="CourseLevelDDList" DefaultValue="Grad" Name="course_level" PropertyName="SelectedValue" Type="String" />
                 </SelectParameters>
             </asp:SqlDataSource>
@@ -163,6 +147,29 @@
                 <asp:Parameter Name="original_program_id" Type="Int16" />
             </UpdateParameters>
         </asp:SqlDataSource>
+
+   
+        <hr />
+        <asp:GridView ID="CourseTBLGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="course_id" DataSourceID="CourseTBLDataSource" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" AllowPaging="True" PageSize="5">
+            <Columns>
+                <asp:BoundField DataField="course_id" HeaderText="Course ID" InsertVisible="False" ReadOnly="True" SortExpression="course_id" />
+                <asp:BoundField DataField="course_name" HeaderText="Course Name" SortExpression="course_name" />
+                <asp:BoundField DataField="course_description" HeaderText="Course Description" SortExpression="course_description" />
+                <asp:BoundField DataField="Effective_start_date" HeaderText="Course - Eff Start Dt" SortExpression="Effective_start_date" />
+                <asp:BoundField DataField="department_id" HeaderText="Department ID" SortExpression="department_id" />
+                <asp:BoundField DataField="course_level" HeaderText="Course Level" SortExpression="course_level" />
+                <asp:BoundField DataField="program_id" HeaderText="Program ID" SortExpression="program_id" />
+            </Columns>
+            <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+            <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+            <RowStyle BackColor="White" ForeColor="#330099" />
+            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+            <SortedAscendingCellStyle BackColor="#FEFCEB" />
+            <SortedAscendingHeaderStyle BackColor="#AF0101" />
+            <SortedDescendingCellStyle BackColor="#F6F0C0" />
+            <SortedDescendingHeaderStyle BackColor="#7E0000" />
+        </asp:GridView>
 
    
     </form>

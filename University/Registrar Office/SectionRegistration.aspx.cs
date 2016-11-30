@@ -20,13 +20,13 @@ namespace University.Registrar_Office
             //    CourseDropdown.DataValueField = "course_id";
             //    CourseDropdown.DataBind();
             //}
-            SectionDropDown.Items.Clear();
-            SectionDropDown.Items.Add(new ListItem("--Select Section--", ""));
+            //SectionDropDown.Items.Clear();
+            //SectionDropDown.Items.Add(new ListItem("--Select Section--", ""));
         }
 
         protected void ApplicationButton_Click(object sender, EventArgs e)
         {
-            try { 
+           // try { 
             DateTime dt = DateTime.Now;
             Sqlsectionregistration.InsertParameters["suser_id"].DefaultValue = StudentId.Text;
             Sqlsectionregistration.InsertParameters["section_id"].DefaultValue = SectionDropDown.SelectedValue;
@@ -58,7 +58,10 @@ namespace University.Registrar_Office
                 SqlSectionUpdate.UpdateParameters["original_section_availabilty"].DefaultValue = Convert.ToString(currentavailability);
                 SqlSectionUpdate.Update();
                 RegistrationStatusLabel.Text = "Registered Successfully" + dt.ToString();
-            }
+                SqlGrade.InsertParameters["suser_id"].DefaultValue = StudentId.Text;
+                SqlGrade.InsertParameters["section_id"].DefaultValue = SectionDropDown.SelectedValue;
+                SqlGrade.Insert();
+                }
 
             if (currentavailability <= 0)
             {
@@ -68,38 +71,54 @@ namespace University.Registrar_Office
             Sqlsectionregistration.InsertParameters["registration_date"].DefaultValue = dt.ToString();
 
             Sqlsectionregistration.Insert();
-           }
+          // }
+            //catch (Exception ex)
+            //{
+             //   throw new ApplicationException("Sorry for the inconvenience", ex);
+            //}
+        }
+
+
+        //protected void course_changed(object sender, EventArgs e)
+        //{
+        //    try {
+        //        SectionDropDown.Items.Clear();
+
+        //        SectionDropDown.AppendDataBoundItems = true;
+        //        SqlSection.SelectCommand = "select section_id from section as s " +
+        //                           "where s.course_id = '" + CourseDropdown.SelectedValue + "'";
+        //        SectionDropDown.DataTextField = "section_id";
+        //        SectionDropDown.DataValueField = "section_id";
+        //        SectionDropDown.DataBind();
+
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        throw new ApplicationException("Sorry for the inconvenience",ex);
+        //    }
+        //}
+
+        protected void SemDropdown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /*try
+            {
+                CourseDropdown.Items.Clear();
+                CourseDropdown.AppendDataBoundItems = true;
+                SqlSection.SelectCommand = "select c.course_name,c.course_id from course as c,section as s " +
+                                   "where s.semester = '" + SemDropdown.SelectedValue + "' and s.course_id = c.course_id";
+                CourseDropdown.DataTextField = "course_name";
+                CourseDropdown.DataValueField = "course_id";
+                CourseDropdown.DataBind();
+            }
             catch (Exception ex)
             {
                 throw new ApplicationException("Sorry for the inconvenience", ex);
-            }
+            }*/
         }
 
-       
-        protected void course_changed(object sender, EventArgs e)
+        protected void SqlGrade_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
         {
-            try {
-                SectionDropDown.Items.Clear();
-                SectionDropDown.Items.Add(new ListItem("--Select Section--", ""));
-                SectionDropDown.AppendDataBoundItems = true;
-                SqlSection.SelectCommand = "select section_id from section as s " +
-                                   "where s.course_id = '" + CourseDropdown.SelectedValue + "'";
-                SectionDropDown.DataTextField = "section_id";
-                SectionDropDown.DataValueField = "section_id";
-                SectionDropDown.DataBind();
-                //if (SectionDropDown.Items.Count >= 1)
-                //{
-                //    SectionDropDown.Enabled = true;
-                //}
-                //else
-                //{
-                //    SectionDropDown.Enabled = false;
-                //}
-            }
-            catch(Exception ex)
-            {
-                throw new ApplicationException("Sorry for the inconvenience",ex);
-            }
+
         }
     }
 }

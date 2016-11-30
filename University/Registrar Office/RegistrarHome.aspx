@@ -37,7 +37,7 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="AcademicsHome.aspx">Registrar - Home</a></li>
+                        <li class="active"><a href="RegistrarHome.aspx">Registrar - Home</a></li>
                         <li><a href="UniversityApplication.aspx">Student Application</a></li>
                         <li><a href="AdmissionDetails.aspx">Admission Details</a></li>                        
                         <li><a href="AdmissionStatus.aspx">Admission Status</a></li>                     

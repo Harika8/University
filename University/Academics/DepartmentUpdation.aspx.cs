@@ -14,5 +14,9 @@ namespace University.Academics
 
         }
 
+        protected void BackButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("DepartmentManagement.aspx");
+        }
     }
 }

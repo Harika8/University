@@ -55,33 +55,14 @@
 
         <p style="width: 203px; margin-left: 600px">
         <b>Department - Creation Form</b></p>
-        <asp:GridView ID="DepartmentTBLGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="department_id" DataSourceID="DepartmentTBLDataSource" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" AllowPaging="True" PageSize="5">
-            <Columns>
-                <asp:BoundField DataField="department_id" HeaderText="department_id" InsertVisible="False" ReadOnly="True" SortExpression="department_id" />
-                <asp:BoundField DataField="department_name" HeaderText="department_name" SortExpression="department_name" />
-                <asp:BoundField DataField="department_location" HeaderText="department_location" SortExpression="department_location" />
-                <asp:BoundField DataField="department_phone_num" HeaderText="department_phone_num" SortExpression="department_phone_num" />
-                <asp:BoundField DataField="department_email_id" HeaderText="department_email_id" SortExpression="department_email_id" />
-            </Columns>
-            <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
-            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
-            <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
-            <RowStyle ForeColor="#330099" BackColor="White" />
-            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
-            <SortedAscendingCellStyle BackColor="#FEFCEB" />
-            <SortedAscendingHeaderStyle BackColor="#AF0101" />
-            <SortedDescendingCellStyle BackColor="#F6F0C0" />
-            <SortedDescendingHeaderStyle BackColor="#7E0000" />
-        </asp:GridView>
+        <asp:Button ID="BackButton" runat="server" OnClick="BackButton_Click" Text="Back" />
+        <br />
         <asp:SqlDataSource ID="DepartmentTBLDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT * FROM [department]"></asp:SqlDataSource>
         <br />
         <hr />
         <br />
         <asp:Label ID="DepartmentName" runat="server" Text="Department Name:"></asp:Label>
         <asp:TextBox ID="DepartmentNameTB" runat="server"></asp:TextBox>
-        &nbsp;&nbsp;&nbsp;
-        <asp:Label ID="DepartmentIDLbl" runat="server" Text="Department ID:"></asp:Label>
-        <asp:TextBox ID="DepartmentIDTB" runat="server" Enabled="False" Width="79px"></asp:TextBox>
         <br />
         <br />
         <br />
@@ -129,9 +110,9 @@
         <br />
         <br />
         
-        <asp:Button ID="ProgramSubmitButton" runat="server" Text="Submit" OnClick="ProgramSubmitButton_Click" />
+        <asp:Button ID="DepartmentSubmitButton" runat="server" Text="Submit" OnClick="DepartmentSubmitButton_Click" />
         &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="ProgramClearButton" runat="server" Text="Clear" OnClick="ProgramClearButton_Click" />
+        <asp:Button ID="DepartmentClearButton" runat="server" Text="Clear" OnClick="DepartmentClearButton_Click" />
         <br />
         <br />
         <asp:SqlDataSource ID="sqldepartment" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [department] WHERE [department_id] = @original_department_id AND [department_name] = @original_department_name AND [department_location] = @original_department_location AND [department_phone_num] = @original_department_phone_num AND [department_email_id] = @original_department_email_id" InsertCommand="INSERT INTO [department] ([department_name], [department_location], [department_phone_num], [department_email_id]) VALUES (@department_name, @department_location, @department_phone_num, @department_email_id)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [department]" UpdateCommand="UPDATE [department] SET [department_name] = @department_name, [department_location] = @department_location, [department_phone_num] = @department_phone_num, [department_email_id] = @department_email_id WHERE [department_id] = @original_department_id AND [department_name] = @original_department_name AND [department_location] = @original_department_location AND [department_phone_num] = @original_department_phone_num AND [department_email_id] = @original_department_email_id">
@@ -160,7 +141,25 @@
                 <asp:Parameter Name="original_department_email_id" Type="String" />
             </UpdateParameters>
         </asp:SqlDataSource>
-      </div>
+        <hr />
+        <asp:GridView ID="DepartmentTBLGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="department_id" DataSourceID="DepartmentTBLDataSource" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" AllowPaging="True" PageSize="5">
+            <Columns>
+                <asp:BoundField DataField="department_id" HeaderText="Department ID" InsertVisible="False" ReadOnly="True" SortExpression="department_id" />
+                <asp:BoundField DataField="department_name" HeaderText="Department Name" SortExpression="department_name" />
+                <asp:BoundField DataField="department_location" HeaderText="Department Ofc Location" SortExpression="department_location" />
+                <asp:BoundField DataField="department_phone_num" HeaderText="Department Phone No" SortExpression="department_phone_num" />
+                <asp:BoundField DataField="department_email_id" HeaderText="Department Email_ID" SortExpression="department_email_id" />
+            </Columns>
+            <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+            <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+            <RowStyle ForeColor="#330099" BackColor="White" />
+            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+            <SortedAscendingCellStyle BackColor="#FEFCEB" />
+            <SortedAscendingHeaderStyle BackColor="#AF0101" />
+            <SortedDescendingCellStyle BackColor="#F6F0C0" />
+            <SortedDescendingHeaderStyle BackColor="#7E0000" />
+        </asp:GridView>
     </form>
 </body>
 </html>

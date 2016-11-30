@@ -1,23 +1,70 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Event_Report.aspx.cs" Inherits="University.Campus_Services.WebForm2" %>
 
-<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            text-decoration: underline;
-        }
-    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Employee Joining" />
+    <meta name="author" content="Harika" />
+    <title>Employee Joining Formalities</title>
+    <%-- ------ css ------ --%>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/animate.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/prettyPhoto.css" rel="stylesheet" type="text/css" />
+    <link href="../css/main.css" rel="stylesheet" type="text/css" />
+    <link href="../css/responsive.css" rel="stylesheet" type="text/css" />
+     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+        rel="stylesheet" type="text/css" />
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="../images/favicon.ico" />
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <header id="header">
+    <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../Default.aspx">University</a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="CampusServicesHome.aspx">Campus - Home</a></li>
+                        <li><a href="Hostel_Accomodation.aspx">Hostel Accomodation</a></li>
+                        <li><a href="Hostel_Confirmation.aspx">Hostel Confiramtion</a></li>                        
+                        <li><a href="Hostel_RoomReport.aspx">Room Report</a></li> 
+                        <li><a href="Event_Registration.aspx">Event Registration</a></li> 
+                        <li><a href="Event_Confirmation.aspx">Event Confirmation</a></li>
+                        <li class="active"><a href="Event_Report.aspx">Event Report</a></li> 
+                        <li><a href="Service_RequestForm.aspx">Service Request</a></li> 
+                        <li><a href="Service_AllotedForm.aspx">Service Allotment</a></li>
+                        <li><a href="ServiceRequestReport.aspx">Service Report</a></li>                  
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+ 
+    </header>
+    <div>        
     
-        <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="auto-style1">Event Report<br />
-        <br />
-        </span></strong>From :
+        <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblhead" ForeColor="Blue" Width="600" runat="server" Text="Event Report"/>
+         </h2> <br />
+         <br />
+            </div> 
+        From :
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 &nbsp;
         <asp:Label ID="Label2" runat="server" Text="(MM/DD/YYYY)"></asp:Label>
@@ -41,17 +88,17 @@
         
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="event_id" DataSourceID="eventSource2" Visible="False">
             <Columns>
-                <asp:BoundField DataField="event_id" HeaderText="event_id" InsertVisible="False" ReadOnly="True" SortExpression="event_id" />
-                <asp:BoundField DataField="event_title" HeaderText="event_title" SortExpression="event_title" />
-                <asp:BoundField DataField="event_start_date" HeaderText="event_start_date" SortExpression="event_start_date" />
-                <asp:BoundField DataField="multi_day_event" HeaderText="multi_day_event" SortExpression="multi_day_event" />
-                <asp:BoundField DataField="event_end_date" HeaderText="event_end_date" SortExpression="event_end_date" />
-                <asp:BoundField DataField="event_end_time" HeaderText="event_end_time" SortExpression="event_end_time" />
-                <asp:BoundField DataField="event_start_time" HeaderText="event_start_time" SortExpression="event_start_time" />
-                <asp:BoundField DataField="event_place" HeaderText="event_place" SortExpression="event_place" />
-                <asp:BoundField DataField="event_capacity" HeaderText="event_capacity" SortExpression="event_capacity" />
-                <asp:BoundField DataField="audio_visual" HeaderText="audio_visual" SortExpression="audio_visual" />
-                <asp:BoundField DataField="user_id" HeaderText="user_id" SortExpression="user_id" />
+                <asp:BoundField DataField="user_id" HeaderText="User ID" SortExpression="user_id" />
+                <asp:BoundField DataField="event_id" HeaderText="Event ID" InsertVisible="False" ReadOnly="True" SortExpression="event_id" />
+                <asp:BoundField DataField="event_title" HeaderText="Event Title" SortExpression="event_title" />
+                <asp:BoundField DataField="multi_day_event" HeaderText="Multi Day Event" SortExpression="multi_day_event" />
+                <asp:BoundField DataField="event_start_date" HeaderText="Event Start Date" SortExpression="event_start_date" />
+                <asp:BoundField DataField="event_end_date" HeaderText="Event End Date" SortExpression="event_end_date" />
+                <asp:BoundField DataField="event_start_time" HeaderText="Event Start Time" SortExpression="event_start_time" />
+                <asp:BoundField DataField="event_end_time" HeaderText="Event End Time" SortExpression="event_end_time" />
+                <asp:BoundField DataField="event_place" HeaderText="Event Place" SortExpression="event_place" />
+                <asp:BoundField DataField="event_capacity" HeaderText="Event Capacity" SortExpression="event_capacity" />
+                <asp:BoundField DataField="audio_visual" HeaderText="Audio Visual" SortExpression="audio_visual" />
             </Columns>
         </asp:GridView>
         <br />

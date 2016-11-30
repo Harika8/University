@@ -56,15 +56,26 @@
 
         <p style="width: 203px; margin-left: 600px">
             <b>Form to Update/Delete a Faculty under a Department</b></p>
+        <asp:Button ID="BackButton" runat="server" OnClick="BackButton_Click" Text="Back" />
+        <br />
+                <br />
+        <br />
+        <div>        
+            <p>
+                <b>Don't Update or Delete the Values in the Grid View, if there is data dependency!</b>
+            </p>
+        </div>
+        <br />
+        <br />
         <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="fuser_id" DataSourceID="FacultytblDataSource" AllowPaging="True" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
             <AlternatingRowStyle BackColor="#CCCCCC" />
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                <asp:BoundField DataField="fuser_id" HeaderText="fuser_id" ReadOnly="True" SortExpression="fuser_id" />
-                <asp:BoundField DataField="specalization" HeaderText="specalization" SortExpression="specalization" />
-                <asp:BoundField DataField="education" HeaderText="education" SortExpression="education" />
-                <asp:BoundField DataField="contract" HeaderText="contract" SortExpression="contract" />
-                <asp:BoundField DataField="department_id" HeaderText="department_id" SortExpression="department_id" />
+                <asp:BoundField DataField="fuser_id" HeaderText="Faculty ID" ReadOnly="True" SortExpression="fuser_id" />
+                <asp:BoundField DataField="specalization" HeaderText="Specalization" SortExpression="specalization" />
+                <asp:BoundField DataField="education" HeaderText="Education" SortExpression="education" />
+                <asp:BoundField DataField="contract" HeaderText="Contract" SortExpression="contract" />
+                <asp:BoundField DataField="department_id" HeaderText="Department ID" SortExpression="department_id" />
             </Columns>
             <FooterStyle BackColor="#CCCCCC" />
             <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />

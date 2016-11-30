@@ -14,9 +14,14 @@ namespace University.Academics
 
         }
 
-        protected void GenReportButton_Click(object sender, EventArgs e)
+        protected void DeptIDDDL_SelectedIndexChanged(object sender, EventArgs e)
         {
+            DepartmentIDTB.Text = DeptIDDDL.SelectedValue;
+        }
 
+        protected void FacultyIDDDL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FacultyIDTB.Text = FacultyIDDDL.SelectedValue;
         }
     }
 }

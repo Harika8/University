@@ -22,13 +22,13 @@ namespace University.Academics {
         protected global::System.Web.UI.HtmlControls.HtmlForm ProgramCreationForm;
         
         /// <summary>
-        /// ProgramTBLGridView control.
+        /// BackButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ProgramTBLGridView;
+        protected global::System.Web.UI.WebControls.Button BackButton;
         
         /// <summary>
         /// ProgramTBLDataSource control.
@@ -56,6 +56,15 @@ namespace University.Academics {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DepartmentIDDDList;
+        
+        /// <summary>
+        /// DepartmentIDTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DepartmentIDTB;
         
         /// <summary>
         /// UniversityDatabase control.
@@ -146,5 +155,14 @@ namespace University.Academics {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource sqlprogram;
+        
+        /// <summary>
+        /// ProgramTBLGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView ProgramTBLGridView;
     }
 }
