@@ -40,7 +40,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="CampusServicesHome.aspx">Campus - Home</a></li>
                         <li><a href="Hostel_Accomodation.aspx">Hostel Accomodation</a></li>
-                        <li><a href="Hostel_Confirmation.aspx">Hostel Accomodation</a></li>                        
+                        <li><a href="Hostel_Confirmation.aspx">Hostel Confiramtion</a></li>                        
                         <li><a href="Hostel_RoomReport.aspx">Room Report</a></li> 
                         <li class="active"><a href="Event_Registration.aspx">Event Registration</a></li> 
                         <li><a href="Event_Confirmation.aspx">Event Confirmation</a></li>
@@ -55,32 +55,35 @@
  
     </header>
     <div>    
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="auto-style2">Event Registration Form:</span><br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblhead" ForeColor="Blue" Width="600" runat="server" Text="Event Registration Form"/>
+         </h2> <br />
+         <br />
+            </div> 
+        
         <br />
-        <span class="auto-style1">User Id:<asp:TextBox ID="TextBox25" runat="server"></asp:TextBox>
+        <span class="auto-style1">User ID:<asp:TextBox ID="TextBox25" runat="server" Width="141px"></asp:TextBox>
         <asp:Button ID="Button3" runat="server"  OnClick="Button3_Click" Text="Go" />
         <br />
         <br />
-        First Name:&nbsp;
-        <asp:TextBox ID="TextBox2" runat="server" Width="179px"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Last Name:&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox3" runat="server" Width="177px" Height="22px" ></asp:TextBox>
+        First Name:<asp:TextBox ID="TextBox2" runat="server" Width="179px"></asp:TextBox>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Last Name:<asp:TextBox ID="TextBox3" runat="server" Width="177px" Height="22px" ></asp:TextBox>
         <br />
         <br />
         Phone Number:&nbsp;
         <asp:TextBox ID="TextBox5" runat="server" Width="168px" style="height: 22px"></asp:TextBox>
         <br />
         <br />
-        Email:&nbsp;
+        Email:
         <asp:TextBox ID="TextBox6" runat="server" Width="287px"></asp:TextBox>
         <br />
         <br />
-        Event Title:&nbsp;
-        <asp:TextBox ID="TextBox7" runat="server" Width="274px"></asp:TextBox>
+        Event Title:&nbsp;<asp:TextBox ID="TextBox7" runat="server" Width="274px"></asp:TextBox>
         <br />
         <br />
-        Event Description:&nbsp;
-        <asp:TextBox ID="TextBox8" runat="server" Height="56px" TextMode="MultiLine" Width="226px"></asp:TextBox>
+        Event Description:&nbsp;<asp:TextBox ID="TextBox8" runat="server" Height="56px" TextMode="MultiLine" Width="226px"></asp:TextBox>
         <br />
         <br />
         <br />
@@ -96,16 +99,14 @@
         <asp:Label ID="Label2" runat="server" Text="(MM/DD/YYYY)"></asp:Label>
         <br />
         <br />
-        <br />
         Event Start Time:&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox11" runat="server" Width="113px"></asp:TextBox>
+        <asp:TextBox ID="TextBox11" runat="server" Width="134px"></asp:TextBox>
         <br />
         <br />
         Event End Date:&nbsp;
         <asp:TextBox ID="TextBox12" runat="server"></asp:TextBox>
 &nbsp;
         <asp:Label ID="Label3" runat="server" Text="(MM/DD/YYYY)"></asp:Label>
-        <br />
         <br />
         <br />
         Event End Time:&nbsp;

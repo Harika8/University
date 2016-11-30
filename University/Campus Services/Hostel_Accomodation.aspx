@@ -41,7 +41,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="CampusServicesHome.aspx">Campus - Home</a></li>
                         <li class="active"><a href="Hostel_Accomodation.aspx">Hostel Accomodation</a></li>
-                        <li><a href="Hostel_Confirmation.aspx">Hostel Accomodation</a></li>                        
+                        <li><a href="Hostel_Confirmation.aspx">Hostel Confirmation</a></li>                        
                         <li><a href="Hostel_RoomReport.aspx">Room Report</a></li> 
                         <li><a href="Event_Registration.aspx">Event Registration</a></li> 
                         <li><a href="Event_Confirmation.aspx">Event Confirmation</a></li>
@@ -56,24 +56,24 @@
  
     </header>
 
-
+        
     
     <div class="auto-style1">
-    
+    <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblhead" ForeColor="Blue" Width="600" runat="server" Text="Hostel Accomodation"/>
+         </h2> <br />
+         <br /><br />
+        </div>
+        
         <p style="margin-left: 40px">
-            &nbsp;</p>
-        <p style="margin-left: 40px">
-            <span class="auto-style2"><strong>Application From for Hostel Accomodation</strong></span><br />
-            <br />
-        </p>
-        <p style="margin-left: 40px">
-            User ID:<asp:TextBox ID="TextBox11" runat="server"></asp:TextBox>
+            User ID: <asp:TextBox ID="TextBox11" runat="server"></asp:TextBox>
             <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Go" />
         </p>
         <p style="margin-left: 40px">
             <span class="auto-style1">First Name:&nbsp;
         <asp:TextBox ID="TextBox12" runat="server" Width="179px"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Last Name:&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Last Name:&nbsp;
         <asp:TextBox ID="TextBox3" runat="server" Width="177px" Height="22px" ></asp:TextBox>
         <br />
         <br />
@@ -88,7 +88,7 @@
         <p style="margin-left: 40px">
             <span class="auto-style1">
         <br />
-        </span>Type of accomodation : 
+        </span>Type of accommodation : 
             
             <asp:DropDownList ID="DropDownList2" runat="server">
                 <asp:ListItem Value="Select">Selected value</asp:ListItem>
@@ -99,6 +99,7 @@
         <p style="margin-left: 40px">
             Select available room:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:DropDownList ID="DropDownList1" runat="server" Visible="True">
+                <asp:ListItem Value="Select"></asp:ListItem>
                 <asp:ListItem>101</asp:ListItem>
                 <asp:ListItem>102</asp:ListItem>
                 <asp:ListItem>103</asp:ListItem>
@@ -109,6 +110,12 @@
                 <asp:ListItem>108</asp:ListItem>
                 <asp:ListItem>109</asp:ListItem>
                 <asp:ListItem>110</asp:ListItem>
+                <asp:ListItem>111</asp:ListItem>
+                <asp:ListItem>112</asp:ListItem>
+                <asp:ListItem>113</asp:ListItem>
+                <asp:ListItem>114</asp:ListItem>
+                <asp:ListItem>115</asp:ListItem>
+                <asp:ListItem>116</asp:ListItem>
             </asp:DropDownList>
         </p>
         <p style="margin-left: 40px">

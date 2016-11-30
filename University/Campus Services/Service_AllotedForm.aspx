@@ -42,13 +42,13 @@
                     <ul class="nav navbar-nav">
                         <li><a href="CampusServicesHome.aspx">Campus - Home</a></li>
                         <li><a href="Hostel_Accomodation.aspx">Hostel Accomodation</a></li>
-                        <li><a href="Hostel_Confirmation.aspx">Hostel Accomodation</a></li>                        
+                        <li><a href="Hostel_Confirmation.aspx">Hostel Confiramtion+</a></li>                        
                         <li><a href="Hostel_RoomReport.aspx">Room Report</a></li> 
                         <li><a href="Event_Registration.aspx">Event Registration</a></li> 
                         <li><a href="Event_Confirmation.aspx">Event Confirmation</a></li>
                         <li><a href="Event_Report.aspx">Event Report</a></li> 
-                        <li class="active"><a href="Service_RequestForm.aspx">Service Request</a></li> 
-                        <li><a href="Service_AllotedForm.aspx">Service Allotment</a></li>
+                        <li><a href="Service_RequestForm.aspx">Service Request</a></li> 
+                        <li class="active"><a href="Service_AllotedForm.aspx">Service Allotment</a></li>
                         <li><a href="ServiceRequestReport.aspx">Service Report</a></li>                  
                     </ul>
                 </div>
@@ -57,8 +57,12 @@
  
     </header>
          
-            <p style="margin-left: 40px">
-                <span class="auto-style1"><strong>Service Allotment Form</strong></span></p>
+           <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblhead" ForeColor="Blue" Width="600" runat="server" Text="Service Allocation"/>
+         </h2> <br />
+         <br />
+            </div> 
             <p style="margin-left: 40px">
                 Room No :<asp:DropDownList ID="DropDownList6" runat="server" DataSourceID="roomservice" DataTextField="room_no" DataValueField="room_no" Width="69px">
                 </asp:DropDownList>

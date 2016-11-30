@@ -3,7 +3,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Employee Joining" />
+    <meta name="description" content="ServiceRequestForm" />
     <meta name="author" content="Harika" />
     <title>Employee Joining Formalities</title>
     <%-- ------ css ------ --%>
@@ -52,7 +52,12 @@
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
-        <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="auto-style1">Service Request Report</span><br />
+         <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblhead" ForeColor="Blue" Width="600" runat="server" Text="Service Request Report"/>
+         </h2> <br />
+         <br />
+            </div> 
         <br />
         <br />
         </strong>From<strong> :&nbsp;
@@ -69,6 +74,9 @@
         <asp:DropDownList ID="DropDownList1" runat="server">
             <asp:ListItem>Electricity</asp:ListItem>
             <asp:ListItem>Plumbing</asp:ListItem>
+            <asp:ListItem>Carpentry</asp:ListItem>
+            <asp:ListItem>Lawn Move</asp:ListItem>
+            <asp:ListItem>House Keeping</asp:ListItem>
         </asp:DropDownList>
         <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>&nbsp;<strong><br />
         <br />

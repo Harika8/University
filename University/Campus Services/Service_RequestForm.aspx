@@ -46,8 +46,8 @@
                         <li><a href="Event_Registration.aspx">Event Registration</a></li> 
                         <li><a href="Event_Confirmation.aspx">Event Confirmation</a></li>
                         <li><a href="Event_Report.aspx">Event Report</a></li> 
-                        <li><a href="Service_RequestForm.aspx">Service Request</a></li> 
-                        <li class="active"><a href="Service_AllotedForm.aspx">Service Allotment</a></li>
+                        <li class="active"><a href="Service_RequestForm.aspx">Service Request</a></li> 
+                        <li ><a href="Service_AllotedForm.aspx">Service Allotment</a></li>
                         <li><a href="ServiceRequestReport.aspx">Service Report</a></li>                  
                     </ul>
                 </div>
@@ -55,8 +55,12 @@
         </nav><!--/nav-->
  
     </header>    
-        <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="auto-style1">Service Request Form<br />
-        </span></strong>
+         <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblhead" ForeColor="Blue" Width="600" runat="server" Text="Service Request Form"/>
+         </h2> <br />
+         <br />
+            </div> 
         <br />
         <br />
         Room Number:&nbsp;<asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="roomservice2" DataTextField="room_no" DataValueField="room_no">
@@ -68,6 +72,9 @@
         <asp:DropDownList ID="DropDownList1" runat="server">
             <asp:ListItem>Electricity</asp:ListItem>
             <asp:ListItem>Plumbing</asp:ListItem>
+            <asp:ListItem>Carpentry</asp:ListItem>
+            <asp:ListItem>Lawn Move</asp:ListItem>
+            <asp:ListItem>House Keeping</asp:ListItem>
             <asp:ListItem></asp:ListItem>
         </asp:DropDownList>
         <br />
@@ -78,6 +85,12 @@
             <asp:ListItem>10 AM</asp:ListItem>
             <asp:ListItem>11 AM</asp:ListItem>
             <asp:ListItem>12 PM</asp:ListItem>
+            <asp:ListItem>1 PM</asp:ListItem>
+            <asp:ListItem>2 PM</asp:ListItem>
+            <asp:ListItem>3 PM</asp:ListItem>
+            <asp:ListItem>4 PM</asp:ListItem>
+            <asp:ListItem>5 PM</asp:ListItem>
+            <asp:ListItem>6 PM</asp:ListItem>
         </asp:DropDownList>
         <br />
         <br />
