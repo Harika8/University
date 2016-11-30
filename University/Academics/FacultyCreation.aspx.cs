@@ -16,7 +16,7 @@ namespace University.Academics
 
         protected void FacultyCreateClearButton_Click(object sender, EventArgs e)
         {
-            FacultyNameTB.Text = string.Empty;
+            FacultyIDTB.Text = string.Empty;
             FacultySpecializationTB.Text = string.Empty;
             FacultyEducationTB.Text = string.Empty;
             ContractHoursTB.Text = string.Empty;
@@ -35,7 +35,7 @@ namespace University.Academics
 
         protected void FacultyIDDDL_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FacultyNameTB.Text = "select first_name from user_info where user_id = @FacultyIDDDL.SelectedValue";
+            FacultyIDTB.Text = FacultyIDDDL.SelectedValue;
         }
 
         protected void BackButton_Click(object sender, EventArgs e)

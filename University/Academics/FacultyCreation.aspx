@@ -69,17 +69,17 @@
         <asp:SqlDataSource ID="DeptIDs_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT [department_id] FROM [department]"></asp:SqlDataSource>
         <br />
     
-        <asp:Label ID="FacultyIDLbl" runat="server" Text="Faculty ID:"></asp:Label>
-        <asp:DropDownList ID="FacultyIDDDL" runat="server" DataSourceID="FacultyIDListEMPLOYEE" DataTextField="EUSER_ID" DataValueField="EUSER_ID" AutoPostBack="True" OnSelectedIndexChanged="FacultyIDDDL_SelectedIndexChanged" >
+        <asp:Label ID="FacultyIDLbl" runat="server" Text="Faculty Name:"></asp:Label>
+        <asp:DropDownList ID="FacultyIDDDL" runat="server" DataSourceID="FacultyIDListEMPLOYEE" DataTextField="Name" DataValueField="Faculty_ID" AutoPostBack="True" OnSelectedIndexChanged="FacultyIDDDL_SelectedIndexChanged" >
         </asp:DropDownList>
-        <asp:SqlDataSource ID="FacultyIDListEMPLOYEE" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [euser_id] FROM [employee] WHERE (([employee_type] = @employee_type) AND ([employement_status] = @employement_status))">
+        <asp:SqlDataSource ID="FacultyIDListEMPLOYEE" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT (info.user_id) as Faculty_ID, (info.first_name+','+info.last_name) as Name FROM [employee] as emp, [user_info] as info WHERE info.user_id = emp.euser_id and (emp.employee_type = @employee_type) AND (emp.employement_status = @employement_status)">
             <SelectParameters>
                 <asp:Parameter DefaultValue="Teaching" Name="employee_type" Type="String" />
                 <asp:Parameter DefaultValue="Activ" Name="employement_status" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
-        &nbsp;&nbsp;&nbsp; Faculty Name:
-        <asp:TextBox ID="FacultyNameTB" runat="server" Enabled="False" Width="125px"></asp:TextBox>
+        &nbsp;&nbsp;&nbsp; Faculty ID:
+        <asp:TextBox ID="FacultyIDTB" runat="server" Enabled="False" Width="125px"></asp:TextBox>
 &nbsp;<br />
         <asp:Label ID="FacultySpecializationLbl" runat="server" Text="Specialization:"></asp:Label>
         <asp:TextBox ID="FacultySpecializationTB" runat="server"></asp:TextBox>
