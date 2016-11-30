@@ -55,9 +55,10 @@
  
     </header>
        <div style="margin-top:75px;" align="center">
+           <center style="height: 384px"> <asp:Image ID="Image1" runat="server" src="../images/academics3.jpg" Height="375px" Width="744px" /> </center>
          <h2>
-         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Academics FlowChart"></asp:Label>
-         </h2> <br />
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Academics Module - Flow Chart"></asp:Label>
+         </h2> <br />           
          <br />
         <asp:Label ID="msg" Width="150" runat="server"></asp:Label> 
         <br />
