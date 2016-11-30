@@ -55,14 +55,16 @@
  
     </header>
     <div style="margin-top:75px;" align="center">
-         Employee Joining <br />
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Employee Joining"></asp:Label>
+         </h2> <br />
          <br /><br />
         </div>
         <div style="margin-left: 100px">
 
          
          <asp:Label ID="lblEmployeeId" Width="150" runat="server" Text="Employee ID :"></asp:Label> 
-         <asp:TextBox ID="txtuserID" Width="150" runat="server" OnTextChanged="txtuserID_TextChanged"></asp:TextBox><br /><br />
+         <asp:TextBox ID="txtuserID" Width="150" runat="server"  OnTextChanged="txtuserID_TextChanged" AutoPostBack="True"></asp:TextBox><br /><br />
          <asp:Label ID="lblFirstName" runat="server" Width="150" Text="First Name"></asp:Label>
         <asp:TextBox ID="txtFirstName" Width="150" runat="server" ReadOnly="true"></asp:TextBox>            
         <asp:Label ID="lblLastName" Width="81px" runat="server" Text="Last Name" style="margin-left: 55px"></asp:Label>
@@ -86,6 +88,9 @@
          <asp:TextBox ID="txtAddressLine" runat="server" Width="500" Height="50px" ReadOnly="true"></asp:TextBox>
             <br />
             '<br />
+            <asp:Label ID="lblPositionId" Width="150" runat="server" Text="Position ID :"></asp:Label>         
+         <asp:TextBox ID="txtPositionId" runat="server" Width="150px"  ReadOnly="true"></asp:TextBox>        
+        <br /><br />
             <asp:Label ID="lblJobtype" Width="150" runat="server" Text="Job Type :"></asp:Label>         
          <asp:TextBox ID="txtJobtype" runat="server" Width="150px"  ReadOnly="true"></asp:TextBox>        
         <br /><br />

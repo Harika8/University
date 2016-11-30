@@ -54,12 +54,43 @@
         </nav><!--/nav-->
  
     </header>
-    <div style="margin-top:75px;" align="center">
-         Position Creation <br />
+     <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Position Creation"></asp:Label>
+         </h2> <br />
          <br /><br />
         </div>
-        <div style="margin-left: 100px">
-     
+        <div align="center">
+                <br />
+                  <asp:Button ID="btnaddPosition" runat="server" CssClass="bg-primary" Text="Add" OnClick="btnaddPosition_Click"/><br /><br /><br />
+                  <asp:Panel ID="PanelgvPosition" runat="server">
+                      <asp:GridView ID="gvPosition" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="position_id" DataSourceID="SqlPosition" ForeColor="Black" GridLines="Vertical">
+                          <AlternatingRowStyle BackColor="White" />
+                          <Columns>
+                              <asp:BoundField DataField="job_type" HeaderText="job_type" SortExpression="job_type" />
+                              <asp:BoundField DataField="designation" HeaderText="designation" SortExpression="designation" />
+                              <asp:BoundField DataField="roles_responsibilities" HeaderText="roles_responsibilities" SortExpression="roles_responsibilities" />
+                              <asp:BoundField DataField="department_id" HeaderText="department_id" SortExpression="department_id" />
+                              <asp:BoundField DataField="salary" HeaderText="salary" SortExpression="salary" />
+                              <asp:BoundField DataField="pay_frequency" HeaderText="pay_frequency" SortExpression="pay_frequency" />
+                          </Columns>
+                          <FooterStyle BackColor="#CCCC99" />
+                          <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+                          <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+                          <RowStyle BackColor="#F7F7DE" />
+                          <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                          <SortedAscendingCellStyle BackColor="#FBFBF2" />
+                          <SortedAscendingHeaderStyle BackColor="#848384" />
+                          <SortedDescendingCellStyle BackColor="#EAEAD3" />
+                          <SortedDescendingHeaderStyle BackColor="#575357" />
+                      </asp:GridView>
+                      <br /><br /><br />
+                  </asp:Panel>
+            </div>
+            
+        
+       <asp:Panel ID="PanelAddPosition" Visible="false" runat="server">
+         <div style="margin-left: 100px">
          <asp:Label ID="lblJobtype" Width="150" runat="server" Text="Job Type :"></asp:Label>         
          <asp:DropDownList ID="selJobtype" Width="150" runat="server">
              <asp:ListItem Selected="True" Value="-1">Select Job Type</asp:ListItem>
@@ -85,6 +116,16 @@
              <asp:ListItem>Monthly</asp:ListItem>
              <asp:ListItem>Bi-Weekly</asp:ListItem>
          </asp:DropDownList>   
+     
+                 
+            <br />            
+        </div>
+        <div style="margin-top:50px;" align="center">
+        <asp:Button ID="btnsubmit" runat="server"  Text="Submit" OnClick="btnsubmit_Click" />&nbsp;&nbsp;
+        <asp:Button ID="btnclear" runat="server"  Text="Clear" OnClick="btnclear_Click" />
+            <br />
+        </div>
+      </asp:Panel>
             <asp:SqlDataSource ID="SqlDepartment" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" SelectCommand="SELECT [department_name], [department_id] FROM [department]"></asp:SqlDataSource>
             <asp:SqlDataSource ID="SqlPosition" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" DeleteCommand="DELETE FROM [position] WHERE [position_id] = @original_position_id AND [job_type] = @original_job_type AND [designation] = @original_designation AND [roles_responsibilities] = @original_roles_responsibilities AND (([department_id] = @original_department_id) OR ([department_id] IS NULL AND @original_department_id IS NULL)) AND (([salary] = @original_salary) OR ([salary] IS NULL AND @original_salary IS NULL)) AND [pay_frequency] = @original_pay_frequency" InsertCommand="INSERT INTO [position] ([job_type], [designation], [roles_responsibilities], [department_id], [salary], [pay_frequency]) VALUES (@job_type, @designation, @roles_responsibilities, @department_id, @salary, @pay_frequency)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [position]" UpdateCommand="UPDATE [position] SET [job_type] = @job_type, [designation] = @designation, [roles_responsibilities] = @roles_responsibilities, [department_id] = @department_id, [salary] = @salary, [pay_frequency] = @pay_frequency WHERE [position_id] = @original_position_id AND [job_type] = @original_job_type AND [designation] = @original_designation AND [roles_responsibilities] = @original_roles_responsibilities AND (([department_id] = @original_department_id) OR ([department_id] IS NULL AND @original_department_id IS NULL)) AND (([salary] = @original_salary) OR ([salary] IS NULL AND @original_salary IS NULL)) AND [pay_frequency] = @original_pay_frequency">
                 <DeleteParameters>
@@ -119,15 +160,7 @@
                     <asp:Parameter Name="original_salary" Type="String" />
                     <asp:Parameter Name="original_pay_frequency" Type="String" />
                 </UpdateParameters>
-            </asp:SqlDataSource>         
-                 
-            <br />            
-        </div>
-        <div style="margin-top:50px;" align="center">
-        <asp:Button ID="btnsubmit" runat="server"  Text="Submit" OnClick="btnsubmit_Click" />&nbsp;&nbsp;
-        <asp:Button ID="btnclear" runat="server"  Text="Clear" OnClick="btnclear_Click" />
-            <br />
-        </div>
+            </asp:SqlDataSource> 
         
     </form>
   

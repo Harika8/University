@@ -11,7 +11,7 @@ namespace University.HR
     
     public partial class EmployeeJoining : System.Web.UI.Page
     {
-        string strpositionid = string.Empty;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -21,10 +21,10 @@ namespace University.HR
         {
             DateTime dt = DateTime.Now;
             SqlEmployee.InsertParameters["euser_id"].DefaultValue = (string)txtuserID.Text;
-            SqlEmployee.InsertParameters["employement_status"].DefaultValue = "active";
+            SqlEmployee.InsertParameters["employement_status"].DefaultValue = ("active").ToUpper();
             SqlEmployee.InsertParameters["date_of_joining"].DefaultValue = dt.ToString();
-            SqlEmployee.InsertParameters["position_id"].DefaultValue = (string)strpositionid;
-            SqlEmployee.InsertParameters["employee_type"].DefaultValue = txtempType.Text.ToUpper().Trim(); ;
+            SqlEmployee.InsertParameters["position_id"].DefaultValue = (string)txtPositionId.Text;
+            SqlEmployee.InsertParameters["employee_type"].DefaultValue = txtempType.Text.ToUpper().Trim(); 
             SqlEmployee.InsertParameters["salaryperhour"].DefaultValue = txtSalaryperhour.Text.ToUpper().Trim();
             SqlEmployee.InsertParameters["pay_frequency"].DefaultValue = txtPayFrequency.Text.ToUpper().Trim();
             SqlEmployee.Insert();
@@ -36,6 +36,7 @@ namespace University.HR
             txtEmail.Text = string.Empty;
             txtContactno.Text = string.Empty;
             txtAddressLine.Text = string.Empty;
+            txtPositionId.Text = string.Empty;
             txtJobtype.Text = string.Empty;
             txtPayFrequency.Text = string.Empty;
             txtDesignation.Text = string.Empty;
@@ -76,15 +77,15 @@ namespace University.HR
             txtContactno.Text = dvView[0].Row["contact_no"].ToString();
             txtAddressLine.Text = dvView[0].Row["address_line1"].ToString() + " " + dvView[0].Row["address_line2"].ToString() + " " + dvView[0].Row["city"].ToString() + " " + dvView[0].Row["state_of_res"].ToString() + " " + dvView[0].Row["zip_code"].ToString() + " " + dvView[0].Row["country"].ToString();
 
-            SqlData.SelectCommand = "Select * from job_application where juser_id = '" + txtuserID.Text + "' and status = 'APPOINTED'" ;
+            SqlData.SelectCommand = "Select * from job_application where juser_id = '" + txtuserID.Text + "' and status = 'APPROVED'" ;
             dvView = (DataView)SqlData.Select(dsArguments);
             string strvacancyid = dvView[0].Row["vacancy_id"].ToString();
 
             SqlData.SelectCommand = "Select * from vacancy  where vacancy_id = '" + strvacancyid + "'";
             dvView = (DataView)SqlData.Select(dsArguments);
-            strpositionid = dvView[0].Row["position_id"].ToString();
+            txtPositionId.Text = dvView[0].Row["position_id"].ToString();
 
-            SqlData.SelectCommand = "Select * from position where position_id = '" + strpositionid + "'";
+            SqlData.SelectCommand = "Select * from position where position_id = '" + txtPositionId.Text + "'";
             dvView = (DataView)SqlData.Select(dsArguments);
 
             txtJobtype.Text = dvView[0].Row["job_type"].ToString();

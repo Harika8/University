@@ -54,10 +54,37 @@
         </nav><!--/nav-->
  
     </header>
-    <div style="margin-top:75px;" align="center">
-         Create Job Notification for new vacancy<br />
+     <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Job Notification"></asp:Label>
+         </h2> <br />
          <br /><br />
         </div>
+        <div align="center">
+                <br />
+                  <asp:Button ID="btnaddVacancy" runat="server" CssClass="bg-primary" Text="Add" OnClick="btnaddVacancy_Click"/><br /><br /><br />
+                  <asp:Panel ID="PanelgvVacancy" runat="server">
+                      <asp:GridView ID="gvVacancy" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="vacancy_id" DataSourceID="SqlVacancy" ForeColor="Black" GridLines="Vertical">
+                          <AlternatingRowStyle BackColor="White" />
+                          <Columns>
+                              <asp:BoundField DataField="no_of_vacancies" HeaderText="no_of_vacancies" SortExpression="no_of_vacancies" />
+                              <asp:BoundField DataField="req_qualification" HeaderText="req_qualification" SortExpression="req_qualification" />
+                              <asp:BoundField DataField="duration" HeaderText="duration" SortExpression="duration" />
+                          </Columns>
+                          <FooterStyle BackColor="#CCCC99" />
+                          <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+                          <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+                          <RowStyle BackColor="#F7F7DE" />
+                          <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                          <SortedAscendingCellStyle BackColor="#FBFBF2" />
+                          <SortedAscendingHeaderStyle BackColor="#848384" />
+                          <SortedDescendingCellStyle BackColor="#EAEAD3" />
+                          <SortedDescendingHeaderStyle BackColor="#575357" />
+                      </asp:GridView>
+                      <br /><br /><br /><br />
+                  </asp:Panel>
+            </div>
+        <asp:Panel ID="PanelAddVacancy" Visible="false" runat="server">
         <div style="margin-left: 100px">
 
          
@@ -94,8 +121,16 @@
         </asp:Panel>
           <br />
             <br />
-                  
-            <asp:SqlDataSource ID="SqlDepartment" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" SelectCommand="SELECT [department_name], [department_id] FROM [department]"></asp:SqlDataSource>
+
+            <br />            
+        </div>
+        <div style="margin-top:50px;" align="center">
+        <asp:Button ID="btnsubmit" runat="server"  Text="Submit" OnClick="btnsubmit_Click" />&nbsp;&nbsp;
+        <asp:Button ID="btnclear" runat="server"  Text="Clear" OnClick="btnclear_Click" />
+            <br />
+        </div>
+        </asp:Panel>
+                    <asp:SqlDataSource ID="SqlDepartment" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" SelectCommand="SELECT [department_name], [department_id] FROM [department]"></asp:SqlDataSource>
             <asp:SqlDataSource ID="SqlPosition" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT [position_id], [job_type], [designation], [roles_responsibilities], [salary], [department_id], [pay_frequency] FROM [position] ORDER BY [designation]">
             </asp:SqlDataSource>       
               
@@ -138,15 +173,6 @@
                     <asp:Parameter DbType="Date" Name="original_close_date" />
                 </UpdateParameters>
             </asp:SqlDataSource>
-              
-                
-            <br />            
-        </div>
-        <div style="margin-top:50px;" align="center">
-        <asp:Button ID="btnsubmit" runat="server"  Text="Submit" OnClick="btnsubmit_Click" />&nbsp;&nbsp;
-        <asp:Button ID="btnclear" runat="server"  Text="Clear" OnClick="btnclear_Click" />
-            <br />
-        </div>
         
     </form>
 </body>

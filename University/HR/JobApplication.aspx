@@ -12,11 +12,12 @@
 <body>
     <form id="form1" runat="server">
     
-      <div style="margin-top:75px;" align="center">
-         Job Application<br />
-
+    <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Job Application"></asp:Label>
+         </h2> <br />
          <br /><br />
-            <asp:Button ID="btnNewUser" runat="server" Width="150" Text="New User" OnClick="btnNewUser_Click" />
+        <asp:Button ID="btnNewUser" runat="server" Width="150" Text="New User" OnClick="btnNewUser_Click" />
           <br /><br />
         </div>
         <div style="margin-left: 100px">

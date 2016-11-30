@@ -53,20 +53,36 @@
             </div><!--/.container-->
         </nav><!--/nav-->
  
-    </header>
+</header>
+      <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Job Applications"></asp:Label>
+         </h2> <br />
+         <br /><br />
+       </div>
     <div style="margin-top:75px;" align="center">
-        <asp:GridView ID="gvJobApplications" runat="server" AutoGenerateColumns="False" DataKeyNames="job_application_id" DataSourceID="SqlJobApplications">
+        <asp:GridView ID="gvJobApplications" runat="server" AutoGenerateColumns="False" DataKeyNames="job_application_id" DataSourceID="SqlJobApplications" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
+            <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="first_name" HeaderText="first_name" SortExpression="first_name" />
                 <asp:BoundField DataField="Job_Title" HeaderText="Job_Title" SortExpression="Job_Title" />
                 <asp:BoundField DataField="Department" HeaderText="Department" SortExpression="Department" />
                 <asp:BoundField DataField="Status_of_Application" HeaderText="Status_of_Application" SortExpression="Status_of_Application" />
-                <asp:CommandField ShowEditButton="True" />
+                <asp:CommandField ShowEditButton="True" HeaderText="Edit Status" />
             </Columns>
+            <FooterStyle BackColor="#CCCC99" />
+            <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+            <RowStyle BackColor="#F7F7DE" />
+            <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#FBFBF2" />
+            <SortedAscendingHeaderStyle BackColor="#848384" />
+            <SortedDescendingCellStyle BackColor="#EAEAD3" />
+            <SortedDescendingHeaderStyle BackColor="#575357" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlJobApplications" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" SelectCommand="Select job_application_id,  first_name, position.designation as Job_Title, department.department_name as Department, job_application.status as Status_of_Application from job_application, user_info, vacancy, position, department where job_application.vacancy_id = vacancy.vacancy_id and vacancy.position_id=position.position_id and position.department_id = department.department_id and juser_id  = user_id;" UpdateCommand="Update job_application Set status = @status where job_application_id = @job_application_id">
+        <asp:SqlDataSource ID="SqlJobApplications" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" SelectCommand="Select job_application_id,  first_name, position.designation as Job_Title, department.department_name as Department, job_application.status as Status_of_Application from job_application, user_info, vacancy, position, department where job_application.vacancy_id = vacancy.vacancy_id and vacancy.position_id=position.position_id and position.department_id = department.department_id and juser_id  = user_id;" UpdateCommand="UPDATE job_application SET status = @Status_of_Application WHERE (job_application_id = @job_application_id)">
             <UpdateParameters>
-                <asp:Parameter Name="status" />
+                <asp:Parameter Name="Status_of_Application" />
                 <asp:Parameter Name="job_application_id" />
             </UpdateParameters>
         </asp:SqlDataSource>
