@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HRDefault.aspx.cs" Inherits="University.HR.HRDefault" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CampusServicesHome.aspx.cs" Inherits="University.Campus_Services.CampusServicesHome" %>
 
 <!DOCTYPE html>
 
@@ -6,9 +6,9 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="HR Landing Page" />
+    <meta name="description" content="Employee Joining" />
     <meta name="author" content="Harika" />
-    <title>HR Default</title>
+    <title>Employee Joining Formalities</title>
     <%-- ------ css ------ --%>
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -25,7 +25,7 @@
     <link rel="shortcut icon" href="../images/favicon.ico" />
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form2" runat="server">
     <header id="header">
     <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
@@ -41,22 +41,28 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="HRDefault.aspx">HR - Home</a></li>
-                        <li><a href="JobSearch.aspx">Job Search</a></li>
-                        <li><a href="JobApplicationStatus.aspx">Job Application Status</a></li>                        
-                        <li><a href="JobNotification.aspx">Create Vacancy</a></li> 
-                        <li><a href="Position.aspx">Create Position</a></li> 
-                        <li><a href="EmployeeJoining.aspx">Employee Joining</a></li>
-                        <li><a href="EmployeeScreen.aspx">Employee</a></li>                           
+                        <li><a href="CampusServicesHome.aspx">Campus - Home</a></li>
+                        <li><a href="Hostel_Accomodation.aspx">Hostel Accomodation</a></li>
+                        <li><a href="Hostel_Confirmation.aspx">Hostel Accomodation</a></li>                        
+                        <li><a href="Hostel_RoomReport.aspx">Room Report</a></li> 
+                        <li><a href="Event_Registration.aspx">Event Registration</a></li> 
+                        <li><a href="Event_Confirmation.aspx">Event Confirmation</a></li>
+                        <li><a href="Event_Report.aspx">Event Report</a></li> 
+                        <li class="active"><a href="Service_RequestForm.aspx">Service Request</a></li> 
+                        <li ><a href="Service_AllotedForm.aspx">Service Allotment</a></li>
+                        <li><a href="ServiceRequestReport.aspx">Service Report</a></li>                  
                     </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
  
-    </header>
-    <div>
-    
-    </div>
-    </form>
+    </header>    
+ <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblhead" ForeColor="Blue" Width="600" runat="server" Text="Campus Services"/>
+         </h2> <br />
+         <br />
+            </div> 
+        </form>
 </body>
 </html>
