@@ -49,6 +49,15 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.DropDownList DeptIDDDList;
         
         /// <summary>
+        /// DepartmentIDTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DepartmentIDTB;
+        
+        /// <summary>
         /// DeptIDs_DataSource control.
         /// </summary>
         /// <remarks>

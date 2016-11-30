@@ -11,19 +11,17 @@ namespace University.Academics
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*FacultyLoadGridView.DataSource = dTable;
-            FacultyLoadGridView.DataBind();
-
-            if (mygrid.Columns.Count > 1)
-            {
-                mygrid.Columns[2].Visible = false;
-            }*/
 
         }
 
-        /*protected void GenReportButton_Click1(object sender, EventArgs e)
+        protected void DeptIDDDL_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //FacultyReportDataSource.Visible = true;
-        }*/
+            DepartmentIDTB.Text = DeptIDDDL.SelectedValue;
+        }
+
+        protected void FacultyIDDDL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FacultyIDTB.Text = FacultyIDDDL.SelectedValue;
+        }
     }
 }

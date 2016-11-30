@@ -64,7 +64,7 @@
         <br />
     
         <asp:Label ID="DeptIDLbl" runat="server" Text="Department Name:"></asp:Label>
-        <asp:DropDownList ID="DeptIDDDL" runat="server" DataSourceID="DeptIDs_DataSource" DataTextField="department_id" DataValueField="department_id" AutoPostBack="True" Height="25px" OnSelectedIndexChanged="DeptIDDDL_SelectedIndexChanged" Width="254px">
+        <asp:DropDownList ID="DeptIDDDL" runat="server" DataSourceID="DeptIDs_DataSource" DataTextField="department_name" DataValueField="department_id" AutoPostBack="True" Height="25px" OnSelectedIndexChanged="DeptIDDDL_SelectedIndexChanged" Width="254px">
         </asp:DropDownList>
         &nbsp;Department ID:<asp:TextBox ID="DepartmentIDTB" runat="server" Height="21px" Width="98px"></asp:TextBox>
 &nbsp;<asp:SqlDataSource ID="DeptIDs_DataSource" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT [department_id], [department_name] FROM [department] WHERE ([department_id] not in (10,11,12,13,19,20,21,22,24))"></asp:SqlDataSource>
@@ -76,7 +76,7 @@
         &nbsp;Faculty ID:
         <asp:TextBox ID="FacultyIDTB" runat="server" Enabled="False" Width="125px"></asp:TextBox>
 &nbsp;<br />
-        <asp:SqlDataSource ID="FacultyIDListEMPLOYEE" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT (info.user_id) as Faculty_ID, (info.first_name+','+info.last_name) as Name FROM [employee] as emp, [user_info] as info WHERE info.user_id = emp.euser_id and (emp.employee_type = @employee_type) AND (emp.employement_status = @employement_status)">
+        <asp:SqlDataSource ID="FacultyIDListEMPLOYEE" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" SelectCommand="SELECT DISTINCT (info.user_id) as Faculty_ID, (info.first_name+','+info.last_name) as Name FROM [employee] as emp, [user_info] as info WHERE info.user_id = emp.euser_id and (emp.employee_type = @employee_type) AND (emp.employement_status = @employement_status) and emp.euser_id not in (Select fuser_id from faculty)">
             <SelectParameters>
                 <asp:Parameter DefaultValue="Teaching" Name="employee_type" Type="String" />
                 <asp:Parameter DefaultValue="Activ" Name="employement_status" Type="String" />
