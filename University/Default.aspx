@@ -10,12 +10,12 @@
     <meta name="author" content="Harika" />
     <title>Home | University DBMS Project</title>
     <%-- ------ CSS ------ --%>
-    <link href="University/University/css/bootstrap.min.css" rel="stylesheet" type="text/css" runat="server"/>
-    <link href="University/University/css/font-awesome.min.css" rel="stylesheet" type="text/css" runat="server"/>
-    <link href="University/University/css/animate.min.css" rel="stylesheet" type="text/css" runat="server"/>
-    <link href="University/University/css/prettyPhoto.css" rel="stylesheet" type="text/css" runat="server"/>
-    <link href="University/University/css/main.css" rel="stylesheet" type="text/css" runat="server"/>
-    <link href="University/University/css/responsive.css" rel="stylesheet" type="text/css" runat="server"/>
+    <link href='@Url.css("~/css/bootstrap.min.css")' rel="stylesheet" type="text/css" runat="server"/>
+    <link href='@Url.css("~/css/font-awesome.min.css")' rel="stylesheet" type="text/css" runat="server"/>
+    <link href='@Url.css("~/css/animate.min.css")' rel="stylesheet" type="text/css" runat="server"/>
+    <link href='@Url.css("~/css/prettyPhoto.css")' rel="stylesheet" type="text/css" runat="server"/>
+    <link href='@Url.css("~/css/main.css")' rel="stylesheet" type="text/css" runat="server"/>
+    <link href='@Url.css("~/css/responsive.css")' rel="stylesheet" type="text/css" runat="server"/>
      <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
         rel="stylesheet" type="text/css" runat="server"/>
     <!--[if lt IE 9]>
@@ -180,12 +180,12 @@
     </script>
     <!-- /top-link-block -->
     <!-- Jscript -->
-    <script src="~/js/jquery.js" type="text/javascript"></script>
-    <script src="~/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="~/js/jquery.prettyPhoto.js" type="text/javascript"></script>
-    <script src="~/js/jquery.isotope.min.js" type="text/javascript"></script>
-    <script src="~/js/main.js" type="text/javascript"></script>
-    <script src="~/js/wow.min.js" type="text/javascript"></script>
+    <script src='@Url.js("~/js/jquery.js")' type="text/javascript"></script>
+    <script src='@Url.js("~/js/bootstrap.min.js")' type="text/javascript"></script>
+    <script src='@Url.js("~/js/jquery.prettyPhoto.js")' type="text/javascript"></script>
+    <script src='@Url.js("~/js/jquery.isotope.min.js")' type="text/javascript"></script>
+    <script src='@Url.js("~/js/main.js")' type="text/javascript"></script>
+    <script src='@Url.js("~/js/wow.min.js")' type="text/javascript"></script>
     </form>
 </body>
 </html>
