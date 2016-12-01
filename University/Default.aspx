@@ -10,12 +10,12 @@
     <meta name="author" content="Harika" />
     <title>Home | University DBMS Project</title>
     <%-- ------ CSS ------ --%>
-    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" runat="server"/>
-    <link href="~/css/font-awesome.min.css" rel="stylesheet" type="text/css" runat="server"/>
-    <link href="~/css/animate.min.css" rel="stylesheet" type="text/css" runat="server"/>
-    <link href="~/css/prettyPhoto.css" rel="stylesheet" type="text/css" runat="server"/>
-    <link href="~/css/main.css" rel="stylesheet" type="text/css" runat="server" />
-    <link href="~/css/responsive.css" rel="stylesheet" type="text/css" runat="server" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" runat="server"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" runat="server"/>
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css" runat="server"/>
+    <link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" runat="server"/>
+    <link href="css/main.css" rel="stylesheet" type="text/css" runat="server"/>
+    <link href="css/responsive.css" rel="stylesheet" type="text/css" runat="server"/>
      <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
         rel="stylesheet" type="text/css" runat="server"/>
     <!--[if lt IE 9]>
