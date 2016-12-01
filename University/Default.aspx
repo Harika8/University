@@ -10,12 +10,12 @@
     <meta name="author" content="Harika" />
     <title>Home | University DBMS Project</title>
     <%-- ------ CSS ------ --%>
-    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="../css/animate.min.css" rel="stylesheet" type="text/css" />
-    <link href="../css/prettyPhoto.css" rel="stylesheet" type="text/css" />
-    <link href="../css/main.css" rel="stylesheet" type="text/css" />
-    <link href="../css/responsive.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/animate.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/prettyPhoto.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/responsive.css" rel="stylesheet" type="text/css" />
      <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
         rel="stylesheet" type="text/css" />
     <!--[if lt IE 9]>
@@ -62,7 +62,7 @@
             </ol>
             <div class="carousel-inner">
 
-                <div class="item active" style="background-image: url(../images/DSC_1854.jpeg)">
+                <div class="item active" style="background-image: url(~/images/DSC_1854.jpeg)">
                     <div class="container">
                         <div class="row slide-margin">
                             <div class="col-sm-6">
@@ -80,7 +80,7 @@
                     </div>
                 </div><!--/.item-->
 
-                <div class="item" style="background-image: url(../images/DSC_1980.jpeg)">
+                <div class="item" style="background-image: url(~/images/DSC_1980.jpeg)">
                     <div class="container">
                         <div class="row slide-margin">
                             <div class="col-sm-6">
@@ -98,7 +98,7 @@
                     </div>
                 </div><!--/.item-->
 
-                <div class="item" style="background-image: url(../images/DSC_1842.jpeg)">
+                <div class="item" style="background-image: url(~/images/DSC_1842.jpeg)">
                     <div class="container">
                         <div class="row slide-margin">
                             <div class="col-sm-6">
@@ -115,7 +115,7 @@
                         </div>
                     </div>
                 </div><!--/.item-->
-                  <div class="item" style="background-image: url(../images/DSC_0833.JPG)">
+                  <div class="item" style="background-image: url(~/images/DSC_0833.JPG)">
                     <div class="container">
                         <div class="row slide-margin">
                             <div class="col-sm-6">
@@ -132,7 +132,7 @@
                         </div>
                     </div>
                 </div><!--/.item-->
-                 <div class="item" style="background-image: url(../images/DSC_0778.JPG)">
+                 <div class="item" style="background-image: url(~/images/DSC_0778.JPG)">
                     <div class="container">
                         <div class="row slide-margin">
                             <div class="col-sm-6">
@@ -180,12 +180,12 @@
     </script>
     <!-- /top-link-block -->
     <!-- Jscript -->
-    <script src="js/jquery.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="js/jquery.prettyPhoto.js" type="text/javascript"></script>
-    <script src="js/jquery.isotope.min.js" type="text/javascript"></script>
-    <script src="js/main.js" type="text/javascript"></script>
-    <script src="js/wow.min.js" type="text/javascript"></script>
+    <script src="~/js/jquery.js" type="text/javascript"></script>
+    <script src="~/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="~/js/jquery.prettyPhoto.js" type="text/javascript"></script>
+    <script src="~/js/jquery.isotope.min.js" type="text/javascript"></script>
+    <script src="~/js/main.js" type="text/javascript"></script>
+    <script src="~/js/wow.min.js" type="text/javascript"></script>
     </form>
 </body>
 </html>
