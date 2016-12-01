@@ -10,9 +10,9 @@
     <meta name="author" content="Harika" />
     <title>Home | University DBMS Project</title>
     <%-- ------ CSS ------ --%>
-    <link href='@Url.css("~/css/bootstrap.min.css")' rel="stylesheet" type="text/css" runat="server"/>
-    <link href='@Url.css("~/css/font-awesome.min.css")' rel="stylesheet" type="text/css" runat="server"/>
-    <link href='@Url.css("~/css/animate.min.css")' rel="stylesheet" type="text/css" runat="server"/>
+    <link href='@Url.css("bootstrap.min.css")' rel="stylesheet" type="text/css" runat="server"/>
+    <link href='@Url.css("font-awesome.min.css")' rel="stylesheet" type="text/css" runat="server"/>
+    <link href='@Url.css("animate.min.css")' rel="stylesheet" type="text/css" runat="server"/>
     <link href='@Url.css("~/css/prettyPhoto.css")' rel="stylesheet" type="text/css" runat="server"/>
     <link href='@Url.css("~/css/main.css")' rel="stylesheet" type="text/css" runat="server"/>
     <link href='@Url.css("~/css/responsive.css")' rel="stylesheet" type="text/css" runat="server"/>
