@@ -175,6 +175,33 @@ namespace University.Academics {
         protected global::System.Web.UI.WebControls.TextBox CourseEffectiveDateTB;
         
         /// <summary>
+        /// EffectiveDateimage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton EffectiveDateimage;
+        
+        /// <summary>
+        /// EffectiveDatePanelCal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel EffectiveDatePanelCal;
+        
+        /// <summary>
+        /// EffectiveDateCal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar EffectiveDateCal;
+        
+        /// <summary>
         /// CourseDescriptionLbl control.
         /// </summary>
         /// <remarks>

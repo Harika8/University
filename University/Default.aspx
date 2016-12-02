@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="LandingPage" />
-    <meta name="author" content="Harika" />
+    <meta name="author" content="Harika/Sri Nuthalapati" />
     <title>Home | University DBMS Project</title>
     <%-- ------ CSS ------ --%>
     <link href= "css/bootstrap.min.css" rel="stylesheet" type="text/css" runat="server"/>
