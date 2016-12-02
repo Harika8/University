@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Employee Joining" />
     <meta name="author" content="Harika" />
-    <title>Employee Joining Formalities</title>
+    <title>Campus Services</title>
     <%-- ------ css ------ --%>
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -42,7 +42,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="CampusServicesHome.aspx">Campus - Home</a></li>
                         <li><a href="Hostel_Accomodation.aspx">Hostel Accomodation</a></li>
-                        <li><a href="Hostel_Confirmation.aspx">Hostel Confiramtion+</a></li>                        
+                        <li><a href="Hostel_Confirmation.aspx">Hostel Confirmation</a></li>                        
                         <li><a href="Hostel_RoomReport.aspx">Room Report</a></li> 
                         <li><a href="Event_Registration.aspx">Event Registration</a></li> 
                         <li><a href="Event_Confirmation.aspx">Event Confirmation</a></li>
@@ -91,7 +91,7 @@
         Service Status:&nbsp;&nbsp;
         <asp:DropDownList ID="DropDownList5" runat="server">
             <asp:ListItem>Completed</asp:ListItem>
-            <asp:ListItem>InProgress</asp:ListItem>
+            <asp:ListItem>Progress</asp:ListItem>
             <asp:ListItem>Pending</asp:ListItem>
         </asp:DropDownList>
         <br />
