@@ -54,12 +54,18 @@
         </nav><!--/nav-->
  
     </header>
-
+        <div style="margin-top:75px;" align="center">
+         <h2>
+         <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="University Application"></asp:Label>
+          </h2> <br />
+         <asp:Label ID="Label2" ForeColor="Blue" Width="500" runat="server" Text="(Please Fill out the Application form carefully)"></asp:Label>
+         <br /><br />
+        </div>
     
     <div>
-         <asp:Label ID="Label1" runat="server" Font-Size="XX-Large" Text="Application For University"></asp:Label>
+         
         <br />
-        (Please Fill out the Application form carefully)<br />
+        <br />
         <br />
          SUserID:&nbsp;
          <asp:TextBox ID="txtSuserid" runat="server" Width="354px"></asp:TextBox>
@@ -165,8 +171,7 @@
             <br />
         </div>
         </asp:Panel>
-&nbsp;
-        YYYY<br />
+         &nbsp; <br />
         <br />
 &nbsp;<br />
         <br />

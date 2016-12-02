@@ -13,5 +13,35 @@ namespace University.HR
         {
 
         }
+
+        protected void btnPosition_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Position.aspx");
+        }
+
+        protected void btnJobNotification_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("JobNotification.aspx");
+        }
+
+        protected void btnJobSearch_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("JobSearch.aspx");
+        }
+
+        protected void btnJobstatus_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("JobApplicationStatus.aspx");
+        }
+
+        protected void btnEmployeeJoining_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EmployeeJoining.aspx");
+        }
+
+        protected void btnEmployee_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EmployeeScreen.aspx");
+        }
     }
 }

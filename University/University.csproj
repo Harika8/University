@@ -525,7 +525,7 @@
     <Folder Include="css\" />
     <Folder Include="fonts\" />
     <Folder Include="images\" />
-    <Folder Include="js\FinancialAid\" />
+    <Folder Include="js\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

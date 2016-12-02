@@ -1,4 +1,4 @@
-﻿*<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="_Default" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js" type="text/javascript"></script>
@@ -7,17 +7,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="LandingPage" />
-    <meta name="author" content="Harika, SriNuthalapati" />
+    <meta name="author" content="Harika/Sri Nuthalapati" />
     <title>Home | University DBMS Project</title>
     <%-- ------ CSS ------ --%>
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/animate.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" />
-    <link href="css/main.css" rel="stylesheet" type="text/css" />
-    <link href="css/responsive.css" rel="stylesheet" type="text/css" />
+    <link href= "css/bootstrap.min.css" rel="stylesheet" type="text/css" runat="server"/>
+    <link href= "css/font-awesome.min.css" rel="stylesheet" type="text/css" runat="server"/>
+    <link href= "css/animate.min.css" rel="stylesheet" type="text/css" runat="server"/>
+    <link href= "css/prettyPhoto.css" rel="stylesheet" type="text/css" runat="server"/>
+    <link href= "css/main.css" rel="stylesheet" type="text/css" runat="server"/>
+    <link href= "css/responsive.css" rel="stylesheet" type="text/css" runat="server"/>
      <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
-        rel="stylesheet" type="text/css" />
+        rel="stylesheet" type="text/css" runat="server"/>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -45,7 +45,7 @@
                         <li><a href="Registrar Office/RegistrarHome.aspx">Registrar</a></li>
                         <li><a href="Academics/AcademicsHome.aspx">Academics</a></li>                        
                         <li><a href="FinancialAid/homeFA.aspx">Financial Aid</a></li> 
-                        <li><a href="HR/HRDefault.aspx">HR</a></li>
+                        <li><a href="HR/HRDefault.aspx">Human Resources</a></li>
                         <li><a href="Campus Services/CampusServicesHome.aspx">Campus Services</a></li>                       
                     </ul>
                 </div>
@@ -62,54 +62,88 @@
             </ol>
             <div class="carousel-inner">
 
-                <div class="item active" style="background-image: url(../images/DSC_1854.jpeg)">
+                <div class="item active" style="background-image: url(./images/DSC_1854.jpeg)">
                     <div class="container">
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">HR</h1>
-                                    <h2 class="animation animated-item-2">About</h2>                                
+                                    <h1 class="animation animated-item-1">Registrar</h1>
+                                    <h2 class="animation animated-item-2"></h2>                                
                                 </div>
                             </div>
                             <div class="col-sm-6 hidden-xs animation animated-item-4">
                                 <div class="slider-img">
-                                    <img src="images/slider/img1.png" class="img-responsive">
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div><!--/.item-->
 
-                <div class="item" style="background-image: url(../images/DSC_1980.jpeg)">
+                <div class="item" style="background-image: url(./images/DSC_1980.jpeg)">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1">Financial Aid</h1>
+                                    <h2 class="animation animated-item-2"></h2>                                    
+                                </div>
+                            </div>
+                            <div class="col-sm-6 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.item-->
+
+                <div class="item" style="background-image: url(./images/DSC_1842.jpeg)">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1">Campus Services</h1>
+                                    <h2 class="animation animated-item-2"></h2>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.item-->
+                  <div class="item" style="background-image: url(./images/DSC_0833.JPG)">
                     <div class="container">
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
                                     <h1 class="animation animated-item-1">Academics</h1>
-                                    <h2 class="animation animated-item-2">About</h2>                                    
+                                    <h2 class="animation animated-item-2"></h2>
                                 </div>
                             </div>
                             <div class="col-sm-6 hidden-xs animation animated-item-4">
                                 <div class="slider-img">
-                                    <img src="images/slider/img2.png" class="img-responsive">
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div><!--/.item-->
-
-                <div class="item" style="background-image: url(../images/DSC_1842.jpeg)">
+                 <div class="item" style="background-image: url(./images/DSC_0778.JPG)">
                     <div class="container">
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">University</h1>
-                                    <h2 class="animation animated-item-2">About</h2>
+                                    <h1 class="animation animated-item-1">Human Resources</h1>
+                                    <h2 class="animation animated-item-2"></h2>
                                 </div>
                             </div>
                             <div class="col-sm-6 hidden-xs animation animated-item-4">
                                 <div class="slider-img">
-                                    <img src="images/slider/img3.png" class="img-responsive">
+                                    
                                 </div>
                             </div>
                         </div>
