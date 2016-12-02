@@ -134,7 +134,7 @@
     <Content Include="Registrar Office\AdmissionStatus.aspx" />
     <Content Include="Registrar Office\StudentGrade.aspx" />
     <Content Include="Registrar Office\UniversityApplication.aspx" />
-    <None Include="Resources\cs FLOWCHART.JPG" />
+    <None Include="images\cs FLOWCHART.JPG" />
     <Content Include="UserRegistration.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -524,13 +524,14 @@
   <ItemGroup>
     <Folder Include="css\" />
     <Folder Include="fonts\" />
-    <Folder Include="images\" />
     <Folder Include="js\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

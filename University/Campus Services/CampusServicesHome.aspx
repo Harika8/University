@@ -63,7 +63,7 @@
          </h2> <br />
             </div>
         <div style="margin-left: 440px">
-            <asp:Image ID="Image1" runat="server" ImageUrl="~/Resources/cs FLOWCHART.JPG" />
+            <asp:Image ID="Image1" runat="server" ImageUrl="../images/campusservices.JPG" />
         </div>
         </form>
 </body>

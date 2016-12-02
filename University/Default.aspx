@@ -67,7 +67,7 @@
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Registrar</h1>
+                                    <h1 class="animation animated-item-1"><a href="Registrar Office/RegistrarHome.aspx">Registrar</a></h1>
                                     <h2 class="animation animated-item-2"></h2>                                
                                 </div>
                             </div>

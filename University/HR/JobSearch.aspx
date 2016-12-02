@@ -54,13 +54,13 @@
         </nav><!--/nav-->
  
     </header>
-     <div style="margin-top:75px;" align="center">
+     <div style="margin-top:50px;" align="center">
           <h2>
          <asp:Label ID="lblHeading" ForeColor="Blue" Width="500" runat="server" Text="Job Search"></asp:Label>
          </h2> <br />
          <br />
          </div>
-        <div style="margin-left: 150px">
+        <div style="margin-left:75px">
             <asp:Label ID="lblsearch"  Width="150" runat="server" Text="Search By :"></asp:Label><br /><br />
             <asp:Label ID="lblDepartmeent"  Width="150" runat="server" Text="Department :"></asp:Label>
              <asp:DropDownList ID="seldept" runat="server" Width="150px" AppendDataBoundItems="true" EnableViewState="false" DataSourceID="SqlDepartment" DataTextField="department_name" DataValueField="department_id">
@@ -73,7 +73,7 @@
              <asp:ListItem>Monthly</asp:ListItem>
              <asp:ListItem>Bi-Weekly</asp:ListItem>
             </asp:DropDownList><br /><br />
-            <div style="margin-left: 150px">
+            <div align="center">
             <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="btnClear" runat="server" Text="Clear Filters" OnClick="btnClear_Click" />
