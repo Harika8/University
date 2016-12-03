@@ -99,6 +99,12 @@ namespace University.Financial_Aid
     con2.Open();        
     submit4.ExecuteNonQuery();
     con2.Close();
+
+            string message = "Application Approved Successfully .";
+            string script = "window.onload = function(){ alert('";
+            script += message;
+            script += "')};";
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -112,6 +118,11 @@ namespace University.Financial_Aid
             con2.Open();
             submit4.ExecuteNonQuery();
             con2.Close();
+            string message = "Application Rejected Successfully .";
+            string script = "window.onload = function(){ alert('";
+            script += message;
+            script += "')};";
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
         }
     }
 }

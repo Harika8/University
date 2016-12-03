@@ -79,7 +79,7 @@
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="fapplication_id" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:CommandField ShowSelectButton="True" />
+                <asp:CommandField ShowSelectButton="True" HeaderText="Deny Financial Aid" />
                 <asp:BoundField DataField="fapplication_id" HeaderText="Application ID" InsertVisible="False" ReadOnly="True" SortExpression="fapplication_id" />
                 <asp:BoundField DataField="suser_id" HeaderText="Student ID" SortExpression="suser_id" />
                 <asp:BoundField DataField="validity_date" HeaderText="Valid Till" SortExpression="validity_date" />
