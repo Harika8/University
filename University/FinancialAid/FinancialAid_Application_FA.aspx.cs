@@ -78,6 +78,16 @@ namespace University.Financial_Aid
             TextBox6.Text = string.Empty;
             TextBox7.Text = string.Empty;
 
+           
+
+
+
+            string message = "Application Submitted Successfully .";
+            string script = "window.onload = function(){ alert('";
+            script += message;
+            script += "')};";
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+
 
 
 

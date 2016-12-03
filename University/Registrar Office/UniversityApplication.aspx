@@ -188,7 +188,7 @@
         :&nbsp;
         <asp:TextBox ID="GDATETextBox" runat="server"></asp:TextBox>
 &nbsp;
-        <asp:Label ID="Label51" runat="server" Text="YYYY-MM-DD"></asp:Label>
+        <asp:Label ID="Label51" runat="server" Text="MM/DD/YYYY"></asp:Label>
 &nbsp;
         <br />
         <br />
@@ -205,7 +205,7 @@
         :&nbsp;
         <asp:TextBox ID="TDATETextBox" runat="server"></asp:TextBox>
 &nbsp;
-        <asp:Label ID="Label52" runat="server" Text="YYYY-MM-DD"></asp:Label>
+        <asp:Label ID="Label52" runat="server" Text="MM/DD/YYYY"></asp:Label>
 &nbsp;
         <br />
         <br />
@@ -222,7 +222,7 @@
         :&nbsp;
         <asp:TextBox ID="IDATETextBox" runat="server"></asp:TextBox>
 &nbsp;
-        <asp:Label ID="Label53" runat="server" Text="YYYY-MM-DD"></asp:Label>
+        <asp:Label ID="Label53" runat="server" Text="MM/DD/YYYY"></asp:Label>
 &nbsp;<br />
         Application Status:&nbsp;
         <asp:DropDownList ID="DropDownList1" runat="server">

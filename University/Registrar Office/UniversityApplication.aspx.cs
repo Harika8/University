@@ -79,7 +79,11 @@ namespace University.Registrar_Office
             TDATETextBox.Text = String.Empty;
             TDATETextBox.Text = String.Empty;
 
-
+            string message = "Student application is created successfully.";
+            string script = "window.onload = function(){ alert('";
+            script += message;
+            script += "')};";
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
         }
     }
 }

@@ -47,6 +47,11 @@ namespace University.FinancialAid
             submit4.ExecuteNonQuery();
             con2.Close();
 
+            string message = "Financial Aid Denied Succefully.";
+            string script = "window.onload = function(){ alert('";
+            script += message;
+            script += "')};";
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
         }
     }
 }

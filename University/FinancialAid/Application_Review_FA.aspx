@@ -152,8 +152,7 @@
            &nbsp;&nbsp;&nbsp; <asp:Label ID="Label18" runat="server" Text="Valid Till : "></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="TextBox18" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </p>
+&nbsp;&nbsp;&nbsp;&nbsp; MM-DD-YYYY</p>
         <p>
             &nbsp;</p>
         <p>
