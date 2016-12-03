@@ -102,7 +102,12 @@
         <p>
             <asp:Label ID="CourseEffDtLbl" runat="server" Text="Effective Date:"></asp:Label>
             <asp:TextBox ID="CourseEffectiveDateTB" runat="server" Width="142px"></asp:TextBox>
+        <asp:ImageButton ID="EffectiveDateimage" runat="server" height="30px" ImageUrl="~/images/calender.png" OnClick="EffectiveDateimage_Click" Width="25px" />
         </p>
+        <asp:Panel ID="EffectiveDatePanelCal" runat="server" Visible="false">
+            <asp:Calendar ID="EffectiveDateCal" runat="server" OnSelectionChanged="EffectiveDateCal_SelectionChanged"></asp:Calendar>
+          <br />
+        </asp:Panel>
         <p>
             <asp:Label ID="CourseDescriptionLbl" runat="server" Text="Course Description:"></asp:Label>
             <asp:TextBox ID="CourseDescriptionTB" runat="server" Width="372px" Height="56px"></asp:TextBox>

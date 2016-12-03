@@ -11,8 +11,7 @@ namespace University.Campus_Services
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-
-
+        
         protected void Button1_Click(object sender, EventArgs e)
         {
             eventsource.InsertParameters["event_title"].DefaultValue = TextBox7.Text.ToUpper().Trim();
@@ -25,10 +24,9 @@ namespace University.Campus_Services
             eventsource.InsertParameters["multi_day_event"].DefaultValue = RadioButtonList1.SelectedValue;
             eventsource.InsertParameters["audio_visual"].DefaultValue = RadioButtonList2.SelectedValue;
             eventsource.InsertParameters["user_id"].DefaultValue = TextBox25.Text.Trim();
-
-
-
+            
             eventsource.Insert();
+          
             TextBox7.Text = string.Empty;
             TextBox10.Text = string.Empty;
             TextBox12.Text = string.Empty;
@@ -78,6 +76,11 @@ namespace University.Campus_Services
             TextBox5.Text = view[0].Row["contact_no"].ToString();
             TextBox6.Text = view[0].Row["email_id"].ToString();
           
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
         }
     }
     }

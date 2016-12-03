@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Employee Joining" />
     <meta name="author" content="Harika" />
-    <title>Employee Joining Formalities</title>
+    <title>Campus Services</title>
     <%-- ------ css ------ --%>
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />

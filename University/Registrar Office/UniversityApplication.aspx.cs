@@ -66,12 +66,24 @@ namespace University.Registrar_Office
             SqlStudentAppli.InsertParameters["ielts_test_date"].DefaultValue = IDATETextBox.Text;
             SqlStudentAppli.InsertParameters["toefl"].DefaultValue = TOEFLTextBox.Text;
             SqlStudentAppli.InsertParameters["toefl_test_date"].DefaultValue = TDATETextBox.Text;
-            SqlStudentAppli.InsertParameters["toefl_test_date"].DefaultValue = TDATETextBox.Text;
             SqlStudentAppli.InsertParameters["admission_status"].DefaultValue = DropDownList1.SelectedValue;
             SqlStudentAppli.Insert();
             
-           
-            
+
+            txtSuserid.Text = String.Empty;
+            GRETextBox.Text = String.Empty;
+            GDATETextBox.Text = String.Empty;
+            IELTSTextBox.Text = String.Empty;
+            IDATETextBox.Text = String.Empty;
+            TOEFLTextBox.Text = String.Empty;
+            TDATETextBox.Text = String.Empty;
+            TDATETextBox.Text = String.Empty;
+
+            string message = "Student application is created successfully.";
+            string script = "window.onload = function(){ alert('";
+            script += message;
+            script += "')};";
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
         }
     }
 }

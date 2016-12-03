@@ -32,6 +32,11 @@ namespace University.Registrar_Office
                 msg.Text = "Admission Status updated Successfully";
 
             GridView1.Visible = true;
+            string message = "Admission Status updated Successfully.";
+            string script = "window.onload = function(){ alert('";
+            script += message;
+            script += "')};";
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
         }
     }
 }

@@ -57,6 +57,19 @@ namespace University.Academics
             DepartmentIDTB.Text = DepartmentIDDDList.SelectedValue;
         }
 
+        protected void EffectiveDateCal_SelectionChanged(object sender, EventArgs e)
+        {
+
+            CourseEffectiveDateTB.Text = EffectiveDateCal.SelectedDate.ToShortDateString();
+            EffectiveDatePanelCal.Visible = false;
+        }
+
+        protected void EffectiveDateimage_Click(object sender, ImageClickEventArgs e)
+        {
+            EffectiveDatePanelCal.Visible = true;
+        }
+
+
         /*protected void DepartmentIDDDList_SelectedIndexChanged(object sender, EventArgs e)
         {
             Response.Redirect("CourseCreation.aspx");
