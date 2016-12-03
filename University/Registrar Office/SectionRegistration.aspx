@@ -92,12 +92,10 @@
 &nbsp;
         <br />
         <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:SqlDataSource ID="Sqlsectionregistration" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [section_registration] WHERE [suser_id] = @original_suser_id AND [section_id] = @original_section_id AND [registration_status] = @original_registration_status AND [registration_date] = @original_registration_date" InsertCommand="INSERT INTO [section_registration] ([suser_id], [section_id], [registration_status], [registration_date]) VALUES (@suser_id, @section_id, @registration_status, @registration_date)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [section_registration]" UpdateCommand="UPDATE [section_registration] SET [registration_status] = @registration_status, [registration_date] = @registration_date WHERE [suser_id] = @original_suser_id AND [section_id] = @original_section_id AND [registration_status] = @original_registration_status AND [registration_date] = @original_registration_date">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:SqlDataSource ID="Sqlsectionregistration" runat="server"  ConnectionString="<%$ ConnectionStrings:UniversityConnectionString %>" DeleteCommand="DELETE FROM [section_registration] WHERE [suser_id] = @original_suser_id AND [section_id] = @original_section_id " InsertCommand="INSERT INTO [section_registration] ([suser_id], [section_id], [registration_status], [registration_date]) VALUES (@suser_id, @section_id, @registration_status, @registration_date)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [section_registration]" UpdateCommand="UPDATE [section_registration] SET [registration_status] = @registration_status, [registration_date] = @registration_date WHERE [suser_id] = @original_suser_id AND [section_id] = @original_section_id AND [registration_status] = @original_registration_status AND [registration_date] = @original_registration_date">
             <DeleteParameters>
                 <asp:Parameter Name="original_suser_id" Type="Int32" />
                 <asp:Parameter Name="original_section_id" Type="Int16" />
-                <asp:Parameter Name="original_registration_status" Type="String" />
-                <asp:Parameter DbType="Date" Name="original_registration_date" />
             </DeleteParameters>
             <InsertParameters>
                 <asp:Parameter Name="suser_id" Type="Int32" />

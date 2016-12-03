@@ -26,6 +26,12 @@ namespace University.Registrar_Office
                 SqlSection.InsertParameters["semester"].DefaultValue = SemesterTxt.Text;
                 SqlSection.Insert();
                 msg.Text = "Saved Successfully";
+
+                string message = "New Section is created successfully under the selected Course.";
+                string script = "window.onload = function(){ alert('";
+                script += message;
+                script += "')};";
+                ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
             }
             catch (Exception ex)
             {

@@ -28,8 +28,7 @@ namespace University.Registrar_Office
         {
            // try { 
             DateTime dt = DateTime.Now;
-            Sqlsectionregistration.InsertParameters["suser_id"].DefaultValue = StudentId.Text;
-            Sqlsectionregistration.InsertParameters["section_id"].DefaultValue = SectionDropDown.SelectedValue;
+            
             SqlSection.SelectCommand = "Select * from section where section_id= '" + SectionDropDown.SelectedValue + "'";
             DataSourceSelectArguments dsArguments = new DataSourceSelectArguments();
             DataView dvView = new DataView();
@@ -43,34 +42,61 @@ namespace University.Registrar_Office
                 int newcurrentavailability = 0;
                 if (index.Equals("0"))
                 {
+                    Sqlsectionregistration.InsertParameters["suser_id"].DefaultValue = StudentId.Text;
+                    Sqlsectionregistration.InsertParameters["section_id"].DefaultValue = SectionDropDown.SelectedValue;
                     Sqlsectionregistration.InsertParameters["registration_status"].DefaultValue = "Y";
+                    Sqlsectionregistration.InsertParameters["registration_date"].DefaultValue = dt.ToString();
+                    Sqlsectionregistration.Insert();
                     newcurrentavailability = currentavailability - 1;
+                    string message = "Student is successfully registered for the section.";
+                    string script = "window.onload = function(){ alert('";
+                    script += message;
+                    script += "')};";
+                    ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+                    SqlSectionUpdate.UpdateParameters["section_availabilty"].DefaultValue = Convert.ToString(newcurrentavailability);
+                    SqlSectionUpdate.UpdateParameters["original_section_id"].DefaultValue = SectionDropDown.SelectedValue;
+                    SqlSectionUpdate.UpdateParameters["original_section_availabilty"].DefaultValue = Convert.ToString(currentavailability);
+                    SqlSectionUpdate.Update();
+                    RegistrationStatusLabel.Text = "Registered Successfully" + dt.ToString();
+                    SqlGrade.InsertParameters["suser_id"].DefaultValue = StudentId.Text;
+                    SqlGrade.InsertParameters["section_id"].DefaultValue = SectionDropDown.SelectedValue;
+                    SqlGrade.Insert();
 
                 }
                 else if (index.Equals("1"))
                 {
-                    Sqlsectionregistration.InsertParameters["registration_status"].DefaultValue = "N";
+                    Sqlsectionregistration.DeleteParameters["original_suser_id"].DefaultValue = StudentId.Text;
+                    Sqlsectionregistration.DeleteParameters["Original_section_id"].DefaultValue = SectionDropDown.SelectedValue;
+                    Sqlsectionregistration.Delete();
                     newcurrentavailability = currentavailability + 1;
-                }
+                    SqlSectionUpdate.UpdateParameters["section_availabilty"].DefaultValue = Convert.ToString(newcurrentavailability);
+                    SqlSectionUpdate.UpdateParameters["original_section_id"].DefaultValue = SectionDropDown.SelectedValue;
+                    SqlSectionUpdate.UpdateParameters["original_section_availabilty"].DefaultValue = Convert.ToString(currentavailability);
+                    SqlSectionUpdate.Update();
+                    string message = "Student is successfully section dropped.";
+                    string script = "window.onload = function(){ alert('";
+                    script += message;
+                    script += "')};";
+                    ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+                 }
 
-                SqlSectionUpdate.UpdateParameters["section_availabilty"].DefaultValue = Convert.ToString(newcurrentavailability);
-                SqlSectionUpdate.UpdateParameters["original_section_id"].DefaultValue = SectionDropDown.SelectedValue;
-                SqlSectionUpdate.UpdateParameters["original_section_availabilty"].DefaultValue = Convert.ToString(currentavailability);
-                SqlSectionUpdate.Update();
-                RegistrationStatusLabel.Text = "Registered Successfully" + dt.ToString();
-                SqlGrade.InsertParameters["suser_id"].DefaultValue = StudentId.Text;
-                SqlGrade.InsertParameters["section_id"].DefaultValue = SectionDropDown.SelectedValue;
-                SqlGrade.Insert();
-                }
+               
+
+            }
 
             if (currentavailability <= 0)
             {
                 Sqlsectionregistration.InsertParameters["registration_status"].DefaultValue = "N";
                 RegistrationStatusLabel.Text = "No Availability";
+                string message = "Seats are not available for the section.";
+                string script = "window.onload = function(){ alert('";
+                script += message;
+                script += "')};";
+                ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
             }
-            Sqlsectionregistration.InsertParameters["registration_date"].DefaultValue = dt.ToString();
+            
 
-            Sqlsectionregistration.Insert();
+            
           // }
             //catch (Exception ex)
             //{
