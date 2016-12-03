@@ -32,7 +32,10 @@ namespace University.HR
             Sqljobapplication.Insert();
             txtUserid.Text = string.Empty;
             msg.Text = "Job Application Submitted";
-            
+            string message = "Job Application Submitted";
+            string script = "window.onload = function(){ alert('" + message + "')};";
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+
 
         }
 

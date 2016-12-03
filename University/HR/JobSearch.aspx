@@ -80,17 +80,17 @@
             </div>
         </div>
      
-        
-         <div style="margin-top:50px;" align="center">       
+         <br /><br />
+         <div style="margin-left:75px" >       
         <asp:Panel ID="PanelResults" runat="server">
             <asp:GridView ID="gvSearchResults" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataKeyNames="vacancy_id" DataSourceID="SqlSearchResults" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" >
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
-                    <asp:BoundField DataField="vacancy_id" HeaderText="vacancy_id" InsertVisible="False" ReadOnly="True" SortExpression="vacancy_id" />
-                    <asp:BoundField DataField="Job_Title" HeaderText="Job_Title" SortExpression="Job_Title" />
+                    <asp:BoundField DataField="vacancy_id" HeaderText="Vacancy ID" InsertVisible="False" ReadOnly="True" SortExpression="vacancy_id" />
+                    <asp:BoundField DataField="Job_Title" HeaderText="Job Title" SortExpression="Job_Title" />
                     <asp:BoundField DataField="Department" HeaderText="Department" SortExpression="Department" />
-                    <asp:BoundField DataField="Position_Type" HeaderText="Position_Type" SortExpression="Position_Type" />
-                    <asp:BoundField DataField="Job_Description" HeaderText="Job_Description" SortExpression="Job_Description" />
+                    <asp:BoundField DataField="Position_Type" HeaderText="Position Type" SortExpression="Position_Type" />
+                    <asp:BoundField DataField="Job_Description" HeaderText="Job Description" SortExpression="Job_Description" />
                     <asp:TemplateField HeaderText="View Details"  ShowHeader="True">
                                  <ItemTemplate>
                                      <asp:LinkButton ID="lnkView" runat="server" CausesValidation="False" ToolTip=" click to view details" OnClick="lnkView_Click"  Text="View"></asp:LinkButton>

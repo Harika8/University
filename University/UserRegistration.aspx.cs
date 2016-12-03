@@ -19,7 +19,7 @@ namespace University
         {
             SqlUser_info.InsertParameters["first_name"].DefaultValue =txtFirstName.Text.ToUpper().Trim();
             SqlUser_info.InsertParameters["last_name"].DefaultValue = txtLastName.Text.ToUpper().Trim();
-            SqlUser_info.InsertParameters["date_of_birth"].DefaultValue = txtDob.Text.ToUpper().Trim();
+            SqlUser_info.InsertParameters["date_of_birth"].DefaultValue = txtDob.Text;
             SqlUser_info.InsertParameters["gender"].DefaultValue = gender.SelectedValue;
             SqlUser_info.InsertParameters["email_id"].DefaultValue = txtEmail.Text.ToUpper().Trim();
             SqlUser_info.InsertParameters["contact_no"].DefaultValue = txtContactno.Text.ToUpper().Trim();
@@ -52,20 +52,26 @@ namespace University
 
             msg.Text = "User Registered";
 
+            string message = "User Registered Successfully";
+            string script = "window.onload = function(){ alert('" + message + "')};";
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+
             Sqlgetuserid.SelectCommand = "Select MAX(user_id) as user_id from user_info";
             DataSourceSelectArguments dsArguments = new DataSourceSelectArguments();
             DataView dvView = new DataView();
             dvView = (DataView)Sqlgetuserid.Select(dsArguments);
 
             string userid = dvView[0].Row["user_id"].ToString();
-            Session["user_id"] = userid;
+            
             string strsender = (string)Session["sender"];
             if ( strsender.Equals("jobapplicant"))
             {
+                Session["juser_id"] = userid;
                 Response.Redirect("HR/NewJobApplicant.aspx");
             }
             if (strsender.Equals("studentapplicant"))
             {
+                Session["user_id"] = userid;
                 Response.Redirect("Registrar Office/UniversityApplication.aspx");
             }
         }

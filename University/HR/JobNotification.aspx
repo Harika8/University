@@ -63,12 +63,14 @@
         <div align="center">
                   <asp:Button ID="btnaddVacancy" runat="server" CssClass="bg-primary" Text="Add" OnClick="btnaddVacancy_Click"/><br /><br /><br />
                   <asp:Panel ID="PanelgvVacancy" runat="server">
-                      <asp:GridView ID="gvVacancy" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="vacancy_id" DataSourceID="SqlVacancy" ForeColor="Black" GridLines="Vertical">
+                      <asp:GridView ID="gvVacancy" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="vacancy_id" DataSourceID="SqlGridView" ForeColor="Black" GridLines="Vertical">
                           <AlternatingRowStyle BackColor="White" />
                           <Columns>
-                              <asp:BoundField DataField="no_of_vacancies" HeaderText="no_of_vacancies" SortExpression="no_of_vacancies" />
-                              <asp:BoundField DataField="req_qualification" HeaderText="req_qualification" SortExpression="req_qualification" />
-                              <asp:BoundField DataField="duration" HeaderText="duration" SortExpression="duration" />
+                              <asp:BoundField DataField="Job_Title" HeaderText="Job Title" SortExpression="Job_Title" />
+                              <asp:BoundField DataField="Department" HeaderText="Department" SortExpression="Department" />
+                              <asp:BoundField DataField="req_qualification" HeaderText="Req Qualification" SortExpression="req_qualification" />
+                              <asp:BoundField DataField="duration" HeaderText="Duration" SortExpression="Duration" />
+                              <asp:BoundField DataField="no_of_vacancies" HeaderText="No of Vacancies" SortExpression="no_of_vacancies" />
                           </Columns>
                           <FooterStyle BackColor="#CCCC99" />
                           <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
@@ -172,6 +174,8 @@
                     <asp:Parameter DbType="Date" Name="original_close_date" />
                 </UpdateParameters>
             </asp:SqlDataSource>
+        
+        <asp:SqlDataSource ID="SqlGridView" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" SelectCommand="Select vacancy.vacancy_id,position.designation as Job_Title, department.department_name as Department,  req_qualification, duration, no_of_vacancies from vacancy, position,department where vacancy.position_id=position.position_id and position.department_id = department.department_id"></asp:SqlDataSource>
         
     </form>
 </body>

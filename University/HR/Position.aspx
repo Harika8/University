@@ -66,12 +66,11 @@
                       <asp:GridView ID="gvPosition" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="position_id" DataSourceID="SqlPosition" ForeColor="Black" GridLines="Vertical">
                           <AlternatingRowStyle BackColor="White" />
                           <Columns>
-                              <asp:BoundField DataField="job_type" HeaderText="job_type" SortExpression="job_type" />
-                              <asp:BoundField DataField="designation" HeaderText="designation" SortExpression="designation" />
-                              <asp:BoundField DataField="roles_responsibilities" HeaderText="roles_responsibilities" SortExpression="roles_responsibilities" />
-                              <asp:BoundField DataField="department_id" HeaderText="department_id" SortExpression="department_id" />
-                              <asp:BoundField DataField="salary" HeaderText="salary" SortExpression="salary" />
-                              <asp:BoundField DataField="pay_frequency" HeaderText="pay_frequency" SortExpression="pay_frequency" />
+                              <asp:BoundField DataField="job_type" HeaderText="Job Type" SortExpression="job_type" />
+                              <asp:BoundField DataField="designation" HeaderText="Designation" SortExpression="designation" />
+                              <asp:BoundField DataField="roles_responsibilities" HeaderText="Roles Responsibilities" SortExpression="roles_responsibilities" />
+                              <asp:BoundField DataField="salary" HeaderText="Salary" SortExpression="salary" />
+                              <asp:BoundField DataField="pay_frequency" HeaderText="Pay Frequency" SortExpression="pay_frequency" />
                           </Columns>
                           <FooterStyle BackColor="#CCCC99" />
                           <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />

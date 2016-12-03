@@ -44,6 +44,7 @@
         <asp:Button ID="btnApply" runat="server"  Text="Apply" OnClick="btnApply_Click" />&nbsp;&nbsp;
         <asp:Button ID="btnBack" runat="server"  Text="Back" OnClick="btnBack_Click" />
             <br />
+            <br />
             <asp:SqlDataSource ID="SqlData" runat="server" ConnectionString="<%$ ConnectionStrings:UniversityConnectionString4 %>" SelectCommand="SELECT * FROM [vacancy]"></asp:SqlDataSource>
         </div>
     

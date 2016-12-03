@@ -85,7 +85,7 @@
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Financial Aid</h1>
+                                    <h1 class="animation animated-item-1"><a href="FinancialAid/homeFA.aspx">Financial Aid</a></h1>
                                     <h2 class="animation animated-item-2"></h2>                                    
                                 </div>
                             </div>
@@ -103,7 +103,7 @@
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Campus Services</h1>
+                                    <h1 class="animation animated-item-1"><a href="Campus Services/CampusServicesHome.aspx">Campus Services</a></h1>
                                     <h2 class="animation animated-item-2"></h2>
                                 </div>
                             </div>
@@ -120,7 +120,7 @@
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Academics</h1>
+                                    <h1 class="animation animated-item-1"><a href="Academics/AcademicsHome.aspx">Academics</a></h1>
                                     <h2 class="animation animated-item-2"></h2>
                                 </div>
                             </div>
@@ -137,7 +137,7 @@
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Human Resources</h1>
+                                    <h1 class="animation animated-item-1"><a href="HR/HRDefault.aspx">Human Resources</a></h1>
                                     <h2 class="animation animated-item-2"></h2>
                                 </div>
                             </div>

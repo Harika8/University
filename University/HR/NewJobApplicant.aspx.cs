@@ -11,13 +11,13 @@ namespace University.HR
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["user_id"] == null)
+            if (Session["juser_id"] == null)
             {
                 string sessionsend = "jobapplicant";
                 Session["sender"] = sessionsend;
                 Response.Redirect("../UserRegistration.aspx");
             }
-            txtUserid.Text = (string)Session["user_id"];
+            txtUserid.Text = (string)Session["juser_id"];
         }
 
         protected void btnaddEduHistory_Click(object sender, EventArgs e)
@@ -88,7 +88,7 @@ namespace University.HR
 
         protected void btnSubmitForm_Click(object sender, EventArgs e)
         {
-            Session["juser_id"] = Session["user_id"];
+            Session["juser_id"] = txtUserid.Text;
             Response.Redirect("JobApplication.aspx");
         }
     }

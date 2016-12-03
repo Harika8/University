@@ -44,7 +44,10 @@ namespace University.HR
             txtSalaryperhour.Text = string.Empty;
             txtempType.Text = string.Empty;
             msg.Text = "New Employee Joined Successfully";
-            
+            string message = "New Employee Joined Successfully";
+            string script = "window.onload = function(){ alert('" + message + "')};";
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+
         }
 
         protected void btnclear_Click(object sender, EventArgs e)

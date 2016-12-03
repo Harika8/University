@@ -24,11 +24,11 @@
                 <asp:GridView ID="gvEducationHistory" ShowHeaderWhenEmpty="True" runat="server" AutoGenerateColumns="False" DataKeyNames="user_id,school_name" DataSourceID="SqlEducationHistory"   GridLines="Vertical" HorizontalAlign="Center" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" >
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
-                        <asp:BoundField DataField="school_name" HeaderText="school_name" ReadOnly="True" SortExpression="school_name" />
-                        <asp:BoundField DataField="degree" HeaderText="degree" SortExpression="degree" />
-                        <asp:BoundField DataField="major" HeaderText="major" SortExpression="major" />
-                        <asp:BoundField DataField="gpa" HeaderText="gpa" SortExpression="gpa" />
-                        <asp:BoundField DataField="graduated_year" HeaderText="graduated_year" SortExpression="graduated_year" />
+                        <asp:BoundField DataField="school_name" HeaderText="School Name" ReadOnly="True" SortExpression="school_name" />
+                        <asp:BoundField DataField="degree" HeaderText="Degree" SortExpression="degree" />
+                        <asp:BoundField DataField="major" HeaderText="Major" SortExpression="major" />
+                        <asp:BoundField DataField="gpa" HeaderText="GPA" SortExpression="gpa" />
+                        <asp:BoundField DataField="Graduated Year" HeaderText="graduated_year" SortExpression="graduated_year" />
                     </Columns>
                     <FooterStyle BackColor="#CCCC99" />
                     <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
@@ -107,10 +107,10 @@
                    
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
-                        <asp:BoundField DataField="employer_name" HeaderText="employer_name" ReadOnly="True" SortExpression="employer_name" />
-                        <asp:BoundField DataField="designation" HeaderText="designation" SortExpression="designation" />
-                        <asp:BoundField DataField="duration" HeaderText="duration" SortExpression="duration" />
-                        <asp:BoundField DataField="job_description" HeaderText="job_description" SortExpression="job_description" />
+                        <asp:BoundField DataField="employer_name" HeaderText="Employer Name" ReadOnly="True" SortExpression="employer_name" />
+                        <asp:BoundField DataField="designation" HeaderText="Designation" SortExpression="designation" />
+                        <asp:BoundField DataField="duration" HeaderText="Duration" SortExpression="duration" />
+                        <asp:BoundField DataField="job_description" HeaderText="Job Description" SortExpression="job_description" />
                     </Columns>
                     <FooterStyle BackColor="#CCCC99" />
                     <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
@@ -179,6 +179,8 @@
         <br /><br /><br /> 
         <div style="margin-top:50px;" align="center">
             <asp:Button ID="btnSubmitForm" runat="server"  Text="Proceed" OnClick="btnSubmitForm_Click" />&nbsp;&nbsp;
+            <br />
+            <br />
             <br />
         </div>
     </form>

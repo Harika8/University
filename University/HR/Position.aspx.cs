@@ -24,6 +24,7 @@ namespace University.HR
             SqlPosition.InsertParameters["pay_frequency"].DefaultValue = selPayfrequency.SelectedValue;
             SqlPosition.Insert();
 
+
             gvPosition.DataBind();
             PanelAddPosition.Visible = false;
             PanelgvPosition.Visible = true;
@@ -34,7 +35,11 @@ namespace University.HR
             seldept.SelectedIndex = -1;
             txtSalary.Text = string.Empty;
             selPayfrequency.SelectedIndex = 0;
-           
+
+            string message = "New Position Created Successfully";
+            string script = "window.onload = function(){ alert('" + message + "')};";
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+
         }
 
         protected void btnclear_Click(object sender, EventArgs e)

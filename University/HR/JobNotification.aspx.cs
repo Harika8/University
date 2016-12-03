@@ -75,7 +75,11 @@ namespace University.HR
             txtRequiredQualification.Text = string.Empty;
             txtDuration.Text = string.Empty;
             txtCloseDate.Text = string.Empty;
-           
+
+            string message = "Vacancy Created Successfully";
+            string script = "window.onload = function(){ alert('" + message + "')};";
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+
 
         }
 
