@@ -4,9 +4,9 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Employee Joining" />
+    <meta name="description" content="Campus Services" />
     <meta name="author" content="Harika" />
-    <title>Employee Joining Formalities</title>
+    <title>Campus Services</title>
     <%-- ------ css ------ --%>
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -79,7 +79,7 @@
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Start Date:
         <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
-&nbsp;(DD/MM/YYYY)<br />
+&nbsp;(MM/DD/YYYY)<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </p>
     <div>
